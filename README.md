@@ -37,7 +37,7 @@ set it as an environment variable named `OPENAI_API_KEY`:
 
 4. Start the Flask server
 
-    `python run app.py`
+    `flask run`
 
 ## Streamlit App Setup
 

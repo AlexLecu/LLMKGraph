@@ -1,0 +1,13 @@
+version: 2
+updates:
+  - package-ecosystem: "pip"
+    directory: "/"
+    insecure-external-code-execution: allow
+    schedule:
+      interval: "weekly"
+      time: "07:30"
+      timezone: "Europe/Berlin"
+    open-pull-requests-limit: 3
+    versioning-strategy: increase
+    labels:
+      - "dependencies"
