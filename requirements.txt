@@ -1,0 +1,6 @@
+streamlit>=1.32.2
+flask>=3.0.2
+langchain>=0.1.12
+langchain-openai>=0.0.8
+openai>=1.14.0
+SPARQLWrapper>=2.0.0
