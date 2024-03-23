@@ -32,6 +32,17 @@ function addRelations(){
   })
 
 }
+
+function reasonKg(){
+  fetch('/api/reason', {
+  method: 'GET',
+  })
+  .then((response) => {
+    console.log("data", response)
+    statusText.value = JSON.stringify("Reasoner finished successfully!")
+  })
+}
+
 </script>
 
 <template>
@@ -48,6 +59,7 @@ function addRelations(){
       <div class="buttons-container">
         <button @click="showRelations" class="action-button">Show relations</button>
         <button @click="addRelations" class="action-button">Add relations</button>
+        <button @click="reasonKg" class="action-button">Reason KG</button>
       </div>
       <textarea v-model="responseText" placeholder="Relations" readonly class="response-textarea"></textarea>
       <textarea v-model="statusText" readonly class="status-textarea"></textarea>

@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify
 from enrich_kg import return_relations, add_relations_to_kg
+from reason import reason_and_update
 
 
 app = Flask(__name__)
@@ -20,6 +21,11 @@ def add_relations():
     add_relations_to_kg(relations)
 
     return "{\"status\": \"Successfully completed\"}"
+
+
+@app.route('/api/reason', methods=['GET'])
+def reason_kg():
+    reason_and_update()
 
 
 if __name__ == '__main__':
