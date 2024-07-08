@@ -1,0 +1,2163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+	xmlns="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#"
+	xmlns:agg="http://jena.apache.org/ARQ/function/aggregate#"
+	xmlns:sail="http://www.openrdf.org/config/sail#"
+	xmlns:owl="http://www.w3.org/2002/07/owl#"
+	xmlns:geof="http://www.opengis.net/def/function/geosparql/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+	xmlns:fn="http://www.w3.org/2005/xpath-functions"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:spif="http://spinrdf.org/spif#"
+	xmlns:path="http://www.ontotext.com/path#"
+	xmlns:array="http://www.w3.org/2005/xpath-functions/array"
+	xmlns:apf="http://jena.apache.org/ARQ/property#"
+	xmlns:rep="http://www.openrdf.org/config/repository#"
+	xmlns:map="http://www.w3.org/2005/xpath-functions/map"
+	xmlns:sr="http://www.openrdf.org/config/repository/sail#"
+	xmlns:wgs="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	xmlns:gn="http://www.geonames.org/ontology#"
+	xmlns:afn="http://jena.apache.org/ARQ/function#"
+	xmlns:list="http://jena.apache.org/ARQ/list#"
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:untitled-ontology-6="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#"
+	xmlns:ofn="http://www.ontotext.com/sparql/functions/"
+	xmlns:geoext="http://rdf.useekm.com/ext#"
+	xmlns:graphdb="http://www.ontotext.com/config/graphdb#"
+	xmlns:math="http://www.w3.org/2005/xpath-functions/math"
+	xmlns:omgeo="http://www.ontotext.com/owlim/geo#">
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#affect">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#aggravate">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#cause">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#improve">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#present">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#prevent">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#treat">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#diagnose">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#test">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#progression">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#BIOMARKER">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#BODY_PART">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#COMPLICATION">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#DISEASE">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#GENE">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#PROGNOSIS">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#PROGRESSION">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#RISK_FACTOR">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#SYMPTOM">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#TEST">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#TREATMENT">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#PERSON">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#AMD">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#DISEASE"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#age_-_related_macular_degeneration">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#DISEASE"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Age_-_related_macular_degeneration_(_AMD_)">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#DISEASE"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#macula">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#BODY_PART"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#irreversible_severe_central_visual_loss">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#COMPLICATION"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#permanent_loss_of_central_vision">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#COMPLICATION"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#eye">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#BODY_PART"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#significantly_impair_the_ability_to_read_,_drive_,_and_carry_out_daily_activities">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#ability_to_read">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#RISK_FACTOR"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#drive">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#RISK_FACTOR"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#patients_over_the_age_of_60">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#RISK_FACTOR"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#blindness">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#SYMPTOM"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#severe_vision_loss">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#SYMPTOM"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Avastin">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#TREATMENT"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#wet_ARMD">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#DISEASE"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#wet_form_of_ARMD">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#DISEASE"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#CX3CR1">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#GENE"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Lucentis">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#TREATMENT"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Lutein">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#TREATMENT"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#ME">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#COMPLICATION"/>
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#SYMPTOM"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#macular_edema">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#COMPLICATION"/>
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#SYMPTOM"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#SNP_in_CFH">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#GENE"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Sirolimus">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#TREATMENT"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#inflammation">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#SYMPTOM"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#amyloid_deposits">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#BIOMARKER"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#angiogenesis">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#PROGRESSION"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#choroidal_neovascularization">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#DISEASE"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#beta_-_carotene">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#TREATMENT"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#beyond_50_years_of_age">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#RISK_FACTOR"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#corticosteroid_injection_around_the_eye">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#TREATMENT"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#development_of_late_stage_manifestations">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#PROGRESSION"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#dry_AMD">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#DISEASE"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#large_drusen">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#SYMPTOM"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#pigmentary_abnormalities_in_the_macula">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#SYMPTOM"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#environmental_factors">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#RISK_FACTOR"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#exudative_AMD">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#DISEASE"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#eyes_with_well_-_defined_CNVM_or_lesions">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#DISEASE"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#formation_of_new_blood_vessels_in_the_choroid">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#BIOMARKER"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#fundus_autofluorescence_changes">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#TEST"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#haemorrhage">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#COMPLICATION"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#hereditary">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#RISK_FACTOR"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#improvement_in_vision">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#PROGNOSIS"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#laser_photocoagulation">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#TREATMENT"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#photodynamic_therapy">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#TREATMENT"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#progress_more_rapidly_to_blindness">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#PROGRESSION"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#severe_visual_impairment">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#COMPLICATION"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#stabilization_of_vision">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#PROGNOSIS"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#sub_-_retinal_neovascular_membranes">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#BODY_PART"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#transpupillary_thermotherapy">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#TREATMENT"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Transpupillary_thermotherapy_(_TTT_)">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#TREATMENT"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#vision_loss">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#COMPLICATION"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#visual_loss">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#COMPLICATION"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#vitamin_C">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#TREATMENT"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#vitamin_E">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#TREATMENT"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#AMRS2_/_HTRA-1">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#GENE"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Ageing_changes_of_the_retinal_pigment_epithelium_(_RPE_)">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#RISK_FACTOR"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#apolipoprotein_E_(_ApoE_)">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#GENE"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#choroidal_neovascular_membrane_formation_(_CNVM_)">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#BIOMARKER"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#continued_intravitreal_therapy_with_Lucentis_(_ranibizumab_)">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#TREATMENT"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#polymorphisms_(_small_gene_variances_)">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#RISK_FACTOR"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#neovascular_type_age-related_macular_degeneration">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#DISEASE"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#flow_cytometry">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#TEST"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#CD34+_stem_cell_levels">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#BIOMARKER"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#smoking_status">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#RISK_FACTOR"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#intravitreal_use_of_aflibercept">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#TREATMENT"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#neovascular_age-related_macular_degeneration">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#DISEASE"/>
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#PROGRESSION"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#myopic_choroidal_neovascularization">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#DISEASE"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#diabetic_macular_edema">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#DISEASE"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#macular_edema_associated_with_retinal_vein_occlusion">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#DISEASE"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#severe_ocular_or_systemic_complications">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#COMPLICATION"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#neovascular_AMD">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#DISEASE"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#visual_acuity">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#PROGNOSIS"/>
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#SYMPTOM"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#eyes">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#BODY_PART"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#VEGF-A">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#BIOMARKER"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#R102G_polymorphism_of_the_complement_component_C3_gene">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#GENE"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#genotyping_for_the_R102G_rs2230199_variant_of_the_C3_gene">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#TEST"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#external_limiting_membrane">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#BODY_PART"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#inner_ellipsoid_band">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#BODY_PART"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#retinal_pigment_epithelium_bands">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#BODY_PART"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#lesion_area">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#SYMPTOM"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#intravitreal_ranibizumab_injection">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#TREATMENT"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#anti-VEGF_treatment">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#TREATMENT"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#retinal_pigment_epithelium_tears">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#COMPLICATION"/>
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#DISEASE"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#ONL_thinning">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#PROGRESSION"/>
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#SYMPTOM"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="file:///eye">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#randomized_controlled_trials">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#TEST"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Age-related_macular_degeneration">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#DISEASE"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#irreversible_blindness">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#SYMPTOM"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="file:///beyond_50_years_of_age">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#anti-vascular_endothelial_growth_factor">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#TREATMENT"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#patients_with_AMD">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#PROGNOSIS"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#bevacizumab">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#TREATMENT"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#ranibizumab">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#TREATMENT"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Dr._Jay_Stewart">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#PERSON"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#age-related_macular_degeneration">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#DISEASE"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#diabetic_retinopathy">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#DISEASE"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#ocular_trauma">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#DISEASE"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#retinal_detachment">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#DISEASE"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#retinal_vascular_diseases">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#DISEASE"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#uveitis">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#DISEASE"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#changes_in_macular_morphology">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#SYMPTOM"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#central_macula">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#BODY_PART"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#retinal_nerve_fiber_layer">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#BODY_PART"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#GC-IPL">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#BODY_PART"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#intravitreal_bevacizumab_injection">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#TREATMENT"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#choroidal_neovascularization_secondary_to_neovascular_age-related_macular_degeneration">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#DISEASE"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#VEGF-C">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#BIOMARKER"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#angiopoietin_2">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#BIOMARKER"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#endothelin_1">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#BIOMARKER"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Best-corrected_visual_acuity">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#SYMPTOM"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Spectral-domain_OCT_parameters">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#TEST"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#anterior_chamber_paracentesis">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#TEST"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#genetic_and_environmental_factors">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#RISK_FACTOR"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#normal_variant_CC">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#GENE"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#GG_variant">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#GENE"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#polymorphisms_in_the_complement_component_pathway_genes">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#GENE"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#locally_weighted_scatterplot_smoothing_curves">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#TEST"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#intermediate_age-related_macular_degeneration">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#DISEASE"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#T&amp;E_regimen">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#TREATMENT"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#adaptive_optics_scanning_laser_ophthalmoscopy">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#TEST"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#dot_subretinal_drusenoid_deposits">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#DISEASE"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#retina">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#BODY_PART"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="file:///eyes_with_well_-_defined_CNVM_or_lesions">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#new_and_regressed_lesions">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#SYMPTOM"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#optical_coherence_tomography">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#TEST"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#measurement_of_thickness_of_central_macula">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#TEST"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#measurement_of_thickness_of_retinal_nerve_fiber_layer">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#TEST"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#measurement_of_GC-IPL_thickness">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#TEST"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#measurement_of_CMT">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#TEST"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#spectral-domain_optical_coherence_tomography">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#TEST"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Hereditary_hemochromatosis">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#DISEASE"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#binary_logistic_regression_model">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#TEST"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#hyperreflective_foci">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#RISK_FACTOR"/>
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#SYMPTOM"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#drusenoid_pigment_epithelial_detachment">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#SYMPTOM"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#delta_width_of_drusenoid_pigment_epithelial_detachment">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#RISK_FACTOR"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#VEGF">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#GENE"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#best-corrected_visual_acuity">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#BODY_PART"/>
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#SYMPTOM"/>
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#TEST"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#fluorescein_angiography">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#TEST"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#aqueous_ANGPTL4_levels">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#BIOMARKER"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#ANGPTL4">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#GENE"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#retinal_angiomatous_proliferation">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#DISEASE"/>
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#SYMPTOM"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#as-needed_antivascular_endothelial_growth_factor_treatment">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#TREATMENT"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#intraretinal/subretinal_fluid">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#SYMPTOM"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#hemorrhage">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#SYMPTOM"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Type_1_choroidal_neovascular_membrane">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#SYMPTOM"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#subfoveal_choroidal_thickness">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#SYMPTOM"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#intraretinal_fluid">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#SYMPTOM"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#subretinal_fluid">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#SYMPTOM"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#tangential_traction_due_to_premacular_membrane_formation">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#SYMPTOM"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#vitrectomy_with_internal_limiting_membrane_peeling">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#TREATMENT"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#vitroschisis">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#SYMPTOM"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#vitreous-derived_cells_and_vitreoschisis">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#BODY_PART"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#traction_formation">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#SYMPTOM"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#vitrectomy">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#TREATMENT"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#anti-vascular_endothelial_growth_factor_therapy">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#COMPLICATION"/>
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#TREATMENT"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#choroidal_neovascular_membranes_in_age-related_macular_degeneration">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#DISEASE"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#active_NV_lesions">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#DISEASE"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#active_leasions_with_small_vessels_branching">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#SYMPTOM"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#active_lesions_with_peripheral_arcades">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#SYMPTOM"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#internal_limiting_membrane_peeling">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#TREATMENT"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#functional_and_anatomical">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#PROGNOSIS"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#increase_in_total_body_iron">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#BIOMARKER"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#high_initial_ferritin_level">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#BIOMARKER"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#No_subject_in_either_group_revealed_multiple_drusen">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#SYMPTOM"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#unambiguous_changes_of_the_retinal_pigment_epithelium">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#SYMPTOM"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#increased_lipofuscin_in_any_of_the_images">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#SYMPTOM"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#short-wavelength_autofluorescence">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#TEST"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#color_fundus_images">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#TEST"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#measuring_ferritin_and_transferrin_saturation">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#TEST"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#genetic_testing">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#TEST"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#increased_intestinal_iron_absorption">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#RISK_FACTOR"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#development_of_retinal_degenerative_changes">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#PROGRESSION"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#increased_blood_iron_concentration">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#RISK_FACTOR"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Intravitreal_anti-vascular_endothelial_growth_factor_treatment">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#TREATMENT"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Pigment_epithelial_detachment">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#DISEASE"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Neovascular_age-related_macular_degeneration">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#DISEASE"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#vascularized_pigment_epithelial_detachment">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#COMPLICATION"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#intravitreal_anti-vascular_endothelial_growth_factor_injections">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#TREATMENT"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#wrinkled_pigment_epithelial_detachment">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#SYMPTOM"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Lower_best-corrected_visual_acuity_at_baseline">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#RISK_FACTOR"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Visual_improvement">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#PROGNOSIS"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Presence_of_foveal_subretinal_fluid">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#RISK_FACTOR"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Female_gender">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#RISK_FACTOR"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Higher_baseline_PED_height">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#RISK_FACTOR"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Pigment_epithelial_detachment_height_reduction">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#SYMPTOM"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Treatment_drug">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#TREATMENT"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Ranibizumab_and_aflibercept">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#TREATMENT"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Baseline_best-corrected_visual_acuity">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#RISK_FACTOR"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Foveal_subretinal_fluid">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#RISK_FACTOR"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Aflibercept">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#TREATMENT"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Pigment_epithelial_detachment_height">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#SYMPTOM"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#adult-onset_foveomacular_vitelliform_dystrophy">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#DISEASE"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#superficial_retinal_vascular_densities">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#BODY_PART"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#deep_retinal_vascular_densities">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#BODY_PART"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#choroidal_thickness">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#BODY_PART"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#increased_parafoveal_superficial_vessel_density">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#SYMPTOM"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#increased_parafoveal_deep_vessel_density">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#SYMPTOM"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#optical_coherence_tomography_angiography">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#TEST"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#intermediate_dry_age-related_macular_degeneration">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#DISEASE"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#quiescent_NV_lesions">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#DISEASE"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#quiescent_NV_lesions_with_prominent_central_vessel">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#SYMPTOM"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#anti-vascular_endothelial_growth_factor_agents">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#TREATMENT"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#body_mass_index">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#RISK_FACTOR"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#rod_intercept_times">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#TEST"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Abnormal_DA">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#SYMPTOM"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#AREDS_vitamins">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#TREATMENT"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#family_history_of_AMD">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#RISK_FACTOR"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#AREDS_supplements">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#TREATMENT"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#alcohol_intake">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#RISK_FACTOR"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#AdaptDx">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#TEST"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="file:///AMD">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#contact_with_doctor">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#TREATMENT"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#treatment_or_follow-up">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#TREATMENT"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#nonpersistence">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#RISK_FACTOR"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#declined_visual_acuity">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#SYMPTOM"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#treatment_exclusively_at_one_center">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#RISK_FACTOR"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#higher_number_of_patients_at_the_treating_center">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#RISK_FACTOR"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#fixed_appointments">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#RISK_FACTOR"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#optical_coherence_tomography_scan">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#TEST"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#initial_gain_in_visual_acuity">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#SYMPTOM"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#intravitreal_injection_of_anti-vascular_endothelial_growth_factor_agents">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#TREATMENT"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#volume_scans_of_optical_coherence_tomography">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#TEST"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#large_tear_area">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#RISK_FACTOR"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#ONL_thinning_outside_the_tear_area">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#SYMPTOM"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#younger_age">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#RISK_FACTOR"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#ONL_thinning_inside_the_tear_area">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#SYMPTOM"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#retinal_pigment_epithelium_tear">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#DISEASE"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#nonexudative_age-related_macular_degeneration">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#DISEASE"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#soft_drusen">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#SYMPTOM"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#subretinal_drusenoid_deposit">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#SYMPTOM"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#pachydrusen">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#SYMPTOM"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#choroids">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#BODY_PART"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#retinal_tissue_area">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#BIOMARKER"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#central_retinal_thickness">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#BODY_PART"/>
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#SYMPTOM"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#optical_density_of_the_retinal_optical_slice_portion_located_in_the_central_subfield">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#BIOMARKER"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#retinal_tissue_area_to_optical_density_ratio">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#BIOMARKER"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#anti-vascular_endothelial_growth_factor_treatment">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#TREATMENT"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#small_lacy_folds_of_the_retinal_pigment_epithelium">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#SYMPTOM"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#the_visual_prognosis_and_number_of_injections">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#PROGNOSIS"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#number_of_intravitreal_anti-vascular_endothelial_growth_factor_injections">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#TREATMENT"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#spectral_domain_optical_coherence_tomography">
+	<rdf:type rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#TEST"/>
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/3/untitled-ontology-56">
+	<rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#PERSON">
+	<rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#AMD">
+	<owl:sameAs rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#age_-_related_macular_degeneration"/>
+	<owl:sameAs rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Age_-_related_macular_degeneration_(_AMD_)"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#age_-_related_macular_degeneration">
+	<owl:sameAs rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Age_-_related_macular_degeneration_(_AMD_)"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#wet_ARMD">
+	<owl:sameAs rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#wet_form_of_ARMD"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#ME">
+	<owl:sameAs rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#macular_edema"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#transpupillary_thermotherapy">
+	<owl:sameAs rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Transpupillary_thermotherapy_(_TTT_)"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#AMD">
+	<affect rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#macula"/>
+	<affect rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#eye"/>
+	<affect rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#ability_to_read"/>
+	<affect rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#drive"/>
+	<affect rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#patients_over_the_age_of_60"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#age_-_related_macular_degeneration">
+	<affect rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#macula"/>
+	<affect rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#eye"/>
+	<affect rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#ability_to_read"/>
+	<affect rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#drive"/>
+	<affect rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#patients_over_the_age_of_60"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Age_-_related_macular_degeneration_(_AMD_)">
+	<affect rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#macula"/>
+	<affect rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#eye"/>
+	<affect rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#ability_to_read"/>
+	<affect rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#drive"/>
+	<affect rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#patients_over_the_age_of_60"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#smoking_status">
+	<affect rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#neovascular_type_age-related_macular_degeneration"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#intravitreal_use_of_aflibercept">
+	<affect rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#eyes"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#neovascular_age-related_macular_degeneration">
+	<affect rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#external_limiting_membrane"/>
+	<affect rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#inner_ellipsoid_band"/>
+	<affect rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#retinal_pigment_epithelium_bands"/>
+	<affect rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#ONL_thinning"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#eyes">
+	<affect rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#intermediate_age-related_macular_degeneration"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Age-related_macular_degeneration">
+	<affect rdf:resource="file:///eye"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#ranibizumab">
+	<affect rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#visual_acuity"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#age-related_macular_degeneration">
+	<affect rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#central_macula"/>
+	<affect rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#retinal_nerve_fiber_layer"/>
+	<affect rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#GC-IPL"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#intravitreal_bevacizumab_injection">
+	<affect rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#VEGF-A"/>
+	<affect rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#VEGF-C"/>
+	<affect rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#angiopoietin_2"/>
+	<affect rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#endothelin_1"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#genetic_and_environmental_factors">
+	<affect rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#neovascular_age-related_macular_degeneration"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#polymorphisms_in_the_complement_component_pathway_genes">
+	<affect rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#neovascular_age-related_macular_degeneration"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#dot_subretinal_drusenoid_deposits">
+	<affect rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#retina"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#increased_intestinal_iron_absorption">
+	<affect rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#development_of_retinal_degenerative_changes"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#increased_blood_iron_concentration">
+	<affect rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#development_of_retinal_degenerative_changes"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#intravitreal_anti-vascular_endothelial_growth_factor_injections">
+	<affect rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#the_visual_prognosis_and_number_of_injections"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#wrinkled_pigment_epithelial_detachment">
+	<affect rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#best-corrected_visual_acuity"/>
+	<affect rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#number_of_intravitreal_anti-vascular_endothelial_growth_factor_injections"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Lower_best-corrected_visual_acuity_at_baseline">
+	<affect rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Visual_improvement"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Presence_of_foveal_subretinal_fluid">
+	<affect rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Visual_improvement"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Female_gender">
+	<affect rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Visual_improvement"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Higher_baseline_PED_height">
+	<affect rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Pigment_epithelial_detachment_height_reduction"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Treatment_drug">
+	<affect rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Pigment_epithelial_detachment_height_reduction"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Baseline_best-corrected_visual_acuity">
+	<affect rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Neovascular_age-related_macular_degeneration"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Foveal_subretinal_fluid">
+	<affect rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Neovascular_age-related_macular_degeneration"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#adult-onset_foveomacular_vitelliform_dystrophy">
+	<affect rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#superficial_retinal_vascular_densities"/>
+	<affect rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#deep_retinal_vascular_densities"/>
+	<affect rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#choroidal_thickness"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#body_mass_index">
+	<affect rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#rod_intercept_times"/>
+	<affect rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Abnormal_DA"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#AREDS_vitamins">
+	<affect rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#rod_intercept_times"/>
+	<affect rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Abnormal_DA"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#family_history_of_AMD">
+	<affect rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#rod_intercept_times"/>
+	<affect rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Abnormal_DA"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#AREDS_supplements">
+	<affect rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Abnormal_DA"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#alcohol_intake">
+	<affect rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Abnormal_DA"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#treatment_exclusively_at_one_center">
+	<affect rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#neovascular_age-related_macular_degeneration"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#higher_number_of_patients_at_the_treating_center">
+	<affect rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#neovascular_age-related_macular_degeneration"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#fixed_appointments">
+	<affect rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#neovascular_age-related_macular_degeneration"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#initial_gain_in_visual_acuity">
+	<affect rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#neovascular_age-related_macular_degeneration"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#large_tear_area">
+	<affect rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#ONL_thinning_outside_the_tear_area"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#younger_age">
+	<affect rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#ONL_thinning_inside_the_tear_area"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#choroids">
+	<affect rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#nonexudative_age-related_macular_degeneration"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#retinal_tissue_area">
+	<affect rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#best-corrected_visual_acuity"/>
+	<affect rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#central_retinal_thickness"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#optical_density_of_the_retinal_optical_slice_portion_located_in_the_central_subfield">
+	<affect rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#best-corrected_visual_acuity"/>
+	<affect rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#central_retinal_thickness"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#retinal_tissue_area_to_optical_density_ratio">
+	<affect rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#best-corrected_visual_acuity"/>
+	<affect rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#central_retinal_thickness"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#patients_over_the_age_of_60">
+	<aggravate rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#AMD"/>
+	<aggravate rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#age_-_related_macular_degeneration"/>
+	<aggravate rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Age_-_related_macular_degeneration_(_AMD_)"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#beyond_50_years_of_age">
+	<aggravate rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#AMD"/>
+	<aggravate rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#age_-_related_macular_degeneration"/>
+	<aggravate rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Age_-_related_macular_degeneration_(_AMD_)"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#polymorphisms_(_small_gene_variances_)">
+	<aggravate rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#AMD"/>
+	<aggravate rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#age_-_related_macular_degeneration"/>
+	<aggravate rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Age_-_related_macular_degeneration_(_AMD_)"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#AMD">
+	<cause rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#irreversible_severe_central_visual_loss"/>
+	<cause rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#permanent_loss_of_central_vision"/>
+	<cause rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#significantly_impair_the_ability_to_read_,_drive_,_and_carry_out_daily_activities"/>
+	<cause rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#blindness"/>
+	<cause rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#severe_vision_loss"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#age_-_related_macular_degeneration">
+	<cause rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#irreversible_severe_central_visual_loss"/>
+	<cause rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#permanent_loss_of_central_vision"/>
+	<cause rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#significantly_impair_the_ability_to_read_,_drive_,_and_carry_out_daily_activities"/>
+	<cause rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#blindness"/>
+	<cause rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#severe_vision_loss"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Age_-_related_macular_degeneration_(_AMD_)">
+	<cause rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#irreversible_severe_central_visual_loss"/>
+	<cause rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#permanent_loss_of_central_vision"/>
+	<cause rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#significantly_impair_the_ability_to_read_,_drive_,_and_carry_out_daily_activities"/>
+	<cause rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#blindness"/>
+	<cause rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#severe_vision_loss"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#ME">
+	<cause rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#ME"/>
+	<cause rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#macular_edema"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#macular_edema">
+	<cause rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#ME"/>
+	<cause rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#macular_edema"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#angiogenesis">
+	<cause rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#choroidal_neovascularization"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#choroidal_neovascularization">
+	<cause rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#severe_vision_loss"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#formation_of_new_blood_vessels_in_the_choroid">
+	<cause rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#AMD"/>
+	<cause rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#age_-_related_macular_degeneration"/>
+	<cause rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Age_-_related_macular_degeneration_(_AMD_)"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#sub_-_retinal_neovascular_membranes">
+	<cause rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#haemorrhage"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#choroidal_neovascular_membrane_formation_(_CNVM_)">
+	<cause rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#vision_loss"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#intravitreal_use_of_aflibercept">
+	<cause rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#severe_ocular_or_systemic_complications"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Age-related_macular_degeneration">
+	<cause rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#irreversible_blindness"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Hereditary_hemochromatosis">
+	<cause rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#increase_in_total_body_iron"/>
+	<cause rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#high_initial_ferritin_level"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#hyperreflective_foci">
+	<cause rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#neovascular_age-related_macular_degeneration"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#delta_width_of_drusenoid_pigment_epithelial_detachment">
+	<cause rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#neovascular_age-related_macular_degeneration"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#vitreous-derived_cells_and_vitreoschisis">
+	<cause rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#traction_formation"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#nonpersistence">
+	<cause rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#declined_visual_acuity"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#retinal_pigment_epithelium_tear">
+	<cause rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#ONL_thinning"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#continued_intravitreal_therapy_with_Lucentis_(_ranibizumab_)">
+	<improve rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#improvement_in_vision"/>
+	<improve rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#stabilization_of_vision"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#intravitreal_use_of_aflibercept">
+	<improve rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#visual_acuity"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#intravitreal_ranibizumab_injection">
+	<improve rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#VEGF"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#anti-VEGF_treatment">
+	<improve rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#VEGF"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#anti-vascular_endothelial_growth_factor">
+	<improve rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#patients_with_AMD"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#intravitreal_bevacizumab_injection">
+	<improve rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Best-corrected_visual_acuity"/>
+	<improve rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Spectral-domain_OCT_parameters"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#vitrectomy_with_internal_limiting_membrane_peeling">
+	<improve rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#visual_acuity"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#internal_limiting_membrane_peeling">
+	<improve rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#functional_and_anatomical"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#intravitreal_anti-vascular_endothelial_growth_factor_injections">
+	<improve rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#visual_acuity"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Ranibizumab_and_aflibercept">
+	<improve rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Neovascular_age-related_macular_degeneration"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Aflibercept">
+	<improve rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Pigment_epithelial_detachment_height"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#anti-vascular_endothelial_growth_factor_agents">
+	<improve rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#visual_acuity"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#CX3CR1">
+	<present rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#AMD"/>
+	<present rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#age_-_related_macular_degeneration"/>
+	<present rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Age_-_related_macular_degeneration_(_AMD_)"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#SNP_in_CFH">
+	<present rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#AMD"/>
+	<present rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#age_-_related_macular_degeneration"/>
+	<present rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Age_-_related_macular_degeneration_(_AMD_)"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#amyloid_deposits">
+	<present rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#AMD"/>
+	<present rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#age_-_related_macular_degeneration"/>
+	<present rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Age_-_related_macular_degeneration_(_AMD_)"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#dry_AMD">
+	<present rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#large_drusen"/>
+	<present rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#pigmentary_abnormalities_in_the_macula"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#environmental_factors">
+	<present rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#AMD"/>
+	<present rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#age_-_related_macular_degeneration"/>
+	<present rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Age_-_related_macular_degeneration_(_AMD_)"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#exudative_AMD">
+	<present rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#choroidal_neovascularization"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#hereditary">
+	<present rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#AMD"/>
+	<present rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#age_-_related_macular_degeneration"/>
+	<present rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Age_-_related_macular_degeneration_(_AMD_)"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#progress_more_rapidly_to_blindness">
+	<present rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#wet_ARMD"/>
+	<present rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#wet_form_of_ARMD"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#AMRS2_/_HTRA-1">
+	<present rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#AMD"/>
+	<present rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#age_-_related_macular_degeneration"/>
+	<present rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Age_-_related_macular_degeneration_(_AMD_)"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Ageing_changes_of_the_retinal_pigment_epithelium_(_RPE_)">
+	<present rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#AMD"/>
+	<present rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#age_-_related_macular_degeneration"/>
+	<present rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Age_-_related_macular_degeneration_(_AMD_)"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#neovascular_type_age-related_macular_degeneration">
+	<present rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#flow_cytometry"/>
+	<present rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#CD34+_stem_cell_levels"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#neovascular_age-related_macular_degeneration">
+	<present rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#visual_acuity"/>
+	<present rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#VEGF-A"/>
+	<present rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#R102G_polymorphism_of_the_complement_component_C3_gene"/>
+	<present rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#lesion_area"/>
+	<present rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#retinal_pigment_epithelium_tears"/>
+	<present rdf:resource="file:///eye"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#diabetic_macular_edema">
+	<present rdf:resource="file:///eye"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Age-related_macular_degeneration">
+	<present rdf:resource="file:///beyond_50_years_of_age"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#age-related_macular_degeneration">
+	<present rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#changes_in_macular_morphology"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#normal_variant_CC">
+	<present rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#neovascular_age-related_macular_degeneration"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#intermediate_age-related_macular_degeneration">
+	<present rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#tangential_traction_due_to_premacular_membrane_formation"/>
+	<present rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#vitroschisis"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#dot_subretinal_drusenoid_deposits">
+	<present rdf:resource="file:///eyes_with_well_-_defined_CNVM_or_lesions"/>
+	<present rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#new_and_regressed_lesions"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Hereditary_hemochromatosis">
+	<present rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#No_subject_in_either_group_revealed_multiple_drusen"/>
+	<present rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#unambiguous_changes_of_the_retinal_pigment_epithelium"/>
+	<present rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#increased_lipofuscin_in_any_of_the_images"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#hyperreflective_foci">
+	<present rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#neovascular_age-related_macular_degeneration"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#drusenoid_pigment_epithelial_detachment">
+	<present rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#neovascular_age-related_macular_degeneration"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#retinal_angiomatous_proliferation">
+	<present rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#neovascular_age-related_macular_degeneration"/>
+	<present rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#retina"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#intraretinal/subretinal_fluid">
+	<present rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#neovascular_age-related_macular_degeneration"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#hemorrhage">
+	<present rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#neovascular_age-related_macular_degeneration"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Type_1_choroidal_neovascular_membrane">
+	<present rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#neovascular_age-related_macular_degeneration"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#subfoveal_choroidal_thickness">
+	<present rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#neovascular_age-related_macular_degeneration"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#intraretinal_fluid">
+	<present rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#neovascular_age-related_macular_degeneration"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#subretinal_fluid">
+	<present rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#neovascular_age-related_macular_degeneration"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Neovascular_age-related_macular_degeneration">
+	<present rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#vascularized_pigment_epithelial_detachment"/>
+	<present rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#wrinkled_pigment_epithelial_detachment"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#vascularized_pigment_epithelial_detachment">
+	<present rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#small_lacy_folds_of_the_retinal_pigment_epithelium"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#adult-onset_foveomacular_vitelliform_dystrophy">
+	<present rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#increased_parafoveal_superficial_vessel_density"/>
+	<present rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#increased_parafoveal_deep_vessel_density"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#nonexudative_age-related_macular_degeneration">
+	<present rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#soft_drusen"/>
+	<present rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#subretinal_drusenoid_deposit"/>
+	<present rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#pachydrusen"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Sirolimus">
+	<prevent rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#inflammation"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#corticosteroid_injection_around_the_eye">
+	<prevent rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#severe_vision_loss"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#fundus_autofluorescence_changes">
+	<prevent rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#development_of_late_stage_manifestations"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#apolipoprotein_E_(_ApoE_)">
+	<prevent rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#AMD"/>
+	<prevent rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#age_-_related_macular_degeneration"/>
+	<prevent rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Age_-_related_macular_degeneration_(_AMD_)"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#GG_variant">
+	<prevent rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#neovascular_age-related_macular_degeneration"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#vitrectomy">
+	<prevent rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#anti-vascular_endothelial_growth_factor_therapy"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Avastin">
+	<treat rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#wet_ARMD"/>
+	<treat rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#wet_form_of_ARMD"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Lucentis">
+	<treat rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#wet_ARMD"/>
+	<treat rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#wet_form_of_ARMD"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Lutein">
+	<treat rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#AMD"/>
+	<treat rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#age_-_related_macular_degeneration"/>
+	<treat rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Age_-_related_macular_degeneration_(_AMD_)"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#beta_-_carotene">
+	<treat rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#AMD"/>
+	<treat rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#age_-_related_macular_degeneration"/>
+	<treat rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Age_-_related_macular_degeneration_(_AMD_)"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#laser_photocoagulation">
+	<treat rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#eyes_with_well_-_defined_CNVM_or_lesions"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#photodynamic_therapy">
+	<treat rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#choroidal_neovascularization"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#transpupillary_thermotherapy">
+	<treat rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#choroidal_neovascularization"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Transpupillary_thermotherapy_(_TTT_)">
+	<treat rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#choroidal_neovascularization"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#vitamin_C">
+	<treat rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#AMD"/>
+	<treat rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#age_-_related_macular_degeneration"/>
+	<treat rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Age_-_related_macular_degeneration_(_AMD_)"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#vitamin_E">
+	<treat rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#AMD"/>
+	<treat rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#age_-_related_macular_degeneration"/>
+	<treat rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Age_-_related_macular_degeneration_(_AMD_)"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#intravitreal_use_of_aflibercept">
+	<treat rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#neovascular_age-related_macular_degeneration"/>
+	<treat rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#myopic_choroidal_neovascularization"/>
+	<treat rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#diabetic_macular_edema"/>
+	<treat rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#macular_edema_associated_with_retinal_vein_occlusion"/>
+	<treat rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#neovascular_AMD"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#neovascular_age-related_macular_degeneration">
+	<treat rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#intravitreal_ranibizumab_injection"/>
+	<treat rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#anti-VEGF_treatment"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#anti-vascular_endothelial_growth_factor">
+	<treat rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Age-related_macular_degeneration"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#bevacizumab">
+	<treat rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#neovascular_AMD"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#ranibizumab">
+	<treat rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#neovascular_age-related_macular_degeneration"/>
+	<treat rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#neovascular_AMD"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Dr._Jay_Stewart">
+	<treat rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#age-related_macular_degeneration"/>
+	<treat rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#diabetic_retinopathy"/>
+	<treat rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#ocular_trauma"/>
+	<treat rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#retinal_detachment"/>
+	<treat rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#retinal_vascular_diseases"/>
+	<treat rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#uveitis"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#intravitreal_bevacizumab_injection">
+	<treat rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#neovascular_age-related_macular_degeneration"/>
+	<treat rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#choroidal_neovascularization_secondary_to_neovascular_age-related_macular_degeneration"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#intermediate_age-related_macular_degeneration">
+	<treat rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#vitrectomy_with_internal_limiting_membrane_peeling"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#T&amp;E_regimen">
+	<treat rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#neovascular_age-related_macular_degeneration"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#as-needed_antivascular_endothelial_growth_factor_treatment">
+	<treat rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#neovascular_age-related_macular_degeneration"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#anti-vascular_endothelial_growth_factor_therapy">
+	<treat rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#neovascular_age-related_macular_degeneration"/>
+	<treat rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#diabetic_macular_edema"/>
+	<treat rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#choroidal_neovascular_membranes_in_age-related_macular_degeneration"/>
+	<treat rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#active_NV_lesions"/>
+	<treat rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#active_leasions_with_small_vessels_branching"/>
+	<treat rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#active_lesions_with_peripheral_arcades"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Intravitreal_anti-vascular_endothelial_growth_factor_treatment">
+	<treat rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Pigment_epithelial_detachment"/>
+	<treat rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Neovascular_age-related_macular_degeneration"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Neovascular_age-related_macular_degeneration">
+	<treat rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#intravitreal_anti-vascular_endothelial_growth_factor_injections"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#anti-vascular_endothelial_growth_factor_agents">
+	<treat rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#neovascular_age-related_macular_degeneration"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#contact_with_doctor">
+	<treat rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#neovascular_age-related_macular_degeneration"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#treatment_or_follow-up">
+	<treat rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#neovascular_age-related_macular_degeneration"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#intravitreal_injection_of_anti-vascular_endothelial_growth_factor_agents">
+	<treat rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#retinal_pigment_epithelium_tears"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#anti-vascular_endothelial_growth_factor_treatment">
+	<treat rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#best-corrected_visual_acuity"/>
+	<treat rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#central_retinal_thickness"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#flow_cytometry">
+	<diagnose rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#CD34+_stem_cell_levels"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#neovascular_age-related_macular_degeneration">
+	<diagnose rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#genotyping_for_the_R102G_rs2230199_variant_of_the_C3_gene"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#anterior_chamber_paracentesis">
+	<diagnose rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#choroidal_neovascularization_secondary_to_neovascular_age-related_macular_degeneration"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#locally_weighted_scatterplot_smoothing_curves">
+	<diagnose rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#visual_acuity"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#intermediate_age-related_macular_degeneration">
+	<diagnose rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#optical_coherence_tomography"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#adaptive_optics_scanning_laser_ophthalmoscopy">
+	<diagnose rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#dot_subretinal_drusenoid_deposits"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#optical_coherence_tomography">
+	<diagnose rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#neovascular_age-related_macular_degeneration"/>
+	<diagnose rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#diabetic_macular_edema"/>
+	<diagnose rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#dot_subretinal_drusenoid_deposits"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#measurement_of_thickness_of_central_macula">
+	<diagnose rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#age-related_macular_degeneration"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#measurement_of_thickness_of_retinal_nerve_fiber_layer">
+	<diagnose rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#age-related_macular_degeneration"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#measurement_of_GC-IPL_thickness">
+	<diagnose rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#age-related_macular_degeneration"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#measurement_of_CMT">
+	<diagnose rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#age-related_macular_degeneration"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#spectral-domain_optical_coherence_tomography">
+	<diagnose rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#neovascular_age-related_macular_degeneration"/>
+	<diagnose rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Hereditary_hemochromatosis"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#binary_logistic_regression_model">
+	<diagnose rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#neovascular_age-related_macular_degeneration"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#best-corrected_visual_acuity">
+	<diagnose rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#neovascular_age-related_macular_degeneration"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#fluorescein_angiography">
+	<diagnose rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#neovascular_age-related_macular_degeneration"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#aqueous_ANGPTL4_levels">
+	<diagnose rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#neovascular_age-related_macular_degeneration"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#ANGPTL4">
+	<diagnose rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#neovascular_age-related_macular_degeneration"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#short-wavelength_autofluorescence">
+	<diagnose rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Hereditary_hemochromatosis"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#color_fundus_images">
+	<diagnose rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Hereditary_hemochromatosis"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#measuring_ferritin_and_transferrin_saturation">
+	<diagnose rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Hereditary_hemochromatosis"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#genetic_testing">
+	<diagnose rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Hereditary_hemochromatosis"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#Neovascular_age-related_macular_degeneration">
+	<diagnose rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#best-corrected_visual_acuity"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#optical_coherence_tomography_angiography">
+	<diagnose rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#choroidal_neovascular_membranes_in_age-related_macular_degeneration"/>
+	<diagnose rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#active_NV_lesions"/>
+	<diagnose rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#adult-onset_foveomacular_vitelliform_dystrophy"/>
+	<diagnose rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#intermediate_dry_age-related_macular_degeneration"/>
+	<diagnose rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#quiescent_NV_lesions"/>
+	<diagnose rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#quiescent_NV_lesions_with_prominent_central_vessel"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#AdaptDx">
+	<diagnose rdf:resource="file:///AMD"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#optical_coherence_tomography_scan">
+	<diagnose rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#neovascular_age-related_macular_degeneration"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#volume_scans_of_optical_coherence_tomography">
+	<diagnose rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#retinal_pigment_epithelium_tears"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#nonexudative_age-related_macular_degeneration">
+	<diagnose rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#optical_coherence_tomography"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#spectral_domain_optical_coherence_tomography">
+	<diagnose rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#wrinkled_pigment_epithelial_detachment"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#randomized_controlled_trials">
+	<test rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#intravitreal_use_of_aflibercept"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#dot_subretinal_drusenoid_deposits">
+	<progression rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#age-related_macular_degeneration"/>
+</rdf:Description>
+
+</rdf:RDF>
