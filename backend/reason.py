@@ -7,7 +7,7 @@ REASONED_ONT_PATH = "amd_ontology_reasoned.rdf"
 
 
 def get_ontology_from_graphdb():
-    sparql = SPARQLWrapper("http://localhost:7200/repositories/amd_repo")
+    sparql = SPARQLWrapper("http://localhost:7200/repositories/test_repo")
     sparql.setQuery("""
         SELECT ?subject ?predicate ?object
         WHERE {
@@ -23,7 +23,7 @@ def get_ontology_from_graphdb():
     for result in results["results"]["bindings"]:
         s = rdflib.URIRef(result["subject"]["value"])
         p = rdflib.URIRef(result["predicate"]["value"])
-        o = rdflib.URIRef(result["object"]["value"])  # Assuming all objects are URIs; adjust for literals
+        o = rdflib.URIRef(result["object"]["value"])
 
         ont.add((s, p, o))
 
@@ -34,8 +34,7 @@ def reason_ontology():
     ont = get_ontology(ONTOLOGY_PATH).load()
 
     with ont:
-        sync_reasoner_hermit(ont)
-
+        sync_reasoner(ont)
     ont.save(file=REASONED_ONT_PATH, format="rdfxml")
 
 

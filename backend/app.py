@@ -5,11 +5,9 @@ from reason import reason_and_update
 
 app = Flask(__name__)
 
-# relations = [{'relation_type': 'affect', 'entity1_type': 'disease', 'entity1_name': 'Age related macular degeneration', 'entity2_type': 'body_part', 'entity2_name': 'eye'}]
-relations = []
-
 @app.route('/api/showRelations', methods=['POST'])
 def show_relations():
+    global relations
     text = request.data
     relations = return_relations(text)
 
@@ -26,6 +24,8 @@ def add_relations():
 @app.route('/api/reason', methods=['GET'])
 def reason_kg():
     reason_and_update()
+
+    return "{\"status\": \"Successfully completed\"}"
 
 
 if __name__ == '__main__':

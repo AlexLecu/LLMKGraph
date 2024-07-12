@@ -21,7 +21,7 @@ def generate_relations(text):
        """
 
     response = client.chat.completions.create(
-        model="gpt-4",
+        model="gpt-3.5-turbo-1106",
         messages=[
             {"role": "system", "content": "Extract causal relations from text using specific labels and relations."},
             {"role": "user", "content": prompt}
@@ -44,7 +44,9 @@ def convert_relations(response):
 
 def create_sparql_query(relations):
     prefixes = """
-    PREFIX ont: <http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#>
+    PREFIX owl: <http://www.w3.org/2002/07/owl#>
+    PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+    PREFIX ont: <http://www.semanticweb.org/lecualexandru/ontologies/2024/1/>
     """
 
     # Start constructing the query
@@ -55,8 +57,10 @@ def create_sparql_query(relations):
         # Assuming subject and obj are instances of ont:Entity and predicate is a direct property
         # Convert the subject, predicate, and object into a more URI-friendly format
         # This is a simple conversion, consider a more robust method for actual use
+        subject_type_uri_ni = "ont:" + relation["entity1_name"].replace(" ", "_") + " rdf:type " + "owl:NamedIndividual . "
         subject_type_uri = "ont:" + relation["entity1_name"].replace(" ", "_") + " rdf:type " + "ont:" + relation[
             "entity1_type"].upper() + " . "
+        object_type_uri_ni = "ont:" + relation["entity2_name"].replace(" ", "_") + " rdf:type " + "owl:NamedIndividual ."
         object_type_uri = "ont:" + relation["entity2_name"].replace(" ", "_") + " rdf:type " + "ont:" + relation[
             "entity2_type"].upper() + " . "
         subject_uri = "ont:" + relation["entity1_name"].replace(" ", "_")
@@ -64,7 +68,9 @@ def create_sparql_query(relations):
         object_uri = "ont:" + relation["entity2_name"].replace(" ", "_")
 
         # Add the triple to the query
+        query += subject_type_uri_ni
         query += subject_type_uri
+        query += object_type_uri_ni
         query += object_type_uri
         query += f"{subject_uri} {predicate_uri} {object_uri} . "
 
@@ -82,7 +88,6 @@ def return_relations(text):
 
 def add_relations_to_kg(relations):
     query = create_sparql_query(relations)
-
     sparql = SPARQLWrapper("http://localhost:7200/repositories/amd_repo/statements")
     sparql.setMethod(POST)
     sparql.setQuery(query)
