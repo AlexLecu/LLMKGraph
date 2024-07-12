@@ -18,8 +18,10 @@ chat. Follow these steps to get the system up and running on your local machine.
 from [GraphDB](https://www.ontotext.com/products/graphdb/download/) official site.
 - An OpenAI API key for accessing OpenAI's services. Once you have your API key, 
 set it as an environment variable named `OPENAI_API_KEY`:
+- A Huggingface API token for accessing Huggingface models.
 
       export OPENAI_API_KEY="sk-...."
+      export HUGGINGFACEHUB_API_TOKEN="hf_...."
 
 
 ## GraphDB Configuration
