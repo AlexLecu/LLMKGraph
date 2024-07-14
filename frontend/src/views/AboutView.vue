@@ -1,26 +1,6 @@
 
 
-<script>
-/*
-export default {
-  mounted() {
-    this.makeFullScreen();
-  },
-  methods: {
-    makeFullScreen() {
-      const iframe = this.$refs.myIframe;
-      iframe.style.position = 'fixed';
-      iframe.style.top = '0';
-      iframe.style.left = '0';
-      iframe.style.width = '100vw';
-      iframe.style.height = '100vh';
-      iframe.style.zIndex = '1000'; // Ensure it's above other content
-      iframe.style.border = 'none'; // Optional: remove the border for a cleaner look
-    }
-  }
-}
-*/
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <div class="app-container">
