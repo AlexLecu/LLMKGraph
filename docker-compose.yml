@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  flask-app:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: flask-app
+    ports:
+      - "5000:5000"
+      - "8501:8501"
+    depends_on:
+      - graphdb
+    environment:
+      - GRAPHDB_URL=http://graphdb:7200
+      - HUGGINGFACEHUB_API_TOKEN=${HUGGINGFACEHUB_API_TOKEN}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+    networks:
+      - app-network
+
+  vuejs-app:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: vuejs-app
+    ports:
+      - "8080:8080"
+    depends_on:
+      - flask-app
+    networks:
+      - app-network
+
+  graphdb:
+    image: ontotext/graphdb:10.6.4
+    container_name: graphdb
+    ports:
+      - "7200:7200"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
