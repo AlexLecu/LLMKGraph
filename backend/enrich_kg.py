@@ -21,7 +21,7 @@ def generate_relations(text):
        """
 
     response = client.chat.completions.create(
-        model="gpt-3.5-turbo-1106",
+        model="ft:gpt-3.5-turbo-1106:personal::8ouriq0i",
         messages=[
             {"role": "system", "content": "Extract causal relations from text using specific labels and relations."},
             {"role": "user", "content": prompt}
