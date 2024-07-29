@@ -8,7 +8,7 @@ const statusText = ref('')
 function showRelations(){
   console.log("abstract", abstract.value);
 
-  fetch('/api/showRelations', {
+  fetch('http://localhost:5000/api/showRelations', {
       method: 'POST',
       body: JSON.stringify(abstract.value),
       }
@@ -22,7 +22,7 @@ function showRelations(){
 }
 
 function addRelations(){
-  fetch('/api/addRelations', {
+  fetch('http://localhost:5000/api/addRelations', {
       method: 'POST',
   })
   .then((response) => response.json())
@@ -34,7 +34,7 @@ function addRelations(){
 }
 
 function reasonKg(){
-  fetch('/api/reason', {
+  fetch('http://localhost:5000/api/reason', {
   method: 'GET',
   })
   .then((response) => {

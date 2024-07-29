@@ -21,7 +21,7 @@ def generate_relations(text):
        """
 
     response = client.chat.completions.create(
-        model="gpt-3.5-turbo-1106",
+        model="gpt-4o",
         messages=[
             {"role": "system", "content": "Extract causal relations from text using specific labels and relations."},
             {"role": "user", "content": prompt}
@@ -88,7 +88,7 @@ def return_relations(text):
 
 def add_relations_to_kg(relations):
     query = create_sparql_query(relations)
-    sparql = SPARQLWrapper("http://localhost:7200/repositories/amd_repo/statements")
+    sparql = SPARQLWrapper("http://graphdb:7200/repositories/amd_repo/statements")
     sparql.setMethod(POST)
     sparql.setQuery(query)
     sparql.query()

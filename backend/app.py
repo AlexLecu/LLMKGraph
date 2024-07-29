@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, make_response
 from enrich_kg import return_relations, add_relations_to_kg
 from reason import reason_and_update
 
@@ -11,21 +11,29 @@ def show_relations():
     text = request.data
     relations = return_relations(text)
 
-    return jsonify(relations)
+    response = make_response(jsonify(relations))
+    response.headers["Access-Control-Allow-Origin"] = "*"
 
+    return response
 
 @app.route('/api/addRelations', methods=['POST'])
 def add_relations():
     add_relations_to_kg(relations)
 
-    return "{\"status\": \"Successfully completed\"}"
+    response = make_response("{\"status\": \"Successfully completed\"}")
+    response.headers["Access-Control-Allow-Origin"] = "*"
+
+    return response
 
 
 @app.route('/api/reason', methods=['GET'])
 def reason_kg():
     reason_and_update()
 
-    return "{\"status\": \"Successfully completed\"}"
+    response = make_response("{\"status\": \"Successfully completed\"}")
+    response.headers["Access-Control-Allow-Origin"] = "*"
+
+    return response
 
 
 if __name__ == '__main__':
