@@ -1,32 +1,41 @@
 import os
 
-from openai import OpenAI
 from SPARQLWrapper import SPARQLWrapper, POST
+from langchain_huggingface.embeddings import HuggingFaceEmbeddings
+from langchain import HuggingFaceHub, PromptTemplate, LLMChain
 
-client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
+huggingfacehub_api_token = os.environ['HUGGINGFACEHUB_API_TOKEN']
+
+repo_id = "mistralai/Mistral-Nemo-Instruct-2407"
+llm = HuggingFaceHub(huggingfacehub_api_token=huggingfacehub_api_token,
+                     repo_id=repo_id,
+                     model_kwargs={"temperature":0.6, "max_new_tokens":2000})
+
+
+def factory():
+    prompt_template = """
+              Given the text:
+
+              {text}
+
+              Please identify entities belonging to the following labels: disease, symptom, treatment, risk_factor, test, gene, biomarker, complication, prognosis, comorbidity, progression, body_part. Then, extract relationships among these entities based on the following relations: cause, treat, present, diagnose, aggravate, prevent, improve, affect. When presenting entity names, ensure the names do not contain parentheses. If an entity's common name typically includes parentheses, rephrase or abbreviate the name without using parentheses. Entity names must not contain commas. Instead, split entity and create separate relations.
+
+              Present only the relationships extracted, in the specified format, without any introductory text, summary, or enumeration. Ensure the correct order of entities in relationships. Use the format:
+              {{'relation_type': 'relation type', 'entity1_type': 'entity1_type', 'entity1_name': 'entity1_name', 'entity2_type': 'entity2_type', 'entity2_name': 'entity2_name'}}
+
+              IMPORTANT: Output must contain only the relations in the specified format, with no other text or numbers included.
+              IMPORTANT: Don't include relations with 'relation_type': 'progression' in the output.
+          """
+
+    prompt = PromptTemplate(template=prompt_template, input_variables=["context", "question"])
+    llm_chain = LLMChain(prompt=prompt, llm=llm, verbose=True)
+
+    return llm_chain, prompt
 
 
 def generate_relations(text):
-    prompt = f"""
-           Given the text:
-
-           {text}
-
-           Please identify entities belonging to the following labels: disease, symptom, treatment, risk_factor, test, gene, biomarker, complication, prognosis, comorbidity, progression, body_part. Then, extract relationships among these entities based on the following relations: cause, treat, present, diagnose, aggravate, prevent, improve, affect. When presenting entity names, ensure the names do not contain parentheses. If an entity's common name typically includes parentheses, rephrase or abbreviate the name without using parentheses. Entity names must not contain commas. Instead, split entity and create separate relations.
-
-           Present only the relationships extracted, in the specified format, without any introductory text, summary, or enumeration. Use the format:
-           {{'relation_type': 'relation type', 'entity1_type': 'entity1_type', 'entity1_name': 'entity1_name', 'entity2_type': 'entity2_type', 'entity2_name': 'entity2_name'}}
-
-           IMPORTANT: Output must contain only the relations in the specified format, with no other text or numbers included.
-       """
-
-    response = client.chat.completions.create(
-        model="gpt-4o",
-        messages=[
-            {"role": "system", "content": "Extract causal relations from text using specific labels and relations."},
-            {"role": "user", "content": prompt}
-        ]
-    )
+    llm_chain, prompt = factory()
+    response = llm_chain.run({"text": text})
 
     return response
 
@@ -80,8 +89,8 @@ def create_sparql_query(relations):
 
 
 def return_relations(text):
-    gpt_response = generate_relations(text)
-    relations = convert_relations(gpt_response)
+    response = generate_relations(text)
+    relations = response
 
     return relations
 
