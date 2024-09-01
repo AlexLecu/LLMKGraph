@@ -1,8 +1,10 @@
 import os
 
 from SPARQLWrapper import SPARQLWrapper, POST
-from langchain_huggingface.embeddings import HuggingFaceEmbeddings
 from langchain import HuggingFaceHub, PromptTemplate, LLMChain
+
+import ast
+import re
 
 huggingfacehub_api_token = os.environ['HUGGINGFACEHUB_API_TOKEN']
 
@@ -41,13 +43,15 @@ def generate_relations(text):
 
 
 def convert_relations(response):
-    relations = []
-    relation_strings = response.choices[0].message.content.strip().split('\n')
-    for relation_string in relation_strings:
-        if relation_string != '':
-            relation_dict = eval(relation_string)
-            relations.append(relation_dict)
+    pattern = r'\[(.*?)\]'
+    matches = re.search(pattern, response, re.DOTALL)
 
+    if matches:
+        list_of_dicts_str = '[' + matches.group(1) + ']'
+
+        relations = ast.literal_eval(list_of_dicts_str)
+    else:
+        relations = "No relations found!"
     return relations
 
 
@@ -90,7 +94,7 @@ def create_sparql_query(relations):
 
 def return_relations(text):
     response = generate_relations(text)
-    relations = response
+    relations = convert_relations(response)
 
     return relations
 
