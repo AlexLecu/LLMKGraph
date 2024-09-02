@@ -26,6 +26,7 @@ def factory():
               {{'relation_type': 'relation type', 'entity1_type': 'entity1_type', 'entity1_name': 'entity1_name', 'entity2_type': 'entity2_type', 'entity2_name': 'entity2_name'}}
 
               IMPORTANT: Output must contain only the relations in the specified format, with no other text or numbers included.
+              IMPORTANT: Output must be inside square brackets.
               IMPORTANT: Don't include relations with 'relation_type': 'progression' in the output.
           """
 

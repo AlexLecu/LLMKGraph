@@ -9,6 +9,7 @@ import os
 import faiss
 import numpy as np
 import streamlit as st
+import re
 
 
 huggingfacehub_api_token = os.environ['HUGGINGFACEHUB_API_TOKEN']
@@ -108,8 +109,9 @@ def generate_response(user_query):
 
     output = llm_chain.run(inputs)
     answer = output.split("Answer:")[1].strip()
+    cleaned_answer = re.sub(r'^<[^>]+>|<[^>]+>$', '', answer)
 
-    return answer
+    return cleaned_answer
 
 
 def streamlit_ui():
