@@ -64,12 +64,12 @@ def index_embeddings(kg_embeddings, kg_triples):
     index.add(kg_embeddings)
 
     # Save the index and mappings
-    faiss.write_index(index, 'kg_index.faiss')
+    faiss.write_index(index, 'embeddings/kg_index.faiss')
     np.save('embeddings/kg_triples.npy', kg_triples)
 
 
 def search_kg(query, top_k=5):
-    index = faiss.read_index('kg_index.faiss')
+    index = faiss.read_index('embeddings/kg_index.faiss')
     kg_triples = np.load('embeddings/kg_triples.npy', allow_pickle=True)
 
     query_embedding = embeddings.embed_query(query)
