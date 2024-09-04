@@ -1,0 +1,163 @@
+{"subject": "Age - related macular degeneration ( AMD )", "relation": "cause", "object": "blindness"}
+{"subject": "patients over the age of 60", "relation": "aggravate", "object": "Age - related macular degeneration ( AMD )"}
+{"subject": "choroidal neovascular membrane formation ( CNVM )", "relation": "cause", "object": "vision loss"}
+{"subject": "laser photocoagulation", "relation": "treat", "object": "eyes with \" well - defined \" CNVM or lesions"}
+{"subject": "corticosteroid injection around the eye", "relation": "prevent", "object": "severe vision loss"}
+{"subject": "age - related macular degeneration", "relation": "cause", "object": "severe vision loss"}
+{"subject": "Age - related macular degeneration ( AMD )", "relation": "cause", "object": "blindness"}
+{"subject": "beyond 50 years of age", "relation": "aggravate", "object": "Age - related macular degeneration ( AMD )"}
+{"subject": "Ageing changes of the retinal pigment epithelium ( RPE )", "relation": "present", "object": "Age - related macular degeneration ( AMD )"}
+{"subject": "fundus autofluorescence changes", "relation": "prevent", "object": "development of late stage manifestations"}
+{"subject": "age-related macular degeneration", "relation": "affect", "object": "ability to read"}
+{"subject": "age-related macular degeneration", "relation": "affect", "object": "drive"}
+{"subject": "age-related macular degeneration", "relation": "cause", "object": "vision loss"}
+{"subject": "Age-related macular degeneration ( AMD )", "relation": "cause", "object": "blindness"}
+{"subject": "Age-related macular degeneration ( AMD )", "relation": "affect", "object": "patients over the age of 50"}
+{"subject": "hereditary", "relation": "present", "object": "Age-related macular degeneration ( AMD )"}
+{"subject": "environmental factors", "relation": "present", "object": "Age-related macular degeneration ( AMD )"}
+{"subject": "no common genetic mutations", "relation": "cause", "object": "Age-related macular degeneration ( AMD )"}
+{"subject": "Lutein", "relation": "treat", "object": "age - related macular degeneration"}
+{"subject": "vitamin C", "relation": "treat", "object": "age - related macular degeneration"}
+{"subject": "vitamin E", "relation": "treat", "object": "age - related macular degeneration"}
+{"subject": "beta - carotene", "relation": "treat", "object": "age - related macular degeneration"}
+{"subject": "photodynamic therapy", "relation": "treat", "object": "choroidal neovascularization"}
+{"subject": "transpupillary thermotherapy", "relation": "treat", "object": "choroidal neovascularization"}
+{"subject": "age - related macular degeneration", "relation": "cause", "object": "choroidal neovascularization"}
+{"subject": "AMD", "relation": "affect", "object": "macula"}
+{"subject": "sub - retinal neovascular membranes", "relation": "cause", "object": "haemorrhage"}
+{"subject": "haemorrhage", "relation": "cause", "object": "visual loss"}
+{"subject": "Transpupillary thermotherapy ( TTT )", "relation": "treat", "object": "choroidal neovascularization"}
+{"subject": "Age - related macular degeneration ( AMD )", "relation": "affect", "object": "macula"}
+{"subject": "polymorphisms ( small gene variances )", "relation": "aggravate", "object": "age - related macular degeneration ( AMD )"}
+{"subject": "age - related macular degeneration ( AMD )", "relation": "affect", "object": "people over 50 years of age"}
+{"subject": "age - related macular degeneration ( AMD )", "relation": "cause", "object": "permanent loss of central vision"}
+{"subject": "Age - related macular degeneration ( AMD )", "relation": "cause", "object": "irreversible severe central visual loss"}
+{"subject": "SNP in CFH", "relation": "present", "object": "AMD"}
+{"subject": "AMRS2 / HTRA-1", "relation": "present", "object": "AMD"}
+{"subject": "CX3CR1", "relation": "present", "object": "AMD"}
+{"subject": "apolipoprotein E ( ApoE )", "relation": "prevent", "object": "AMD"}
+{"subject": "mitochondria", "relation": "prevent", "object": "AMD"}
+{"subject": "chaperone proteins genes", "relation": "prevent", "object": "AMD"}
+{"subject": "AMD.21 - 23 Single nucleotide polymorphism ( SNP ) in ApoE", "relation": "prevent", "object": "AMD"}
+{"subject": "C2 / BF", "relation": "prevent", "object": "AMD"}
+{"subject": "Age - related macular degeneration ( ARMD )", "relation": "cause", "object": "irreversible blindness"}
+{"subject": "genetic", "relation": "affect", "object": "Age - related macular degeneration ( ARMD )"}
+{"subject": "environmental influences", "relation": "affect", "object": "Age - related macular degeneration ( ARMD )"}
+{"subject": "Age - related macular degeneration ( AMD )", "relation": "cause", "object": "severe loss of vision"}
+{"subject": "Age - related macular degeneration ( AMD )", "relation": "affect", "object": "older adults"}
+{"subject": "laser treatment", "relation": "treat", "object": "recurrent subfoveal CNV"}
+{"subject": "photodynamic therapy with verteporfin", "relation": "treat", "object": "subfoveal neovascularization associated with AMD"}
+{"subject": "histo spots", "relation": "aggravate", "object": "Choroidal neovascularization"}
+{"subject": "laser photocoagulation", "relation": "treat", "object": "CNV"}
+{"subject": "submacular surgery", "relation": "treat", "object": "CNV"}
+{"subject": "choroidal neovascularization", "relation": "cause", "object": "vision loss"}
+{"subject": "Age - related macular degeneration ( AMD )", "relation": "cause", "object": "choroidal neovascularization"}
+{"subject": "triamcinolone acetonide", "relation": "treat", "object": "AMD"}
+{"subject": "Age - related macular degeneration ( AMD )", "relation": "cause", "object": "breakdown of the macular pigment ( MP )"}
+{"subject": "increase in L / Z", "relation": "prevent", "object": "AMD"}
+{"subject": "low blood levels of lutein and zeaxanthin", "relation": "cause", "object": "AMD"}
+{"subject": "fluocinolone implant", "relation": "treat", "object": "age - related macular degeneration"}
+{"subject": "age - related macular degeneration", "relation": "cause", "object": "severely impair central vision"}
+{"subject": "formation of new blood vessels in the choroid", "relation": "cause", "object": "age - related macular degeneration"}
+{"subject": "intraocular corticosteroids", "relation": "prevent", "object": "CNVM"}
+{"subject": "Age - related macular degeneration ( AMD )", "relation": "cause", "object": "vision loss"}
+{"subject": "choroidal neovascular membrane ( CNVM )", "relation": "cause", "object": "vision loss"}
+{"subject": "laser photocoagulation", "relation": "treat", "object": "well - formed CNVM"}
+{"subject": "photodynamic therapy", "relation": "treat", "object": "well - formed CNVM"}
+{"subject": "alterations in choroidal blood flow", "relation": "affect", "object": "AMD"}
+{"subject": "ocular rigidity", "relation": "affect", "object": "AMD"}
+{"subject": "Celebrex", "relation": "improve", "object": "age - related macular degeneration ( AMD )"}
+{"subject": "celecoxib", "relation": "improve", "object": "age - related macular degeneration ( AMD )"}
+{"subject": "photodynamic therapy", "relation": "improve", "object": "age - related macular degeneration ( AMD )"}
+{"subject": "cold laser treatment", "relation": "improve", "object": "age - related macular degeneration ( AMD )"}
+{"subject": "PDT", "relation": "improve", "object": "age - related macular degeneration ( AMD )"}
+{"subject": "Age - related macular degeneration ( AMD )", "relation": "cause", "object": "severe and irreversible loss of vision"}
+{"subject": "large drusen", "relation": "present", "object": "dry AMD"}
+{"subject": "pigmentary abnormalities in the macula", "relation": "present", "object": "dry AMD"}
+{"subject": "dry AMD", "relation": "cause", "object": "minimal visual impairment"}
+{"subject": "hemorrhagic detachment of retinal pigment epithelium", "relation": "present", "object": "exudative AMD"}
+{"subject": "choroidal neovascularization", "relation": "present", "object": "exudative AMD"}
+{"subject": "serous", "relation": "present", "object": "exudative AMD"}
+{"subject": "exudative AMD", "relation": "cause", "object": "severe loss of vision"}
+{"subject": "formation of choroidal neovascularization", "relation": "cause", "object": "severe visual impairment"}
+{"subject": "rs11200638 on HTRA1", "relation": "aggravate", "object": "AMD"}
+{"subject": "rs1061170 on CFH", "relation": "aggravate", "object": "AMD"}
+{"subject": "HTRA1", "relation": "present", "object": "AMD"}
+{"subject": "CFH", "relation": "present", "object": "AMD"}
+{"subject": "Age - related macular degeneration ( AMD )", "relation": "cause", "object": "blindness"}
+{"subject": "Age - related macular degeneration ( ARMD )", "relation": "affect", "object": "macula"}
+{"subject": "proliferation of abnormal vessels in the choroid", "relation": "present", "object": "Wet AMD"}
+{"subject": "Age - related macular degeneration ( AMD )", "relation": "cause", "object": "destroys the macula"}
+{"subject": "reduce the biologically available extracellular levels of S1P.", "relation": "improve", "object": "AMD"}
+{"subject": "sirolimus", "relation": "improve", "object": "geographic atrophy GA"}
+{"subject": "AMD", "relation": "affect", "object": "macula"}
+{"subject": "dry AMD", "relation": "affect", "object": "cells in the macula"}
+{"subject": "Age - related macular degeneration ( AMD )", "relation": "present", "object": "people over age 55"}
+{"subject": "Age - related macular degeneration ( AMD )", "relation": "cause", "object": "blindness"}
+{"subject": "impairment of central visual acuity", "relation": "present", "object": "Age - related macular degeneration ( AMD )"}
+{"subject": "Age - related macular degeneration ( AMD )", "relation": "cause", "object": "irreversible visual impairment"}
+{"subject": "Age - related macular degeneration ( AMD )", "relation": "cause", "object": "blindness"}
+{"subject": "geographic atrophy", "relation": "present", "object": "Age - related macular degeneration ( AMD )"}
+{"subject": "neovascularization", "relation": "present", "object": "Age - related macular degeneration ( AMD )"}
+{"subject": "neovascular AMD", "relation": "cause", "object": "90 % of blindness"}
+{"subject": "development of abnormal blood vessels underneath the retina", "relation": "present", "object": "choroidal neovascularization ( CNV )"}
+{"subject": "continued intravitreal therapy with Lucentis ( ranibizumab )", "relation": "treat", "object": "subfoveal CNV"}
+{"subject": "subfoveal CNV", "relation": "present", "object": "AMD"}
+{"subject": "continued intravitreal therapy with Lucentis ( ranibizumab )", "relation": "improve", "object": "stabilization of vision"}
+{"subject": "continued intravitreal therapy with Lucentis ( ranibizumab )", "relation": "improve", "object": "improvement in vision"}
+{"subject": "Age - related macular degeneration ( AMD )", "relation": "affect", "object": "people over 65 years"}
+{"subject": "anti - VEGF antibody treatment", "relation": "treat", "object": "Neovascular Age - related Macular Degeneration ( nAMD )"}
+{"subject": "Neovascular Age - related Macular Degeneration ( nAMD )", "relation": "present", "object": "Age - related macular degeneration ( AMD )"}
+{"subject": "Bevacizumab", "relation": "present", "object": "anti - VEGF drug"}
+{"subject": "Age - related macular degeneration ( ARMD )", "relation": "cause", "object": "deterioration of the central retinal function"}
+{"subject": "Age - related macular degeneration ( ARMD )", "relation": "cause", "object": "blindness"}
+{"subject": "Age - related macular degeneration ( ARMD )", "relation": "affect", "object": "people over 50 years of age"}
+{"subject": "choroidal neovascularization", "relation": "present", "object": "wet form of ARMD"}
+{"subject": "progress more rapidly to blindness", "relation": "present", "object": "wet form of ARMD"}
+{"subject": "Lucentis", "relation": "treat", "object": "wet ARMD"}
+{"subject": "Avastin", "relation": "treat", "object": "wet ARMD"}
+{"subject": "intravitreal bevacizumab Avastin", "relation": "treat", "object": "neovascular age - related macular degeneration"}
+{"subject": "verteporfin photodynamic therapy PDT", "relation": "treat", "object": "neovascular age - related macular degeneration"}
+{"subject": "Age - related macular degeneration AMD", "relation": "cause", "object": "visual impairment"}
+{"subject": "Age - related macular degeneration AMD", "relation": "cause", "object": "social blindness"}
+{"subject": "Age - related macular degeneration AMD", "relation": "affect", "object": "people 60 years or older"}
+{"subject": "Age - related macular degeneration ( ARMD )", "relation": "cause", "object": "deterioration of the central retinal function"}
+{"subject": "Age - related macular degeneration ( ARMD )", "relation": "cause", "object": "blindness"}
+{"subject": "Age - related macular degeneration ( ARMD )", "relation": "affect", "object": "people over 50 years of age"}
+{"subject": "advanced ARMD", "relation": "cause", "object": "irreversible loss of vision"}
+{"subject": "subsequently loss of social skills", "relation": "present", "object": "advanced ARMD"}
+{"subject": "inflammatory cells", "relation": "present", "object": "ARMD"}
+{"subject": "inflammatory factors ( complement H )", "relation": "present", "object": "ARMD"}
+{"subject": "anti - TNF - alpha", "relation": "treat", "object": "ARMD"}
+{"subject": "Adjunctive Avastin", "relation": "treat", "object": "Age - Related Macular Degeneration"}
+{"subject": "Triamcinolone Acetonide ( Kenalog)(Triple Therapy )", "relation": "treat", "object": "Age - Related Macular Degeneration"}
+{"subject": "rPDT With Adjunctive Avastin ( Double Therapy )", "relation": "treat", "object": "Age - Related Macular Degeneration"}
+{"subject": "Monotherapy With Avastin", "relation": "treat", "object": "Age - Related Macular Degeneration"}
+{"subject": "Age - related macular degeneration ( AMD )", "relation": "cause", "object": "irreversible blindness"}
+{"subject": "Subcutaneous Copaxone", "relation": "treat", "object": "Dry Age Related Macular Degeneration"}
+{"subject": "immunomodulatory substance named copaxone", "relation": "treat", "object": "Dry Age Related Macular Degeneration"}
+{"subject": "extracellur deposits named drusen", "relation": "present", "object": "Age - related macular degeneration ( AMD )"}
+{"subject": "amyloid deposits", "relation": "present", "object": "AMD"}
+{"subject": "activated microglia", "relation": "present", "object": "amyloid deposits"}
+{"subject": "Corticosteroid Treatment of Ill", "relation": "cause", "object": "Choroidal Neovascularization in Age - Related Macular Degeneration Age - related macular degeneration ( AMD ) represents the most common cause of blindness in patients over the age of 60 . The"}
+{"subject": "Confocal Scanning Laser Ophthalmoscopy", "relation": "treat", "object": "Age - related Macular Degeneration"}
+{"subject": "age - related macular degeneration", "relation": "affect", "object": "eye"}
+{"subject": "age - related macular degeneration", "relation": "cause", "object": "significantly impair the ability to read , drive , and carry out daily activities"}
+{"subject": "age - related macular degeneration", "relation": "cause", "object": "vision loss"}
+{"subject": "Age - related macular degeneration", "relation": "cause", "object": "blindness"}
+{"subject": "AMD", "relation": "cause", "object": "geographic atrophy"}
+{"subject": "AMD", "relation": "cause", "object": "choroidal neovascularization"}
+{"subject": "Lutein", "relation": "treat", "object": "age - related macular degeneration"}
+{"subject": "Age - related macular degeneration", "relation": "cause", "object": "significantly impair the ability to read , drive , and carry out daily activities"}
+{"subject": "Age - related macular degeneration", "relation": "cause", "object": "vision loss"}
+{"subject": "AMD", "relation": "cause", "object": "drusen"}
+{"subject": "AMD", "relation": "cause", "object": "geographic atrophic"}
+{"subject": "AMD", "relation": "cause", "object": "retinal pigment epithelial detachment"}
+{"subject": "AMD", "relation": "cause", "object": "neovascular / exudative disease"}
+{"subject": "vitamin C", "relation": "treat", "object": "age - related macular degeneration"}
+{"subject": "vitamin E", "relation": "treat", "object": "age - related macular degeneration"}
+{"subject": "beta - carotene", "relation": "treat", "object": "age - related macular degeneration"}
+{"subject": "Lutein", "relation": "present", "object": "the back part of the eye"}
+{"subject": "AMD", "relation": "cause", "object": "choroidal neovascularization"}
+{"subject": "TTT", "relation": "treat", "object": "CNV"}
+{"subject": "PDT", "relation": "treat", "object": "CNV"}
