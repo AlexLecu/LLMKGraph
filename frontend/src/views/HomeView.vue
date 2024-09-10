@@ -1,48 +1,65 @@
 <script setup lang="ts">
-import TheWelcome from '../components/TheWelcome.vue';
-import {ref} from 'vue';
+import { ref } from 'vue';
+
 const abstract = ref('');
-const responseText = ref('')
-const statusText = ref('')
+const responseText = ref('');
+const statusText = ref('');
+let statusTimeout = null;
 
-function showRelations(){
-  console.log("abstract", abstract.value);
-
+function showRelations() {
   fetch('http://localhost:5555/api/showRelations', {
-      method: 'POST',
-      body: JSON.stringify(abstract.value),
-      }
-    )
-    .then((response) => response.json())
-    .then((response)=> {
-      console.log("data", response)
-      responseText.value = JSON.stringify(response, null, 2)
-    })
-
-}
-
-function addRelations(){
-  fetch('http://localhost:5555/api/addRelations', {
-      method: 'POST',
+    method: 'POST',
+    body: JSON.stringify(abstract.value),
+    headers: {
+      'Content-Type': 'application/json',
+    }
   })
   .then((response) => response.json())
   .then((response) => {
-    console.log("data", response)
-    statusText.value = JSON.stringify(response, null, 2)
-  })
-
+    responseText.value = JSON.stringify(response, null, 2);
+  });
 }
 
-function reasonKg(){
+function addRelations() {
+  fetch('http://localhost:5555/api/addRelations', {
+    method: 'POST',
+    body: JSON.stringify(JSON.parse(responseText.value)),
+    headers: {
+      'Content-Type': 'application/json',
+    }
+  })
+  .then((response) => response.json())
+  .then((data) => {
+    statusText.value = data.status === "Successfully completed"
+      ? "Relations successfully added to the knowledge graph!"
+      : "There was an issue adding relations.";
+
+    clearStatusTextAfterDelay();
+  });
+}
+
+function reasonKg() {
   fetch('http://localhost:5555/api/reason', {
-  method: 'GET',
+    method: 'GET',
   })
-  .then((response) => {
-    console.log("data", response)
-    statusText.value = JSON.stringify("Reasoner finished successfully!")
-  })
+  .then((response) => response.json())
+  .then((data) => {
+    statusText.value = data.status === "Successfully completed"
+      ? "Reasoning operation completed successfully!"
+      : "There was an issue running the reasoner.";
+
+    clearStatusTextAfterDelay();
+  });
 }
 
+function clearStatusTextAfterDelay() {
+  if (statusTimeout) {
+    clearTimeout(statusTimeout);
+  }
+  statusTimeout = setTimeout(() => {
+    statusText.value = '';
+  }, 5000);
+}
 </script>
 
 <template>
@@ -78,8 +95,8 @@ function reasonKg(){
 
         <div class="output-area">
           <div class="textarea-container">
-            <label for="response-text" class="input-label">Relations Output</label>
-            <textarea v-model="responseText" id="response-text" placeholder="Relations" readonly class="response-textarea"></textarea>
+            <label for="response-text" class="input-label">Relations Output (Editable)</label>
+            <textarea v-model="responseText" id="response-text" placeholder="Relations" class="response-textarea"></textarea>
           </div>
           <div class="textarea-container">
             <label for="status-text" class="input-label">Status</label>
