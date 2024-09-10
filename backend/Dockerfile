@@ -16,6 +16,6 @@ COPY . .
 
 ENV PYTHONUNBUFFERED 1
 
-EXPOSE 5000 8501
+EXPOSE 5555 8501
 
-CMD ["sh", "-c", "flask run --host=0.0.0.0 --port=5000 & streamlit run streamlit_app_falcon.py --server.port=8501 --server.enableCORS=false --server.headless=true"]
+CMD ["sh", "-c", "flask run --host=0.0.0.0 --port=5555 & streamlit run streamlit_app_mistral.py --server.port=8501 --server.enableCORS=false --server.headless=true"]
