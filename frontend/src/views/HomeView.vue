@@ -1,12 +1,16 @@
 <script setup lang="ts">
 import { ref } from 'vue';
+import 'vue-loading-overlay/dist/css/index.css';
+import { useLoading } from 'vue-loading-overlay';
 
 const abstract = ref('');
 const responseText = ref('');
 const statusText = ref('');
+const $loading = useLoading();
 let statusTimeout = null;
 
 function showRelations() {
+  const loader = $loading.show();
   fetch('http://localhost:5555/api/showRelations', {
     method: 'POST',
     body: JSON.stringify(abstract.value),
@@ -17,10 +21,19 @@ function showRelations() {
   .then((response) => response.json())
   .then((response) => {
     responseText.value = JSON.stringify(response, null, 2);
+    statusText.value = 'Relations fetched successfully!';
+  })
+  .catch(() => {
+    statusText.value = 'Error fetching relations.';
+  })
+  .finally(() => {
+    loader.hide();
+    clearStatusTextAfterDelay();
   });
 }
 
 function addRelations() {
+  const loader = $loading.show();
   fetch('http://localhost:5555/api/addRelations', {
     method: 'POST',
     body: JSON.stringify(JSON.parse(responseText.value)),
@@ -33,12 +46,18 @@ function addRelations() {
     statusText.value = data.status === "Successfully completed"
       ? "Relations successfully added to the knowledge graph!"
       : "There was an issue adding relations.";
-
+  })
+  .catch(() => {
+    statusText.value = 'Error adding relations.';
+  })
+  .finally(() => {
+    loader.hide();
     clearStatusTextAfterDelay();
   });
 }
 
 function reasonKg() {
+  const loader = $loading.show();
   fetch('http://localhost:5555/api/reason', {
     method: 'GET',
   })
@@ -47,7 +66,12 @@ function reasonKg() {
     statusText.value = data.status === "Successfully completed"
       ? "Reasoning operation completed successfully!"
       : "There was an issue running the reasoner.";
-
+  })
+  .catch(() => {
+    statusText.value = 'Error running the reasoner.';
+  })
+  .finally(() => {
+    loader.hide();
     clearStatusTextAfterDelay();
   });
 }
