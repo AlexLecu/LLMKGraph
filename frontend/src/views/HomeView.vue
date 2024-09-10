@@ -6,11 +6,34 @@ import { useLoading } from 'vue-loading-overlay';
 const abstract = ref('');
 const responseText = ref('');
 const statusText = ref('');
+const validationError = ref('');
 const $loading = useLoading();
 let statusTimeout = null;
 
+function validateAbstract() {
+  if (!abstract.value.trim()) {
+    validationError.value = 'Abstract cannot be empty.';
+    return false;
+  }
+  return true;
+}
+
+function validateRelations() {
+  try {
+    JSON.parse(responseText.value);
+  } catch (e) {
+    validationError.value = 'Relations must be valid JSON.';
+    return false;
+  }
+  return true;
+}
+
 function showRelations() {
+  if (!validateAbstract()) return;
+
+  validationError.value = '';
   const loader = $loading.show();
+
   fetch('http://localhost:5555/api/showRelations', {
     method: 'POST',
     body: JSON.stringify(abstract.value),
@@ -33,7 +56,11 @@ function showRelations() {
 }
 
 function addRelations() {
+  if (!validateRelations()) return;
+
+  validationError.value = '';
   const loader = $loading.show();
+
   fetch('http://localhost:5555/api/addRelations', {
     method: 'POST',
     body: JSON.stringify(JSON.parse(responseText.value)),
@@ -57,7 +84,9 @@ function addRelations() {
 }
 
 function reasonKg() {
+  validationError.value = '';
   const loader = $loading.show();
+
   fetch('http://localhost:5555/api/reason', {
     method: 'GET',
   })
@@ -112,9 +141,13 @@ function clearStatusTextAfterDelay() {
         </div>
 
         <div class="buttons-container">
-          <button @click="showRelations" class="action-button">Show Relations</button>
-          <button @click="addRelations" class="action-button">Add Relations</button>
-          <button @click="reasonKg" class="action-button">Reason KG</button>
+          <button @click="showRelations" class="action-button" :disabled="isLoading">Show Relations</button>
+          <button @click="addRelations" class="action-button" :disabled="isLoading">Add Relations</button>
+          <button @click="reasonKg" class="action-button" :disabled="isLoading">Reason KG</button>
+        </div>
+
+        <div v-if="validationError" class="validation-error">
+          <p>{{ validationError }}</p>
         </div>
 
         <div class="output-area">
