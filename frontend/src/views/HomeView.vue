@@ -8,7 +8,7 @@ const responseText = ref('');
 const statusText = ref('');
 const validationError = ref('');
 const $loading = useLoading();
-let statusTimeout = null;
+let statusTimeout: number | null = null;
 
 function validateAbstract() {
   if (!abstract.value.trim()) {
@@ -141,9 +141,9 @@ function clearStatusTextAfterDelay() {
         </div>
 
         <div class="buttons-container">
-          <button @click="showRelations" class="action-button" :disabled="isLoading">Show Relations</button>
-          <button @click="addRelations" class="action-button" :disabled="isLoading">Add Relations</button>
-          <button @click="reasonKg" class="action-button" :disabled="isLoading">Reason KG</button>
+          <button @click="showRelations" class="action-button">Show Relations</button>
+          <button @click="addRelations" class="action-button">Add Relations</button>
+          <button @click="reasonKg" class="action-button">Reason KG</button>
         </div>
 
         <div v-if="validationError" class="validation-error">
