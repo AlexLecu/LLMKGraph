@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile
     container_name: flask-app
     ports:
-      - "5000:5000"
+      - "5555:5555"
       - "8501:8501"
     depends_on:
       - graphdb

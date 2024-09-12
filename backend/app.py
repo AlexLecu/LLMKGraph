@@ -1,27 +1,26 @@
 from flask import Flask, request, jsonify, make_response
 from enrich_kg_mistral import return_relations, add_relations_to_kg
 from reason import reason_and_update
-
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/api/showRelations', methods=['POST'])
 def show_relations():
-    global relations
     text = request.data
     relations = return_relations(text)
 
     response = make_response(jsonify(relations))
-    response.headers["Access-Control-Allow-Origin"] = "*"
 
     return response
 
 @app.route('/api/addRelations', methods=['POST'])
 def add_relations():
-    add_relations_to_kg(relations)
+    modified_relations = request.get_json()
+    add_relations_to_kg(modified_relations)
 
     response = make_response("{\"status\": \"Successfully completed\"}")
-    response.headers["Access-Control-Allow-Origin"] = "*"
 
     return response
 
@@ -29,9 +28,7 @@ def add_relations():
 @app.route('/api/reason', methods=['GET'])
 def reason_kg():
     reason_and_update()
-
     response = make_response("{\"status\": \"Successfully completed\"}")
-    response.headers["Access-Control-Allow-Origin"] = "*"
 
     return response
 
