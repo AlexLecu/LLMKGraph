@@ -215,6 +215,12 @@ html, body {
   transition: background-color 0.3s ease, transform 0.2s;
 }
 
+.validation-error {
+  color: red;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
 .sidebar-link:hover {
   background-color: #007bff;
   color: #ffffff;
