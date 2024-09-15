@@ -113,6 +113,61 @@ function clearStatusTextAfterDelay() {
     statusText.value = '';
   }, 5000);
 }
+
+const queryText = ref('');
+const filterType = ref('');
+const results = ref([]);
+const cyElements = ref([]);
+
+function extractMainComponent(uri: string): string {
+  // Split the URI at '#' and return the last part
+  return uri.split('#').pop() || uri;
+}
+
+function processSearchResults(data: any[]) {
+  // Assuming the response is an array of objects with subject, predicate, and object
+  return data.map(result => ({
+    subject: extractMainComponent(result.subject),
+    predicate: extractMainComponent(result.predicate),
+    object: extractMainComponent(result.object),
+  }));
+}
+
+function performSearch() {
+  if (!queryText.value.trim()) {
+    validationError.value = 'Please enter a search term.';
+    return;
+  }
+
+  validationError.value = '';
+  const loader = $loading.show();
+  const params = new URLSearchParams();
+  params.append('q', queryText.value);
+  if (filterType.value) {
+    params.append('type', filterType.value);
+  }
+
+  fetch(`http://localhost:5555/api/search?${params.toString()}`)
+    .then((response) => response.json())
+    .then((data) => {
+      // Process the results to extract main components
+      results.value = processSearchResults(data);
+
+      if (results.value.length === 0) {
+        statusText.value = 'No results found.';
+      } else {
+        statusText.value = 'Search completed successfully!';
+      }
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+      statusText.value = 'Error during search.';
+    })
+    .finally(() => {
+      loader.hide();
+      clearStatusTextAfterDelay();
+    });
+}
 </script>
 
 <template>
@@ -123,15 +178,82 @@ function clearStatusTextAfterDelay() {
     </aside>
 
     <div class="main-content">
-      <section class="iframe-section">
-        <h2 class="section-title">Knowledge Graph Visualization</h2>
-        <iframe
-          src="http://localhost:7200/graphs-visualizations?uri=http:%2F%2Fwww.semanticweb.org%2Flecualexandru%2Fontologies%2F2024%2F1%2Funtitled-ontology-6%23AMD&embedded"
-          title="Knowledge Graph Visualization"
-          class="visualization-iframe">
-        </iframe>
-      </section>
+      <!-- Left Part: Iframe and Search Section -->
+      <div class="left-part">
+        <section class="iframe-section">
+          <h2 class="section-title">Knowledge Graph Visualization</h2>
+          <iframe
+            src="http://localhost:7200/graphs-visualizations?uri=http:%2F%2Fwww.semanticweb.org%2Flecualexandru%2Fontologies%2F2024%2F1%2Funtitled-ontology-6%23AMD&embedded"
+            title="Knowledge Graph Visualization"
+            class="visualization-iframe">
+          </iframe>
+        </section>
 
+        <!-- Search Section -->
+        <section class="search-section">
+          <h2 class="section-title">Search and Filtering</h2>
+
+          <div class="input-area">
+            <label for="search-input" class="input-label">Search</label>
+            <input
+              type="text"
+              v-model="queryText"
+              id="search-input"
+              placeholder="Enter search term"
+              @keyup.enter="performSearch"
+              class="search-input">
+          </div>
+
+          <div class="filter-area">
+            <label for="filter-select" class="input-label">Filter By</label>
+            <select
+              v-model="filterType"
+              id="filter-select"
+              class="filter-select">
+              <option value="">All</option>
+              <option value="node">Node</option>
+              <option value="relation">Relation</option>
+              <option value="entity">Entity</option>
+            </select>
+          </div>
+
+          <div class="buttons-container">
+            <button @click="performSearch" class="action-button">Search</button>
+          </div>
+
+          <!-- Validation Error -->
+          <div v-if="validationError" class="validation-error">
+            <p>{{ validationError }}</p>
+          </div>
+
+          <!-- Search Results -->
+          <div v-if="results.length" class="results-section">
+            <h3 class="section-title">Results:</h3>
+
+            <!-- Scrollable Table Container -->
+            <div class="results-table-container">
+              <table class="results-table">
+                <thead>
+                  <tr>
+                    <th>Subject</th>
+                    <th>Predicate</th>
+                    <th>Object</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr v-for="(result, index) in results" :key="index">
+                    <td>{{ result.subject }}</td>
+                    <td>{{ result.predicate }}</td>
+                    <td>{{ result.object }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Right Part: Controls Section -->
       <section class="controls-section">
         <h2 class="section-title">Knowledge Graph Operations</h2>
 
@@ -175,7 +297,7 @@ function clearStatusTextAfterDelay() {
 html, body {
   height: 100%;
   width: 100%;
-  overflow-x: hidden; /* Prevent horizontal overflow */
+  overflow-x: hidden;
 }
 
 /* General App Container */
@@ -185,7 +307,7 @@ html, body {
   width: 100vw;
   background-color: #f7f9fc;
   font-family: 'Roboto', sans-serif;
-  overflow-x: hidden; /* Ensure no horizontal scrolling */
+  overflow-x: hidden;
 }
 
 /* Sidebar Styling */
@@ -230,36 +352,28 @@ html, body {
 
 /* Main Content Area */
 .main-content {
-  margin-left: 200px; /* Offset the content by the width of the sidebar */
+  margin-left: 200px;
   display: flex;
   flex-grow: 1;
   gap: 20px;
   padding: 20px;
   background-color: #f7f9fc;
   overflow-x: hidden;
-  width: calc(100% - 200px); /* Ensure the content fits within the viewport */
+  width: calc(100% - 200px);
 }
 
-/* Visualization Section */
-.iframe-section {
-  flex-grow: 2;
-  padding: 20px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+/* Left Part: Iframe and Search Section */
+.left-part {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.visualization-iframe {
-  width: 100%;
-  height: 80vh;
-  border: 2px solid #e0e0e0;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-/* Controls Section */
+/* Right Part: Controls Section */
 .controls-section {
   flex-grow: 1;
+  width: 50%;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -269,16 +383,78 @@ html, body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
+/* Visualization Section */
+.iframe-section {
+  flex-grow: 1;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.visualization-iframe {
+  width: 100%;
+  height: 50vh;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Search Section */
+.search-section {
+  flex-grow: 1;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.results-section {
+  margin-top: 20px;
+}
+
+.results-table-container {
+  max-height: 300px;
+  overflow-y: auto;
+  width: 100%;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+}
+
+.results-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.results-table th,
+.results-table td {
+  padding: 10px;
+  border: 1px solid #dee2e6;
+  text-align: left;
+  font-size: 16px;
+  color: #333;
+  white-space: nowrap;
+}
+
+.results-table th {
+  background-color: #f8f9fa;
+  font-weight: bold;
+}
+
+.results-table td {
+  background-color: #ffffff;
+}
+
 /* Fix for the section title text color */
 .section-title {
   font-size: 24px;
   font-weight: bold;
-  color: #333; /* Darker text for better visibility */
+  color: #333;
   margin-bottom: 15px;
 }
 
 /* Input and Button Areas */
-.input-area, .textarea-container {
+.input-area, .textarea-container, .filter-area {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -287,7 +463,7 @@ html, body {
 .input-label {
   font-size: 16px;
   font-weight: 500;
-  color: #333; /* Darker color for better visibility */
+  color: #333;
 }
 
 /* Abstract Textarea */
@@ -298,7 +474,7 @@ html, body {
   border-radius: 8px;
   background-color: #ffffff;
   font-size: 16px;
-  color: #333; /* Darker color for text inside the textarea */
+  color: #333;
   transition: border-color 0.3s ease;
 }
 
@@ -315,7 +491,7 @@ html, body {
   border-radius: 8px;
   background-color: #ffffff;
   font-size: 16px;
-  color: #333; /* Darker color for text in the textareas */
+  color: #333;
   resize: vertical;
   box-sizing: border-box;
 }
@@ -331,10 +507,38 @@ html, body {
   color: #28a745;
 }
 
+/* Search Input */
+.search-input {
+  padding: 12px;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #333;
+}
+
+.search-input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Filter Select */
+.filter-select {
+  padding: 12px;
+  border: 1px solid #ced4da;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #333;
+}
+
+.filter-select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
 /* Buttons */
 .buttons-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 15px;
 }
 
@@ -357,8 +561,12 @@ html, body {
 
 /* Media Queries */
 @media (max-width: 1024px) {
-  .app-container {
+  .main-content {
     flex-direction: column;
+  }
+
+  .left-part, .controls-section {
+    width: 100%;
   }
 
   .visualization-iframe {
@@ -367,10 +575,6 @@ html, body {
 }
 
 @media (max-width: 768px) {
-  .main-content {
-    flex-direction: column;
-  }
-
   .visualization-iframe {
     height: 45vh;
   }
