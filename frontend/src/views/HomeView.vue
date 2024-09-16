@@ -30,7 +30,7 @@ onMounted(() => {
 });
 
 async function fetchData(query: string | null = null) {
-  const endpointUrl = 'http://localhost:7200/repositories/amd_repo';
+  const endpointUrl = 'http://graphdb:7200/repositories/amd_repo';
 
   const defaultQuery = `
     PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
@@ -175,7 +175,7 @@ async function toggleNode(nodeId: string) {
 }
 
 async function fetchConnectedNodes(nodeId: string) {
-  const endpointUrl = 'http://localhost:7200/repositories/amd_repo';
+  const endpointUrl = 'http://graphdb:7200/repositories/amd_repo';
 
   const baseURI = 'http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#';
   const isURI = /^(http|https):\/\/.+$/.test(nodeId);
