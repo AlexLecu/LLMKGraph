@@ -63,7 +63,7 @@ def create_sparql_query(relations):
     prefixes = """
     PREFIX owl: <http://www.w3.org/2002/07/owl#>
     PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-    PREFIX ont: <http://www.semanticweb.org/lecualexandru/ontologies/2024/1/#>
+    PREFIX ont: <http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#>
     """
 
     # Start constructing the query

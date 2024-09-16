@@ -2,8 +2,8 @@ from owlready2 import *
 from SPARQLWrapper import SPARQLWrapper, JSON, POST
 import rdflib
 
-ONTOLOGY_PATH = "amd_ontology.rdf"
-REASONED_ONT_PATH = "amd_ontology_reasoned.rdf"
+ONTOLOGY_PATH = "/app/data/amd_ontology.rdf"
+REASONED_ONT_PATH = "/app/data/amd_ontology_reasoned.rdf"
 
 
 def get_ontology_from_graphdb():

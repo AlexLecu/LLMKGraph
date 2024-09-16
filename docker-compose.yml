@@ -6,6 +6,8 @@ services:
       context: ./backend
       dockerfile: Dockerfile
     container_name: flask-app
+    volumes:
+      - ./data:/app/data
     ports:
       - "5555:5555"
       - "8501:8501"
