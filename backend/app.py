@@ -40,8 +40,9 @@ def search():
     filter_type = request.args.get('type', '')
 
     data = query_knowledge_graph(query_text, filter_type)
+    response = make_response(jsonify(data))
 
-    return jsonify(data)
+    return response
 
 
 if __name__ == '__main__':

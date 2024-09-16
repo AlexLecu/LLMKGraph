@@ -1,5 +1,5 @@
 from SPARQLWrapper import SPARQLWrapper, JSON
-sparql = SPARQLWrapper("http://localhost:7200/repositories/amd_repo")
+sparql = SPARQLWrapper("http://graphdb:7200/repositories/amd_repo")
 
 
 def construct_sparql_query(query_text, filter_type):
