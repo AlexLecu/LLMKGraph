@@ -10,8 +10,9 @@ import faiss
 import numpy as np
 import streamlit as st
 import re
+from dotenv import load_dotenv
 
-
+load_dotenv()
 huggingfacehub_api_token = os.environ['HUGGINGFACEHUB_API_TOKEN']
 
 embeddings = HuggingFaceEmbeddings()

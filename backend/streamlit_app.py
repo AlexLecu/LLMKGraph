@@ -6,6 +6,11 @@ from langchain_openai import ChatOpenAI
 from langchain_core.messages import AIMessage, HumanMessage
 
 import streamlit as st
+from dotenv import load_dotenv
+
+load_dotenv()
+
+openai_api_key = os.environ['OPENAI_API_KEY']
 
 os.environ["GRAPHDB_USERNAME"] = "admin"
 os.environ["GRAPHDB_PASSWORD"] = "root"
