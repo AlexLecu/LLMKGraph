@@ -6,12 +6,17 @@ from langchain_openai import ChatOpenAI
 from langchain_core.messages import AIMessage, HumanMessage
 
 import streamlit as st
+from dotenv import load_dotenv
+
+load_dotenv()
+
+openai_api_key = os.environ['OPENAI_API_KEY']
 
 os.environ["GRAPHDB_USERNAME"] = "admin"
 os.environ["GRAPHDB_PASSWORD"] = "root"
 
 graph = OntotextGraphDBGraph(
-    query_endpoint="http://localhost:7200/repositories/amd_repo",
+    query_endpoint="http://graphdb:7200/repositories/amd_repo",
     query_ontology="CONSTRUCT {?s ?p ?o} FROM <http://amddata.org/amd/> WHERE {?s ?p ?o}",
 )
 

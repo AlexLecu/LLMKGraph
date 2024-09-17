@@ -10,8 +10,9 @@ import faiss
 import numpy as np
 import streamlit as st
 import re
+from dotenv import load_dotenv
 
-
+load_dotenv()
 huggingfacehub_api_token = os.environ['HUGGINGFACEHUB_API_TOKEN']
 
 embeddings = HuggingFaceEmbeddings()
@@ -23,7 +24,7 @@ llm = HuggingFaceHub(huggingfacehub_api_token=huggingfacehub_api_token,
 
 def extract_data():
     #Extract Data from GraphDB
-    sparql = SPARQLWrapper("http://localhost:7200/repositories/amd_repo")
+    sparql = SPARQLWrapper("http://graphdb:7200/repositories/amd_repo")
 
     sparql.setQuery("""
         SELECT ?subject ?predicate ?object

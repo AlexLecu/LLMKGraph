@@ -11,3 +11,4 @@ owlready2>=0.45
 rdflib>=7.0.0
 notebook>=7.1.2
 faiss-gpu>=1.7.2
+python-dotenv>=1.0.1
