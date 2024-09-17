@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify, make_response
 from enrich_kg_mistral import return_relations, add_relations_to_kg
 from reason import reason_and_update
-from search_kg import query_knowledge_graph
+from search_kg import query_knowledge_graph, delete_relation_kg
 from flask_cors import CORS
 
 app = Flask(__name__)
@@ -41,6 +41,21 @@ def search():
 
     data = query_knowledge_graph(query_text, filter_type)
     response = make_response(jsonify(data))
+
+    return response
+
+
+@app.route('/api/deleteRelation', methods=['POST'])
+def delete_relation():
+    data = request.json
+
+    subject = data.get('subject')
+    predicate = data.get('predicate')
+    object_ = data.get('object')
+
+    delete_relation_kg(subject, predicate, object_)
+
+    response = make_response("{\"status\": \"Successfully completed\"}")
 
     return response
 

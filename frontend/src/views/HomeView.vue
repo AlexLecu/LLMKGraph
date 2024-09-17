@@ -6,6 +6,14 @@ import axios from 'axios';
 import { Network } from 'vis-network';
 import { DataSet } from 'vis-data';
 
+interface Edge {
+  id: string;
+  from: string;
+  to: string;
+  label: string;
+  predicate: string;
+}
+
 const abstract = ref('');
 const responseText = ref('');
 const statusText = ref('');
@@ -17,13 +25,15 @@ let statusTimeout: number | null = null;
 const graphContainer = ref<HTMLElement | null>(null);
 let network: Network | null = null;
 const nodes = ref<DataSet<any> | null>(null);
-const edges = ref<DataSet<any> | null>(null);
+const edges = ref<DataSet<Edge> | null>(null);
 const nodeStates = ref<Record<string, string>>({});
 const loadingGraph = ref(true);
 
 const queryText = ref('');
 const filterType = ref('');
 const results = ref<{ subject: string; predicate: string; object: string }[]>([]);
+
+const selectedEdge = ref<Edge | null>(null);
 
 onMounted(() => {
   fetchData();
@@ -159,8 +169,71 @@ function renderGraph(nodesArray: any[], edgesArray: any[]) {
     if (params.nodes.length > 0) {
       const nodeId = params.nodes[0];
       await toggleNode(nodeId);
+    } else if (params.edges.length > 0) {
+      const edgeId = params.edges[0];
+      selectEdge(edgeId);
+    } else {
+      // Clicked on empty space, deselect
+      deselectEdge();
     }
   });
+}
+
+function selectEdge(edgeId: string) {
+  if (edges.value) {
+    const edge = edges.value.get(edgeId);
+    if (edge) {
+      selectedEdge.value = edge;
+      const relation = `${getLocalName(edge.from)} ${edge.label} ${getLocalName(edge.to)}`;
+      responseText.value = relation;
+    }
+  }
+}
+
+function deselectEdge() {
+  selectedEdge.value = null;
+  responseText.value = '';
+}
+
+async function deleteSelectedEdge() {
+  if (selectedEdge.value) {
+    const edge = selectedEdge.value;
+
+    const payload = {
+      subject: edge.from,
+      predicate: edge.predicate,
+      object: edge.to
+    };
+
+    const loader = $loading.show();
+
+    try {
+      const response = await axios.post('http://localhost:5555/api/deleteRelation', payload, {
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+
+      if (response.status === 200) {
+        if (edges.value && selectedEdge.value) {
+          edges.value.remove(edge.id);
+          deselectEdge();
+          statusText.value = 'Relation deleted successfully!';
+        }
+      } else {
+        statusText.value = 'Failed to delete relation.';
+      }
+    } catch (error) {
+      console.error('Error deleting relation:', error);
+      statusText.value = 'Error deleting relation.';
+    } finally {
+      loader.hide();
+      clearStatusTextAfterDelay();
+    }
+  } else {
+    statusText.value = 'No edge selected for deletion.';
+    clearStatusTextAfterDelay();
+  }
 }
 
 async function toggleNode(nodeId: string) {
@@ -305,7 +378,7 @@ function performSearch() {
           nodeStates.value[o] = 'collapsed';
         }
 
-        edgesArray.push({ from: s, to: o, label: pLabel });
+        edgesArray.push({ from: s, to: o, label: pLabel, predicate: p });
          });
 
       if (edgesArray.length === 0) {
@@ -543,6 +616,7 @@ function clearStatusTextAfterDelay() {
           <button @click="showRelations" class="action-button">Show Relations</button>
           <button @click="addRelations" class="action-button">Add Relations</button>
           <button @click="reasonKg" class="action-button">Reason KG</button>
+          <button @click="deleteSelectedEdge" class="action-button delete-button" :disabled="!selectedEdge">Delete Relation</button>
         </div>
 
         <div v-if="validationError" class="validation-error">
@@ -712,6 +786,17 @@ body {
   font-size: 16px;
   font-weight: 500;
   transition: all 0.3s ease;
+}
+
+.delete-button:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+.delete-button:disabled:hover {
+  background-color: #6c757d;
+  box-shadow: none;
+  transform: none;
 }
 
 .refresh-button:hover, .refresh-button:focus {
