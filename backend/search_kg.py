@@ -1,6 +1,6 @@
 from SPARQLWrapper import SPARQLWrapper, POST, JSON
 sparql = SPARQLWrapper("http://graphdb:7200/repositories/amd_repo")
-
+sparql_post = SPARQLWrapper("http://graphdb:7200/repositories/amd_repo/statements")
 
 def construct_sparql_query(query_text, filter_type):
     if filter_type == 'node':
@@ -56,16 +56,16 @@ def query_knowledge_graph(query_text, filter_type):
     return data
 
 
-def delete_relation_kg(subject, predicate, object):
+def delete_relation_kg(subject, predicate, object_):
     delete_query = f"""
         PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
         PREFIX ont: <http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#>
 
         DELETE WHERE {{
-            <{subject}> <{predicate}> <{object}> .
+            <{subject}> <{predicate}> <{object_}> .
         }}
         """
 
-    sparql.setQuery(delete_query)
-    sparql.setMethod(POST)
-    sparql.query()
+    sparql_post.setQuery(delete_query)
+    sparql_post.setMethod(POST)
+    sparql_post.query()
