@@ -2,6 +2,10 @@ import os
 
 from openai import OpenAI
 from SPARQLWrapper import SPARQLWrapper, POST
+from dotenv import load_dotenv
+
+
+load_dotenv()
 
 client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
 
@@ -23,7 +27,7 @@ def generate_relations(text):
     response = client.chat.completions.create(
         model="gpt-4o",
         messages=[
-            {"role": "system", "content": "Extract causal relations from text using specific labels and relations."},
+            {"role": "system", "content": "You are an advanced language model that specializes in analyzing text to identify medical causal relationships."},
             {"role": "user", "content": prompt}
         ]
     )

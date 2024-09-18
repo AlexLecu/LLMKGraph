@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify, make_response
-from enrich_kg_mistral import return_relations, add_relations_to_kg
+from enrich_kg_gpt import return_relations, add_relations_to_kg
 from reason import reason_and_update
 from search_kg import query_knowledge_graph, delete_relation_kg
 from flask_cors import CORS

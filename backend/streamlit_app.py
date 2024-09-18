@@ -20,12 +20,13 @@ graph = OntotextGraphDBGraph(
     query_ontology="CONSTRUCT {?s ?p ?o} FROM <http://amddata.org/amd/> WHERE {?s ?p ?o}",
 )
 
-llm = ChatOpenAI(temperature=0.5, model_name="gpt-4-1106-preview")
+llm = ChatOpenAI(temperature=0.5, model_name="gpt-4o")
 
 chain = OntotextGraphDBQAChain.from_llm(
     llm,
     graph=graph,
     verbose=True,
+    allow_dangerous_requests=True,
 )
 
 
