@@ -5,6 +5,7 @@
     <aside class="sidebar">
       <router-link to="/" class="sidebar-link">Home</router-link>
       <router-link to="/chat" class="sidebar-link">Chat</router-link>
+      <router-link to="/evaluation" class="sidebar-link">Evaluation</router-link>
     </aside>
 
     <div class="chat-content">
