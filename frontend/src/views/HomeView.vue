@@ -21,6 +21,8 @@ const validationError = ref('');
 const searchValidationError = ref('');
 const $loading = useLoading();
 let statusTimeout: number | null = null;
+const repositories = ref('');
+const currentRepoId = ref('amd_repo');
 
 const graphContainer = ref<HTMLElement | null>(null);
 let network: Network | null = null;
@@ -37,14 +39,29 @@ const selectedEdge = ref<Edge | null>(null);
 
 onMounted(() => {
   fetchData();
+  fetchRepositories();
 });
 
+async function fetchRepositories() {
+  try {
+    const response = await axios.get("http://localhost:5555/api/available_repositories");
+    repositories.value = response.data;
+  } catch (error) {
+    console.error("Error fetching repositories:", error);
+  }
+}
+
+function activateRepository(repoId: string) {
+  currentRepoId.value = repoId;
+  fetchData();
+}
+
 async function fetchData(query: string | null = null) {
-  const endpointUrl = 'http://localhost:7200/repositories/amd_repo';
+  const endpointUrl = `http://localhost:7200/repositories/${currentRepoId.value}`;
 
   const defaultQuery = `
     PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-    PREFIX ont: <http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#>
+    PREFIX ont: <http://www.semanticweb.org/lecualexandru/ontologies/2024/1/>
     SELECT ?subject ?predicate ?object WHERE {
       ?subject ?predicate ?object .
       FILTER (?subject = ont:AMD)
@@ -248,9 +265,9 @@ async function toggleNode(nodeId: string) {
 }
 
 async function fetchConnectedNodes(nodeId: string) {
-  const endpointUrl = 'http://localhost:7200/repositories/amd_repo';
+  const endpointUrl = `http://localhost:7200/repositories/${currentRepoId.value}`;
 
-  const baseURI = 'http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#';
+  const baseURI = 'http://www.semanticweb.org/lecualexandru/ontologies/2024/1/';
   const isURI = /^(http|https):\/\/.+$/.test(nodeId);
   const formattedNodeId = isURI ? nodeId : `${baseURI}${nodeId}`;
   const sparqlQuery = `
@@ -347,6 +364,7 @@ function performSearch() {
   if (filterType.value) {
     params.append('type', filterType.value);
   }
+  params.append('repo_id', currentRepoId.value)
 
   fetch(`http://localhost:5555/api/search?${params.toString()}`)
     .then((response) => response.json())
@@ -469,10 +487,13 @@ function addRelations() {
 
   validationError.value = '';
   const loader = $loading.show();
-
+  const payload = {
+    repo_id: currentRepoId.value,
+    relations: JSON.parse(responseText.value)
+  };
   fetch('http://localhost:5555/api/addRelations', {
     method: 'POST',
-    body: JSON.stringify(JSON.parse(responseText.value)),
+    body: JSON.stringify(payload),
     headers: {
       'Content-Type': 'application/json',
     }
@@ -495,8 +516,9 @@ function addRelations() {
 function reasonKg() {
   validationError.value = '';
   const loader = $loading.show();
-
-  fetch('http://localhost:5555/api/reason', {
+  const params = new URLSearchParams();
+  params.append('repo_id', currentRepoId.value);
+  fetch(`http://localhost:5555/api/reason?${params.toString()}`, {
     method: 'GET',
   })
   .then((response) => response.json())
@@ -522,6 +544,67 @@ function clearStatusTextAfterDelay() {
     statusText.value = '';
   }, 5000);
 }
+
+const abstractFile = ref<File | null>(null);
+const relationsFile = ref<File | Blob | null>(null);
+const selectedModel = ref<string>('');
+const abstractDownloadLink = ref<string | null>(null);
+const relationsFileReady = ref(false);
+const uploadStatus = ref<string | null>(null);
+
+function handleAbstractUpload(event: Event) {
+  const fileInput = event.target as HTMLInputElement;
+  abstractFile.value = fileInput.files ? fileInput.files[0] : null;
+}
+
+function handleRelationsUpload(event: Event) {
+  const fileInput = event.target as HTMLInputElement;
+  relationsFile.value = fileInput.files ? fileInput.files[0] : null;
+}
+
+async function uploadAbstractFile() {
+  const loader = $loading.show();
+  if (!abstractFile.value || !selectedModel.value) return;
+
+  const formData = new FormData();
+  formData.append("file", abstractFile.value);
+  formData.append("model", selectedModel.value);
+  try {
+    const response = await axios.post("http://localhost:5555/api/upload_abstract", formData, {
+      responseType: "blob",
+    });
+
+    const extractedFile = new Blob([response.data], { type: "application/json" });
+
+    abstractDownloadLink.value = URL.createObjectURL(extractedFile);
+
+    relationsFile.value = extractedFile;
+    relationsFileReady.value = true;  // Flag to show the extracted file is ready
+
+  } catch (error) {
+    console.error("Error extracting relations from abstract:", error);
+  } finally {
+    loader.hide();
+    clearStatusTextAfterDelay();
+  }
+}
+
+async function addRelationsToKG() {
+  if (!relationsFile || !currentRepoId.value) return;
+
+  const formData = new FormData();
+  formData.append("file", relationsFile.value);
+  formData.append("repo_id", currentRepoId.value);
+
+  try {
+    const response = await axios.post("http://localhost:5555/api/upload_relations", formData);
+
+    uploadStatus.value = response.data.message || "Failed to add relations.";
+  } catch (error) {
+    console.error("Error adding relations to KG:", error);
+    uploadStatus.value = "Error adding relations to KG.";
+  }
+}
 </script>
 
 <template>
@@ -529,6 +612,7 @@ function clearStatusTextAfterDelay() {
     <aside class="sidebar">
       <router-link to="/" class="sidebar-link">Home</router-link>
       <router-link to="/chat" class="sidebar-link">Chat</router-link>
+      <router-link to="/evaluation" class="sidebar-link">Evaluation</router-link>
     </aside>
 
     <div class="main-content">
@@ -633,6 +717,71 @@ function clearStatusTextAfterDelay() {
           </div>
         </div>
       </section>
+
+
+  <section class="repositories-section">
+  <h2 class="section-title">Available Repositories</h2>
+
+  <div class="repositories-container">
+    <button
+      v-for="repo in repositories"
+      :key="repo.id"
+      @click="activateRepository(repo.id)"
+      :class="['repo-button', { active: repo.id === currentRepoId }]"
+      class="repo-button"
+    >
+      {{ repo.id }}
+    </button>
+  </div>
+
+  <h2 class="section-title">Relation Extraction and Upload</h2>
+
+  <!-- Model Selection for Relation Extraction -->
+  <div class="form-group">
+    <label for="modelSelect">Select Model for Extraction:</label>
+    <select v-model="selectedModel" id="modelSelect" class="select-input">
+      <option value="" disabled>Select a model</option>
+      <option value="model_a">GPT3.5 Turbo (Fine-Tuned)</option>
+      <option value="model_b">Mistral-Nemo (Fine-Tuned)</option>
+      <option value="model_c">GPT 4o1-mini</option>
+    </select>
+  </div>
+
+  <!-- Upload Abstract File -->
+  <div class="form-group">
+    <label for="abstractFile">Upload Abstract File:</label>
+    <input type="file" id="abstractFile" @change="handleAbstractUpload" class="file-input" />
+    <button @click="uploadAbstractFile" :disabled="!abstractFile || !selectedModel" class="action-button">
+      Extract Relations from Abstract
+    </button>
+  </div>
+
+  <!-- Download Extracted Relations -->
+  <div v-if="abstractDownloadLink" class="download-section">
+    <a :href="abstractDownloadLink" download="extracted_relations.json" class="download-link">
+      Download Extracted Relations
+    </a>
+  </div>
+
+  <!-- Status Message -->
+  <p v-if="relationsFileReady" class="status-message">
+    Extracted relations are ready for upload. You can replace the file if needed.
+  </p>
+
+  <!-- Upload or Modify Extracted Relations File -->
+  <div class="form-group">
+    <label for="relationsFile">Upload or Modify Extracted Relations File:</label>
+    <input type="file" id="relationsFile" @change="handleRelationsUpload" class="file-input" />
+    <button @click="addRelationsToKG" :disabled="!relationsFile" class="action-button">
+      Add Relations to Knowledge Graph
+    </button>
+  </div>
+
+  <!-- Upload Status -->
+  <div v-if="uploadStatus" class="upload-status">
+    {{ uploadStatus }}
+  </div>
+</section>
     </div>
   </div>
 </template>
@@ -1082,5 +1231,175 @@ body {
     padding: 10px 20px;
     font-size: 14px;
   }
+}
+/* Repositories Section Styling */
+.repositories-section {
+  padding: 20px;
+  background-color: #f9fafb;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.repositories-section h2 {
+  margin-bottom: 20px;
+  font-size: 1.5em;
+  color: #333;
+  text-align: center;
+}
+
+.repositories-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.repo-button {
+  flex: 1 1 150px;
+  min-width: 120px;
+  padding: 12px 16px;
+  background-color: #e5e7eb;
+  color: #1f2937;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1em;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+.repo-button:hover {
+  background-color: #d1d5db;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.repo-button.active {
+  background-color: #3b82f6;
+  color: #fff;
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(59, 130, 246, 0.4);
+}
+
+.repo-button:focus {
+  outline: 3px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+  .repo-button {
+    flex: 1 1 45%;
+  }
+}
+
+@media (max-width: 480px) {
+  .repo-button {
+    flex: 1 1 100%;
+  }
+}
+
+.repositories-section {
+  padding: 20px;
+  background-color: #f9fafb;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.repositories-section-section h2 {
+  margin-bottom: 20px;
+  font-size: 1.5em;
+  color: #333;
+  text-align: center;
+}
+
+.repositories-section .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.repositories-section label {
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.repositories-section .select-input,
+.repositories-section .file-input {
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 1em;
+  background-color: #fff;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.repositories-section .select-input:focus,
+.repositories-section .file-input:focus {
+  border-color: #3b82f6;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
+}
+
+.repositories-section .action-button {
+  padding: 12px 20px;
+  background-color: #3b82f6;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s, box-shadow 0.3s;
+}
+
+.repositories-section .action-button:hover:not(:disabled) {
+  background-color: #2563eb;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3);
+}
+
+.repositories-section .action-button:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+}
+
+.repositories-section .download-section {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.repositories-section .download-link {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: #10b981;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+.repositories-section .download-link:hover {
+  background-color: #059669;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(16, 185, 129, 0.3);
+}
+
+.repositories-section .status-message {
+  text-align: center;
+  color: #065f46;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+.repositories-section .upload-status {
+  text-align: center;
+  padding: 10px;
+  background-color: #d1fae5;
+  color: #065f46;
+  border-radius: 6px;
+  margin-top: 10px;
 }
 </style>
