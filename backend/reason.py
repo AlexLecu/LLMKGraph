@@ -6,8 +6,8 @@ ONTOLOGY_PATH = "/app/data/amd_ontology.rdf"
 REASONED_ONT_PATH = "/app/data/amd_ontology_reasoned.rdf"
 
 
-def get_ontology_from_graphdb():
-    sparql = SPARQLWrapper("http://graphdb:7200/repositories/amd_repo")
+def get_ontology_from_graphdb(repo_id):
+    sparql = SPARQLWrapper(f"http://graphdb:7200/repositories/{repo_id}")
     sparql.setQuery("""
         SELECT ?subject ?predicate ?object
         WHERE {
@@ -38,8 +38,8 @@ def reason_ontology():
     ont.save(file=REASONED_ONT_PATH, format="rdfxml")
 
 
-def update_graph():
-    sparql = SPARQLWrapper("http://graphdb:7200/repositories/amd_repo/statements")
+def update_graph(repo_id):
+    sparql = SPARQLWrapper(f"http://graphdb:7200/repositories/{repo_id}/statements")
     clear_graph_query = "CLEAR GRAPH <http://amddata.org/amd/>"
 
     sparql.setQuery(clear_graph_query)
@@ -56,7 +56,7 @@ def update_graph():
     sparql.query()
 
 
-def reason_and_update():
-    get_ontology_from_graphdb()
+def reason_and_update(repo_id):
+    get_ontology_from_graphdb(repo_id)
     reason_ontology()
-    update_graph()
+    update_graph(repo_id)

@@ -12,13 +12,6 @@ load_dotenv()
 client_gpt = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
 client_mistral = Mistral(api_key=os.environ["MISTRAL_API_KEY"])
 
-# logging.basicConfig(
-#     filename='warnings_mistral.log',
-#     filemode='w',
-#     level=logging.WARNING,
-#     format='%(asctime)s - %(levelname)s - %(message)s'
-# )
-
 
 system_prompt = """
 You are an AI language model tasked with:
@@ -260,7 +253,7 @@ def create_sparql_queries_for_bulk_import(relations, batch_size=200):
 
 
 def add_bulk_relations_to_kg(relations, repo_id):
-    sparql = SPARQLWrapper(f"http://localhost:7200/repositories/{repo_id}/statements")
+    sparql = SPARQLWrapper(f"http://graphdb:7200/repositories/{repo_id}/statements")
     queries = create_sparql_queries_for_bulk_import(relations)
     for query in queries:
         sparql.setMethod(POST)
