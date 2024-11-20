@@ -3,6 +3,7 @@ import os
 from openai import OpenAI
 from SPARQLWrapper import SPARQLWrapper, POST
 from dotenv import load_dotenv
+import re
 
 
 load_dotenv()
@@ -46,6 +47,14 @@ def convert_relations(response):
     return relations
 
 
+def sanitize_entity_name(name):
+    # Replace spaces and special characters with underscores
+    name = re.sub(r'[\s\W]+', '_', name)
+    # Remove leading and trailing underscores
+    name = name.strip('_')
+    return name
+
+
 def create_sparql_query(relations):
     prefixes = """
     PREFIX owl: <http://www.w3.org/2002/07/owl#>
@@ -53,25 +62,25 @@ def create_sparql_query(relations):
     PREFIX ont: <http://www.semanticweb.org/lecualexandru/ontologies/2024/1/>
     """
 
-    # Start constructing the query
     query = prefixes + "INSERT DATA { GRAPH <http://amddata.org/amd/> { "
 
-    # Dynamically add each relation to the query
     for relation in relations:
-        # Assuming subject and obj are instances of ont:Entity and predicate is a direct property
-        # Convert the subject, predicate, and object into a more URI-friendly format
-        # This is a simple conversion, consider a more robust method for actual use
-        subject_type_uri_ni = "ont:" + relation["entity1_name"].replace(" ", "_") + " rdf:type " + "owl:NamedIndividual . "
-        subject_type_uri = "ont:" + relation["entity1_name"].replace(" ", "_") + " rdf:type " + "ont:" + relation[
-            "entity1_type"].upper() + " . "
-        object_type_uri_ni = "ont:" + relation["entity2_name"].replace(" ", "_") + " rdf:type " + "owl:NamedIndividual ."
-        object_type_uri = "ont:" + relation["entity2_name"].replace(" ", "_") + " rdf:type " + "ont:" + relation[
-            "entity2_type"].upper() + " . "
-        subject_uri = "ont:" + relation["entity1_name"].replace(" ", "_")
-        predicate_uri = "ont:" + relation["relation_type"]
-        object_uri = "ont:" + relation["entity2_name"].replace(" ", "_")
+        # Sanitize entity names and types
+        subject_name = sanitize_entity_name(relation["entity1_name"])
+        object_name = sanitize_entity_name(relation["entity2_name"])
+        relation_type = sanitize_entity_name(relation["relation_type"])
+        entity1_type = sanitize_entity_name(relation["entity1_type"]).upper()
+        entity2_type = sanitize_entity_name(relation["entity2_type"]).upper()
 
-        # Add the triple to the query
+        # Construct URIs and triples
+        subject_type_uri_ni = f"ont:{subject_name} rdf:type owl:NamedIndividual . "
+        subject_type_uri = f"ont:{subject_name} rdf:type ont:{entity1_type} . "
+        object_type_uri_ni = f"ont:{object_name} rdf:type owl:NamedIndividual . "
+        object_type_uri = f"ont:{object_name} rdf:type ont:{entity2_type} . "
+        subject_uri = f"ont:{subject_name}"
+        predicate_uri = f"ont:{relation_type}"
+        object_uri = f"ont:{object_name}"
+
         query += subject_type_uri_ni
         query += subject_type_uri
         query += object_type_uri_ni
@@ -90,9 +99,9 @@ def return_relations(text):
     return relations
 
 
-def add_relations_to_kg(relations):
+def add_relations_to_kg(relations, repo_id):
     query = create_sparql_query(relations)
-    sparql = SPARQLWrapper("http://graphdb:7200/repositories/amd_repo/statements")
+    sparql = SPARQLWrapper(f"http://graphdb:7200/repositories/{repo_id}/statements")
     sparql.setMethod(POST)
     sparql.setQuery(query)
     sparql.query()
