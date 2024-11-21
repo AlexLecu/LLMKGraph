@@ -11,9 +11,9 @@ def main():
 
     # Repositories and their SPARQL endpoints with actual names
     repositories = {
-        "amd_repo_gpt_35": "http://localhost:7200/repositories/amd_repo_gpt_35",
-        "amd_repo_mistral": "http://localhost:7200/repositories/amd_repo_mistral",
-        "amd_repo_gpt_4o1_mini": "http://localhost:7200/repositories/amd_repo_gpt_4o1_mini"
+        "amd_repo_gpt_35": "http://graphdb:7200/repositories/amd_repo_gpt_35",
+        "amd_repo_mistral": "http://graphdb:7200/repositories/amd_repo_mistral",
+        "amd_repo_gpt_4o1_mini": "http://graphdb:7200/repositories/amd_repo_gpt_4o1_mini"
     }
 
     # The graph URI to be used across all repositories
