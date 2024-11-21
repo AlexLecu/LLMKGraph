@@ -1,13 +1,14 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
+import seaborn as sns
 import networkx as nx
 from SPARQLWrapper import SPARQLWrapper, JSON
 
 
 def main():
-    st.title("GraphDB Ontotext Graph Comparison App")
-    st.write("Compare the same graph across multiple GraphDB Ontotext repositories.")
+    st.title("Graph Comparison App")
+    st.write("Compare the graphs generated using the same data but different LLMs, stored across multiple repositories.")
 
     # Repositories and their SPARQL endpoints with actual names
     repositories = {
@@ -27,7 +28,6 @@ def main():
         "Degree Distribution",
         "Average Degree",
         "Clustering Coefficient",
-        "Diameter",
         "Triple Analysis",
         "Entity Type Analysis"
     ]
@@ -47,7 +47,6 @@ def main():
             st.error(f"No data found in repository '{repo_name}' for graph '{graph_uri}'.")
 
     if data_frames:
-        st.header(f"Comparing Graph '{graph_uri}' across Repositories")
         if not evaluation_metrics:
             st.warning("Please select at least one evaluation metric.")
         else:
@@ -64,8 +63,6 @@ def main():
                         compare_average_degree(graphs_data)
                     elif metric == "Clustering Coefficient":
                         compare_clustering_coefficient(graphs_data)
-                    elif metric == "Diameter":
-                        compare_diameter(graphs_data)
                     elif metric == "Triple Analysis":
                         compare_triples(data_frames)
                     elif metric == "Entity Type Analysis":
@@ -112,6 +109,20 @@ def fetch_graph_data(endpoint_url, graph_uri=None):
         } for result in results["results"]["bindings"]
     ])
 
+    # Define the get_label function
+    def get_label(uri):
+        if '#' in uri:
+            return uri.split('#')[-1]
+        elif '/' in uri:
+            return uri.rstrip('/').split('/')[-1]
+        else:
+            return uri
+
+    # Apply get_label function to extract labels
+    data['Subject'] = data['Subject'].apply(get_label)
+    data['Predicate'] = data['Predicate'].apply(get_label)
+    data['Object'] = data['Object'].apply(get_label)
+
     # Create a NetworkX graph
     G = nx.DiGraph()
     for idx, row in data.iterrows():
@@ -151,14 +162,12 @@ def compare_degree_distribution(graphs_data):
     fig, ax = plt.subplots()
     for repo_name, G in graphs_data.items():
         degrees = [degree for node, degree in G.degree()]
-        ax.hist(
-            degrees,
-            bins=range(min(degrees), max(degrees)+2),
-            alpha=0.5,
-            label=repo_name
-        )
+        degree_counts = pd.Series(degrees).value_counts().sort_index()
+        ax.plot(degree_counts.index, degree_counts.values, marker='o', linestyle='-', label=repo_name)
     ax.set_xlabel('Degree')
     ax.set_ylabel('Frequency')
+    ax.set_yscale('log')
+    ax.set_xscale('log')
     ax.legend()
     st.pyplot(fig)
 
@@ -187,45 +196,63 @@ def compare_clustering_coefficient(graphs_data):
     st.bar_chart(df)
 
 
-def compare_diameter(graphs_data):
-    st.subheader("Diameter Comparison")
-    diameters = {}
-    for repo_name, G in graphs_data.items():
-        # Compute diameter of the largest connected component
-        try:
-            components = nx.connected_components(G.to_undirected())
-            largest_component = max(components, key=len)
-            subgraph = G.subgraph(largest_component)
-            diameter = nx.diameter(subgraph)
-            diameters[repo_name] = diameter
-            st.write(f"**{diameter} diameter** in repository '{repo_name}'")
-        except Exception as e:
-            diameter = float('inf')
-            diameters[repo_name] = diameter
-            st.warning(f"Could not compute diameter for repository '{repo_name}': {e}")
-    # Bar chart comparison
-    df = pd.DataFrame.from_dict(diameters, orient='index', columns=['Diameter'])
-    st.bar_chart(df)
-
-
 def compare_triples(data_frames):
     st.subheader("Triple Analysis (Subject-Predicate-Object)")
 
     # Gather triples from each repository
     triples = {}
+    stats_list = {}
     for repo_name, df in data_frames.items():
-        triples[repo_name] = set(zip(df['Subject'], df['Predicate'], df['Object']))
+        # Filter out 'type' relations
+        df_filtered = df[~df['Predicate'].isin(['type', 'rdf:type'])]
+
+        triples[repo_name] = set(zip(df_filtered['Subject'], df_filtered['Predicate'], df_filtered['Object']))
+
+        # Calculate statistics
+        stats = calculate_statistics(df_filtered, repo_name)
+        stats_list[repo_name] = stats
+
+        # Display statistics
+        st.write(f"### Repository '{repo_name}'")
+        st.write(f"**Total Triples (excluding 'type'):** {stats['Total Entries']}")
+        st.write(f"**Unique Subjects:** {stats['Unique Subjects']}")
+        st.write(f"**Unique Predicates:** {stats['Unique Predicates']}")
+        st.write(f"**Unique Objects:** {stats['Unique Objects']}")
+
+        # Display top entities
+        st.write("#### Top Subjects")
+        st.write(pd.DataFrame.from_dict(stats['Top Subjects'], orient='index', columns=['Count']))
+
+        st.write("#### Top Predicates")
+        st.write(pd.DataFrame.from_dict(stats['Top Predicates'], orient='index', columns=['Count']))
+
+        st.write("#### Top Objects")
+        st.write(pd.DataFrame.from_dict(stats['Top Objects'], orient='index', columns=['Count']))
+
+        # Plot top entities
+        plot_top_entities(df_filtered, 'Subject', f"Top 10 Subjects in Repository '{repo_name}'")
+        plot_top_entities(df_filtered, 'Predicate', f"Top 10 Predicates in Repository '{repo_name}'")
+        plot_top_entities(df_filtered, 'Object', f"Top 10 Objects in Repository '{repo_name}'")
+
+        # Plot predicate distribution
+        plot_relation_distribution(df_filtered, f"Predicate Distribution in Repository '{repo_name}'")
+
+        # Plot co-occurrence heatmap
+        plot_cooccurrence_heatmap(df_filtered, f"Subject-Object Co-occurrence Matrix for Repository '{repo_name}'")
+
+    # Existing code for triple comparisons
+    st.write("### Triple Comparison Across Repositories")
 
     all_repos = set(triples.keys())
 
     # Common triples
     common_triples = set.intersection(*triples.values())
-    st.write(f"**{len(common_triples)} triples** are common across all repositories.")
+    st.write(f"**{len(common_triples)} triples** are common across all repositories (excluding 'type').")
 
     # Unique triples
     for repo_name in all_repos:
         unique_triples = triples[repo_name] - set.union(*(triples[r] for r in all_repos - {repo_name}))
-        st.write(f"**{len(unique_triples)} unique triples** in repository '{repo_name}'.")
+        st.write(f"**{len(unique_triples)} unique triples** in repository '{repo_name}' (excluding 'type').")
         if st.checkbox(f"Show unique triples in repository '{repo_name}'", key=f"unique_triples_{repo_name}"):
             unique_triples_df = pd.DataFrame(list(unique_triples), columns=['Subject', 'Predicate', 'Object'])
             st.dataframe(unique_triples_df)
@@ -244,17 +271,59 @@ def compare_triples(data_frames):
     st.dataframe(overlap_matrix)
 
 
+def calculate_statistics(df, name):
+    stats = {
+        'Name': name,
+        'Total Entries': len(df),
+        'Unique Subjects': df['Subject'].nunique(),
+        'Unique Predicates': df['Predicate'].nunique(),
+        'Unique Objects': df['Object'].nunique(),
+        'Top Subjects': df['Subject'].value_counts().head(5).to_dict(),
+        'Top Predicates': df['Predicate'].value_counts().head(5).to_dict(),
+        'Top Objects': df['Object'].value_counts().head(5).to_dict(),
+    }
+    return stats
+
+
+def plot_top_entities(df, entity, title):
+    top_entities = df[entity].value_counts().head(10)
+    fig, ax = plt.subplots()
+    sns.barplot(y=top_entities.index, x=top_entities.values, palette='viridis', ax=ax)
+    ax.set_title(title)
+    ax.set_xlabel('Count')
+    ax.set_ylabel(entity)
+    st.pyplot(fig)
+
+
+def plot_relation_distribution(df, title):
+    relation_dist = df['Predicate'].value_counts()
+    fig, ax = plt.subplots()
+    ax.pie(relation_dist.values, labels=relation_dist.index, autopct='%1.1f%%', startangle=140,
+           colors=sns.color_palette('viridis', len(relation_dist)))
+    ax.set_title(title)
+    st.pyplot(fig)
+
+
+def plot_cooccurrence_heatmap(df, title):
+    # Limit to top 20 subjects and objects to keep the heatmap readable
+    top_subjects = df['Subject'].value_counts().head(20).index
+    top_objects = df['Object'].value_counts().head(20).index
+    filtered_df = df[df['Subject'].isin(top_subjects) & df['Object'].isin(top_objects)]
+    cooccurrence_matrix = pd.crosstab(filtered_df['Subject'], filtered_df['Object'])
+    fig, ax = plt.subplots(figsize=(12, 10))
+    sns.heatmap(cooccurrence_matrix, cmap='viridis', annot=True, fmt='d', ax=ax)
+    ax.set_title(title)
+    st.pyplot(fig)
+
+
 def analyze_entity_types(data_frames):
     st.subheader("Entity Type Analysis")
 
     # For each repository, extract types of entities
     entity_types = {}
     for repo_name, df in data_frames.items():
-        # Filter triples where predicate is rdf:type
-        type_triples = df[df['Predicate'].isin([
-            'http://www.w3.org/1999/02/22-rdf-syntax-ns#type',
-            'rdf:type'
-        ])]
+        # Filter triples where predicate is 'type' or 'rdf:type'
+        type_triples = df[df['Predicate'].isin(['type', 'rdf:type'])]
         if type_triples.empty:
             st.write(f"No type information found in repository '{repo_name}'.")
             continue
@@ -289,6 +358,15 @@ def analyze_entity_types(data_frames):
                 st.write(unique_types)
     else:
         st.write("No type information available for comparison.")
+
+
+def get_label(uri):
+    if '#' in uri:
+        return uri.split('#')[-1]
+    elif '/' in uri:
+        return uri.rstrip('/').split('/')[-1]
+    else:
+        return uri
 
 
 if __name__ == "__main__":
