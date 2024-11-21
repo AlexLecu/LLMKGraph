@@ -11,12 +11,14 @@ services:
     ports:
       - "5555:5555"
       - "8501:8501"
+      - "8502:8502"
     depends_on:
       - graphdb
     environment:
       - GRAPHDB_URL=http://graphdb:7200
       - HUGGINGFACEHUB_API_TOKEN=${HUGGINGFACEHUB_API_TOKEN}
       - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - MISTRAL_API_KEY=${MISTRAL_API_KEY}
     networks:
       - app-network
 
@@ -33,7 +35,7 @@ services:
       - app-network
 
   graphdb:
-    image: ontotext/graphdb:10.6.4
+    image: ontotext/graphdb:10.8.0
     container_name: graphdb
     ports:
       - "7200:7200"

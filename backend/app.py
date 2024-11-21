@@ -12,7 +12,7 @@ app = Flask(__name__)
 CORS(app)
 
 
-GRAPHDB_REPO_URL = "http://localhost:7200/rest/repositories"
+GRAPHDB_REPO_URL = "http://graphdb:7200/rest/repositories"
 AVAILABLE_MODELS = ["model_a", "model_b", "model_c"]
 
 

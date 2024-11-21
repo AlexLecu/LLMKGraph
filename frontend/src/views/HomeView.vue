@@ -14,6 +14,10 @@ interface Edge {
   predicate: string;
 }
 
+interface Repository {
+  id: string;
+}
+
 const abstract = ref('');
 const responseText = ref('');
 const statusText = ref('');
@@ -21,7 +25,7 @@ const validationError = ref('');
 const searchValidationError = ref('');
 const $loading = useLoading();
 let statusTimeout: number | null = null;
-const repositories = ref('');
+const repositories = ref<Repository[]>([]);
 const currentRepoId = ref('amd_repo');
 
 const graphContainer = ref<HTMLElement | null>(null);
@@ -44,7 +48,7 @@ onMounted(() => {
 
 async function fetchRepositories() {
   try {
-    const response = await axios.get("http://localhost:5555/api/available_repositories");
+    const response = await axios.get<Repository[]>("http://localhost:5555/api/available_repositories");
     repositories.value = response.data;
   } catch (error) {
     console.error("Error fetching repositories:", error);
@@ -579,7 +583,7 @@ async function uploadAbstractFile() {
     abstractDownloadLink.value = URL.createObjectURL(extractedFile);
 
     relationsFile.value = extractedFile;
-    relationsFileReady.value = true;  // Flag to show the extracted file is ready
+    relationsFileReady.value = true;
 
   } catch (error) {
     console.error("Error extracting relations from abstract:", error);
@@ -590,7 +594,10 @@ async function uploadAbstractFile() {
 }
 
 async function addRelationsToKG() {
-  if (!relationsFile || !currentRepoId.value) return;
+  if (!relationsFile.value || !currentRepoId.value) {
+    console.error('No relations file or repository ID provided.');
+    return;
+  }
 
   const formData = new FormData();
   formData.append("file", relationsFile.value);
