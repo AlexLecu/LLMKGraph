@@ -1,0 +1,206 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD/"
+     xml:base="http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD#affect -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD#affect"/>
+    
+
+
+    <!-- http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD#aggravate -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD#aggravate"/>
+    
+
+
+    <!-- http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD#cause -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD#cause"/>
+    
+
+
+    <!-- http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD#diagnose -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD#diagnose"/>
+    
+
+
+    <!-- http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD#improve -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD#improve"/>
+    
+
+
+    <!-- http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD#present -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD#present"/>
+    
+
+
+    <!-- http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD#prevent -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD#prevent"/>
+    
+
+
+    <!-- http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD#progression -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD#progression"/>
+    
+
+
+    <!-- http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD#relation_object -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD#relation_object">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD#RELATION"/>
+        <rdfs:comment>The object entity in the relation.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD#relation_predicate -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD#relation_predicate">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD#RELATION"/>
+        <rdfs:comment>The predicate indicating the type of relation.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD#relation_subject -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD#relation_subject">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD#RELATION"/>
+        <rdfs:comment>The subject entity in the relation.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD#test -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD#test"/>
+    
+
+
+    <!-- http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD#treat -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD#treat"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD#BIOMARKER -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD#BIOMARKER"/>
+    
+
+
+    <!-- http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD#BODY_PART -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD#BODY_PART"/>
+    
+
+
+    <!-- http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD#COMPLICATION -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD#COMPLICATION"/>
+    
+
+
+    <!-- http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD#DISEASE -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD#DISEASE"/>
+    
+
+
+    <!-- http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD#GENE -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD#GENE"/>
+    
+
+
+    <!-- http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD#PROGNOSIS -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD#PROGNOSIS"/>
+    
+
+
+    <!-- http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD#PROGRESSION -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD#PROGRESSION"/>
+    
+
+
+    <!-- http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD#PUBLICATION -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD#PUBLICATION">
+        <rdfs:comment>A publication from which the relation was derived.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD#RELATION -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD#RELATION">
+        <rdfs:comment>An n-ary relation between two entities with provenance.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD#RISK_FACTOR -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD#RISK_FACTOR"/>
+    
+
+
+    <!-- http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD#SYMPTOM -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD#SYMPTOM"/>
+    
+
+
+    <!-- http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD#TEST -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD#TEST"/>
+    
+
+
+    <!-- http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD#TREATMENT -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD#TREATMENT"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi -->
+
