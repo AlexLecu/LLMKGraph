@@ -5,6 +5,7 @@ from dotenv import load_dotenv
 import re
 import ast
 import logging
+import uuid
 from SPARQLWrapper import SPARQLWrapper, POST
 
 load_dotenv()
@@ -156,6 +157,14 @@ def generate_response_mistral(abstracts):
         print(i)
         response = generate_relations_mistral(abstract['text'])
         matches = validate_output(str(response))
+
+        pub_id = {
+            'pub_id': abstract.get('id', None)
+        }
+
+        for match in matches:
+            match.update(pub_id)
+
         relations.extend(matches)
 
     return relations
@@ -211,17 +220,19 @@ def sanitize_entity_name(name):
 
 
 def create_sparql_queries_for_bulk_import(relations, batch_size=200):
-    prefixes = """
+    prefixes = f"""
     PREFIX owl: <http://www.w3.org/2002/07/owl#>
     PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-    PREFIX ont: <http://www.semanticweb.org/lecualexandru/ontologies/2024/1/>
+    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    PREFIX ont: <http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD#>
+    PREFIX prov: <http://www.w3.org/ns/prov#>
     """
     sparql_queries = []
 
     # Split the relations into batches
     for i in range(0, len(relations), batch_size):
         batch_relations = relations[i:i+batch_size]
-        query = prefixes + "INSERT DATA { GRAPH <http://amddata.org/amd/> { "
+        query = prefixes + f"INSERT DATA {{ GRAPH <http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD/> {{\n"
 
         for relation in batch_relations:
             # Sanitize entity names and types
@@ -231,29 +242,50 @@ def create_sparql_queries_for_bulk_import(relations, batch_size=200):
             entity1_type = sanitize_entity_name(relation["entity1_type"]).upper()
             entity2_type = sanitize_entity_name(relation["entity2_type"]).upper()
 
-            # Construct URIs and triples
-            subject_type_uri_ni = f"ont:{subject_name} rdf:type owl:NamedIndividual . "
-            subject_type_uri = f"ont:{subject_name} rdf:type ont:{entity1_type} . "
-            object_type_uri_ni = f"ont:{object_name} rdf:type owl:NamedIndividual . "
-            object_type_uri = f"ont:{object_name} rdf:type ont:{entity2_type} . "
+            # Generate a unique URI for the relation
+            relation_id = f"REL_{uuid.uuid4()}"
+            relation_uri = f"ont:{relation_id}"
+
+            # Define URIs
             subject_uri = f"ont:{subject_name}"
             predicate_uri = f"ont:{relation_type}"
             object_uri = f"ont:{object_name}"
 
-            query += subject_type_uri_ni
-            query += subject_type_uri
-            query += object_type_uri_ni
-            query += object_type_uri
-            query += f"{subject_uri} {predicate_uri} {object_uri} . "
+            # Start constructing the triple
+            triple = (
+                f"{relation_uri} rdf:type ont:RELATION ;\n"
+                f"  ont:relation_subject {subject_uri} ;\n"
+                f"  ont:relation_predicate {predicate_uri} ;\n"
+                f"  ont:relation_object {object_uri} ;\n"
+            )
 
-        query += " } }"
+            # Check if 'pub_id' exists and is not empty
+            pub_id = relation.get("pub_id")
+            if pub_id:
+                publication_uri = f"ont:PUB_{sanitize_entity_name(pub_id)}"
+                triple += f"  prov:wasDerivedFrom {publication_uri} .\n"
+                # Create the publication instance
+                triple += f"{publication_uri} rdf:type ont:PUBLICATION .\n"
+            else:
+                # Remove the trailing ';' and replace with '.'
+                triple = triple.rstrip(' ;\n') + ' .\n'
+
+            # Add type declarations for entities
+            triple += (
+                f"{subject_uri} rdf:type ont:{entity1_type} .\n"
+                f"{object_uri} rdf:type ont:{entity2_type} .\n"
+            )
+
+            query += triple + "\n"
+
+        query += "}}"
         sparql_queries.append(query)
 
     return sparql_queries
 
 
 def add_bulk_relations_to_kg(relations, repo_id):
-    sparql = SPARQLWrapper(f"http://graphdb:7200/repositories/{repo_id}/statements")
+    sparql = SPARQLWrapper(f"http://localhost:7200/repositories/{repo_id}/statements")
     queries = create_sparql_queries_for_bulk_import(relations)
     for query in queries:
         sparql.setMethod(POST)
