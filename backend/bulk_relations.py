@@ -283,6 +283,27 @@ def extract_relations(content, model):
         return relations
 
 
+def deduplicate_relations(relations):
+    unique_relations_set = set()
+    refined_relations = []
+
+    for rel in relations:
+        rel_tuple = (
+            rel.get("relation_type"),
+            rel.get("entity1_type"),
+            rel.get("entity1_name"),
+            rel.get("entity2_type"),
+            rel.get("entity2_name"),
+            rel.get("pub_id")
+        )
+
+        if rel_tuple not in unique_relations_set:
+            unique_relations_set.add(rel_tuple)
+            refined_relations.append(rel)
+
+    return refined_relations
+
+
 def sanitize_entity_name(name):
     # Replace spaces and special characters with underscores
     name = re.sub(r'[\s\W]+', '_', name)
@@ -358,7 +379,8 @@ def create_sparql_queries_for_bulk_import(relations, batch_size=200):
 
 def add_bulk_relations_to_kg(relations, repo_id):
     sparql = SPARQLWrapper(f"http://localhost:7200/repositories/{repo_id}/statements")
-    queries = create_sparql_queries_for_bulk_import(relations)
+    refined_relations = deduplicate_relations(relations)
+    queries = create_sparql_queries_for_bulk_import(refined_relations)
     for query in queries:
         sparql.setMethod(POST)
         sparql.setQuery(query)
