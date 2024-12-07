@@ -104,7 +104,7 @@ Output:
 
 
 def generate_user_prompt(text):
-    return f"Extract all relationships from the following text and present them in the specified format:\n\n{text}"
+    return f"Extract all relationships from the following text and present them exactly in the specified format:\n\n{text}"
 
 
 def generate_relations_mistral(text):
@@ -228,6 +228,14 @@ def generate_responses_gpt_35_turbo(abstracts):
         print(i)
         response = generate_relations_gpt_35_turbo(abstract["text"])
         matches = validate_output(str(response))
+
+        pub_id = {
+            'pub_id': abstract.get('id', None)
+        }
+
+        for match in matches:
+            match.update(pub_id)
+
         relations.extend(matches)
 
     return relations
@@ -241,6 +249,14 @@ def generate_responses_gpt_4o1_mini(abstracts):
         print(i)
         response = generate_relations_gpt_o1_mini(abstract["text"])
         matches = validate_output(str(response))
+
+        pub_id = {
+            'pub_id': abstract.get('id', None)
+        }
+
+        for match in matches:
+            match.update(pub_id)
+
         relations.extend(matches)
 
     return relations
