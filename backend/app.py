@@ -66,7 +66,7 @@ def delete_relation():
     predicate = data.get('predicate')
     object_ = data.get('object')
 
-    repo_id = request.form.get("repo_id")
+    repo_id = data.get("repo_id")
 
     delete_relation_kg(subject, predicate, object_, repo_id)
 
