@@ -13,6 +13,12 @@ load_dotenv()
 client_gpt = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
 client_mistral = Mistral(api_key=os.environ["MISTRAL_API_KEY"])
 
+# logging.basicConfig(
+#     filename='../data/Logs/2024-12-05/Log_Extraction_GPT3.5.log',
+#     filemode='w',
+#     level=logging.WARNING,
+#     format='%(asctime)s - %(levelname)s - %(message)s'
+# )
 
 system_prompt = """
 You are an AI language model tasked with:
