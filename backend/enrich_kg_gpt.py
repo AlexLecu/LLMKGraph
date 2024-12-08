@@ -1,39 +1,33 @@
 import os
+import uuid
 
 from openai import OpenAI
 from SPARQLWrapper import SPARQLWrapper, POST
 from dotenv import load_dotenv
-import re
+from prompts import system_prompt, generate_user_prompt
+from disambiguation.disambiguation import sanitize_entity_name
 
 
 load_dotenv()
 
 client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
+GRAPHDB_URL = os.getenv('GRAPHDB_URL', 'http://localhost:7200')
 
 
 def generate_relations(text):
-    prompt = f"""
-           Given the text:
+    user_prompt = generate_user_prompt(text)
 
-           {text}
-
-           Please identify entities belonging to the following labels: disease, symptom, treatment, risk_factor, test, gene, biomarker, complication, prognosis, comorbidity, progression, body_part. Then, extract relationships among these entities based on the following relations: cause, treat, present, diagnose, aggravate, prevent, improve, affect. When presenting entity names, ensure the names do not contain parentheses. If an entity's common name typically includes parentheses, rephrase or abbreviate the name without using parentheses. Entity names must not contain commas. Instead, split entity and create separate relations.
-
-           Present only the relationships extracted, in the specified format, without any introductory text, summary, or enumeration. Use the format:
-           {{'relation_type': 'relation type', 'entity1_type': 'entity1_type', 'entity1_name': 'entity1_name', 'entity2_type': 'entity2_type', 'entity2_name': 'entity2_name'}}
-
-           IMPORTANT: Output must contain only the relations in the specified format, with no other text or numbers included.
-       """
-
-    response = client.chat.completions.create(
+    chat_response = client.chat.completions.create(
         model="gpt-4o",
+        max_tokens=2000,
+        temperature=0,
         messages=[
-            {"role": "system", "content": "You are an advanced language model that specializes in analyzing text to identify medical causal relationships."},
-            {"role": "user", "content": prompt}
+            {"role": "system", "content": system_prompt.strip()},
+            {"role": "user", "content": user_prompt.strip()}
         ]
     )
 
-    return response
+    return chat_response
 
 
 def convert_relations(response):
@@ -47,22 +41,16 @@ def convert_relations(response):
     return relations
 
 
-def sanitize_entity_name(name):
-    # Replace spaces and special characters with underscores
-    name = re.sub(r'[\s\W]+', '_', name)
-    # Remove leading and trailing underscores
-    name = name.strip('_')
-    return name
-
-
 def create_sparql_query(relations):
-    prefixes = """
+    prefixes = f"""
     PREFIX owl: <http://www.w3.org/2002/07/owl#>
     PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-    PREFIX ont: <http://www.semanticweb.org/lecualexandru/ontologies/2024/1/>
+    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    PREFIX ont: <http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD#>
+    PREFIX prov: <http://www.w3.org/ns/prov#>
     """
 
-    query = prefixes + "INSERT DATA { GRAPH <http://amddata.org/amd/> { "
+    query = prefixes + f"INSERT DATA {{ GRAPH <http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD/> {{\n"
 
     for relation in relations:
         # Sanitize entity names and types
@@ -72,22 +60,43 @@ def create_sparql_query(relations):
         entity1_type = sanitize_entity_name(relation["entity1_type"]).upper()
         entity2_type = sanitize_entity_name(relation["entity2_type"]).upper()
 
-        # Construct URIs and triples
-        subject_type_uri_ni = f"ont:{subject_name} rdf:type owl:NamedIndividual . "
-        subject_type_uri = f"ont:{subject_name} rdf:type ont:{entity1_type} . "
-        object_type_uri_ni = f"ont:{object_name} rdf:type owl:NamedIndividual . "
-        object_type_uri = f"ont:{object_name} rdf:type ont:{entity2_type} . "
+        # Generate a unique URI for the relation
+        relation_id = f"REL_{uuid.uuid4()}"
+        relation_uri = f"ont:{relation_id}"
+
+        # Define URIs
         subject_uri = f"ont:{subject_name}"
         predicate_uri = f"ont:{relation_type}"
         object_uri = f"ont:{object_name}"
 
-        query += subject_type_uri_ni
-        query += subject_type_uri
-        query += object_type_uri_ni
-        query += object_type_uri
-        query += f"{subject_uri} {predicate_uri} {object_uri} . "
+        # Start constructing the triple
+        triple = (
+            f"{relation_uri} rdf:type ont:RELATION ;\n"
+            f"  ont:relation_subject {subject_uri} ;\n"
+            f"  ont:relation_predicate {predicate_uri} ;\n"
+            f"  ont:relation_object {object_uri} ;\n"
+        )
 
-    query += " } }"
+        # Check if 'pub_id' exists and is not empty
+        pub_id = relation.get("pub_id")
+        if pub_id:
+            publication_uri = f"ont:PUB_{sanitize_entity_name(pub_id)}"
+            triple += f"  prov:wasDerivedFrom {publication_uri} .\n"
+            # Create the publication instance
+            triple += f"{publication_uri} rdf:type ont:PUBLICATION .\n"
+        else:
+            # Remove the trailing ';' and replace with '.'
+            triple = triple.rstrip(' ;\n') + ' .\n'
+
+        # Add type declarations for entities
+        triple += (
+            f"{subject_uri} rdf:type ont:{entity1_type} .\n"
+            f"{object_uri} rdf:type ont:{entity2_type} .\n"
+        )
+
+        query += triple + "\n"
+
+    query += "}}"
 
     return query
 
@@ -101,7 +110,7 @@ def return_relations(text):
 
 def add_relations_to_kg(relations, repo_id):
     query = create_sparql_query(relations)
-    sparql = SPARQLWrapper(f"http://graphdb:7200/repositories/{repo_id}/statements")
+    sparql = SPARQLWrapper(f"{GRAPHDB_URL}/repositories/{repo_id}/statements")
     sparql.setMethod(POST)
     sparql.setQuery(query)
     sparql.query()

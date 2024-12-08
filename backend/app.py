@@ -79,7 +79,7 @@ def delete_relation():
 @app.route("/api/available_repositories", methods=["GET"])
 def available_repositories():
     try:
-        response = requests.get( f"{GRAPHDB_URL}/repositories/", headers={"Accept": "application/json"})
+        response = requests.get(f"{GRAPHDB_URL}/rest/repositories/", headers={"Accept": "application/json"})
         if response.status_code == 200:
             repos = response.json()
             available_repos = [
