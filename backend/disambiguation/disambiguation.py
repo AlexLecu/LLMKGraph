@@ -10,6 +10,9 @@ synonyms_map = {
     "wet age-related macular degeneration amd": "wet age-related macular degeneration",
     "early age related macular degeneration amd": "early age-related macular degeneration",
     "wet armd": "wet age-related macular degeneration",
+    "ga": "geographic atrophy",
+    "oct": "optical coherence tomography",
+    "pdt": "photodynamic therapy",
 }
 
 trailing_words = {"cnv", "ga"}
