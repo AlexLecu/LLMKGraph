@@ -13,6 +13,9 @@ synonyms_map = {
     "ga": "geographic atrophy",
     "oct": "optical coherence tomography",
     "pdt": "photodynamic therapy",
+    "pcv": "polypoidal choroidal vasculopathy",
+    "vma": "vitreomacular adhesion",
+    "me": "macular edema",
 }
 
 trailing_words = {"cnv", "ga"}
