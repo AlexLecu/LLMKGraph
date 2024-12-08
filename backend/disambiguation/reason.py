@@ -3,13 +3,11 @@ from owlready2 import get_ontology, sync_reasoner
 import requests
 import os
 
-
-ONTOLOGY_PATH = "amd_ontology.rdf"
-REASONED_ONT_PATH = "amd_ontology_reasoned.rdf"
-GRAPHDB_URL = "http://localhost:7200"
+GRAPHDB_URL = os.getenv('GRAPHDB_URL', 'http://localhost:7200')
+RUN_MODE = os.getenv('RUN_MODE', 'local').lower()
 
 
-def get_ontology_from_graphdb(repo_id):
+def get_ontology_from_graphdb(repo_id, ontology_path):
     endpoint_url = f"{GRAPHDB_URL}/repositories/{repo_id}"
     sparql_query = """
         CONSTRUCT {
@@ -24,36 +22,36 @@ def get_ontology_from_graphdb(repo_id):
     logging.info("Exporting ontology from GraphDB...")
     response = requests.post(endpoint_url, data={"query": sparql_query}, headers=headers)
     if response.status_code == 200:
-        with open(ONTOLOGY_PATH, "wb") as f:
+        with open(ontology_path, "wb") as f:
             f.write(response.content)
-        logging.info(f"RDF exported successfully to {ONTOLOGY_PATH}!")
+        logging.info(f"RDF exported successfully to {ontology_path}!")
     else:
         error_msg = f"Failed to retrieve data: {response.status_code} {response.text}"
         logging.error(error_msg)
         raise Exception(error_msg)
 
 
-def reason_ontology():
-    if not os.path.exists(ONTOLOGY_PATH):
-        error_msg = f"Input ontology file not found at {ONTOLOGY_PATH}"
+def reason_ontology(ontology_path, reasoned_ont_path):
+    if not os.path.exists(ontology_path):
+        error_msg = f"Input ontology file not found at {ontology_path}"
         logging.error(error_msg)
         raise FileNotFoundError(error_msg)
 
     logging.info("Loading ontology for reasoning...")
-    ont = get_ontology(f"file://{os.path.abspath(ONTOLOGY_PATH)}").load()
+    ont = get_ontology(f"file://{os.path.abspath(ontology_path)}").load()
 
     logging.info("Running reasoner...")
     with ont:
         sync_reasoner()
 
-    ont.save(file=REASONED_ONT_PATH, format="rdfxml")
-    logging.info(f"Reasoned ontology saved to {REASONED_ONT_PATH}.")
+    ont.save(file=reasoned_ont_path, format="rdfxml")
+    logging.info(f"Reasoned ontology saved to {reasoned_ont_path}.")
 
 
-def update_graph(repo_id):
+def update_graph(repo_id, reasoned_ont_path):
     update_endpoint = f"{GRAPHDB_URL}/repositories/{repo_id}/statements"
     named_graph_uri = "http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD/"
-    drop_query = "DROP ALL"
+    drop_query = "CLEAR ALL"
 
     logging.info("Clearing the repository...")
     response = requests.post(
@@ -70,13 +68,13 @@ def update_graph(repo_id):
         raise Exception(error_msg)
 
     named_graph_endpoint = f"{update_endpoint}?context=<{named_graph_uri}>"
-    logging.info(f"Uploading reasoned ontology from {REASONED_ONT_PATH} into graph {named_graph_uri}...")
-    if not os.path.exists(REASONED_ONT_PATH):
-        error_msg = f"Reasoned ontology file not found at {REASONED_ONT_PATH}"
+    logging.info(f"Uploading reasoned ontology from {reasoned_ont_path} into graph {named_graph_uri}...")
+    if not os.path.exists(reasoned_ont_path):
+        error_msg = f"Reasoned ontology file not found at {reasoned_ont_path}"
         logging.error(error_msg)
         raise FileNotFoundError(error_msg)
 
-    with open(REASONED_ONT_PATH, "rb") as f:
+    with open(reasoned_ont_path, "rb") as f:
         headers = {"Content-Type": "application/rdf+xml"}
         response = requests.post(named_graph_endpoint, data=f, headers=headers)
 
@@ -89,6 +87,13 @@ def update_graph(repo_id):
 
 
 def reason_and_update(repo_id):
-    get_ontology_from_graphdb(repo_id)
-    reason_ontology()
-    update_graph(repo_id)
+    if RUN_MODE == 'docker':
+        ontology_path = f"/app/data/amd_ontology_{repo_id}.rdf"
+        reasoned_ont_path = f"/app/data/amd_ontology_reasoned_{repo_id}.rdf"
+    else:
+        ontology_path = f"amd_ontology_{repo_id}.rdf"
+        reasoned_ont_path = f"amd_ontology_reasoned_{repo_id}.rdf"
+
+    get_ontology_from_graphdb(repo_id, ontology_path)
+    reason_ontology(ontology_path, reasoned_ont_path)
+    update_graph(repo_id, reasoned_ont_path)
