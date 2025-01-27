@@ -1,5 +1,4 @@
-version: '3.8'
-
+---
 services:
   weaviate:
     command:
@@ -13,15 +12,18 @@ services:
     ports:
     - 8080:8080
     - 50051:50051
-    volumes:
-    - weaviate_data:/var/lib/weaviate
     restart: on-failure:0
     environment:
+      TRANSFORMERS_INFERENCE_API: 'http://t2v-transformers:8080'
+      OPENAI_APIKEY: $OPENAI_APIKEY
       QUERY_DEFAULTS_LIMIT: 25
       AUTHENTICATION_ANONYMOUS_ACCESS_ENABLED: 'true'
       PERSISTENCE_DATA_PATH: '/var/lib/weaviate'
-      ENABLE_API_BASED_MODULES: 'true'
-      ENABLE_MODULES: 'text2vec-huggingface'
+      DEFAULT_VECTORIZER_MODULE: 'text2vec-transformers'
+      ENABLE_MODULES: 'text2vec-transformers,generative-openai'
       CLUSTER_HOSTNAME: 'node1'
-volumes:
-  weaviate_data:
+  t2v-transformers:
+    image: cr.weaviate.io/semitechnologies/transformers-inference:sentence-transformers-multi-qa-MiniLM-L6-cos-v1
+    environment:
+      ENABLE_CUDA: '0'
+...
