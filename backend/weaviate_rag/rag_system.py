@@ -77,7 +77,7 @@ class KGRAGSystem:
         except Exception as e:
             result["error"] = str(e)
             logger.error(f"Query failed: {str(e)}", exc_info=True)
-        print(result)
+
         return result
 
     def _hybrid_search(self, client: WeaviateClient, query: str, top_k: int = 5) -> List[Dict]:

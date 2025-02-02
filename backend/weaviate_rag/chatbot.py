@@ -1,152 +1,141 @@
-import streamlit as st
-import requests
-import json
-import logging
+import chainlit as cl
+import ollama
 from rag_system import KGRAGSystem
-from typing import Dict
+import time
 
-logging.basicConfig(
-    level=logging.WARNING,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
-)
-logging.getLogger("httpx").setLevel(logging.WARNING)
-logging.getLogger("weaviate").setLevel(logging.WARNING)
-
-OLLAMA_HOST = "http://localhost:11434"
 MODEL_NAME = "deepseek-r1"
-MAX_HISTORY = 3
+MAX_HISTORY = 10
 
 
-class ChatManager:
-    def __init__(self):
-        self.rag = None
-        self.init_session_state()
+def retrieve(user_input):
+    rag_system = KGRAGSystem()
+    kg_result = rag_system.query(user_input)
+    if kg_result.get("error"):
+        return f"Knowledge retrieval error: {kg_result['error']}"
+    return kg_result.get('context', 'No further information is available.')
 
-    def init_session_state(self):
-        if "messages" not in st.session_state:
-            st.session_state.messages = []
-        if "rag" not in st.session_state:
-            try:
-                st.session_state.rag = KGRAGSystem()
-            except Exception as e:
-                st.error(f"Failed to initialize RAG system: {str(e)}")
-                st.stop()
 
-    def get_conversation_history(self) -> str:
-        return "\n".join(
-            f"{msg['role'].capitalize()}: {msg['content']}"
-            for msg in st.session_state.messages[-MAX_HISTORY * 2:]
+async def async_generator(sync_gen):
+    while True:
+        try:
+            yield next(sync_gen)
+        except StopIteration:
+            break
+
+
+async def create_system_prompt(user_input):
+    context = retrieve(user_input)
+
+    system_prompt = f"""
+    You are a highly knowledgeable and trusted medical research assistant specializing in age-related macular degeneration (AMD). You have access to the following additional relevant data:
+    {context}
+
+    Your task is to provide thorough, accurate, and detailed answers about AMD research. Please follow these guidelines precisely:
+
+    1. **Incorporate and Format Available References:**  
+       - Examine the provided data carefully. If you encounter any clinical trial IDs or reference numbers (e.g., NCT01291121), include them in your response.
+       - Always present these references as markdown hyperlinks using the following format:  
+         [NCT01291121](https://app.dimensions.ai/details/clinical_trial/NCT01291121)
+       - If the additional data contains reference IDs, ensure they are clearly integrated into your answer using this format.
+
+    2. **Indicate When Reference Data Is Missing:**  
+       - If no reference data or clinical trial IDs are available in the provided context, explicitly mention that no additional references were found.
+
+    3. **Express Uncertainty When Necessary:**  
+       - If you do not have enough information to answer confidently, clearly state the limitations and specify what extra details or data would be needed.
+
+    4. **Maintain Accuracy and Integrity:**  
+       - Do not fabricate any references or information. Base your answer solely on verified data and the provided context.
+
+    5. **Communicate Professionally and Clearly:**  
+       - Deliver your response in a clear, well-organized, and professional tone, ensuring that complex information is accessible and understandable.
+
+    Please begin your response below.
+    """
+
+    return system_prompt
+
+
+@cl.on_chat_start
+async def start_chat():
+    cl.user_session.set("history", [])
+
+
+@cl.set_starters
+async def set_starters():
+    return  [
+        cl.Starter(
+            label="Early Signs of AMD",
+            message="What subtle vision changes should I watch for that might indicate early stage AMD?",
+            icon="/public/idea.svg",
+        ),
+        cl.Starter(
+            label="Latest AMD research",
+            message="What recent clinical trials show promise for dry AMD treatment? Explain the science simply",
+            icon="/public/learn.svg",
+        ),
+        cl.Starter(
+            label="Current AMD Treatments",
+            message="Write a comparison between the effectiveness of anti-VEGF injections vs. emerging gene therapies for wet AMD",
+            icon="/public/write.svg",
         )
-
-    def generate_response(self, prompt: str) -> str:
-        try:
-            kg_result = st.session_state.rag.query(prompt)
-
-            if kg_result.get("error"):
-                return f"Knowledge retrieval error: {kg_result['error']}"
-
-            llm_prompt = f"""
-            You are a helpful, expert-level medical research assistant. 
-            You have access to additional relevant data:
-            
-            {kg_result.get('context', 'No further information is available.')}
-            
-            Here is the current conversation:
-            
-            {self.get_conversation_history()}
-            
-            The user asks:
-            
-            {prompt}
-            
-            Please provide a detailed yet concise answer, observing these guidelines:
-            1. Draw upon any relevant data you have to support your answer.
-            2. Cite sources only if they are specifically referenced in your data. 
-               - Use a simple reference style (e.g., "[Source]") and place it naturally within your text.
-            3. If you lack enough information to answer confidently, say so and explain what is missing.
-            4. Do not fabricate references or information.
-            
-            Deliver your response in a clear, professional tone, focusing on accuracy and helpfulness.
-            """
-
-            response = requests.post(
-                f"{OLLAMA_HOST}/api/chat",
-                json={
-                    "model": MODEL_NAME,
-                    "messages": [{"role": "user", "content": llm_prompt}],
-                    "stream": True
-                },
-                stream=True
-            )
-
-            return self.handle_streaming_response(response, kg_result)
-
-        except requests.exceptions.ConnectionError:
-            st.error("Ollama service unavailable. Start it with `ollama serve`")
-            st.stop()
-        except Exception as e:
-            logging.error(f"Response generation failed: {str(e)}", exc_info=True)
-            return f"Error processing request: {str(e)}"
-
-    def handle_streaming_response(self, response, kg_result: Dict) -> str:
-        full_response = ""
-        message_placeholder = st.empty()
-
-        try:
-            for line in response.iter_lines():
-                if line:
-                    chunk = json.loads(line.decode())
-                    if "message" in chunk:
-                        content = chunk["message"].get("content", "")
-                        full_response += content
-                        message_placeholder.markdown(full_response + "▌")
-
-            sources = kg_result.get("sources", [])
-            if sources:
-                sources_section = "\n\n**Sources:**\n" + "\n".join(f"- {src}" for src in sources)
-                full_response += sources_section
-
-                message_placeholder.markdown(full_response)
-
-            return full_response
-
-        except Exception as e:
-            logging.error(f"Stream processing error: {str(e)}", exc_info=True)
-            return "Error processing streaming response"
+    ]
 
 
-def main():
-    st.set_page_config(
-        page_title="Medical Research Chat",
-        page_icon="⚕️",
-        layout="wide"
+@cl.on_message
+async def main(message: cl.Message):
+    start_time = time.time()
+    user_input = message.content.strip()
+
+    if user_input.lower() == "/clear":
+        cl.user_session.set("history", [])
+        await cl.Message("🔄 History cleared").send()
+        return
+
+    system_prompt = await create_system_prompt(user_input)
+    history = cl.user_session.get("history", [])
+
+    if not history or history[0].get("role") != "system":
+        history.insert(0, {"role": "system", "content": system_prompt})
+    else:
+        history[0]["content"] = system_prompt
+
+    history.append({"role": "user", "content": user_input})
+
+    if len(history) > MAX_HISTORY * 2 + 1:
+        history = [history[0]] + history[-(MAX_HISTORY * 2):]
+
+    sync_stream = ollama.chat(
+        model=MODEL_NAME,
+        messages=history,
+        stream=True
     )
 
-    chat_manager = ChatManager()
+    stream = async_generator(sync_stream)
 
-    st.title("Medical Research Assistant")
+    thinking = False
+    final_answer = cl.Message(content="")
 
-    for msg in st.session_state.messages:
-        with st.chat_message(msg["role"]):
-            st.markdown(msg["content"])
-            if "sources" in msg and msg["sources"]:
-                with st.expander("References"):
-                    st.write("\n".join(f"- {src}" for src in msg["sources"]))
+    async with cl.Step(name="Thinking") as thinking_step:
+        async for chunk in stream:
+            content = chunk['message']['content']
 
-    if prompt := st.chat_input("Ask about medical research..."):
-        with st.chat_message("user"):
-            st.markdown(prompt)
+            if content == "<think>":
+                thinking = True
+                continue
 
-        st.session_state.messages.append({"role": "user", "content": prompt})
+            if content == "</think>":
+                thinking = False
+                thought_duration = round(time.time() - start_time)
+                thinking_step.name = f"Thought for {thought_duration}s"
+                await thinking_step.update()
+                continue
 
-        with st.chat_message("assistant"):
-            response = chat_manager.generate_response(prompt)
+            if thinking:
+                await thinking_step.stream_token(content)
+            else:
+                await final_answer.stream_token(content)
 
-        st.session_state.messages.append({
-            "role": "assistant",
-            "content": response
-        })
-
-
-if __name__ == "__main__":
-    main()
+    await final_answer.send()
+    history.append({"role": "assistant", "content": final_answer.content})
+    cl.user_session.set("history", history)
