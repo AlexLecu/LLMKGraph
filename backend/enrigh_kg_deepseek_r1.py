@@ -1,7 +1,8 @@
 import os
 import uuid
-
-from openai import OpenAI
+import ollama
+import re
+import json
 from SPARQLWrapper import SPARQLWrapper, POST
 from dotenv import load_dotenv
 from prompts import system_prompt, generate_user_prompt
@@ -10,35 +11,52 @@ from disambiguation.disambiguation import sanitize_entity_name
 
 load_dotenv()
 
-client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
 GRAPHDB_URL = os.getenv('GRAPHDB_URL', 'http://localhost:7200')
 
 
 def generate_relations(text):
     user_prompt = generate_user_prompt(text)
 
-    chat_response = client.chat.completions.create(
-        model="gpt-4o",
-        max_tokens=2000,
-        temperature=0,
+    chat_response = ollama.chat(
+        model='deepseek-r1',
         messages=[
             {"role": "system", "content": system_prompt.strip()},
             {"role": "user", "content": user_prompt.strip()}
-        ]
+        ],
+        options={
+            'num_predict': 2000,
+            'temperature': 0,
+            'format': 'json'
+        }
     )
-
     return chat_response
 
 
 def convert_relations(response):
-    relations = []
-    relation_strings = response.choices[0].message.content.strip().split('\n')
-    for relation_string in relation_strings:
-        if relation_string != '':
-            relation_dict = eval(relation_string)
-            relations.append(relation_dict)
+    try:
+        raw_content = response['message']['content']
 
-    return relations
+        matches = re.findall(r'\{.*?\}', raw_content, re.DOTALL)
+        if not matches:
+            print("No JSON-like content found in the response")
+            return []
+
+        relations = []
+        for match in matches:
+            try:
+                relation = json.loads(match.replace("'", '"'))
+                if isinstance(relation, dict) and {'relation_type', 'entity1_type', 'entity1_name', 'entity2_type', 'entity2_name'}.issubset(relation.keys()):
+                    relations.append(relation)
+                else:
+                    print(f"Invalid relation structure: {relation}")
+            except json.JSONDecodeError as e:
+                print(f"JSON parsing failed for match: {match} - Error: {e}")
+
+        return relations
+
+    except KeyError as e:
+        print(f"Invalid response format: {e}")
+        return []
 
 
 def create_sparql_query(relations):

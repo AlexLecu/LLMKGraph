@@ -1,19 +1,21 @@
 from flask import Flask, request, jsonify, make_response, send_file
 from enrich_kg_gpt import return_relations, add_relations_to_kg
-from reason import reason_and_update
+# from enrigh_kg_deepseek_r1 import return_relations, add_relations_to_kg
+from disambiguation.reason import reason_and_update
 from search_kg import query_knowledge_graph, delete_relation_kg
 from bulk_relations import extract_relations, add_bulk_relations_to_kg
 from flask_cors import CORS
 import requests
 import tempfile
 import json
+import os
 
 app = Flask(__name__)
 CORS(app)
 
 
-GRAPHDB_REPO_URL = "http://graphdb:7200/rest/repositories"
-AVAILABLE_MODELS = ["model_a", "model_b", "model_c"]
+GRAPHDB_URL = os.getenv('GRAPHDB_URL', 'http://localhost:7200')
+AVAILABLE_MODELS = ["model_a", "model_b", "model_c", "model_d"]
 
 
 @app.route('/api/showRelations', methods=['POST'])
@@ -66,7 +68,7 @@ def delete_relation():
     predicate = data.get('predicate')
     object_ = data.get('object')
 
-    repo_id = request.form.get("repo_id")
+    repo_id = data.get("repo_id")
 
     delete_relation_kg(subject, predicate, object_, repo_id)
 
@@ -78,7 +80,7 @@ def delete_relation():
 @app.route("/api/available_repositories", methods=["GET"])
 def available_repositories():
     try:
-        response = requests.get(GRAPHDB_REPO_URL, headers={"Accept": "application/json"})
+        response = requests.get(f"{GRAPHDB_URL}/rest/repositories/", headers={"Accept": "application/json"})
         if response.status_code == 200:
             repos = response.json()
             available_repos = [

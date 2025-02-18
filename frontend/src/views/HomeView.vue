@@ -751,6 +751,7 @@ async function addRelationsToKG() {
       <option value="model_a">GPT3.5 Turbo (Fine-Tuned)</option>
       <option value="model_b">Mistral-Nemo (Fine-Tuned)</option>
       <option value="model_c">GPT 4o1-mini</option>
+      <option value="model_d">DeepSeek R1</option>
     </select>
   </div>
 

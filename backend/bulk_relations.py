@@ -5,55 +5,25 @@ from dotenv import load_dotenv
 import re
 import ast
 import logging
+import uuid
 from SPARQLWrapper import SPARQLWrapper, POST
+from prompts import generate_user_prompt, system_prompt
+from disambiguation.disambiguation import sanitize_entity_name, refine_relations
+import ollama
+import json
 
 load_dotenv()
 
+GRAPHDB_URL = os.getenv('GRAPHDB_URL', 'http://localhost:7200')
 client_gpt = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
 client_mistral = Mistral(api_key=os.environ["MISTRAL_API_KEY"])
 
-
-system_prompt = """
-You are an AI language model tasked with:
-
-1. **Entity Identification**:
-   - Identify entities in the text labeled **only** as:
-     - **disease**, **symptom**, **treatment**, **risk_factor**, **test**, **gene**, **biomarker**, **complication**, **prognosis**, **comorbidity**, **progression**, **body_part**
-   - **Use these exact labels; do not introduce new labels or synonyms.**
-
-2. **Relationship Extraction**:
-   - Extract relationships among these entities based on the relations **only**:
-     - **cause**, **treat**, **present**, **diagnose**, **aggravate**, **prevent**, **improve**, **affect**
-   - **Use these exact labels; do not introduce new labels or synonyms.**
-
-**Output Format**:
-
-Present each relationship in the following exact format (including single quotes and braces):
-
-{'relation_type': 'relation_type_value', 'entity1_type': 'entity1_type_value', 'entity1_name': 'entity1_name_value', 'entity2_type': 'entity2_type_value', 'entity2_name': 'entity2_name_value'}
-
-**Example**:
-
-Text: "AMD affects the retina and causes vision loss."
-
-Output:
-{'relation_type': 'affect', 'entity1_type': 'disease', 'entity1_name': 'AMD', 'entity2_type': 'body_part', 'entity2_name': 'retina'}
-{'relation_type': 'cause', 'entity1_type': 'disease', 'entity1_name': 'AMD', 'entity2_type': 'symptom', 'entity2_name': 'vision loss'}
-
-**Instructions**:
-
-- Replace placeholders with appropriate values from the text.
-- **Ensure 'entity1_type' and 'entity2_type' are **only** from the specified labels.**
-- **Do not use any other terms for entity or relation types.**
-- Output **only** the relationships in the specified format.
-- **Do not include any additional text, explanations, or numbers.**
-- Exclude parentheses and special characters in 'entity1_name' and 'entity2_name'.
-- For enumerations, split them into separate relationships (e.g., "AMD affects the eye and the retina" becomes two relationships: one with 'eye' and one with 'retina').
-"""
-
-
-def generate_user_prompt(text):
-    return f"Extract all relationships from the following text and present them in the specified format:\n\n{text}"
+# logging.basicConfig(
+#     filename='../data/Logs/2024-12-05/Log_Extraction_GPT3.5.log',
+#     filemode='w',
+#     level=logging.WARNING,
+#     format='%(asctime)s - %(levelname)s - %(message)s'
+# )
 
 
 def generate_relations_mistral(text):
@@ -106,6 +76,23 @@ def generate_relations_gpt_o1_mini(text):
 
     return chat_response
 
+# Needs more testing
+def generate_relations_deepseek_r1(text):
+    user_prompt = generate_user_prompt(text)
+    chat_response = ollama.chat(
+        model='deepseek-r1',
+        messages=[
+            {"role": "system", "content": system_prompt.strip()},
+            {"role": "user", "content": user_prompt.strip()}
+        ],
+        options={
+            'num_predict': 2000,
+            'temperature': 0,
+        }
+    )
+
+    return chat_response
+
 
 def is_valid_relation(data):
     valid_entity_types = {'disease', 'symptom', 'treatment', 'risk_factor', 'test', 'gene', 'biomarker', 'complication',
@@ -136,17 +123,34 @@ def validate_output(output):
             logging.warning(f"Failed to parse match: {match}. Error: {e}")
     return dicts
 
+# Needs more testing
+def convert_relations(response):
+    try:
+        raw_content = response['message']['content']
 
-def convert_relations_gpt(response):
-    relations = []
-    relation_strings = response.choices[0].message.content.strip().split('\n')
-    for relation_string in relation_strings:
-        if relation_string != '':
-            relation_dict = eval(relation_string)
-            relations.append(relation_dict)
+        matches = re.findall(r'\{.*?\}', raw_content, re.DOTALL)
+        if not matches:
+            print("No JSON-like content found in the response")
+            return []
 
-    return relations
+        relations = []
+        for match in matches:
+            try:
+                relation = json.loads(match.replace("'", '"'))
 
+                if isinstance(relation, dict) and {'relation_type', 'entity1_type', 'entity1_name', 'entity2_type',
+                                                   'entity2_name'}.issubset(relation.keys()):
+                    relations.append(relation)
+                else:
+                    print(f"Invalid relation structure: {relation}")
+            except json.JSONDecodeError as e:
+                print(f"JSON parsing failed for match: {match} - Error: {e}")
+
+        return relations
+
+    except KeyError as e:
+        print(f"Invalid response format: {e}")
+        return []
 
 def generate_response_mistral(abstracts):
     relations = []
@@ -156,6 +160,14 @@ def generate_response_mistral(abstracts):
         print(i)
         response = generate_relations_mistral(abstract['text'])
         matches = validate_output(str(response))
+
+        pub_id = {
+            'pub_id': abstract.get('id', None)
+        }
+
+        for match in matches:
+            match.update(pub_id)
+
         relations.extend(matches)
 
     return relations
@@ -169,6 +181,14 @@ def generate_responses_gpt_35_turbo(abstracts):
         print(i)
         response = generate_relations_gpt_35_turbo(abstract["text"])
         matches = validate_output(str(response))
+
+        pub_id = {
+            'pub_id': abstract.get('id', None)
+        }
+
+        for match in matches:
+            match.update(pub_id)
+
         relations.extend(matches)
 
     return relations
@@ -182,8 +202,43 @@ def generate_responses_gpt_4o1_mini(abstracts):
         print(i)
         response = generate_relations_gpt_o1_mini(abstract["text"])
         matches = validate_output(str(response))
+
+        pub_id = {
+            'pub_id': abstract.get('id', None)
+        }
+
+        for match in matches:
+            match.update(pub_id)
+
         relations.extend(matches)
 
+    return relations
+
+
+# Needs more testing
+def generate_responses_deepseek_r1(abstracts):
+    """Process multiple abstracts and extract relations"""
+    relations = []
+
+    for i, abstract in enumerate(abstracts, 1):
+        try:
+            print(f"Processing abstract {i}/{len(abstracts)}")
+            response = generate_relations_deepseek_r1(abstract["text"])
+
+
+            matches = convert_relations(response)
+
+            print(matches)
+            # Add publication ID to each match
+            pub_id = {'pub_id': abstract.get('id')}
+            for match in matches:
+                match.update(pub_id)
+
+            relations.extend(matches)
+
+        except Exception as e:
+            logging.error(f"Error processing abstract {i}: {e}")
+    print(relations)
     return relations
 
 
@@ -200,28 +255,26 @@ def extract_relations(content, model):
         relations = generate_responses_gpt_4o1_mini(content)
 
         return relations
+    elif model == "model_d":
+        relations = generate_responses_deepseek_r1(content)
 
-
-def sanitize_entity_name(name):
-    # Replace spaces and special characters with underscores
-    name = re.sub(r'[\s\W]+', '_', name)
-    # Remove leading and trailing underscores
-    name = name.strip('_')
-    return name
+        return relations
 
 
 def create_sparql_queries_for_bulk_import(relations, batch_size=200):
-    prefixes = """
+    prefixes = f"""
     PREFIX owl: <http://www.w3.org/2002/07/owl#>
     PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-    PREFIX ont: <http://www.semanticweb.org/lecualexandru/ontologies/2024/1/>
+    PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+    PREFIX ont: <http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD#>
+    PREFIX prov: <http://www.w3.org/ns/prov#>
     """
     sparql_queries = []
 
     # Split the relations into batches
     for i in range(0, len(relations), batch_size):
         batch_relations = relations[i:i+batch_size]
-        query = prefixes + "INSERT DATA { GRAPH <http://amddata.org/amd/> { "
+        query = prefixes + f"INSERT DATA {{ GRAPH <http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD/> {{\n"
 
         for relation in batch_relations:
             # Sanitize entity names and types
@@ -231,30 +284,52 @@ def create_sparql_queries_for_bulk_import(relations, batch_size=200):
             entity1_type = sanitize_entity_name(relation["entity1_type"]).upper()
             entity2_type = sanitize_entity_name(relation["entity2_type"]).upper()
 
-            # Construct URIs and triples
-            subject_type_uri_ni = f"ont:{subject_name} rdf:type owl:NamedIndividual . "
-            subject_type_uri = f"ont:{subject_name} rdf:type ont:{entity1_type} . "
-            object_type_uri_ni = f"ont:{object_name} rdf:type owl:NamedIndividual . "
-            object_type_uri = f"ont:{object_name} rdf:type ont:{entity2_type} . "
+            # Generate a unique URI for the relation
+            relation_id = f"REL_{uuid.uuid4()}"
+            relation_uri = f"ont:{relation_id}"
+
+            # Define URIs
             subject_uri = f"ont:{subject_name}"
             predicate_uri = f"ont:{relation_type}"
             object_uri = f"ont:{object_name}"
 
-            query += subject_type_uri_ni
-            query += subject_type_uri
-            query += object_type_uri_ni
-            query += object_type_uri
-            query += f"{subject_uri} {predicate_uri} {object_uri} . "
+            # Start constructing the triple
+            triple = (
+                f"{relation_uri} rdf:type ont:RELATION ;\n"
+                f"  ont:relation_subject {subject_uri} ;\n"
+                f"  ont:relation_predicate {predicate_uri} ;\n"
+                f"  ont:relation_object {object_uri} ;\n"
+            )
 
-        query += " } }"
+            # Check if 'pub_id' exists and is not empty
+            pub_id = relation.get("pub_id")
+            if pub_id:
+                publication_uri = f"ont:PUB_{sanitize_entity_name(pub_id)}"
+                triple += f"  prov:wasDerivedFrom {publication_uri} .\n"
+                # Create the publication instance
+                triple += f"{publication_uri} rdf:type ont:PUBLICATION .\n"
+            else:
+                # Remove the trailing ';' and replace with '.'
+                triple = triple.rstrip(' ;\n') + ' .\n'
+
+            # Add type declarations for entities
+            triple += (
+                f"{subject_uri} rdf:type ont:{entity1_type} .\n"
+                f"{object_uri} rdf:type ont:{entity2_type} .\n"
+            )
+
+            query += triple + "\n"
+
+        query += "}}"
         sparql_queries.append(query)
 
     return sparql_queries
 
 
 def add_bulk_relations_to_kg(relations, repo_id):
-    sparql = SPARQLWrapper(f"http://graphdb:7200/repositories/{repo_id}/statements")
-    queries = create_sparql_queries_for_bulk_import(relations)
+    sparql = SPARQLWrapper(f"{GRAPHDB_URL}/repositories/{repo_id}/statements")
+    refined_relations = refine_relations(relations)
+    queries = create_sparql_queries_for_bulk_import(refined_relations)
     for query in queries:
         sparql.setMethod(POST)
         sparql.setQuery(query)
