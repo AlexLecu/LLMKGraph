@@ -1,7 +1,7 @@
 streamlit<=1.32.2
 flask<=3.0.2
 flask-cors<=5.0.0
-langchain<=0.1.12
+langchain<=0.3.18
 langchain-openai<=0.0.8
 langchain_huggingface<=0.0.3
 langchain_community<=0.2.7
