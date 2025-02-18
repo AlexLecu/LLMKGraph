@@ -52,7 +52,7 @@ class KGRAGSystem:
         """Main query pipeline with proper connection handling."""
         result = {
             "question": question,
-            "answer": "Unable to generate response",
+            "context": "No context found",
             "sources": [],
             "context_entities": 0,
             "context_relations": 0,
@@ -64,32 +64,14 @@ class KGRAGSystem:
                 context_data = self._hybrid_search(client, question)
                 context_str = self._format_context(client, context_data)[:max_context_length]
 
-                # print(context_str)
-
-                response = self.openai_client.chat.completions.create(
-                    model="gpt-4",
-                    messages=[{
-                        "role": "user",
-                        "content": f"""Knowledge Graph Context:
-                                    {context_str}
-
-                                    Question: {question}
-
-                                    Answer following these rules:
-                                    1. Use the information from the context
-                                    2. Cite entities and relations explicitly
-                                    4. Mention supporting publications when available"""
-                    }],
-                    temperature=0.3
-                )
-
+                # Update results with KG context
                 result.update({
-                    "answer": response.choices[0].message.content,
+                    "context": context_str,
                     "sources": self._extract_sources(context_data),
                     "context_entities": sum(
-                        1 for i in context_data if isinstance(i, dict) and i.get("type") == "entity"),
+                        1 for item in context_data if isinstance(item, dict) and item.get("type") == "entity"),
                     "context_relations": sum(
-                        1 for i in context_data if isinstance(i, dict) and i.get("type") == "relation")
+                        1 for item in context_data if isinstance(item, dict) and item.get("type") == "relation")
                 })
 
         except Exception as e:

@@ -9,6 +9,8 @@ import uuid
 from SPARQLWrapper import SPARQLWrapper, POST
 from prompts import generate_user_prompt, system_prompt
 from disambiguation.disambiguation import sanitize_entity_name, refine_relations
+import ollama
+import json
 
 load_dotenv()
 
@@ -74,6 +76,23 @@ def generate_relations_gpt_o1_mini(text):
 
     return chat_response
 
+# Needs more testing
+def generate_relations_deepseek_r1(text):
+    user_prompt = generate_user_prompt(text)
+    chat_response = ollama.chat(
+        model='deepseek-r1',
+        messages=[
+            {"role": "system", "content": system_prompt.strip()},
+            {"role": "user", "content": user_prompt.strip()}
+        ],
+        options={
+            'num_predict': 2000,
+            'temperature': 0,
+        }
+    )
+
+    return chat_response
+
 
 def is_valid_relation(data):
     valid_entity_types = {'disease', 'symptom', 'treatment', 'risk_factor', 'test', 'gene', 'biomarker', 'complication',
@@ -104,6 +123,34 @@ def validate_output(output):
             logging.warning(f"Failed to parse match: {match}. Error: {e}")
     return dicts
 
+# Needs more testing
+def convert_relations(response):
+    try:
+        raw_content = response['message']['content']
+
+        matches = re.findall(r'\{.*?\}', raw_content, re.DOTALL)
+        if not matches:
+            print("No JSON-like content found in the response")
+            return []
+
+        relations = []
+        for match in matches:
+            try:
+                relation = json.loads(match.replace("'", '"'))
+
+                if isinstance(relation, dict) and {'relation_type', 'entity1_type', 'entity1_name', 'entity2_type',
+                                                   'entity2_name'}.issubset(relation.keys()):
+                    relations.append(relation)
+                else:
+                    print(f"Invalid relation structure: {relation}")
+            except json.JSONDecodeError as e:
+                print(f"JSON parsing failed for match: {match} - Error: {e}")
+
+        return relations
+
+    except KeyError as e:
+        print(f"Invalid response format: {e}")
+        return []
 
 def generate_response_mistral(abstracts):
     relations = []
@@ -168,6 +215,33 @@ def generate_responses_gpt_4o1_mini(abstracts):
     return relations
 
 
+# Needs more testing
+def generate_responses_deepseek_r1(abstracts):
+    """Process multiple abstracts and extract relations"""
+    relations = []
+
+    for i, abstract in enumerate(abstracts, 1):
+        try:
+            print(f"Processing abstract {i}/{len(abstracts)}")
+            response = generate_relations_deepseek_r1(abstract["text"])
+
+
+            matches = convert_relations(response)
+
+            print(matches)
+            # Add publication ID to each match
+            pub_id = {'pub_id': abstract.get('id')}
+            for match in matches:
+                match.update(pub_id)
+
+            relations.extend(matches)
+
+        except Exception as e:
+            logging.error(f"Error processing abstract {i}: {e}")
+    print(relations)
+    return relations
+
+
 def extract_relations(content, model):
     if model == "model_a":
         relations = generate_responses_gpt_35_turbo(content)
@@ -179,6 +253,10 @@ def extract_relations(content, model):
         return relations
     elif model == "model_c":
         relations = generate_responses_gpt_4o1_mini(content)
+
+        return relations
+    elif model == "model_d":
+        relations = generate_responses_deepseek_r1(content)
 
         return relations
 
