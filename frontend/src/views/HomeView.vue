@@ -250,7 +250,11 @@ function renderGraph(nodesArray: any[], edgesArray: any[]) {
     },
     edges: {
       arrows: 'to',
-      smooth: { enabled: true, type: "continuous" },
+      smooth: {
+        enabled: true,
+        type: "continuous",
+        roundness: 0.5
+      },
       font: { size: 12, align: 'middle' },
       color: { color: '#848484', highlight: '#848484' },
       width: 2
@@ -314,6 +318,15 @@ async function toggleNode(nodeId: string) {
   } else {
     await expandNode(nodeId);
     nodeStates.value[nodeId] = 'expanded';
+  }
+}
+
+function addNodesAndEdgesFromMemory(memory: { nodes: any[]; edges: any[] }) {
+  if (nodes.value && memory.nodes.length) {
+    nodes.value.add(memory.nodes);
+  }
+  if (edges.value && memory.edges.length) {
+    edges.value.add(memory.edges);
   }
 }
 
