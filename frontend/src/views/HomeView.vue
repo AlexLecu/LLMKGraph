@@ -39,6 +39,9 @@ const selectedModel = ref<string>('');
 const abstractDownloadLink = ref<string | null>(null);
 const relationsFileReady = ref(false);
 const uploadStatus = ref<string | null>(null);
+const infoVisible = ref(false);
+const deepSeekInfoVisible = ref(false);
+const repoInfoVisible = ref(false);
 
 // Loading Indicator & Graph Refs
 const $loading = useLoading();
@@ -889,6 +892,18 @@ async function addRelationsToKG() {
     uploadStatus.value = "Error adding relations to KG.";
   }
 }
+
+function toggleInfo() {
+  infoVisible.value = !infoVisible.value;
+}
+
+function toggleDeepSeekInfo() {
+  deepSeekInfoVisible.value = !deepSeekInfoVisible.value;
+}
+
+function toggleRepoInfo() {
+  repoInfoVisible.value = !repoInfoVisible.value;
+}
 </script>
 
 <template>
@@ -958,7 +973,24 @@ async function addRelationsToKG() {
       </div>
 
       <section class="controls-section">
-        <h2 class="section-title">Knowledge Graph Operations</h2>
+        <div class="header-container">
+          <div class="info-container">
+            <button class="info-button" @click="toggleDeepSeekInfo">
+              <svg class="info-icon" viewBox="0 0 24 24" width="18" height="18">
+                <circle cx="12" cy="12" r="10" fill="none" stroke="#007bff" stroke-width="2"/>
+                <text x="12" y="16" text-anchor="middle" fill="#007bff" font-size="12" font-family="Arial" font-weight="bold">i</text>
+              </svg>
+            </button>
+            <transition name="fade">
+              <div v-if="deepSeekInfoVisible" class="popover">
+                <p>Relations are extracted using DeepSeek-R1:7B</p>
+                <button class="close-button" @click="toggleDeepSeekInfo">&times;</button>
+              </div>
+            </transition>
+          </div>
+          <h2 class="section-title">Knowledge Graph Operations</h2>
+        </div>
+
         <div class="input-area">
           <textarea v-model="abstract" id="abstract-input" placeholder="Enter abstract" class="abstract-textarea"></textarea>
         </div>
@@ -983,13 +1015,45 @@ async function addRelationsToKG() {
       </section>
 
       <section class="repositories-section">
-        <h2 class="section-title">Available Repositories</h2>
+        <div class="header-container">
+          <div class="info-container left">
+            <button class="info-button" @click="toggleRepoInfo">
+              <svg class="info-icon" viewBox="0 0 24 24" width="18" height="18">
+                <circle cx="12" cy="12" r="10" fill="none" stroke="#007bff" stroke-width="2"/>
+                <text x="12" y="16" text-anchor="middle" fill="#007bff" font-size="12" font-family="Arial" font-weight="bold">i</text>
+              </svg>
+            </button>
+            <transition name="fade">
+              <div v-if="repoInfoVisible" class="popover left">
+                <p>Select the repository you wish to use from GraphDB.</p>
+                <button class="close-button" @click="toggleRepoInfo">&times;</button>
+              </div>
+            </transition>
+          </div>
+          <h2 class="section-title">Available Repositories</h2>
+        </div>
         <div class="repositories-container">
           <button v-for="repo in repositories" :key="repo.id" @click="activateRepository(repo.id)" :class="['repo-button', { active: repo.id === currentRepoId }]" class="repo-button">
             {{ repo.id }}
           </button>
         </div>
-        <h2 class="section-title">Relation Extraction and Upload</h2>
+        <div class="header-container">
+        <div class="info-container">
+            <button class="info-button" @click="toggleInfo">
+              <svg class="info-icon" viewBox="0 0 24 24" width="18" height="18">
+                <circle cx="12" cy="12" r="10" fill="none" stroke="#007bff" stroke-width="2"/>
+                <text x="12" y="16" text-anchor="middle" fill="#007bff" font-size="12" font-family="Arial" font-weight="bold">i</text>
+              </svg>
+            </button>
+            <transition name="fade">
+              <div v-if="infoVisible" class="popover">
+                <p>API keys must be provided in the .env file for this section to work correctly.</p>
+                <button class="close-button" @click="toggleInfo">&times;</button>
+              </div>
+            </transition>
+          </div>
+          <h2 class="section-title">Relation Extraction and Upload</h2>
+        </div>
         <div class="form-group">
           <label for="modelSelect">Select Model for Extraction:</label>
           <select v-model="selectedModel" id="modelSelect" class="select-input">
@@ -1044,6 +1108,91 @@ html, body {
   font-family: 'Roboto', sans-serif;
   background-color: #f7f9fc;
   color: #333;
+}
+.header-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.section-title {
+  margin: 0;
+  font-size: 1.5em;
+  flex: 1;
+}
+
+.info-container {
+  position: relative;
+}
+
+/* Refined info button */
+.info-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+.info-button:hover {
+  background-color: rgba(0, 123, 255, 0.1);
+}
+
+.info-icon {
+  display: block;
+}
+
+/* Adjusted popover with wider dimensions */
+.popover {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  width: 320px; /* Fixed width for a horizontal layout */
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  padding: 10px 15px;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  font-size: 0.8em;
+  line-height: 1.3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.popover p {
+  margin: 0;
+  white-space: normal;
+  flex: 1;
+}
+
+/* Optional: A slight adjustment for the arrow, if needed, removed for a cleaner design */
+/* .popover::before and .popover::after { ... } */
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 1em;
+  color: #888;
+  cursor: pointer;
+  margin-left: 10px;
+  padding: 0;
+}
+
+.close-button:hover {
+  color: #555;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 
 /* Focus styles for accessibility */
