@@ -1,74 +1,117 @@
 from SPARQLWrapper import SPARQLWrapper, POST, JSON
+import re
+import os
 
+ONT_NAMESPACE = 'http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD#'
+GRAPHDB_URL = os.getenv('GRAPHDB_URL', 'http://localhost:7200')
 
 def construct_sparql_query(query_text, filter_type):
+    pattern = re.escape(query_text)
+
     if filter_type == 'node':
-        sparql_query = f"""
-        SELECT ?s ?p ?o WHERE {{
-            ?s ?p ?o .
-            FILTER regex(str(?s), "{query_text}", "i")
-        }} LIMIT 100
-        """
+            sparql_query = f"""
+            PREFIX ont: <{ONT_NAMESPACE}>
+            PREFIX prov: <http://www.w3.org/ns/prov#>
+            SELECT ?relation ?subject ?predicate ?object ?publication WHERE {{
+                ?relation a ont:RELATION ;
+                        ont:relation_subject ?subject ;
+                        ont:relation_predicate ?predicate ;
+                        ont:relation_object ?object ;
+                        OPTIONAL {{ ?relation prov:wasDerivedFrom ?publication . }}
+                FILTER regex(str(?subject), "{pattern}", "i")
+            }} LIMIT 100
+            """
     elif filter_type == 'relation':
         sparql_query = f"""
-        SELECT ?s ?p ?o WHERE {{
-            ?s ?p ?o .
-            FILTER regex(str(?p), "{query_text}", "i")
+        PREFIX ont: <{ONT_NAMESPACE}>
+        PREFIX prov: <http://www.w3.org/ns/prov#>
+        SELECT ?relation ?subject ?predicate ?object ?publication WHERE {{
+            ?relation a ont:RELATION ;
+                    ont:relation_subject ?subject ;
+                    ont:relation_predicate ?predicate ;
+                    ont:relation_object ?object ;
+                    OPTIONAL {{ ?relation prov:wasDerivedFrom ?publication . }}
+            FILTER regex(str(?predicate), "{pattern}", "i")
         }} LIMIT 100
         """
     elif filter_type == 'entity':
         sparql_query = f"""
-        SELECT ?s ?p ?o WHERE {{
-            ?s ?p ?o .
-            FILTER regex(str(?o), "{query_text}", "i")
+        PREFIX ont: <{ONT_NAMESPACE}>
+        PREFIX prov: <http://www.w3.org/ns/prov#>
+        SELECT ?relation ?subject ?predicate ?object ?publication WHERE {{
+            ?relation a ont:RELATION ;
+                    ont:relation_subject ?subject ;
+                    ont:relation_predicate ?predicate ;
+                    ont:relation_object ?object ;
+                   OPTIONAL {{ ?relation prov:wasDerivedFrom ?publication . }}
+            FILTER regex(str(?object), "{pattern}", "i")
         }} LIMIT 100
         """
     else:
+        # No specific filter type: search in all fields.
         sparql_query = f"""
-        SELECT ?s ?p ?o WHERE {{
-            ?s ?p ?o .
+        PREFIX ont: <{ONT_NAMESPACE}>
+        PREFIX prov: <http://www.w3.org/ns/prov#>
+        SELECT ?relation ?subject ?predicate ?object ?publication WHERE {{
+            ?relation a ont:RELATION ;
+                    ont:relation_subject ?subject ;
+                    ont:relation_predicate ?predicate ;
+                    ont:relation_object ?object ;
+                    OPTIONAL {{ ?relation prov:wasDerivedFrom ?publication . }}
             FILTER (
-                regex(str(?s), "{query_text}", "i") ||
-                regex(str(?p), "{query_text}", "i") ||
-                regex(str(?o), "{query_text}", "i")
+                regex(str(?subject), "{pattern}", "i") ||
+                regex(str(?predicate), "{pattern}", "i") ||
+                regex(str(?object), "{pattern}", "i")
             )
         }} LIMIT 100
         """
-
     return sparql_query
 
-
 def query_knowledge_graph(query_text, filter_type, repo_id):
-    sparql = SPARQLWrapper(f"http://graphdb:7200/repositories/{repo_id}")
-
-    data = []
+    sparql = SPARQLWrapper(f"{GRAPHDB_URL}/repositories/{repo_id}")
     sparql_query = construct_sparql_query(query_text, filter_type)
-
+    
     sparql.setQuery(sparql_query)
     sparql.setReturnFormat(JSON)
-    results = sparql.query().convert()
+    
+    data = []
+    try:
+        results = sparql.query().convert()
+    except Exception as e:
+        print(f"Error executing SPARQL query: {e}")
+        return data
 
     for result in results["results"]["bindings"]:
-        s = result["s"]["value"]
-        p = result["p"]["value"]
-        o = result["o"]["value"]
-        data.append({"subject": s, "predicate": p, "object": o})
+        relation = result.get("relation", {}).get("value", "")
+        subject = result.get("subject", {}).get("value", "")
+        predicate = result.get("predicate", {}).get("value", "")
+        object_ = result.get("object", {}).get("value", "")
+        publication = result.get("publication", {}).get("value", None)
+        if publication and publication.startswith("PUB_"):
+            publication = publication.replace("PUB_", "")
+        data.append({
+            "relation": relation,
+            "subject": subject,
+            "predicate": predicate,
+            "object": object_,
+            "publicationId": publication
+        })
 
     return data
 
 
 def delete_relation_kg(subject, predicate, object_, repo_id):
-    sparql_post = SPARQLWrapper(f"http://graphdb:7200/repositories/{repo_id}/statements")
-
+    print(f"Deleting relation: {subject} {predicate} {object_}")
+    sparql_post = SPARQLWrapper(f"{GRAPHDB_URL}/repositories/{repo_id}/statements")
+    
     delete_query = f"""
         PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-        PREFIX ont: <http://www.semanticweb.org/lecualexandru/ontologies/2024/1/untitled-ontology-6#>
-
+        PREFIX ont: <{ONT_NAMESPACE}>
         DELETE WHERE {{
-            <{subject}> <{predicate}> <{object_}> .
+            ont:{subject} ont:{predicate} ont:{object_} .
         }}
-        """
-
+    """
+    print(delete_query)
     sparql_post.setQuery(delete_query)
     sparql_post.setMethod(POST)
     sparql_post.query()
