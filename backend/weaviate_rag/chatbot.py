@@ -1,9 +1,10 @@
 import chainlit as cl
+from chainlit.input_widget import Select
 import ollama
 from rag_system import KGRAGSystem
 import time
 
-MODEL_NAME = "deepseek-r1"
+DEFAULT_MODEL = "deepseek-r1"
 MAX_HISTORY = 10
 
 
@@ -59,11 +60,30 @@ async def create_system_prompt(user_input):
 @cl.on_chat_start
 async def start_chat():
     cl.user_session.set("history", [])
+    cl.user_session.set("model", DEFAULT_MODEL)
+    settings = await cl.ChatSettings(
+        [
+            Select(
+                id="model",
+                label="Select the Model",
+                values=["deepseek-r1", "llama3.2"],
+                initial_index=0,
+            )
+        ]
+    ).send()
+    if settings and "model" in settings:
+        cl.user_session.set("model", settings["model"])
+
+
+@cl.on_settings_update
+async def on_settings_update(settings):
+    if "model" in settings:
+        cl.user_session.set("model", settings["model"])
 
 
 @cl.set_starters
 async def set_starters():
-    return  [
+    return [
         cl.Starter(
             label="Early Signs of AMD",
             message="What subtle vision changes should I watch for that might indicate early stage AMD?",
@@ -87,6 +107,21 @@ async def main(message: cl.Message):
     start_time = time.time()
     user_input = message.content.strip()
 
+    if user_input.lower() == "/settings":
+        settings = await cl.ChatSettings(
+            [
+                Select(
+                    id="model",
+                    label="Select the Model",
+                    values=["deepseek-r1", "llama3.2"],
+                    initial_index=0,
+                )
+            ]
+        ).send()
+        if settings and "model" in settings:
+            cl.user_session.set("model", settings["model"])
+        return
+
     if user_input.lower() == "/clear":
         cl.user_session.set("history", [])
         await cl.Message("🔄 History cleared").send()
@@ -105,36 +140,42 @@ async def main(message: cl.Message):
     if len(history) > MAX_HISTORY * 2 + 1:
         history = [history[0]] + history[-(MAX_HISTORY * 2):]
 
+    model_name = cl.user_session.get("model", DEFAULT_MODEL)
+
     sync_stream = ollama.chat(
-        model=MODEL_NAME,
+        model=model_name,
         messages=history,
         stream=True
     )
 
     stream = async_generator(sync_stream)
-
-    thinking = False
     final_answer = cl.Message(content="")
 
-    async with cl.Step(name="Thinking") as thinking_step:
+    if model_name == "deepseek-r1":
+        thinking = False
+        async with cl.Step(name="Thinking") as thinking_step:
+            async for chunk in stream:
+                content = chunk['message']['content']
+
+                if content == "<think>":
+                    thinking = True
+                    continue
+
+                if content == "</think>":
+                    thinking = False
+                    thought_duration = round(time.time() - start_time)
+                    thinking_step.name = f"Thought for {thought_duration}s"
+                    await thinking_step.update()
+                    continue
+
+                if thinking:
+                    await thinking_step.stream_token(content)
+                else:
+                    await final_answer.stream_token(content)
+    else:
         async for chunk in stream:
             content = chunk['message']['content']
-
-            if content == "<think>":
-                thinking = True
-                continue
-
-            if content == "</think>":
-                thinking = False
-                thought_duration = round(time.time() - start_time)
-                thinking_step.name = f"Thought for {thought_duration}s"
-                await thinking_step.update()
-                continue
-
-            if thinking:
-                await thinking_step.stream_token(content)
-            else:
-                await final_answer.stream_token(content)
+            await final_answer.stream_token(content)
 
     await final_answer.send()
     history.append({"role": "assistant", "content": final_answer.content})
