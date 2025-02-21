@@ -9,7 +9,7 @@
     </aside>
 
     <div class="chat-content">
-      <iframe ref="myIframe" src="http://localhost:8501/?embed=true&embed_options=show_toolbar"></iframe>
+      <iframe ref="myIframe" src="http://localhost:8000/"></iframe>
     </div>
   </div>
 </template>
