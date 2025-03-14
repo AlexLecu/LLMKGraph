@@ -174,7 +174,8 @@ class KGRAGSystem:
     def _format_context(self, client: WeaviateClient, context: List[Dict]) -> str:
         """Format context."""
         formatted = []
-        base_url = "https://app.dimensions.ai/details/clinical_trial/"
+        base_url_ct = "https://app.dimensions.ai/details/clinical_trial/"
+        base_url_pub = "https://app.dimensions.ai/details/publication/"
 
         for item in context:
             if item["type"] == "relation":
@@ -189,7 +190,13 @@ class KGRAGSystem:
                 pub_links = []
                 for pub in rel["publications"]:
                     pub_name = pub.get('name', 'Unnamed Publication')
-                    pub_links.append(f"[{pub_name}]({base_url}{pub_name})")  # Use name as ID for demo
+
+                    if pub_name.startswith("pub."):
+                        base_url = base_url_pub
+                    else:
+                        base_url = base_url_ct
+
+                    pub_links.append(f"[{pub_name}]({base_url}{pub_name})")
 
                 rel_str = (
                     f"{subject_name} → {predicate} → {object_name}\n"
