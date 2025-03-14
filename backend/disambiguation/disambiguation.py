@@ -106,12 +106,6 @@ def normalize_entity_name(name):
             words.pop()
         name = ' '.join(words)
 
-        # Remove embedded acronyms
-        name = re.sub(r'\bamd\b', '', name).strip()
-        name = re.sub(r'\bcnv\b', '', name).strip()
-
-        name = ' '.join(name.split())
-
     # Apply domain-specific synonyms mapping
     if name in synonyms_map:
         name = synonyms_map[name]
@@ -165,6 +159,15 @@ def refine_relations(relations):
 
 
 def sanitize_entity_name(name):
+    replacements = {
+        'µ': 'u',
+        'ö': 'o',
+        'é': 'e',
+    }
+
+    for char, replacement in replacements.items():
+        name = name.replace(char, replacement)
+
     # Replace spaces and special characters with underscores
     name = re.sub(r'[\s\W]+', '_', name)
     # Remove leading and trailing underscores
