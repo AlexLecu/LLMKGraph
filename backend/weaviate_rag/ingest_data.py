@@ -6,7 +6,7 @@ from queries import SPARQL_QUERY_ENTITIES, SPARQL_QUERY_RELATIONS, SPARQL_QUERY_
 
 logger = logging.getLogger(__name__)
 
-GRAPHDB_SPARQL_ENDPOINT = "http://localhost:7200/repositories/amd_repo_gpt_4o1_mini"
+GRAPHDB_SPARQL_ENDPOINT = "http://localhost:7200/repositories/amd_repo_deepseek_v3"
 WEAVIATE_URL = "http://localhost:8080"
 
 load_dotenv()
