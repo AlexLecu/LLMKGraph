@@ -1,4 +1,3 @@
-import os
 from dotenv import load_dotenv
 import weaviate
 from weaviate import WeaviateClient
@@ -6,7 +5,7 @@ from typing import List, Dict
 import logging
 from weaviate.classes.query import QueryReference
 from weaviate.collections.classes.filters import Filter
-from openai import OpenAI
+import random
 
 load_dotenv()
 
@@ -24,7 +23,6 @@ class KGRAGSystem:
         self.client: WeaviateClient = None
         try:
             self.client = weaviate.connect_to_local()
-            self.openai_client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
             self._verify_schema()
         except Exception as e:
             logger.error(f"Initialization failed: {str(e)}")
@@ -48,7 +46,7 @@ class KGRAGSystem:
                     "Please create them first."
                 )
 
-    def query(self, question: str, max_context_length: int = 3000) -> Dict:
+    def query(self, question: str, max_context_length: int = 4000, max_entities: int = 10) -> Dict:
         """Main query pipeline with proper connection handling."""
         result = {
             "question": question,
@@ -61,17 +59,28 @@ class KGRAGSystem:
 
         try:
             with self.client as client:
-                context_data = self._hybrid_search(client, question)
-                context_str = self._format_context(client, context_data)[:max_context_length]
+                context_data = self._hybrid_search(client, question, top_k=30)
+                if not context_data:
+                    result["error"] = "No relevant information found"
+                    return result
+
+                # Randomize and limit context data
+                randomized_context = self._randomize_context(context_data, max_entities)
+
+                # Format context and trim to max length
+                context_str = self._format_context(randomized_context)
+                if len(context_str) > max_context_length:
+                    logger.info(f"Trimming context from {len(context_str)} to {max_context_length} chars")
+                    context_str = context_str[:max_context_length]
 
                 # Update results with KG context
                 result.update({
                     "context": context_str,
-                    "sources": self._extract_sources(context_data),
+                    "sources": self._extract_sources(randomized_context),
                     "context_entities": sum(
-                        1 for item in context_data if isinstance(item, dict) and item.get("type") == "entity"),
+                        1 for item in randomized_context if isinstance(item, dict) and item.get("type") == "entity"),
                     "context_relations": sum(
-                        1 for item in context_data if isinstance(item, dict) and item.get("type") == "relation")
+                        1 for item in randomized_context if isinstance(item, dict) and item.get("type") == "relation")
                 })
 
         except Exception as e:
@@ -80,9 +89,51 @@ class KGRAGSystem:
 
         return result
 
-    def _hybrid_search(self, client: WeaviateClient, query: str, top_k: int = 5) -> List[Dict]:
-        """Perform hybrid search."""
+    @staticmethod
+    def _randomize_context(context_data: List[Dict], max_entities: int) -> List[Dict]:
+        """Randomize and limit the context data."""
+        # Separate entities and relations
+        entities = [item for item in context_data if item["type"] == "entity"]
+        relations = [item for item in context_data if item["type"] == "relation"]
+
+        # Select and randomize entities
+        random.shuffle(entities)
+        selected_entities = entities[:max_entities]
+        selected_entity_ids = {entity["id"] for entity in selected_entities}
+
+        # Keep only relations connected to selected entities (max 3 per entity)
+        entity_relations = {entity_id: [] for entity_id in selected_entity_ids}
+
+        for relation in relations:
+            subject_id = relation.get("subject", {}).get("id")
+            object_id = relation.get("object", {}).get("id")
+
+            # Check if relation connects to a selected entity
+            if subject_id in selected_entity_ids:
+                if len(entity_relations[subject_id]) < 3:
+                    entity_relations[subject_id].append(relation)
+            elif object_id in selected_entity_ids:
+                if len(entity_relations[object_id]) < 3:
+                    entity_relations[object_id].append(relation)
+
+        # Flatten relations and combine with entities
+        selected_relations = [rel for rels in entity_relations.values() for rel in rels]
+        final_context = selected_entities + selected_relations
+        random.shuffle(final_context)
+
+        return final_context
+
+
+    def _hybrid_search(self, client: WeaviateClient, query: str, top_k: int = 30) -> List[Dict]:
+        """Perform hybrid search with simple AMD normalization."""
         try:
+            if "amd" in query.lower():
+                expanded_query = query.replace("AMD", "age-related macular degeneration")
+                expanded_query = expanded_query.replace("amd", "age-related macular degeneration")
+                logger.info(f"Using expanded query: {expanded_query}")
+
+                query = expanded_query
+
             logger.info(f"Starting hybrid search for: {query}")
 
             entities_collection = client.collections.get(KG_CLASS_NAME)
@@ -100,6 +151,13 @@ class KGRAGSystem:
                     continue
 
                 seen_entities.add(entity_id)
+
+                context.append({
+                    "type": "entity",
+                    "id": entity_id,
+                    "name": obj.properties.get("name", "Unknown"),
+                    "entity_type": obj.properties.get("type", "Unknown")
+                })
 
                 relations = self._get_relations_for_entity(client, entity_id)
                 context.extend(relations)
@@ -126,103 +184,124 @@ class KGRAGSystem:
             Filter.by_ref("relation_subject").by_id().equal(entity_id),  # Outgoing
             Filter.by_ref("relation_object").by_id().equal(entity_id)  # Incoming
         ]:
-            result = relations_collection.query.fetch_objects(
-                limit=5,
-                return_references=base_refs,
-                filters=filter_cond
-            )
-            relations.extend(self._process_relation_objects(result.objects))
+            try:
+                result = relations_collection.query.fetch_objects(
+                    limit=5,
+                    return_references=base_refs,
+                    filters=filter_cond
+                )
+                relations.extend(self._process_relation_objects(result.objects, entity_id))
+            except Exception as e:
+                logger.error(f"Error fetching relations: {str(e)}")
+                continue
 
         return relations
 
-    def _process_relation_objects(self, relations: list) -> List[Dict]:
+    def _process_relation_objects(self, relations: list, entity_id: str) -> List[Dict]:
         """Process Weaviate relation objects into standardized dictionaries."""
         processed = []
 
         for rel in relations:
+            try:
+                # Get subject, object and publication information
+                subject = self._get_reference_data(rel, "relation_subject")
+                obj = self._get_reference_data(rel, "relation_object")
 
-            subject = self._get_reference_data(rel, "relation_subject")
-            obj = self._get_reference_data(rel, "relation_object")
-            pubs = [{"name" : self._clean_pub_name(rel.references.get("hasPublication").objects[0].properties.get("name", "Unknown"))}]
+                # Get publications (default to empty if none found)
+                pubs = []
+                pub_refs = rel.references.get("hasPublication")
+                if pub_refs and pub_refs.objects:
+                    for pub_obj in pub_refs.objects:
+                        pub_name = self._clean_pub_name(pub_obj.properties.get("name", "Unknown"))
+                        pubs.append({"name": pub_name})
 
-            processed.append({
-                "type": "relation",
-                "predicate": rel.properties.get("relation_predicate"),
-                "subject": subject,
-                "object": obj,
-                "publications": pubs
-            })
+                processed.append({
+                    "type": "relation",
+                    "id": rel.uuid,
+                    "entity_id": entity_id,
+                    "predicate": rel.properties.get("relation_predicate", "Unknown"),
+                    "subject": subject,
+                    "object": obj,
+                    "publications": pubs
+                })
+            except Exception as e:
+                logger.error(f"Error processing relation: {str(e)}")
+                continue
 
         return processed
 
-    def _get_reference_data(self, rel, ref_name: str) -> Dict:
+    @staticmethod
+    def _get_reference_data(rel, ref_name: str) -> Dict:
         """Safe extraction of reference data with defaults."""
         ref = rel.references.get(ref_name)
         if not ref or not ref.objects:
             return {"name": "Unknown", "type": "Unknown"}
 
         return {
+            "id": ref.objects[0].uuid,  # Store ID for filtering
             "name": ref.objects[0].properties.get("name", "Unknown"),
             "type": ref.objects[0].properties.get("type", "Unknown")
         }
 
-    def _clean_pub_name(self, pub_name: str) -> str:
+    @staticmethod
+    def _clean_pub_name(pub_name: str) -> str:
         """Remove 'PUB_' prefix from publication names if present."""
         return pub_name[4:] if pub_name.startswith("PUB_") else pub_name
 
-
-    def _format_context(self, client: WeaviateClient, context: List[Dict]) -> str:
+    @staticmethod
+    def _format_context(context: List[Dict]) -> str:
         """Format context."""
         formatted = []
-        base_url = "https://app.dimensions.ai/details/clinical_trial/"
+        base_url_ct = "https://app.dimensions.ai/details/clinical_trial/"
+        base_url_pub = "https://app.dimensions.ai/details/publication/"
 
         for item in context:
-            if item["type"] == "relation":
-                rel = item
-                predicate = rel["predicate"].replace('_', ' ').title()
+            try:
+                if item["type"] == "relation":
+                    rel = item
+                    predicate = rel["predicate"].replace('_', ' ').title()
 
-                # Extract names directly from subject/object
-                subject_name = f"{rel['subject']['name']} ({rel['subject']['type']})"
-                object_name = f"{rel['object']['name']} ({rel['object']['type']})"
+                    # Extract names directly from subject/object
+                    subject_name = f"{rel['subject']['name']} ({rel['subject']['type']})"
+                    object_name = f"{rel['object']['name']} ({rel['object']['type']})"
 
-                # Format publications
-                pub_links = []
-                for pub in rel["publications"]:
-                    pub_name = pub.get('name', 'Unnamed Publication')
-                    pub_links.append(f"[{pub_name}]({base_url}{pub_name})")  # Use name as ID for demo
+                    # Format publications
+                    pub_links = []
+                    for pub in rel["publications"]:
+                        pub_name = pub.get('name', 'Unnamed Publication')
 
-                rel_str = (
-                    f"{subject_name} → {predicate} → {object_name}\n"
-                    f"  - Supported by: {', '.join(pub_links) if pub_links else 'No publications'}"
-                )
-                formatted.append(rel_str)
+                        if pub_name.startswith("pub"):
+                            base_url = base_url_pub
+                        else:
+                            base_url = base_url_ct
 
-            elif item["type"] == "entity":
-                e_name = item.get("name", "Unknown Entity")
-                e_type = item.get("type", "Unknown Type")
-                formatted.append(f"Entity: {e_name} ({e_type})")
+                        pub_links.append(f"[{pub_name}]({base_url}{pub_name.replace('_', '.')})")
+
+                    rel_str = (
+                        f"{subject_name} → {predicate} → {object_name}\n"
+                        f"  - Supported by: {', '.join(pub_links) if pub_links else 'No publications'}"
+                    )
+                    formatted.append(rel_str)
+
+                elif item["type"] == "entity":
+                    e_name = item.get("name", "Unknown Entity")
+                    e_type = item.get("entity_type", "Unknown Type")
+                    formatted.append(f"Entity: {e_name} ({e_type})")
+            except Exception as e:
+                logger.error(f"Error formatting context item: {str(e)}")
+                continue
 
         return "\n\n".join(formatted)
 
-    def _get_entity_name(self, client: WeaviateClient, entity_id: str) -> str:
-        """Get entity name."""
-        try:
-            entity = client.collections.get(KG_CLASS_NAME).get(uuid=entity_id)
-            return entity.properties.get("name", "Unknown Entity")
-        except Exception as e:
-            logger.error(f"Error getting entity name: {str(e)}")
-            return "Unknown Entity"
-
-    def _extract_sources(self, context: List[Dict]) -> List[str]:
+    @staticmethod
+    def _extract_sources(context: List[Dict]) -> List[str]:
         sources = set()
         try:
             for item in context or []:
                 if isinstance(item, dict) and item.get("type") == "relation":
-                    pubs = item.get("data", {}).get("hasPublication", [])
-                    sources.update(
-                        f"{pub.get('name', 'Unnamed Publication')}: {pub.get('description', 'No description')}"
-                        for pub in pubs if isinstance(pub, dict)
-                    )
+                    for pub in item.get("publications", []):
+                        if isinstance(pub, dict) and "name" in pub:
+                            sources.add(pub["name"].replace('_', '.'))
         except Exception as e:
             logger.error(f"Source extraction error: {str(e)}")
         return list(sources)
@@ -238,12 +317,12 @@ if __name__ == "__main__":
         for q in questions:
             print(f"\n{'=' * 40}\nQuestion: {q}")
             result = rag.query(q)
-            print(f"Answer: {result['answer']}")
+            print(f"Context: {result['context']}")
             if result["sources"]:
                 print("\nSources:")
                 for source in result["sources"]:
                     print(f"- {source}")
-            print(f"\nContext: {result['context_relations']} relations")
+            print(f"\nEntities: {result['context_entities']}, Relations: {result['context_relations']}")
             print("=" * 40)
 
     except Exception as e:
