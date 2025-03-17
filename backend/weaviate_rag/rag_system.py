@@ -275,7 +275,7 @@ class KGRAGSystem:
                         else:
                             base_url = base_url_ct
 
-                        pub_links.append(f"[{pub_name}]({base_url}{pub_name.replace('_', '.')})")
+                        pub_links.append(f"[{pub_name.replace('_', '.')}]({base_url}{pub_name.replace('_', '.')})")
 
                     rel_str = (
                         f"{subject_name} → {predicate} → {object_name}\n"
