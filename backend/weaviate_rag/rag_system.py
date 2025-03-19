@@ -5,7 +5,6 @@ from typing import List, Dict
 import logging
 from weaviate.classes.query import QueryReference
 from weaviate.collections.classes.filters import Filter
-import random
 
 load_dotenv()
 
@@ -88,11 +87,10 @@ class KGRAGSystem:
                     result["error"] = "No relevant information found"
                     return result
 
-                # Randomize and limit context data
-                randomized_context = self._randomize_context(context_data, max_entities)
+                relevant_context = self._select_relevant_context(context_data, max_entities)
 
                 # Format context
-                context_str = self._format_context(randomized_context)
+                context_str = self._format_context(relevant_context)
 
                 # Trim to max length if needed
                 if len(context_str) > max_context_length:
@@ -102,11 +100,11 @@ class KGRAGSystem:
                 # Update results with KG context
                 result.update({
                     "context": context_str,
-                    "sources": self._extract_sources(randomized_context),
+                    "sources": self._extract_sources(relevant_context),
                     "context_entities": sum(
-                        1 for item in randomized_context if isinstance(item, dict) and item.get("type") == "entity"),
+                        1 for item in relevant_context if isinstance(item, dict) and item.get("type") == "entity"),
                     "context_relations": sum(
-                        1 for item in randomized_context if isinstance(item, dict) and item.get("type") == "relation")
+                        1 for item in relevant_context if isinstance(item, dict) and item.get("type") == "relation")
                 })
 
         except Exception as e:
@@ -117,36 +115,60 @@ class KGRAGSystem:
 
 
     @staticmethod
-    def _randomize_context(context_data: List[Dict], max_entities: int) -> List[Dict]:
-        """Randomize and limit the context data."""
-        # Separate entities and relations
+    def _select_relevant_context(context_data: List[Dict], max_entities: int) -> List[Dict]:
+        """Select the most relevant entities and their relations."""
+
         entities = [item for item in context_data if item["type"] == "entity"]
         relations = [item for item in context_data if item["type"] == "relation"]
 
-        # Select and randomize entities
-        random.shuffle(entities)
         selected_entities = entities[:max_entities]
         selected_entity_ids = {entity["id"] for entity in selected_entities}
 
-        # Keep only relations connected to selected entities (max 3 per entity)
-        entity_relations = {entity_id: [] for entity_id in selected_entity_ids}
+        relation_scores = {}
 
-        for relation in relations:
+        for i, relation in enumerate(relations):
             subject_id = relation.get("subject", {}).get("id")
             object_id = relation.get("object", {}).get("id")
 
-            # Check if relation connects to a selected entity
-            if subject_id in selected_entity_ids:
-                if len(entity_relations[subject_id]) < 3:
-                    entity_relations[subject_id].append(relation)
-            elif object_id in selected_entity_ids:
-                if len(entity_relations[object_id]) < 3:
-                    entity_relations[object_id].append(relation)
+            if subject_id not in selected_entity_ids and object_id not in selected_entity_ids:
+                continue
 
-        # Flatten relations and combine with entities
+            try:
+                subject_rank = next((i for i, e in enumerate(selected_entities)
+                                     if e["id"] == subject_id), len(selected_entities))
+                object_rank = next((i for i, e in enumerate(selected_entities)
+                                    if e["id"] == object_id), len(selected_entities))
+
+                relation_score = min(subject_rank, object_rank) + (i * 0.01)
+                relation_scores[relation["id"]] = (relation_score, relation)
+            except Exception:
+                continue
+
+        entity_relations = {entity_id: [] for entity_id in selected_entity_ids}
+
+        sorted_relations = [r for _, r in sorted(relation_scores.values(), key=lambda x: x[0])]
+
+        for relation in sorted_relations:
+            subject_id = relation.get("subject", {}).get("id")
+            object_id = relation.get("object", {}).get("id")
+
+            if subject_id in selected_entity_ids and len(entity_relations[subject_id]) < 3:
+                entity_relations[subject_id].append(relation)
+                continue
+
+            if object_id in selected_entity_ids and len(entity_relations[object_id]) < 3:
+                entity_relations[object_id].append(relation)
+
         selected_relations = [rel for rels in entity_relations.values() for rel in rels]
-        final_context = selected_entities + selected_relations
-        random.shuffle(final_context)
+
+        final_context = []
+        for entity in selected_entities:
+            final_context.append(entity)
+            # Add this entity's relations
+            entity_id = entity["id"]
+            final_context.extend([r for r in selected_relations if
+                                  r.get("subject", {}).get("id") == entity_id or
+                                  r.get("object", {}).get("id") == entity_id])
 
         return final_context
 
