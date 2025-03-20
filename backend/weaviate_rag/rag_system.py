@@ -186,7 +186,7 @@ class KGRAGSystem:
             logger.info(f"Starting hybrid search for: {query}")
 
             entities_collection = client.collections.get(KG_CLASS_NAME)
-            vector_result = entities_collection.query.near_text(
+            vector_result = entities_collection.query.hybrid(
                 query=query,
                 limit=top_k,
                 return_properties=["name", "type"]

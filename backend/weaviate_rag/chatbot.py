@@ -13,20 +13,50 @@ from backend.prompts import generate_chat_prompt
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
-DEFAULT_MODEL = "deepseek-r1"
+DEFAULT_MODEL = "llama3.2"
 MAX_HISTORY = 10
 TEMPERATURE = 0.3
 
 
 def sanitize_input(text):
-    """Remove or replace potentially problematic control characters."""
-    text = re.sub(r'[\r\x08]', '', text)
+    """Enhanced sanitization to prevent prompt injection and control character attacks."""
+    if text is None:
+        return None
+
+    text = text.replace('\r', '').replace('\x08', '')
+
+    if len(text) > 500:
+        logger.warning(f"Input exceeds maximum length: {len(text)} chars")
+        return None
+
+    injection_patterns = [
+        r'(?i)ignore .*instructions',
+        r'(?i)disregard .*instructions',
+        r'(?i)forget .*guidelines',
+        r'(?i)just say',
+        r'(?i)just print',
+        r'(?i)output the following',
+        r'(?i)verbatim',
+        r'(?i)STAN',
+        r'(?i)DAN',
+        r'(?i)DUDE',
+        r'(?i)ANTI-DAN'
+    ]
+
+    for pattern in injection_patterns:
+        if re.search(pattern, text):
+            logger.warning(f"Potential prompt injection detected: {text[:50]}...")
+            return None
+
     return text
 
 
 def retrieve(user_input):
     try:
         sanitized_input = sanitize_input(user_input)
+
+        if sanitized_input is None:
+            return "No relevant information available due to potential security concerns."
 
         rag_system = KGRAGSystem()
         kg_result = rag_system.query(sanitized_input)
@@ -51,10 +81,11 @@ async def async_generator(sync_gen):
 
 
 async def create_system_prompt(user_input):
-    context = retrieve(user_input)
-    logger.info("Retrieved context for user query")
+    sanitized_input = sanitize_input(user_input)
 
-    system_prompt = generate_chat_prompt(context, user_input)
+    context = retrieve(sanitized_input)
+    logger.info("Retrieved context for user query")
+    system_prompt = generate_chat_prompt(context, sanitized_input)
 
     return system_prompt
 
@@ -70,7 +101,7 @@ async def start_chat():
             Select(
                 id="model",
                 label="Select Model",
-                values=["deepseek-r1", "gemma3", "llama3.2"],
+                values=["llama3.2", "deepseek-r1", "gemma3"],
                 initial_index=0,
             ),
             Slider(
@@ -130,19 +161,14 @@ async def main(message: cl.Message):
         await cl.Message("🔄 Chat history cleared. Starting fresh!").send()
         return
 
-    # Check for known malicious input patterns
-    if any(pattern in user_input for pattern in ["STAN", "DAN", "DUDE", "ANTI-DAN"]):
+    sanitized_input = sanitize_input(user_input)
+
+    if sanitized_input is None:
         await cl.Message(
-            content="I can only provide factual information about AMD research. For security reasons, I cannot engage with this request.").send()
+            content="I can only provide factual information about AMD research. Your question contains patterns that may compromise security or exceed length limits. Please rephrase your question.").send()
         return
 
-    # Handle potentially dangerous input for robustness
-    if len(user_input) > 500 or re.search(r'[\r\x08]{3,}', user_input):
-        await cl.Message(
-            content="Your message contains unusual patterns that may affect my ability to respond accurately. Please simplify your question.").send()
-        return
-
-    system_prompt = await create_system_prompt(user_input)
+    system_prompt = await create_system_prompt(sanitized_input)
 
     history = cl.user_session.get("history", [])
 
@@ -151,7 +177,7 @@ async def main(message: cl.Message):
     else:
         history[0]["content"] = system_prompt
 
-    history.append({"role": "user", "content": user_input})
+    history.append({"role": "user", "content": sanitized_input})
 
     if len(history) > MAX_HISTORY * 2 + 1:
         history = [history[0]] + history[-(MAX_HISTORY * 2):]

@@ -3,6 +3,7 @@ import os
 import re
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
 
 import pandas as pd
 import ollama
@@ -14,30 +15,49 @@ from backend.prompts import generate_chat_prompt
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
-DEFAULT_MODEL = "deepseek-r1"
+DEFAULT_MODEL = "llama3.2"
 TEMPERATURE = 0.3
 
 
 def sanitize_input(text):
-    """Remove or replace potentially problematic control characters."""
-    text = re.sub(r'[\r\x08]', '', text)
+    """Enhanced sanitization to prevent prompt injection and control character attacks."""
+    if text is None:
+        return None
+
+    text = text.replace('\r', '').replace('\x08', '')
+
+    if len(text) > 500:
+        logger.warning(f"Input exceeds maximum length: {len(text)} chars")
+        return None
+
+    injection_patterns = [
+        r'(?i)ignore .*instructions',
+        r'(?i)disregard .*instructions',
+        r'(?i)forget .*guidelines',
+        r'(?i)just say',
+        r'(?i)just print',
+        r'(?i)output the following',
+        r'(?i)verbatim',
+        r'(?i)STAN',
+        r'(?i)DAN',
+        r'(?i)DUDE',
+        r'(?i)ANTI-DAN'
+    ]
+
+    for pattern in injection_patterns:
+        if re.search(pattern, text):
+            logger.warning(f"Potential prompt injection detected: {text[:50]}...")
+            return None
+
     return text
-
-
-def is_malicious_input(text):
-    """Check for known malicious prompt patterns."""
-    malicious_patterns = ["STAN", "DAN", "DUDE", "ANTI-DAN"]
-    return any(pattern in text for pattern in malicious_patterns)
-
-
-def is_suspicious_input(text):
-    """Check for potentially problematic input patterns."""
-    return len(text) > 500 or re.search(r'[\r\x08]{3,}', text)
 
 
 def retrieve(user_input):
     try:
         sanitized_input = sanitize_input(user_input)
+
+        if sanitized_input is None:
+            return "No relevant information available due to potential security concerns."
 
         rag_system = KGRAGSystem()
         kg_result = rag_system.query(sanitized_input)
@@ -53,30 +73,19 @@ def retrieve(user_input):
         return f"Error retrieving information: {str(e)}"
 
 
-def remove_thinking_section(text):
-    """Remove the thinking section from DeepSeek-r1 responses."""
-    clean_text = re.sub(r'<think>.*?</think>', '', text, flags=re.DOTALL)
-    clean_text = clean_text.replace('<think>', '').replace('</think>', '')
-    clean_text = re.sub(r'\n{3,}', '\n\n', clean_text)
-
-    return clean_text.strip()
-
-
 def create_system_prompt(user_input):
-    context = retrieve(user_input)
-
-    system_prompt = generate_chat_prompt(context, user_input)
+    sanitized_input = sanitize_input(user_input)
+    context = retrieve(sanitized_input)
+    system_prompt = generate_chat_prompt(context, sanitized_input)
 
     return system_prompt
 
 
 def rag_chatbot(question):
     sanitized_question = sanitize_input(question)
-    if is_malicious_input(sanitized_question):
-        return "I can only provide factual information about AMD research. For security reasons, I cannot engage with this request."
 
-    if is_suspicious_input(sanitized_question):
-        return "Your message contains unusual patterns that may affect my ability to respond accurately. Please simplify your question."
+    if sanitized_question is None:
+        return "I can only provide factual information about AMD research. Your question contains patterns that may compromise security or exceed length limits. Please rephrase your question."
 
     system_prompt = create_system_prompt(sanitized_question)
 
@@ -94,10 +103,7 @@ def rag_chatbot(question):
         )
 
         response_text = response["message"]["content"]
-
-        clean_response = remove_thinking_section(response_text)
-
-        return clean_response
+        return response_text
 
     except Exception as e:
         logger.exception("Error in chat processing")
