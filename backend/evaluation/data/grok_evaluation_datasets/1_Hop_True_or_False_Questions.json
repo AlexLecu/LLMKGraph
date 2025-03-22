@@ -1,0 +1,2502 @@
+[
+    {
+        "question": "Does AMD primarily affect the macula of the retina?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is wet AMD characterized by abnormal blood vessel growth?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can dry AMD lead to complete blindness?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is smoking a known risk factor for AMD?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does wet AMD progress faster than dry AMD?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is there a cure for advanced dry AMD?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can anti-VEGF injections treat wet AMD?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does AMD affect peripheral vision more than central vision?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is family history a risk factor for developing AMD?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD be diagnosed with a blood test?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Does the Amsler grid help detect AMD symptoms?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is dry AMD more common than wet AMD?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can sunglasses completely prevent AMD?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does diabetes increase the risk of AMD?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Is laser therapy a standard treatment for dry AMD?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Are drusen deposits associated with dry AMD?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does AMD primarily affect people over 50?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can wet AMD cause sudden vision loss?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is AMD contagious between individuals?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does obesity increase the risk of AMD?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD be reversed with surgery?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does AMD affect color perception?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Is AMD caused by excessive screen time?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can optical coherence tomography (OCT) detect AMD?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does wet AMD involve fluid leakage under the retina?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is AMD more prevalent in women than men?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can AMD be treated with over-the-counter eye drops?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does high blood pressure increase AMD risk?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is AMD linked to high cholesterol levels?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can fish oil supplements alone prevent AMD?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does AMD affect the optic nerve directly?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is photodynamic therapy used to treat wet AMD?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD increase the risk of falls in older adults?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Does AMD only occur in one eye at a time?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can AREDS supplements slow dry AMD progression?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "Is AMD more common in Caucasian populations?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does wet AMD always lead to total blindness?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can AMD cause straight lines to appear wavy?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is AMD caused by a bacterial infection?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does AMD affect depth perception?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can children develop AMD?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does AMD increase the need for visual aids?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is AMD linked to UV light exposure?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD be reversed with exercise alone?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does AMD affect night vision more than daytime vision?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can a dilated eye exam diagnose AMD?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is AMD caused by reading in dim light?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does AMD affect the ability to recognize faces?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can wet AMD be cured with antibiotics?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does AMD risk increase with age?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does AMD affect the central vision?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is wet AMD caused by bacterial infections?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can dry AMD progress to geographic atrophy?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is AMD treatable with antibiotics?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does wet AMD involve choroidal neovascularization?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can AMD be prevented by avoiding all sunlight?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is smoking a risk factor for AMD?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does dry AMD cause rapid vision loss?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is AMD primarily a disease of the cornea?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does family history increase AMD risk?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD be diagnosed with a urine test?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Is the Amsler grid used to monitor AMD symptoms?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does wet AMD cause sudden vision changes?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is dry AMD more prevalent than wet AMD?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can AMD be cured with dietary supplements alone?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is AMD contagious?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can optical coherence tomography detect AMD?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is obesity a risk factor for AMD?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD be reversed with laser surgery?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can diabetes increase the risk of AMD?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Does wet AMD involve fluid buildup under the retina?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is AMD more common in women than men?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does AMD increase the risk of falls in older adults?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Is photodynamic therapy a treatment for wet AMD?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD be prevented by wearing UV-protective sunglasses?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is AMD caused by a viral infection?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does AMD primarily affect people over 60?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is AMD reversible with current treatments?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can wet AMD cause distorted vision?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is high cholesterol a risk factor for AMD?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Does AMD cause straight lines to appear wavy?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD be cured with exercise alone?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can a dilated eye exam detect AMD?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can wet AMD be treated with antibiotics?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is dry AMD associated with drusen deposits?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can AMD be diagnosed with an MRI?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Does wet AMD cause fluid leakage in the eye?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is AMD linked to cardiovascular disease?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can AMD be prevented with fish oil supplements alone?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does AMD affect reading ability?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is AMD caused by excessive caffeine intake?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can fluorescein angiography diagnose wet AMD?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does AMD only affect one eye at a time?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is AMD more prevalent in developed countries?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can wet AMD be reversed completely?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does AMD affect the macula?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is AMD caused by poor hygiene?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can low vision aids help manage AMD symptoms?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does AMD affect driving ability?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is AMD caused by excessive alcohol consumption?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD be inherited genetically?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does wet AMD cause hemorrhages under the retina?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is AMD caused by staring at bright lights?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can regular eye exams detect AMD early?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does AMD cause floaters in the eye?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is AMD linked to lighter eye color?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD be cured with vitamin C alone?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does AMD cause blind spots in central vision?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is AMD caused by excessive sugar intake?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can smoking cessation reduce AMD risk?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does AMD affect night vision exclusively?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Is AMD detectable with a retina scan?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can wet AMD be managed with dietary changes alone?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does AMD cause difficulty adapting to low light?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Is AMD caused by a lack of sleep?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD be monitored with regular eye checkups?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does dry AMD cause bleeding in the eye?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is AMD more common in African Americans than Caucasians?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD cause visual hallucinations in advanced stages?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does AMD affect only the elderly over 80?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is AMD linked to oxidative stress?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can AMD be treated with acupuncture?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does AMD increase the risk of depression?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Is AMD caused by excessive use of contact lenses?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can fundus photography help diagnose AMD?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does wet AMD cause scarring of the retina?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is AMD caused by a lack of vitamin D?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD affect the ability to judge distances?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Does dry AMD always progress to wet AMD?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is AMD associated with about 11 million cases in the US?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can wet AMD be prevented by avoiding all fats?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does AMD cause blurred central vision?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is wet AMD caused by excessive tearing?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can dry AMD lead to thinning of the retina?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is AMD treatable with hearing aids?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does wet AMD cause rapid central vision loss?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can AMD be prevented by avoiding all exercise?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is hypertension a risk factor for AMD?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does dry AMD cause sudden vision changes?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can photodynamic therapy treat wet AMD?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is AMD a disease of the iris?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does AMD increase the need for brighter lighting?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD be diagnosed with a hearing test?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Is fluorescein angiography used to detect wet AMD?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does wet AMD cause swelling beneath the retina?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is early AMD often asymptomatic?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD be cured with herbal remedies?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does cardiovascular disease increase AMD risk?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Is AMD caused by loud noises?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can fundus autofluorescence imaging detect AMD?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does AMD affect the sclera?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is oxidative stress a factor in AMD development?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can AMD be reversed with meditation?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does AMD impair the ability to see fine details?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is AMD caused by a lack of water intake?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can late-stage AMD severely limit daily activities?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does wet AMD cause gradual vision improvement?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is AMD more severe in one eye than the other in some cases?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD be treated with skin creams?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does AMD increase the risk of social isolation?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Is dry AMD treated with anti-VEGF injections?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can smoking cessation reduce the progression of AMD?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does AMD cause pain in the eyes?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is AMD linked to reduced contrast sensitivity?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can AMD be prevented by avoiding all carbohydrates?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does wet AMD cause a gray spot in central vision?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is AMD caused by excessive blinking?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD affect the ability to see in low light?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Does dry AMD cause retinal hemorrhages?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is AMD detectable before symptoms appear?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD be cured with cold compresses?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does AMD cause difficulty seeing in bright light?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Is wet AMD caused by a vitamin deficiency?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD increase the need for magnifying devices?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does AMD affect the lens of the eye?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is AMD linked to chronic inflammation?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can AMD be prevented by avoiding all dairy?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does wet AMD cause a wavy appearance of objects?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is AMD caused by excessive hand washing?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD lead to legal blindness?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does dry AMD cause inflammation of the eyelids?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is AMD associated with retinal pigment epithelial damage?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can AMD be treated with nasal sprays?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does AMD affect the ability to see motion?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Is AMD caused by excessive use of perfume?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD increase difficulty navigating crowded spaces?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Does wet AMD cause vision loss only in dim light?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is AMD linked to reduced visual acuity?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD be prevented by avoiding all protein?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does dry AMD cause small blind spots over time?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is AMD caused by excessive exposure to wind?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD affect the ability to sew or knit?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Does wet AMD cause inflammation of the iris?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is AMD linked to difficulty seeing in fog?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD be cured with aromatherapy?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does AMD cause challenges with recognizing patterns?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Is dry AMD caused by a fungal infection?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD increase difficulty with cooking tasks?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Does AMD cause vision loss due to lens clouding?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is AMD linked to impaired ability to see small print?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD be prevented by avoiding all grains?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does wet AMD cause a ripple effect in vision?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is AMD caused by excessive foot massages?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD affect the ability to play card games?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does dry AMD cause rapid photoreceptor regeneration?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is AMD linked to difficulty seeing traffic signs?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD be treated with throat lozenges?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does AMD cause trouble seeing in dimly lit rooms?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is wet AMD caused by excessive use of toothpaste?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD affect the ability to enjoy painting?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Does AMD cause vision loss due to corneal scarring?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is AMD linked to difficulty identifying coins?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can AMD be prevented by avoiding all liquids?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does wet AMD cause a central haze in vision?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is AMD caused by excessive use of hair dye?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD affect the ability to watch television?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does dry AMD cause inflammation of the conjunctiva?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is AMD linked to difficulty assembling puzzles?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can AMD be cured with foot reflexology?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does AMD cause challenges with writing by hand?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is wet AMD caused by a lack of potassium?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD affect the ability to use a smartphone?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does AMD cause vision loss due to pupil damage?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is AMD linked to reduced independence in older adults?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can AMD be prevented by avoiding all meats?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does wet AMD cause shadows in the visual field?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is AMD caused by excessive nail polishing?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD affect the ability to see details on a map?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does dry AMD cause rapid vision improvement?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does AMD cause difficulty seeing in low-contrast environments?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is wet AMD caused by excessive exposure to pollen?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can dry AMD lead to photoreceptor loss?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is AMD treatable with ear drops?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does wet AMD cause a blurred central spot?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can AMD be prevented by avoiding all vegetables?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is atherosclerosis a risk factor for AMD?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Does dry AMD cause immediate vision loss?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can optical coherence tomography angiography detect wet AMD?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is AMD a disease of the vitreous?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does AMD impair the ability to see edges clearly?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can AMD be diagnosed with a skin test?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Is home vision testing useful for monitoring AMD?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does wet AMD cause subretinal fluid accumulation?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is intermediate AMD characterized by larger drusen?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD be cured with over-the-counter painkillers?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does chronic inflammation increase AMD risk?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Is AMD caused by excessive exposure to cold weather?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can visual rehabilitation help manage AMD symptoms?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does AMD affect the pupil directly?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is retinal hypoxia a factor in AMD progression?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can AMD be reversed with chiropractic care?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does AMD cause difficulty threading a needle?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is AMD caused by a lack of dietary protein?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can advanced AMD limit independence?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Does wet AMD cause gradual central vision recovery?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is AMD linked to difficulty seeing in crowded places?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can AMD be treated with dietary fat alone?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does AMD increase the risk of tripping over objects?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Is dry AMD treated with photodynamic therapy?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can quitting smoking slow AMD progression?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does AMD cause inflammation of the cornea?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is AMD associated with reduced ability to see details in art?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does wet AMD cause a dark central patch?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is AMD caused by excessive use of air conditioning?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD affect the ability to enjoy birdwatching?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Does dry AMD cause optic nerve swelling?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is AMD detectable with regular vision screenings?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD be cured with heat therapy?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does AMD cause difficulty seeing in bright sunlight?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Is wet AMD caused by a lack of dietary fiber?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD increase the need for reading glasses?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does AMD affect the choroid directly?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is AMD linked to difficulty distinguishing similar colors?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can AMD be prevented by avoiding all dairy products?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does wet AMD cause vision to appear bent?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is AMD caused by excessive use of cleaning products?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD lead to challenges with buttoning a shirt?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Does dry AMD cause retinal pigment regeneration?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is AMD associated with difficulty seeing clock faces?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD be treated with herbal tea?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does AMD affect the ability to see fine print on labels?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is AMD caused by excessive exposure to rain?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD impair the ability to see numbers on a phone?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does wet AMD cause inflammation of the sclera?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is AMD linked to difficulty seeing in hazy conditions?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD be cured with essential oils?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does AMD cause challenges with recognizing textures?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Is dry AMD caused by excessive exposure to chlorine?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD affect the ability to enjoy photography?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does AMD cause vision loss due to iris damage?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is AMD linked to difficulty seeing details on a menu?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD be prevented by avoiding all spices?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does wet AMD cause a central shadow in bright light?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is AMD caused by excessive use of deodorant?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD affect the ability to thread a sewing machine?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Does dry AMD cause rapid retinal regeneration?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is AMD linked to difficulty seeing fine details in photographs?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD be treated with mouthwash?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does AMD cause trouble seeing in low-light environments?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Is wet AMD caused by a lack of dietary calcium?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD affect the ability to enjoy hobbies like painting?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Does AMD cause vision loss due to vitreous detachment?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is AMD linked to difficulty identifying small objects?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD be prevented by avoiding all fats?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does wet AMD cause a distorted central field?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is AMD caused by excessive use of hair gel?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD impair the ability to read small text on screens?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does dry AMD cause inflammation of the vitreous?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is AMD linked to difficulty seeing in smoky environments?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD be cured with ice packs?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does AMD cause challenges with seeing details in nature?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is AMD caused by excessive pet dander exposure?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD affect the ability to see fine print on packaging?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does wet AMD cause optic disc damage?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is AMD linked to difficulty seeing in overcast weather?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD be prevented by avoiding all sugars?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does wet AMD cause a central blind spot?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is AMD caused by excessive use of sunscreen?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD affect the ability to see details on a computer?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does dry AMD cause rapid retinal pigment epithelial repair?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is AMD linked to difficulty seeing in twilight?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can AMD be treated with hand sanitizer?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does AMD cause challenges with seeing fine details in books?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is AMD caused by excessive exposure to smoke detectors?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does AMD cause difficulty distinguishing contrasts?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is wet AMD caused by excessive exposure to dust?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can dry AMD lead to retinal pigment epithelial atrophy?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is AMD treatable with topical ointments?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does wet AMD cause a sudden central blur?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is hyperlipidemia a risk factor for AMD?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Does dry AMD cause abrupt vision deterioration?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can fundus photography detect AMD changes?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is AMD a condition of the conjunctiva?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does AMD impair the ability to see sharp outlines?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can AMD be diagnosed with a saliva test?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Is visual acuity testing useful for AMD detection?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does wet AMD cause retinal pigment epithelial detachment?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is early AMD often unnoticed by patients?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD be cured with homeopathic remedies?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does systemic inflammation increase AMD risk?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Is AMD caused by excessive exposure to loud music?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can adaptive devices assist with AMD-related vision loss?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does AMD affect the retina\u2019s outer layers?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is lipid metabolism dysregulation linked to AMD?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can AMD be reversed with yoga?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does AMD cause difficulty with precision tasks like sewing?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is AMD caused by a lack of dietary carbohydrates?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can severe AMD restrict mobility?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Does wet AMD cause gradual vision stabilization?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is AMD linked to difficulty navigating busy environments?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can AMD be treated with sugar syrup?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does AMD increase the likelihood of stumbling?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Is wet AMD treated with laser surgery as a first-line option?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can reducing smoking improve AMD outcomes?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does AMD cause swelling of the optic disc?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is AMD associated with trouble seeing intricate designs?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD be prevented by avoiding all proteins?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does wet AMD cause a dark central shadow?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is AMD caused by excessive use of fans?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD affect the ability to spot wildlife?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Does dry AMD cause retinal vein occlusion?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is AMD detectable with routine eye chart tests?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD be cured with salt water rinses?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does AMD cause issues seeing in glaring conditions?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Is wet AMD caused by a lack of dietary fats?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD increase reliance on corrective lenses?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does AMD affect the retinal ganglion cells directly?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is AMD linked to trouble discerning subtle hues?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Does wet AMD cause objects to appear wavy?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is AMD caused by excessive use of shampoo?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD lead to difficulty with tasks like fastening buttons?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Does dry AMD cause retinal artery occlusion?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is AMD associated with trouble reading analog clocks?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD be treated with cough syrup?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does AMD affect the ability to read product labels?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is AMD caused by excessive exposure to heat?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD impair the ability to dial a phone?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does wet AMD cause inflammation of the pupil?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is AMD linked to difficulty seeing in foggy weather?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD be cured with lemon extract?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does AMD cause trouble identifying visual patterns?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Is dry AMD caused by excessive exposure to mold?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD affect the ability to appreciate scenic views?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does AMD cause vision loss due to lens detachment?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is AMD linked to difficulty reading restaurant menus?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD be prevented by avoiding all salt?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does wet AMD cause a central visual haze?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is AMD caused by excessive use of conditioner?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD impair the ability to sew intricate patterns?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Does dry AMD cause retinal pigment epithelial swelling?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is AMD linked to difficulty seeing fine details in images?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD be treated with nasal decongestants?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does AMD affect the ability to read digital displays?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is AMD caused by excessive exposure to humidity?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD impair the ability to see in dawn light?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Does AMD cause inflammation of the lens?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is AMD linked to difficulty reading fine print in books?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does wet AMD cause a central visual distortion?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is AMD caused by excessive use of body lotion?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD affect the ability to see details on a tablet?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does dry AMD cause rapid retinal pigment epithelial regeneration?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is AMD linked to difficulty seeing in dusk conditions?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can AMD be treated with lip balm?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does AMD cause trouble reading fine text on screens?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is AMD caused by excessive exposure to perfumes?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD affect the ability to see details in artwork?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does wet AMD cause inflammation of the cornea?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is AMD linked to difficulty seeing in cloudy weather?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD be cured with sugar pills?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does AMD cause challenges with seeing fine details in crafts?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Is AMD caused by excessive exposure to sand?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD affect the ability to see fine details in landscapes?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does dry AMD cause rapid choroidal repair?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does AMD cause trouble seeing subtle contrasts?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is wet AMD caused by excessive exposure to smoke?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can dry AMD lead to loss of retinal pigment?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is AMD treatable with antihistamines?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does wet AMD cause a sudden central blind spot?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can AMD be prevented by avoiding all fruits?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is coronary artery disease a risk factor for AMD?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Does dry AMD cause instant vision impairment?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can perimetry testing detect AMD-related vision loss?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is AMD a condition of the eyelids?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does AMD impair the ability to see clear boundaries?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can AMD be diagnosed with a breath test?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Is contrast sensitivity testing useful for AMD monitoring?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does wet AMD cause subretinal hemorrhages?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is early-stage AMD typically symptomatic?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does chronic systemic inflammation contribute to AMD?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Is AMD caused by excessive exposure to silence?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can magnifiers help with AMD-related vision difficulties?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does AMD affect the retinal inner layers directly?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is impaired retinal metabolism a feature of AMD?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can AMD be reversed with sound therapy?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does AMD cause difficulty with tasks requiring fine vision?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is AMD caused by a lack of dietary salt?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can advanced AMD hinder daily functioning?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Does wet AMD cause slow vision recovery?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is AMD linked to difficulty in chaotic visual settings?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can AMD be treated with honey?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does AMD increase the risk of tripping in dim light?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Is dry AMD treated with steroid injections?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can stopping smoking mitigate AMD progression?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does AMD cause swelling of the retina\u2019s inner layers?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is AMD associated with trouble seeing detailed patterns?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does wet AMD cause a central gray area?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is AMD caused by excessive exposure to dry air?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD affect the ability to identify distant objects?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Does dry AMD cause retinal detachment?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is AMD detectable with color vision tests?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD be cured with vinegar?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does AMD cause problems seeing in reflective light?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Is wet AMD caused by a lack of dietary protein?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD increase dependence on optical aids?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does AMD affect the retinal blood vessels directly?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is AMD linked to difficulty perceiving faint colors?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Does wet AMD cause lines to appear curved?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is AMD caused by excessive use of soap?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD lead to difficulty with tasks like tying knots?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Does dry AMD cause optic nerve inflammation?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is AMD associated with trouble reading digital clocks?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD be treated with antacids?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does AMD affect the ability to read fine print on bottles?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is AMD caused by excessive exposure to fog?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD impair the ability to use a keypad?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does wet AMD cause inflammation of the optic nerve?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is AMD linked to difficulty seeing in misty conditions?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD be cured with garlic extract?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does AMD cause trouble identifying visual textures?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Is dry AMD caused by excessive exposure to pollen?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD affect the ability to enjoy detailed scenery?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does AMD cause vision loss due to optic disc damage?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is AMD linked to difficulty reading price tags?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does wet AMD cause a central visual ripple?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is AMD caused by excessive use of lotion?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD impair the ability to sew fine stitches?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Does AMD cause difficulty seeing straight lines as straight?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is wet AMD caused by excessive exposure to blue light?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can dry AMD lead to atrophy of the retinal pigment epithelium?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is AMD treatable with herbal eye washes?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does wet AMD cause leakage of blood into the retina?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can AMD be prevented by avoiding all artificial light?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is a history of stroke a risk factor for AMD?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Does dry AMD cause immediate distortion of central vision?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can dark adaptometry testing detect AMD-related vision changes?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is AMD a condition affecting the tear ducts?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does AMD impair the ability to see subtle gradients?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can AMD be diagnosed with an electrocardiogram?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Is microperimetry useful for assessing AMD progression?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does wet AMD cause abnormal growth of choroidal blood vessels?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does wet AMD involve abnormal blood vessel growth?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is AMD curable with current treatments?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Are drusen deposits a sign of early dry AMD?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does AMD primarily affect peripheral vision?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can anti-VEGF injections slow wet AMD progression?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does AMD only occur in people under 50?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is geographic atrophy an advanced form of dry AMD?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD cause complete blindness in all cases?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can the Amsler grid help detect vision changes in AMD?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is AMD caused by bacterial infection?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    }
+]
