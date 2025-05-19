@@ -11,7 +11,21 @@ class GraphRAGSystem:
     def __init__(self, question):
         """Initialize the analyzer with a question and set up Weaviate and Ollama clients."""
         self.question = question
-        self.acronyms = {"AMD": "age-related macular degeneration"}
+        self.acronyms ={
+            "wet amd": "wet age-related macular degeneration",
+            "early amd": "early age-related macular degeneration",
+            "cnv": "choroidal neovascularization",
+            "amd": "age-related macular degeneration",
+            "wet age-related macular degeneration amd": "wet age-related macular degeneration",
+            "early age related macular degeneration amd": "early age-related macular degeneration",
+            "wet armd": "wet age-related macular degeneration",
+            "ga": "geographic atrophy",
+            "oct": "optical coherence tomography",
+            "pdt": "photodynamic therapy",
+            "pcv": "polypoidal choroidal vasculopathy",
+            "vma": "vitreomacular adhesion",
+            "me": "macular edema",
+        }
         self.temp_dir = tempfile.mkdtemp()
         atexit.register(shutil.rmtree, self.temp_dir, ignore_errors=True)
         self.client = weaviate.connect_to_local()
@@ -21,13 +35,24 @@ class GraphRAGSystem:
         self.entity_id_to_name = {}
 
     def expand_terms(self, terms):
-        """Replace acronyms with their full forms in the list of terms."""
-        return [self.acronyms.get(term, term) for term in terms]
+        """Replace acronyms with their full forms in the list of terms or noun phrases, normalizing case."""
+        expanded_terms = []
+        for term in terms:
+            words = term.split()
+            expanded_words = [self.acronyms.get(word.lower(), word) for word in words]
+            expanded_terms.append(" ".join(expanded_words))
+        return expanded_terms
 
     def retrieve_entities(self):
         """Retrieve entities based on predefined noun phrases from the question."""
         query_analysis = analyze_query(self.question)
-        expanded_noun_phrases = self.expand_terms(query_analysis['noun_phrases'])
+        if query_analysis.get('noun_phrases', []):
+            expanded_noun_phrases = self.expand_terms(query_analysis['noun_phrases'])
+        elif query_analysis.get('keywords', []):
+            expanded_noun_phrases = self.expand_terms(query_analysis['keywords'])
+        else:
+            # Fallback to the raw question if no noun phrases or keywords
+            expanded_noun_phrases = self.expand_terms([self.question])
         entity_results = {}
         for noun_phrase in expanded_noun_phrases:
             entity_search_res = self.entity_collection.query.bm25(
@@ -153,11 +178,10 @@ class GraphRAGSystem:
         prompt = (
             f"Given the question: '{self.question}'\n\n"
             f"Below is a list of relationship descriptions:\n{relation_string}\n\n"
-            f"Select the most relevant relationships that help answer the question. "
-            f"Instead of listing the relationships individually, provide a single concise paragraph "
-            f"summarizing how these relationships collectively demonstrate their relevance to the question. "
-            f"Focus on their combined significance and avoid directly quoting the relationships. "
-            f"Present the response as plain text without JSON or numbered lists."
+            f"Based on the relationships provided, craft a concise, single-paragraph summary that answers the question. "
+            f"Focus on the collective significance of the most relevant relationships without mentioning or referencing specific relationship numbers or indices. "
+            f"Do not list relationships individually or quote them directly. "
+            f"Present the response as plain text in a natural, narrative style, avoiding technical terms like 'relationships' in the summary itself."
         )
         try:
             response = self.ollama_client.generate(model='llama3.2', prompt=prompt)
@@ -182,8 +206,7 @@ class GraphRAGSystem:
 
 # Example usage
 if __name__ == "__main__":
-    question = "Does dry AMD progress slowly because it avoids retinal pigment epithelial regeneration? a) Yes b) No c) Sometimes d) Only early stages"
-    # question = "What is AMD?"
+    question = "Can wet AMD lead to complete blindness?"
     analyzer = GraphRAGSystem(question)
     summary = analyzer.analyze()
     print("Summary of relevant relationships:\n", summary)
