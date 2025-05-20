@@ -3,24 +3,13 @@ import os
 from datetime import datetime
 
 # List of notebook paths in the desired execution order
-# notebooks = [
-#     "/Users/alexlecu/PycharmProjects/LLMKGraph/backend/evaluation/notebooks_ragas/NewRetrieval_multiprocessing/new_retrieval_1hop_true_false.ipynb",
-#     "/Users/alexlecu/PycharmProjects/LLMKGraph/backend/evaluation/notebooks_ragas/NewRetrieval_multiprocessing/new_retrieval_2hop_true_false.ipynb",
-#     "/Users/alexlecu/PycharmProjects/LLMKGraph/backend/evaluation/notebooks_ragas/NewRetrieval_multiprocessing/new_retrieval_1hop_MCQ.ipynb",
-#     "/Users/alexlecu/PycharmProjects/LLMKGraph/backend/evaluation/notebooks_ragas/NewRetrieval_multiprocessing/new_retrieval_2hop_MCQ.ipynb",
-#     "/Users/alexlecu/PycharmProjects/LLMKGraph/backend/evaluation/notebooks_ragas/NewRetrieval_multiprocessing/1_Hop_RAGAS_Evaluation.ipynb",
-#     "/Users/alexlecu/PycharmProjects/LLMKGraph/backend/evaluation/notebooks_ragas/NewRetrieval_multiprocessing/2_Hop_RAGAS_Evaluation.ipynb"
-# ]
-
 notebooks = [
-    "/Users/alexlecu/PycharmProjects/LLMKGraph/backend/evaluation/notebooks_ragas/NewRetrieval_multiprocessing/OnlyNegative/new_retrieval_1hop_true_false.ipynb",
-    "/Users/alexlecu/PycharmProjects/LLMKGraph/backend/evaluation/notebooks_ragas/NewRetrieval_multiprocessing/OnlyNegative/new_retrieval_2hop_true_false.ipynb",
-    "/Users/alexlecu/PycharmProjects/LLMKGraph/backend/evaluation/notebooks_ragas/NewRetrieval_multiprocessing/OnlyNegative/new_retrieval_1hop_MCQ.ipynb",
-    "/Users/alexlecu/PycharmProjects/LLMKGraph/backend/evaluation/notebooks_ragas/NewRetrieval_multiprocessing/OnlyNegative/new_retrieval_2hop_MCQ.ipynb"
+    "/Users/alexlecu/PycharmProjects/LLMKGraph/backend/evaluation/evaluation_notebooks/multiprocessing/1hop_open.ipynb",
+    "/Users/alexlecu/PycharmProjects/LLMKGraph/backend/evaluation/evaluation_notebooks/multiprocessing/2hop_open.ipynb",
 ]
 
 # Create an output directory for executed notebooks
-output_dir = "./executed_notebooks_negative"
+output_dir = "./executed_notebooks"
 os.makedirs(output_dir, exist_ok=True)
 
 # Log file for execution details
@@ -33,7 +22,6 @@ def log_message(message):
 
 # Execute each notebook sequentially
 for notebook in notebooks:
-    # Extract notebook filename
     notebook_name = os.path.basename(notebook)
     output_path = os.path.join(output_dir, f"executed_{notebook_name}")
 
@@ -43,9 +31,6 @@ for notebook in notebooks:
         pm.execute_notebook(
             input_path=notebook,
             output_path=output_path,
-            # Optional: Add parameters if needed
-            # parameters=dict(param1=value1, param2=value2),
-            # Ensure the notebook uses the same working directory
             cwd=os.path.dirname(notebook)
         )
         duration = (datetime.now() - start_time).total_seconds()
@@ -53,5 +38,5 @@ for notebook in notebooks:
     except Exception as e:
         duration = (datetime.now() - start_time).total_seconds()
         log_message(f"Error executing {notebook_name} after {duration:.2f} seconds: {e}")
-        # Comment out 'break' to continue on error
-        break  # Remove or comment this line to continue on error
+
+        break
