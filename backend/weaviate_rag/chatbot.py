@@ -1,7 +1,7 @@
 import chainlit as cl
 from chainlit.input_widget import Select, Slider
 import ollama
-from rag_system import KGRAGSystem
+from weaviate_rag.rag_system import GraphRAGSystem
 import time
 import logging
 import re
@@ -30,17 +30,17 @@ def sanitize_input(text):
         return None
 
     injection_patterns = [
-        r'(?i)ignore .*instructions',
-        r'(?i)disregard .*instructions',
-        r'(?i)forget .*guidelines',
-        r'(?i)just say',
-        r'(?i)just print',
-        r'(?i)output the following',
-        r'(?i)verbatim',
-        r'(?i)STAN',
-        r'(?i)DAN',
-        r'(?i)DUDE',
-        r'(?i)ANTI-DAN'
+        r'(?i)\bignore\b.*\binstructions\b',
+        r'(?i)\bdisregard\b.*\binstructions\b',
+        r'(?i)\bforget\b.*\bguidelines\b',
+        r'(?i)\bjust\s+say\b',
+        r'(?i)\bjust\s+print\b',
+        r'(?i)\boutput\s+the\s+following\b',
+        r'(?i)\bverbatim\b',
+        r'(?i)\bSTAN\b',
+        r'(?i)\bDAN\b',
+        r'(?i)\bDUDE\b',
+        r'(?i)\bANTI-DAN\b'
     ]
 
     for pattern in injection_patterns:
@@ -58,14 +58,9 @@ def retrieve(user_input):
         if sanitized_input is None:
             return "No relevant information available due to potential security concerns."
 
-        rag_system = KGRAGSystem()
-        kg_result = rag_system.query(sanitized_input)
+        analyzer = GraphRAGSystem(sanitized_input)
+        context = analyzer.analyze()
 
-        if kg_result.get("error"):
-            logger.error(f"Knowledge retrieval error: {kg_result['error']}")
-            return f"Knowledge retrieval error: {kg_result['error']}"
-
-        context = kg_result.get('context', 'No further information is available.')
         return context
     except Exception as e:
         logger.exception("Error in retrieve function")
