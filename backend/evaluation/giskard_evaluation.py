@@ -1,22 +1,16 @@
-import sys
-import os
 import re
-
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
 
 import pandas as pd
 import ollama
-from weaviate_rag.rag_system import KGRAGSystem
+from weaviate_rag.rag_system import GraphRAGSystem
 import giskard
 import logging
-from backend.prompts import generate_chat_prompt
+from prompts import generate_chat_prompt
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
 DEFAULT_MODEL = "llama3.2"
-TEMPERATURE = 0.3
 
 
 def sanitize_input(text):
@@ -59,14 +53,11 @@ def retrieve(user_input):
         if sanitized_input is None:
             return "No relevant information available due to potential security concerns."
 
-        rag_system = KGRAGSystem()
-        kg_result = rag_system.query(sanitized_input)
+        analyzer = GraphRAGSystem(sanitized_input)
+        context = analyzer.analyze()
 
-        if kg_result.get("error"):
-            logger.error(f"Knowledge retrieval error: {kg_result['error']}")
-            return f"Knowledge retrieval error: {kg_result['error']}"
-
-        context = kg_result.get('context', 'No further information is available.')
+        if not context:
+            return "No further information is available."
         return context
     except Exception as e:
         logger.exception("Error in retrieve function")
@@ -89,21 +80,22 @@ def rag_chatbot(question):
 
     system_prompt = create_system_prompt(sanitized_question)
 
-    messages = [
-        {"role": "system", "content": system_prompt},
-        {"role": "user", "content": sanitized_question}
-    ]
-
     try:
         response = ollama.chat(
             model=DEFAULT_MODEL,
-            messages=messages,
-            options={"temperature": TEMPERATURE},
-            stream=False
+            messages=[
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": question}
+            ],
+            stream=False,
+            options={
+                "temperature": 0.1,
+                "top_k": 50,
+                "top_p": 0.9
+            }
         )
 
-        response_text = response["message"]["content"]
-        return response_text
+        return response["message"]["content"]
 
     except Exception as e:
         logger.exception("Error in chat processing")
