@@ -258,6 +258,8 @@ def extract_relations(content, model):
         relations = generate_responses_deepseek_r1(content)
 
         return relations
+    else:
+        return []
 
 
 def create_sparql_queries_for_bulk_import(relations, batch_size=200):
@@ -303,7 +305,7 @@ def create_sparql_queries_for_bulk_import(relations, batch_size=200):
             # Check if 'pub_id' exists and is not empty
             pub_id = relation.get("pub_id")
             if pub_id:
-                publication_uri = f"ont:PUB_{sanitize_entity_name(pub_id)}"
+                publication_uri = f"ont:{sanitize_entity_name(pub_id)}"
                 triple += f"  prov:wasDerivedFrom {publication_uri} .\n"
                 # Create the publication instance
                 triple += f"{publication_uri} rdf:type ont:PUBLICATION .\n"

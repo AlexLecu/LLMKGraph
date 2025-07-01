@@ -6,6 +6,7 @@ from SPARQLWrapper import SPARQLWrapper, POST
 from dotenv import load_dotenv
 from prompts import system_prompt, generate_user_prompt
 from disambiguation.disambiguation import sanitize_entity_name
+from openai.types.chat import ChatCompletionSystemMessageParam, ChatCompletionUserMessageParam
 
 
 load_dotenv()
@@ -18,12 +19,12 @@ def generate_relations(text):
     user_prompt = generate_user_prompt(text)
 
     chat_response = client.chat.completions.create(
-        model="gpt-4o",
+        model="gpt-4o-mini",
         max_tokens=2000,
         temperature=0,
         messages=[
-            {"role": "system", "content": system_prompt.strip()},
-            {"role": "user", "content": user_prompt.strip()}
+            ChatCompletionSystemMessageParam(role="system", content=system_prompt.strip()),
+            ChatCompletionUserMessageParam(role="user", content=user_prompt.strip())
         ]
     )
 
