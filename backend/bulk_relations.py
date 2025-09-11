@@ -9,7 +9,6 @@ import uuid
 from SPARQLWrapper import SPARQLWrapper, POST
 from prompts import generate_user_prompt, system_prompt
 from disambiguation.disambiguation import sanitize_entity_name, refine_relations
-import ollama
 import json
 
 load_dotenv()
@@ -17,6 +16,7 @@ load_dotenv()
 GRAPHDB_URL = os.getenv('GRAPHDB_URL', 'http://localhost:7200')
 client_gpt = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
 client_mistral = Mistral(api_key=os.environ["MISTRAL_API_KEY"])
+client_deepseek = OpenAI(api_key=os.environ["DEEPSEEK_API_KEY"], base_url="https://api.deepseek.com")
 
 # logging.basicConfig(
 #     filename='../data/Logs/2024-12-05/Log_Extraction_GPT3.5.log',
@@ -75,22 +75,20 @@ def generate_relations_gpt_4o_mini(text):
 
     return chat_response
 
-# Needs more testing
-def generate_relations_deepseek_r1(text):
-    user_prompt = generate_user_prompt(text)
-    chat_response = ollama.chat(
-        model='deepseek-r1',
-        messages=[
-            {"role": "system", "content": system_prompt.strip()},
-            {"role": "user", "content": user_prompt.strip()}
-        ],
-        options={
-            'num_predict': 2000,
-            'temperature': 0,
-        }
-    )
 
-    return chat_response
+def generate_relations_deepseek_r1(text):
+        model = "deepseek-chat"
+        user_prompt = generate_user_prompt(text)
+        chat_response = client_deepseek.chat.completions.create(
+            model=model,
+            max_tokens=2000,
+            temperature=0,
+            messages=[
+                {"role": "system", "content": system_prompt.strip()},
+                {"role": "user", "content": user_prompt.strip()}
+            ]
+        )
+        return chat_response
 
 
 def is_valid_relation(data):
@@ -214,30 +212,24 @@ def generate_responses_gpt_4o_mini(abstracts):
     return relations
 
 
-# Needs more testing
 def generate_responses_deepseek_r1(abstracts):
-    """Process multiple abstracts and extract relations"""
     relations = []
+    i = 0
+    for abstract in abstracts:
+        i += 1
+        print(i)
+        response = generate_relations_deepseek_r1(abstract["text"])
+        matches = validate_output(str(response))
 
-    for i, abstract in enumerate(abstracts, 1):
-        try:
-            print(f"Processing abstract {i}/{len(abstracts)}")
-            response = generate_relations_deepseek_r1(abstract["text"])
+        pub_id = {
+            'pub_id': abstract.get('id', None)
+        }
 
+        for match in matches:
+            match.update(pub_id)
 
-            matches = convert_relations(response)
+        relations.extend(matches)
 
-            print(matches)
-            # Add publication ID to each match
-            pub_id = {'pub_id': abstract.get('id')}
-            for match in matches:
-                match.update(pub_id)
-
-            relations.extend(matches)
-
-        except Exception as e:
-            logging.error(f"Error processing abstract {i}: {e}")
-    print(relations)
     return relations
 
 
@@ -335,4 +327,3 @@ def add_bulk_relations_to_kg(relations, repo_id):
         sparql.setMethod(POST)
         sparql.setQuery(query)
         sparql.query()
-
