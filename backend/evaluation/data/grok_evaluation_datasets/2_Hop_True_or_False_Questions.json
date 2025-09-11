@@ -1,0 +1,2502 @@
+[
+    {
+        "question": "Does smoking increase the risk of wet AMD by promoting abnormal blood vessel growth?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can dry AMD progress to wet AMD because of oxidative stress alone?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does a family history of AMD increase the likelihood of wet AMD due to genetic predisposition to VEGF overexpression?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can anti-VEGF injections treat wet AMD by completely eliminating drusen deposits?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does high blood pressure contribute to AMD risk by directly causing retinal detachment?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can the Amsler grid detect wet AMD symptoms because it measures peripheral vision loss?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does UV light exposure increase AMD risk by accelerating choroidal neovascularization?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AREDS supplements slow dry AMD progression by repairing the Bruch\u2019s membrane?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "Does obesity heighten AMD risk by increasing oxidative damage to the retina?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can wet AMD cause sudden vision loss due to the rupture of drusen deposits?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does diabetes increase AMD risk by directly causing abnormal blood vessel growth?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can optical coherence tomography diagnose wet AMD by detecting fluid leakage under the retina?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does smoking exacerbate dry AMD by accelerating geographic atrophy progression?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can photodynamic therapy treat wet AMD by reducing oxidative stress in the retina?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does a diet rich in leafy greens reduce AMD progression by eliminating existing drusen?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/healthy-vision-resource-center/age-related-macular-degeneration-amd-resources"
+    },
+    {
+        "question": "Can wet AMD lead to legal blindness because it affects peripheral vision?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does high cholesterol increase AMD risk by causing lipid deposits in the cornea?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can dry AMD transition to wet AMD due to excessive VEGF production in the retina?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does AMD impair color perception by directly damaging the optic nerve?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can anti-VEGF therapy stabilize wet AMD by preventing further photoreceptor loss?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does a family history of AMD increase risk by altering retinal blood flow?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can wet AMD cause wavy lines in vision due to fluid buildup under the macula?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does dry AMD progress slowly because it lacks choroidal neovascularization?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can high blood pressure worsen AMD by increasing intraocular pressure?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Does smoking increase AMD risk by causing direct damage to the lens?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can OCT detect early AMD by identifying changes in retinal thickness?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does wet AMD treatment with anti-VEGF injections work by reducing drusen size?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can diabetes contribute to AMD progression by elevating retinal inflammation?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Does dry AMD lead to geographic atrophy by causing blood vessel leakage?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can AMD increase fall risk in older adults by impairing depth perception?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Does UV exposure accelerate AMD by directly causing photoreceptor death?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can wet AMD cause rapid vision loss due to subretinal hemorrhages?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does a diet high in antioxidants prevent AMD by repairing retinal pigment epithelium?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/healthy-vision-resource-center/age-related-macular-degeneration-amd-resources"
+    },
+    {
+        "question": "Can smoking worsen wet AMD by increasing VEGF levels in the retina?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does dry AMD affect central vision because it damages the optic disc?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can photodynamic therapy manage wet AMD by sealing leaking blood vessels?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does obesity increase AMD risk by directly causing retinal detachment?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can wet AMD distort vision by causing retinal pigment epithelial detachment?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does high cholesterol contribute to AMD by clogging retinal arteries?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can AREDS supplements reduce AMD progression by eliminating oxidative stress entirely?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "Does wet AMD lead to blind spots by causing photoreceptor regeneration?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can family history increase AMD risk by predisposing individuals to drusen accumulation?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does dry AMD progress to wet AMD because of excessive screen time?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can anti-VEGF injections improve wet AMD outcomes by reducing fluid leakage?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does UV light increase AMD risk by causing direct optic nerve damage?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can wet AMD impair reading ability by distorting central vision?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does high blood pressure exacerbate AMD by increasing retinal hemorrhages?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can smoking contribute to AMD progression by enhancing retinal inflammation?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does dry AMD cause vision loss by directly affecting the choroid?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can OCT confirm wet AMD by visualizing choroidal neovascularization?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does smoking increase wet AMD risk by triggering excessive VEGF production?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can dry AMD progress to wet AMD solely due to a lack of antioxidants?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does family history elevate AMD risk by increasing susceptibility to retinal inflammation?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can anti-VEGF injections treat wet AMD by removing existing drusen deposits?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does high blood pressure worsen AMD by causing direct photoreceptor damage?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can the Amsler grid detect dry AMD progression by measuring optic nerve function?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does UV light exposure accelerate wet AMD by causing retinal hemorrhages?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AREDS supplements slow AMD progression by repairing choroidal blood vessels?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "Does obesity increase AMD risk by promoting oxidative stress in the macula?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can wet AMD cause sudden vision loss by rupturing the Bruch\u2019s membrane?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does diabetes heighten AMD risk by directly causing drusen accumulation?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can OCT diagnose wet AMD by visualizing subretinal fluid accumulation?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does smoking exacerbate dry AMD by increasing retinal pigment epithelial damage?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can photodynamic therapy manage wet AMD by eliminating oxidative stress?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does a diet high in leafy greens reduce AMD risk by reversing retinal thinning?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/healthy-vision-resource-center/age-related-macular-degeneration-amd-resources"
+    },
+    {
+        "question": "Can wet AMD lead to legal blindness by impairing peripheral vision?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does high cholesterol increase AMD risk by depositing lipids in the retina?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can dry AMD transition to wet AMD due to excessive choroidal inflammation?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does AMD impair depth perception by damaging the optic nerve?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can anti-VEGF therapy stabilize wet AMD by reducing neovascular leakage?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does family history increase AMD risk by causing direct blood vessel growth?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can wet AMD distort vision by causing subretinal fluid buildup?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does dry AMD progress slowly because it avoids photoreceptor regeneration?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can high blood pressure exacerbate AMD by increasing retinal pigment detachment?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Does smoking worsen AMD by enhancing retinal hypoxia?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can OCT detect early dry AMD by identifying drusen size changes?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does wet AMD treatment with anti-VEGF injections work by regenerating photoreceptors?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can diabetes contribute to AMD by increasing systemic inflammation?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Does dry AMD lead to geographic atrophy by causing neovascularization?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can AMD increase fall risk by impairing central vision clarity?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Does UV exposure accelerate AMD by directly damaging the choroid?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can wet AMD cause rapid vision loss by inducing subretinal scarring?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does a diet high in antioxidants prevent AMD by reversing Bruch\u2019s membrane damage?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/healthy-vision-resource-center/age-related-macular-degeneration-amd-resources"
+    },
+    {
+        "question": "Can smoking worsen wet AMD by promoting choroidal neovascularization?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does dry AMD affect color perception by damaging retinal ganglion cells?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can photodynamic therapy treat wet AMD by reducing blood vessel leakage?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does obesity increase AMD risk by causing direct retinal thinning?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can wet AMD impair reading by causing central vision distortion?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does high cholesterol contribute to AMD by increasing drusen formation?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can AREDS supplements reduce AMD progression by fully eliminating oxidative damage?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "Does wet AMD cause blind spots by regenerating retinal tissue?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can family history increase AMD risk by predisposing to photoreceptor loss?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does dry AMD progress to wet AMD due to excessive UV light exposure alone?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can anti-VEGF injections improve wet AMD by reducing retinal swelling?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does UV light increase AMD risk by causing optic disc swelling?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can wet AMD affect face recognition by distorting central vision?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does high blood pressure worsen AMD by causing choroidal hemorrhages?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can smoking exacerbate AMD by increasing retinal oxidative damage?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does dry AMD cause gradual vision loss by affecting the optic nerve?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can OCT confirm wet AMD by detecting abnormal blood vessel growth?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does diabetes increase AMD risk by causing retinal artery occlusion?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can wet AMD cause sudden vision changes by inducing retinal edema?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does family history elevate AMD risk by increasing lipid deposits in the cornea?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can anti-VEGF therapy prevent wet AMD progression by stabilizing retinal thickness?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does smoking increase dry AMD risk by causing direct choroidal thinning?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can wet AMD impair driving by distorting central visual acuity?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does high cholesterol exacerbate AMD by causing optic nerve inflammation?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can AREDS supplements mitigate AMD risk by repairing retinal pigment epithelium?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "Does wet AMD cause depth perception issues by regenerating retinal layers?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can obesity worsen AMD by increasing retinal inflammation?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Does dry AMD progress to geographic atrophy due to excessive blood vessel growth?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can photodynamic therapy treat wet AMD by shrinking abnormal blood vessels?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does UV light exposure increase AMD risk by causing retinal pigment regeneration?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can wet AMD cause visual hallucinations by inducing retinal scarring?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does high blood pressure contribute to AMD by increasing drusen size?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can smoking increase AMD severity by promoting photoreceptor degeneration?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does dry AMD impair reading by causing optic nerve damage?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can OCT detect early AMD by measuring retinal layer thinning?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does diabetes exacerbate AMD by causing direct blood vessel leakage?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can wet AMD affect color perception by causing central vision loss?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does family history increase AMD risk by causing optic nerve atrophy?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can anti-VEGF injections treat wet AMD by preventing subretinal hemorrhages?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does smoking worsen AMD by causing direct retinal detachment?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can wet AMD increase fall risk by impairing central depth perception?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Does high cholesterol increase AMD risk by causing retinal vein occlusion?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can AREDS supplements slow dry AMD by reducing retinal hypoxia?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "Does wet AMD cause rapid vision loss by regenerating choroidal tissue?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can obesity increase AMD risk by enhancing retinal oxidative stress?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Does dry AMD progress to wet AMD due to excessive antioxidant intake?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can photodynamic therapy manage wet AMD by reducing retinal edema?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does UV light exposure worsen AMD by causing photoreceptor regeneration?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can wet AMD impair night vision by distorting central visual fields?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does high blood pressure increase AMD severity by causing optic nerve swelling?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can smoking exacerbate AMD by increasing choroidal inflammation?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does dry AMD cause blind spots by damaging the retinal vasculature?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can OCT diagnose wet AMD by identifying retinal pigment epithelial detachment?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does diabetes increase AMD risk by causing optic nerve inflammation?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can wet AMD affect reading speed by causing central vision blurring?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does family history worsen AMD by causing direct retinal scarring?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can anti-VEGF therapy improve wet AMD by reducing choroidal neovascular activity?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does smoking increase AMD risk by causing retinal pigment regeneration?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does smoking increase AMD risk by causing excessive retinal pigment epithelial damage?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can dry AMD progress to wet AMD due to a lack of dietary zinc alone?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does family history increase AMD risk by predisposing to chronic retinal inflammation?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can anti-VEGF injections treat wet AMD by reversing retinal thinning?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does hypertension worsen AMD by directly causing optic nerve degeneration?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can the Amsler grid detect wet AMD by measuring changes in peripheral acuity?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does UV light exposure accelerate AMD by inducing immediate choroidal neovascularization?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AREDS supplements slow dry AMD by regenerating photoreceptor cells?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "Does obesity exacerbate AMD by increasing retinal oxidative stress?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can wet AMD cause sudden vision loss by triggering retinal pigment epithelial detachment?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does diabetes increase AMD risk by causing direct retinal hemorrhages?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can OCT diagnose wet AMD by detecting abnormal choroidal blood vessels?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does smoking worsen dry AMD by accelerating photoreceptor degeneration?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can photodynamic therapy treat wet AMD by eliminating retinal inflammation?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does a diet high in leafy greens reduce AMD progression by repairing retinal pigment epithelium?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/healthy-vision-resource-center/age-related-macular-degeneration-amd-resources"
+    },
+    {
+        "question": "Can wet AMD lead to legal blindness by causing peripheral vision distortion?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does high cholesterol increase AMD risk by causing lipid buildup in the Bruch\u2019s membrane?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can dry AMD transition to wet AMD due to excessive retinal hypoxia?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does AMD impair color perception by causing choroidal thinning?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can anti-VEGF therapy stabilize wet AMD by reducing subretinal fluid?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does family history increase AMD risk by causing direct retinal detachment?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can wet AMD cause wavy vision by inducing retinal edema?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does dry AMD progress slowly because it lacks retinal pigment regeneration?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can hypertension exacerbate AMD by increasing retinal vein occlusion?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Does smoking worsen AMD by promoting chronic choroidal inflammation?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can OCT detect early dry AMD by visualizing retinal pigment epithelial changes?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does wet AMD treatment with anti-VEGF injections work by repairing the optic nerve?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can diabetes contribute to AMD by increasing retinal oxidative damage?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Does dry AMD progress to geographic atrophy by causing retinal hemorrhages?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can AMD increase fall risk by reducing central visual sharpness?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Does UV exposure accelerate AMD by causing immediate photoreceptor loss?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can wet AMD cause rapid vision loss by inducing choroidal scarring?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does a diet high in antioxidants prevent AMD by reversing choroidal thinning?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/healthy-vision-resource-center/age-related-macular-degeneration-amd-resources"
+    },
+    {
+        "question": "Can smoking exacerbate wet AMD by increasing retinal fluid accumulation?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does dry AMD affect depth perception by causing retinal artery occlusion?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can photodynamic therapy manage wet AMD by reducing choroidal neovascular activity?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does obesity increase AMD risk by causing direct photoreceptor regeneration?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can wet AMD impair reading by causing retinal pigment epithelial swelling?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does high cholesterol contribute to AMD by increasing retinal pigment epithelial detachment?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can AREDS supplements reduce AMD progression by fully repairing retinal layers?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "Does wet AMD cause blind spots by causing retinal pigment regeneration?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can family history increase AMD risk by predisposing to retinal hypoxia?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does dry AMD progress to wet AMD due to excessive dietary fat intake alone?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can anti-VEGF injections improve wet AMD by preventing retinal scarring?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does UV light increase AMD risk by causing retinal ganglion cell loss?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can wet AMD affect face recognition by causing subretinal hemorrhages?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does hypertension worsen AMD by causing direct retinal pigment epithelial regeneration?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can smoking exacerbate AMD by increasing retinal pigment epithelial oxidative stress?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does dry AMD cause gradual vision loss by affecting the retinal vasculature?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can OCT confirm wet AMD by visualizing subretinal scarring?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does diabetes increase AMD risk by causing retinal pigment epithelial inflammation?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can wet AMD cause sudden vision changes by inducing photoreceptor swelling?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does family history elevate AMD risk by increasing choroidal lipid deposits?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can anti-VEGF therapy stabilize wet AMD by reducing retinal hypoxia?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does smoking increase dry AMD risk by causing immediate retinal thinning?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can wet AMD impair driving by reducing central contrast sensitivity?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does high cholesterol exacerbate AMD by causing retinal pigment epithelial regeneration?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can AREDS supplements mitigate AMD risk by reversing retinal edema?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "Does wet AMD cause depth perception issues by causing choroidal regeneration?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can obesity worsen AMD by increasing choroidal oxidative stress?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Does dry AMD progress to geographic atrophy due to excessive retinal pigment regeneration?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can photodynamic therapy treat wet AMD by reducing retinal pigment epithelial detachment?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does UV light exposure increase AMD risk by causing immediate retinal scarring?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can wet AMD cause visual hallucinations by inducing photoreceptor loss?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does hypertension contribute to AMD by causing retinal pigment epithelial hemorrhages?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can smoking increase AMD severity by promoting retinal edema?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does dry AMD impair reading by causing retinal pigment regeneration?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can OCT detect early AMD by identifying changes in choroidal thickness?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does diabetes exacerbate AMD by causing immediate choroidal neovascularization?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can wet AMD affect color perception by inducing retinal swelling?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does family history worsen AMD by causing direct retinal pigment epithelial regeneration?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can anti-VEGF therapy improve wet AMD by reducing retinal pigment epithelial damage?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does smoking worsen AMD by causing immediate photoreceptor regeneration?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can wet AMD increase fall risk by reducing central visual acuity?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Does high cholesterol increase AMD risk by causing immediate retinal detachment?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can AREDS supplements slow dry AMD by reversing retinal pigment epithelial loss?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "Does wet AMD cause rapid vision loss by causing retinal pigment epithelial regeneration?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can obesity increase AMD risk by promoting retinal pigment epithelial inflammation?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Does dry AMD progress to wet AMD due to excessive retinal pigment epithelial repair?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can photodynamic therapy manage wet AMD by reducing subretinal fluid accumulation?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does UV light exposure worsen AMD by causing immediate retinal pigment epithelial regeneration?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can wet AMD impair night vision by causing central retinal scarring?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does hypertension increase AMD severity by causing retinal pigment epithelial swelling?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can smoking exacerbate AMD by increasing retinal pigment epithelial hypoxia?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does dry AMD cause blind spots by causing retinal pigment epithelial regeneration?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can OCT diagnose wet AMD by detecting changes in retinal blood flow?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does diabetes increase AMD risk by causing immediate retinal pigment epithelial detachment?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can wet AMD affect reading speed by inducing central retinal edema?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does family history worsen AMD by causing immediate choroidal thinning?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can anti-VEGF therapy improve wet AMD by reducing choroidal inflammation?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does smoking increase AMD risk by causing retinal pigment epithelial regeneration?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does smoking increase AMD risk by promoting retinal pigment epithelial hypoxia?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can dry AMD progress to wet AMD due to excessive dietary sugar intake alone?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does family history elevate AMD risk by increasing retinal pigment epithelial susceptibility to oxidative stress?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can anti-VEGF injections treat wet AMD by reversing choroidal thinning?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does atherosclerosis worsen AMD by causing direct retinal pigment epithelial detachment?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can the Amsler grid detect wet AMD by assessing retinal blood flow changes?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does UV light exposure accelerate AMD by causing immediate retinal pigment epithelial swelling?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AREDS supplements slow dry AMD by repairing retinal blood vessels?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "Does obesity exacerbate AMD by increasing choroidal inflammation?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can wet AMD cause sudden vision loss by inducing subretinal fluid leakage?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does diabetes increase AMD risk by causing immediate retinal pigment epithelial regeneration?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can OCT diagnose wet AMD by detecting retinal pigment epithelial detachment?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does smoking worsen dry AMD by promoting retinal pigment epithelial atrophy?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can photodynamic therapy treat wet AMD by reversing retinal hypoxia?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does a diet high in leafy greens reduce AMD progression by eliminating retinal pigment epithelial damage?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/healthy-vision-resource-center/age-related-macular-degeneration-amd-resources"
+    },
+    {
+        "question": "Can wet AMD lead to legal blindness by impairing retinal blood flow?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does high cholesterol increase AMD risk by causing retinal pigment epithelial lipid accumulation?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can dry AMD transition to wet AMD due to excessive retinal pigment epithelial inflammation?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does AMD impair depth perception by causing retinal pigment epithelial regeneration?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can anti-VEGF therapy stabilize wet AMD by reducing choroidal neovascular leakage?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does family history increase AMD risk by causing immediate retinal pigment epithelial swelling?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can wet AMD cause distorted vision by inducing choroidal edema?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does dry AMD progress slowly because it avoids retinal pigment epithelial repair?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can atherosclerosis exacerbate AMD by causing retinal pigment epithelial hemorrhages?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Does smoking worsen AMD by increasing retinal pigment epithelial lipid deposits?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can OCT detect early dry AMD by visualizing retinal pigment epithelial thinning?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does wet AMD treatment with anti-VEGF injections work by repairing retinal pigment epithelium?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can diabetes contribute to AMD by increasing retinal pigment epithelial oxidative stress?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Does dry AMD progress to geographic atrophy by causing choroidal neovascularization?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can AMD increase fall risk by impairing retinal pigment epithelial function?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Does UV exposure accelerate AMD by causing immediate retinal pigment epithelial regeneration?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can wet AMD cause rapid vision loss by inducing retinal pigment epithelial scarring?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does a diet high in antioxidants prevent AMD by reversing retinal pigment epithelial atrophy?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/healthy-vision-resource-center/age-related-macular-degeneration-amd-resources"
+    },
+    {
+        "question": "Can smoking exacerbate wet AMD by increasing retinal pigment epithelial fluid leakage?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does dry AMD affect color perception by causing retinal pigment epithelial swelling?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can photodynamic therapy manage wet AMD by reducing retinal pigment epithelial edema?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does obesity increase AMD risk by causing immediate retinal pigment epithelial regeneration?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can wet AMD impair reading by inducing retinal pigment epithelial hypoxia?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does high cholesterol contribute to AMD by causing retinal pigment epithelial regeneration?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can AREDS supplements reduce AMD progression by reversing retinal pigment epithelial damage?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "Does wet AMD cause blind spots by inducing retinal pigment epithelial repair?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can family history increase AMD risk by predisposing to retinal pigment epithelial lipid accumulation?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can anti-VEGF injections improve wet AMD by reducing retinal pigment epithelial swelling?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does UV light increase AMD risk by causing retinal pigment epithelial hemorrhages?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can wet AMD affect face recognition by inducing retinal pigment epithelial edema?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does atherosclerosis worsen AMD by causing retinal pigment epithelial regeneration?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can smoking exacerbate AMD by increasing retinal pigment epithelial atrophy?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does dry AMD cause gradual vision loss by inducing retinal pigment epithelial regeneration?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can OCT confirm wet AMD by detecting retinal pigment epithelial lipid deposits?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does diabetes increase AMD risk by causing retinal pigment epithelial hemorrhages?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can wet AMD cause sudden vision changes by inducing retinal pigment epithelial detachment?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does family history elevate AMD risk by causing retinal pigment epithelial swelling?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can anti-VEGF therapy stabilize wet AMD by reducing retinal pigment epithelial hypoxia?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does smoking increase dry AMD risk by causing retinal pigment epithelial regeneration?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can wet AMD impair driving by inducing retinal pigment epithelial edema?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does high cholesterol exacerbate AMD by causing retinal pigment epithelial repair?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can AREDS supplements mitigate AMD risk by reversing retinal pigment epithelial swelling?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "Does wet AMD cause depth perception issues by inducing retinal pigment epithelial repair?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can obesity worsen AMD by increasing retinal pigment epithelial lipid deposits?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Does dry AMD progress to geographic atrophy due to retinal pigment epithelial regeneration?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can photodynamic therapy treat wet AMD by reducing retinal pigment epithelial hypoxia?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does UV light exposure increase AMD risk by causing retinal pigment epithelial regeneration?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can wet AMD cause visual hallucinations by inducing retinal pigment epithelial atrophy?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does atherosclerosis contribute to AMD by causing retinal pigment epithelial swelling?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can smoking increase AMD severity by promoting retinal pigment epithelial scarring?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does dry AMD impair reading by inducing retinal pigment epithelial repair?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can OCT detect early AMD by visualizing retinal pigment epithelial lipid accumulation?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does diabetes exacerbate AMD by causing retinal pigment epithelial regeneration?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can wet AMD affect color perception by inducing retinal pigment epithelial scarring?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does family history worsen AMD by causing retinal pigment epithelial hemorrhages?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can anti-VEGF therapy improve wet AMD by reducing retinal pigment epithelial atrophy?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does smoking worsen AMD by causing retinal pigment epithelial repair?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can wet AMD increase fall risk by inducing retinal pigment epithelial hypoxia?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Does high cholesterol increase AMD risk by causing retinal pigment epithelial swelling?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can AREDS supplements slow dry AMD by reversing retinal pigment epithelial hypoxia?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "Does wet AMD cause rapid vision loss by inducing retinal pigment epithelial repair?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can obesity increase AMD risk by promoting retinal pigment epithelial atrophy?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Does dry AMD progress to wet AMD due to retinal pigment epithelial swelling alone?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can photodynamic therapy manage wet AMD by reducing retinal pigment epithelial scarring?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does UV light exposure worsen AMD by causing retinal pigment epithelial hemorrhages?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can wet AMD impair night vision by inducing retinal pigment epithelial edema?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does atherosclerosis increase AMD severity by causing retinal pigment epithelial regeneration?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can smoking exacerbate AMD by increasing retinal pigment epithelial lipid accumulation?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does dry AMD cause blind spots by inducing retinal pigment epithelial repair?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can OCT diagnose wet AMD by detecting retinal pigment epithelial atrophy?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does diabetes increase AMD risk by causing retinal pigment epithelial swelling?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can wet AMD affect reading speed by inducing retinal pigment epithelial hypoxia?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does family history worsen AMD by causing retinal pigment epithelial regeneration?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can anti-VEGF therapy improve wet AMD by reducing retinal pigment epithelial lipid deposits?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does smoking increase AMD risk by causing retinal pigment epithelial hemorrhages?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does smoking increase AMD risk by causing retinal pigment epithelial inflammation?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can dry AMD progress to wet AMD due to excessive dietary salt intake alone?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does family history elevate AMD risk by increasing retinal pigment epithelial vulnerability to hypoxia?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can anti-VEGF injections treat wet AMD by reversing retinal pigment epithelial atrophy?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does hyperlipidemia worsen AMD by causing retinal pigment epithelial hemorrhages?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can the Amsler grid detect wet AMD by assessing retinal pigment epithelial regeneration?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does UV light exposure accelerate AMD by causing retinal pigment epithelial lipid deposits?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AREDS supplements slow dry AMD by regenerating retinal pigment epithelial cells?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "Does obesity exacerbate AMD by promoting retinal pigment epithelial hypoxia?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can wet AMD cause sudden vision loss by inducing retinal pigment epithelial edema?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does diabetes increase AMD risk by causing retinal pigment epithelial repair?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can OCT diagnose wet AMD by detecting retinal pigment epithelial scarring?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does smoking worsen dry AMD by increasing retinal pigment epithelial lipid accumulation?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can photodynamic therapy treat wet AMD by reversing retinal pigment epithelial damage?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does a diet high in leafy greens reduce AMD progression by repairing retinal pigment epithelial hypoxia?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/healthy-vision-resource-center/age-related-macular-degeneration-amd-resources"
+    },
+    {
+        "question": "Can wet AMD lead to legal blindness by causing retinal pigment epithelial regeneration?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does hyperlipidemia increase AMD risk by promoting retinal pigment epithelial inflammation?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can dry AMD transition to wet AMD due to retinal pigment epithelial hypoxia?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does AMD impair color perception by inducing retinal pigment epithelial repair?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can anti-VEGF therapy stabilize wet AMD by reducing retinal pigment epithelial fluid leakage?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does family history increase AMD risk by causing retinal pigment epithelial hemorrhages?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can wet AMD cause wavy vision by inducing retinal pigment epithelial detachment?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does dry AMD progress slowly because it avoids retinal pigment epithelial swelling?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can hyperlipidemia exacerbate AMD by causing retinal pigment epithelial swelling?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Does smoking worsen AMD by promoting retinal pigment epithelial edema?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can OCT detect early dry AMD by visualizing retinal pigment epithelial atrophy?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does wet AMD treatment with anti-VEGF injections work by reversing retinal pigment epithelial hypoxia?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can diabetes contribute to AMD by increasing retinal pigment epithelial lipid deposits?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Does dry AMD progress to geographic atrophy by inducing retinal pigment epithelial repair?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can AMD increase fall risk by impairing retinal pigment epithelial acuity?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Does UV exposure accelerate AMD by causing retinal pigment epithelial edema?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can wet AMD cause rapid vision loss by inducing retinal pigment epithelial lipid accumulation?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does a diet high in antioxidants prevent AMD by reversing retinal pigment epithelial lipid deposits?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/healthy-vision-resource-center/age-related-macular-degeneration-amd-resources"
+    },
+    {
+        "question": "Can smoking exacerbate wet AMD by increasing retinal pigment epithelial scarring?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does dry AMD affect depth perception by causing retinal pigment epithelial hemorrhages?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can photodynamic therapy manage wet AMD by reducing retinal pigment epithelial lipid deposits?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does obesity increase AMD risk by causing retinal pigment epithelial repair?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can wet AMD impair reading by inducing retinal pigment epithelial scarring?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does hyperlipidemia contribute to AMD by causing retinal pigment epithelial edema?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can AREDS supplements reduce AMD progression by reversing retinal pigment epithelial lipid accumulation?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "Does wet AMD cause blind spots by inducing retinal pigment epithelial swelling?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can family history increase AMD risk by predisposing to retinal pigment epithelial edema?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can dry AMD progress to wet AMD due to retinal pigment epithelial lipid deposits?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can anti-VEGF injections improve wet AMD by reducing retinal pigment epithelial hemorrhages?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does UV light increase AMD risk by causing retinal pigment epithelial swelling?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can wet AMD affect face recognition by inducing retinal pigment epithelial lipid accumulation?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does hyperlipidemia worsen AMD by causing retinal pigment epithelial repair?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can smoking exacerbate AMD by increasing retinal pigment epithelial hemorrhages?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does dry AMD cause gradual vision loss by inducing retinal pigment epithelial swelling?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can OCT confirm wet AMD by detecting retinal pigment epithelial edema?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can wet AMD cause sudden vision changes by inducing retinal pigment epithelial lipid deposits?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does family history elevate AMD risk by causing retinal pigment epithelial regeneration?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can anti-VEGF therapy stabilize wet AMD by reducing retinal pigment epithelial scarring?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does smoking increase dry AMD risk by causing retinal pigment epithelial swelling?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can wet AMD impair driving by inducing retinal pigment epithelial lipid deposits?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does hyperlipidemia exacerbate AMD by causing retinal pigment epithelial swelling?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can AREDS supplements mitigate AMD risk by reversing retinal pigment epithelial edema?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "Does wet AMD cause depth perception issues by inducing retinal pigment epithelial regeneration?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can obesity worsen AMD by increasing retinal pigment epithelial edema?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Does dry AMD progress to geographic atrophy due to retinal pigment epithelial swelling?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can photodynamic therapy treat wet AMD by reducing retinal pigment epithelial atrophy?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does UV light exposure increase AMD risk by causing retinal pigment epithelial edema?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can wet AMD cause visual hallucinations by inducing retinal pigment epithelial lipid deposits?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does hyperlipidemia contribute to AMD by causing retinal pigment epithelial regeneration?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can smoking increase AMD severity by promoting retinal pigment epithelial lipid deposits?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does dry AMD impair reading by causing retinal pigment epithelial hemorrhages?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can OCT detect early AMD by visualizing retinal pigment epithelial scarring?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does diabetes exacerbate AMD by causing retinal pigment epithelial swelling?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can wet AMD affect color perception by inducing retinal pigment epithelial edema?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does family history worsen AMD by causing retinal pigment epithelial lipid deposits?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can anti-VEGF therapy improve wet AMD by reducing retinal pigment epithelial edema?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does smoking worsen AMD by causing retinal pigment epithelial regeneration?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can wet AMD increase fall risk by inducing retinal pigment epithelial scarring?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Does hyperlipidemia increase AMD risk by causing retinal pigment epithelial edema?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can AREDS supplements slow dry AMD by reversing retinal pigment epithelial scarring?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "Does wet AMD cause rapid vision loss by inducing retinal pigment epithelial swelling?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can obesity increase AMD risk by promoting retinal pigment epithelial repair?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Does dry AMD progress to wet AMD due to retinal pigment epithelial edema alone?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can photodynamic therapy manage wet AMD by reducing retinal pigment epithelial hemorrhages?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does UV light exposure worsen AMD by causing retinal pigment epithelial swelling?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can wet AMD impair night vision by inducing retinal pigment epithelial lipid accumulation?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does hyperlipidemia increase AMD severity by causing retinal pigment epithelial repair?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can smoking exacerbate AMD by increasing retinal pigment epithelial edema?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does dry AMD cause blind spots by causing retinal pigment epithelial lipid deposits?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can OCT diagnose wet AMD by detecting retinal pigment epithelial hemorrhages?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does diabetes increase AMD risk by causing retinal pigment epithelial edema?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can wet AMD affect reading speed by inducing retinal pigment epithelial scarring?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does family history worsen AMD by causing retinal pigment epithelial swelling?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can anti-VEGF therapy improve wet AMD by reducing retinal pigment epithelial lipid accumulation?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does smoking increase AMD risk by causing retinal pigment epithelial edema?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does smoking increase AMD risk by promoting retinal pigment epithelial scarring?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can dry AMD progress to wet AMD due to excessive dietary protein intake alone?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does family history elevate AMD risk by increasing retinal pigment epithelial susceptibility to lipid deposits?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can anti-VEGF injections treat wet AMD by reversing retinal pigment epithelial lipid accumulation?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does systemic inflammation worsen AMD by causing retinal pigment epithelial regeneration?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can the Amsler grid detect wet AMD by measuring retinal pigment epithelial lipid changes?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does UV light exposure accelerate AMD by causing retinal pigment epithelial hemorrhages?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AREDS supplements slow dry AMD by repairing retinal pigment epithelial lipid deposits?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "Does obesity exacerbate AMD by increasing retinal pigment epithelial scarring?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can wet AMD cause sudden vision loss by inducing retinal pigment epithelial hemorrhages?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can OCT diagnose wet AMD by detecting retinal pigment epithelial hypoxia?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does smoking worsen dry AMD by promoting retinal pigment epithelial edema?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can photodynamic therapy treat wet AMD by reversing retinal pigment epithelial lipid deposits?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does a diet high in leafy greens reduce AMD progression by eliminating retinal pigment epithelial hypoxia?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/healthy-vision-resource-center/age-related-macular-degeneration-amd-resources"
+    },
+    {
+        "question": "Can wet AMD lead to legal blindness by causing retinal pigment epithelial repair?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does systemic inflammation increase AMD risk by promoting retinal pigment epithelial lipid accumulation?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can dry AMD transition to wet AMD due to retinal pigment epithelial scarring?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does AMD impair color perception by causing retinal pigment epithelial lipid deposits?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can anti-VEGF therapy stabilize wet AMD by reducing retinal pigment epithelial hemorrhages?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does family history increase AMD risk by causing retinal pigment epithelial edema?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can wet AMD cause distorted vision by inducing retinal pigment epithelial lipid accumulation?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does dry AMD progress slowly because it avoids retinal pigment epithelial lipid repair?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can systemic inflammation exacerbate AMD by causing retinal pigment epithelial edema?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Does smoking worsen AMD by increasing retinal pigment epithelial scarring?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can OCT detect early dry AMD by visualizing retinal pigment epithelial hemorrhages?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does wet AMD treatment with anti-VEGF injections work by reversing retinal pigment epithelial scarring?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can diabetes contribute to AMD by increasing retinal pigment epithelial edema?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Does dry AMD progress to geographic atrophy by causing retinal pigment epithelial swelling?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can AMD increase fall risk by impairing retinal pigment epithelial lipid metabolism?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Does UV exposure accelerate AMD by causing retinal pigment epithelial regeneration?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can wet AMD cause rapid vision loss by inducing retinal pigment epithelial atrophy?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does a diet high in antioxidants prevent AMD by reversing retinal pigment epithelial edema?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/healthy-vision-resource-center/age-related-macular-degeneration-amd-resources"
+    },
+    {
+        "question": "Can smoking exacerbate wet AMD by increasing retinal pigment epithelial lipid deposits?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does dry AMD affect depth perception by causing retinal pigment epithelial edema?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does obesity increase AMD risk by causing retinal pigment epithelial regeneration?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can wet AMD impair reading by inducing retinal pigment epithelial lipid deposits?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does systemic inflammation contribute to AMD by causing retinal pigment epithelial repair?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can AREDS supplements reduce AMD progression by reversing retinal pigment epithelial hemorrhages?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "Does wet AMD cause blind spots by inducing retinal pigment epithelial lipid repair?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can family history increase AMD risk by predisposing to retinal pigment epithelial scarring?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does dry AMD progress to wet AMD due to retinal pigment epithelial regeneration alone?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can anti-VEGF injections improve wet AMD by reducing retinal pigment epithelial atrophy?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does UV light increase AMD risk by causing retinal pigment epithelial lipid repair?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can wet AMD affect face recognition by inducing retinal pigment epithelial atrophy?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does systemic inflammation worsen AMD by causing retinal pigment epithelial swelling?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Does dry AMD cause gradual vision loss by inducing retinal pigment epithelial lipid deposits?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can OCT confirm wet AMD by detecting retinal pigment epithelial lipid accumulation?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does diabetes increase AMD risk by causing retinal pigment epithelial lipid repair?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can wet AMD cause sudden vision changes by inducing retinal pigment epithelial scarring?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does family history elevate AMD risk by causing retinal pigment epithelial lipid repair?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can anti-VEGF therapy stabilize wet AMD by reducing retinal pigment epithelial lipid deposits?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does smoking increase dry AMD risk by causing retinal pigment epithelial lipid repair?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can wet AMD impair driving by inducing retinal pigment epithelial atrophy?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does systemic inflammation exacerbate AMD by causing retinal pigment epithelial regeneration?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can AREDS supplements mitigate AMD risk by reversing retinal pigment epithelial lipid deposits?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "Does wet AMD cause depth perception issues by inducing retinal pigment epithelial lipid repair?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can obesity worsen AMD by increasing retinal pigment epithelial lipid accumulation?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Does dry AMD progress to geographic atrophy due to retinal pigment epithelial lipid repair?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can photodynamic therapy treat wet AMD by reducing retinal pigment epithelial edema?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does UV light exposure increase AMD risk by causing retinal pigment epithelial lipid regeneration?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can wet AMD cause visual hallucinations by inducing retinal pigment epithelial edema?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does systemic inflammation contribute to AMD by causing retinal pigment epithelial lipid repair?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can smoking increase AMD severity by promoting retinal pigment epithelial edema?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does dry AMD impair reading by inducing retinal pigment epithelial lipid repair?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can OCT detect early AMD by visualizing retinal pigment epithelial edema?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does diabetes exacerbate AMD by causing retinal pigment epithelial lipid regeneration?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can wet AMD affect color perception by inducing retinal pigment epithelial lipid deposits?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does family history worsen AMD by causing retinal pigment epithelial edema?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can anti-VEGF therapy improve wet AMD by reducing retinal pigment epithelial scarring?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does smoking worsen AMD by causing retinal pigment epithelial lipid regeneration?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can wet AMD increase fall risk by inducing retinal pigment epithelial lipid deposits?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Does systemic inflammation increase AMD risk by causing retinal pigment epithelial swelling?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can AREDS supplements slow dry AMD by reversing retinal pigment epithelial edema?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "Does wet AMD cause rapid vision loss by inducing retinal pigment epithelial lipid regeneration?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can obesity increase AMD risk by promoting retinal pigment epithelial edema?",
+        "answer": true,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Does dry AMD progress to wet AMD due to retinal pigment epithelial lipid regeneration alone?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can photodynamic therapy manage wet AMD by reducing retinal pigment epithelial lipid accumulation?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does UV light exposure worsen AMD by causing retinal pigment epithelial lipid repair?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can wet AMD impair night vision by inducing retinal pigment epithelial scarring?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does systemic inflammation increase AMD severity by causing retinal pigment epithelial repair?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can smoking exacerbate AMD by increasing retinal pigment epithelial lipid repair?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does dry AMD cause blind spots by inducing retinal pigment epithelial edema?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can OCT diagnose wet AMD by detecting retinal pigment epithelial swelling?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does smoking increase oxidative stress in the retina, making AMD more likely?",
+        "answer": true,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can wet AMD cause blood vessel leakage, leading to complete vision restoration?",
+        "answer": false,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does aging lead to drusen buildup, which always progresses to wet AMD?",
+        "answer": false,
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can anti-VEGF injections reduce fluid in wet AMD, improving central vision over time?",
+        "answer": true,
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does UV exposure damage the retinal pigment epithelium, causing immediate AMD onset?",
+        "answer": false,
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    }
+]

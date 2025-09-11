@@ -1,6 +1,5 @@
 from flask import Flask, request, jsonify, make_response, send_file
-# from enrich_kg_gpt import return_relations, add_relations_to_kg
-from enrigh_kg_deepseek_r1 import return_relations, add_relations_to_kg
+from enrich_kg_gpt import return_relations, add_relations_to_kg
 from disambiguation.reason import reason_and_update
 from search_kg import query_knowledge_graph, delete_relation_kg
 from bulk_relations import extract_relations, add_bulk_relations_to_kg

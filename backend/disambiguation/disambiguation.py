@@ -16,6 +16,8 @@ synonyms_map = {
     "pcv": "polypoidal choroidal vasculopathy",
     "vma": "vitreomacular adhesion",
     "me": "macular edema",
+    "namd": "neovascular age-related macular degeneration",
+    "neovascular amd": "neovascular age-related macular degeneration",
 }
 
 trailing_words = {"cnv", "ga"}
