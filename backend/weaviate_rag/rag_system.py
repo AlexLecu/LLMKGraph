@@ -1,257 +1,212 @@
-import os
-from dotenv import load_dotenv
 import weaviate
-from weaviate import WeaviateClient
-from typing import List, Dict
-import logging
-from weaviate.classes.query import QueryReference
-from weaviate.collections.classes.filters import Filter
-from openai import OpenAI
+from weaviate.classes.query import Filter, QueryReference
+import itertools
+import tempfile
+import atexit
+import shutil
+from ollama import Client
+from weaviate_rag.query_analyzer import analyze_query
 
-load_dotenv()
-
-WEAVIATE_URL = "http://localhost:8080"
-KG_CLASS_NAME = "Entity"
-RELATION_CLASS = "Relation"
-PUBLICATION_CLASS = "Publication"
-
-logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger("KGRAG")
-
-
-class KGRAGSystem:
-    def __init__(self):
-        self.client: WeaviateClient = None
-        try:
-            self.client = weaviate.connect_to_local()
-            self.openai_client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
-            self._verify_schema()
-        except Exception as e:
-            logger.error(f"Initialization failed: {str(e)}")
-            raise
-        finally:
-            if self.client is not None:
-                self.client.close()
-
-    def _verify_schema(self):
-        """Verify required classes exist in Weaviate schema (v4)."""
-        with self.client as client:
-            collections = client.collections.list_all(simple=False)
-            existing_collections = [col for col in collections]
-
-            required_classes = {KG_CLASS_NAME, RELATION_CLASS, PUBLICATION_CLASS}
-            missing = required_classes - set(existing_collections)
-
-            if missing:
-                raise ValueError(
-                    f"Missing required collections in Weaviate: {missing}. "
-                    "Please create them first."
-                )
-
-    def query(self, question: str, max_context_length: int = 3000) -> Dict:
-        """Main query pipeline with proper connection handling."""
-        result = {
-            "question": question,
-            "context": "No context found",
-            "sources": [],
-            "context_entities": 0,
-            "context_relations": 0,
-            "error": None
+class GraphRAGSystem:
+    def __init__(self, question):
+        """Initialize the analyzer with a question and set up Weaviate and Ollama clients."""
+        self.question = question
+        self.acronyms ={
+            "wet amd": "wet age-related macular degeneration",
+            "early amd": "early age-related macular degeneration",
+            "cnv": "choroidal neovascularization",
+            "amd": "age-related macular degeneration",
+            "wet age-related macular degeneration amd": "wet age-related macular degeneration",
+            "early age related macular degeneration amd": "early age-related macular degeneration",
+            "wet armd": "wet age-related macular degeneration",
+            "ga": "geographic atrophy",
+            "oct": "optical coherence tomography",
+            "pdt": "photodynamic therapy",
+            "pcv": "polypoidal choroidal vasculopathy",
+            "vma": "vitreomacular adhesion",
+            "me": "macular edema",
         }
+        self.temp_dir = tempfile.mkdtemp()
+        atexit.register(shutil.rmtree, self.temp_dir, ignore_errors=True)
+        self.client = weaviate.connect_to_local()
+        self.ollama_client = Client()
+        self.entity_collection = self.client.collections.get("Entity")
+        self.relation_collection = self.client.collections.get("Relation")
+        self.entity_id_to_name = {}
 
-        try:
-            with self.client as client:
-                context_data = self._hybrid_search(client, question)
-                context_str = self._format_context(client, context_data)[:max_context_length]
+    def expand_terms(self, terms):
+        """Replace acronyms with their full forms in the list of terms or noun phrases, normalizing case."""
+        expanded_terms = []
+        for term in terms:
+            words = term.split()
+            expanded_words = [self.acronyms.get(word.lower(), word) for word in words]
+            expanded_terms.append(" ".join(expanded_words))
+        return expanded_terms
 
-                # Update results with KG context
-                result.update({
-                    "context": context_str,
-                    "sources": self._extract_sources(context_data),
-                    "context_entities": sum(
-                        1 for item in context_data if isinstance(item, dict) and item.get("type") == "entity"),
-                    "context_relations": sum(
-                        1 for item in context_data if isinstance(item, dict) and item.get("type") == "relation")
-                })
-
-        except Exception as e:
-            result["error"] = str(e)
-            logger.error(f"Query failed: {str(e)}", exc_info=True)
-
-        return result
-
-    def _hybrid_search(self, client: WeaviateClient, query: str, top_k: int = 5) -> List[Dict]:
-        """Perform hybrid search."""
-        try:
-            logger.info(f"Starting hybrid search for: {query}")
-
-            entities_collection = client.collections.get(KG_CLASS_NAME)
-            vector_result = entities_collection.query.near_text(
-                query=query,
-                limit=top_k,
+    def retrieve_entities(self):
+        """Retrieve entities based on predefined noun phrases from the question."""
+        query_analysis = analyze_query(self.question)
+        if query_analysis.get('noun_phrases', []):
+            expanded_noun_phrases = self.expand_terms(query_analysis['noun_phrases'])
+        elif query_analysis.get('keywords', []):
+            expanded_noun_phrases = self.expand_terms(query_analysis['keywords'])
+        else:
+            # Fallback to the raw question if no noun phrases or keywords
+            expanded_noun_phrases = self.expand_terms([self.question])
+        entity_results = {}
+        for noun_phrase in expanded_noun_phrases:
+            entity_search_res = self.entity_collection.query.bm25(
+                query=noun_phrase,
+                limit=5,
                 return_properties=["name", "type"]
             )
+            if entity_search_res.objects:
+                entity_results[noun_phrase] = entity_search_res.objects
+        return entity_results
 
-            context = []
-            seen_entities = set()
-            for obj in vector_result.objects:
-                entity_id = obj.uuid
-                if entity_id in seen_entities:
-                    continue
+    def get_entity_ids_and_names(self, entity_results):
+        """Extract entity IDs and names from search results."""
+        entity_ids = []
+        entity_names = []
+        for noun_phrase, entity_objects in entity_results.items():
+            for entity_obj in entity_objects:
+                entity_ids.append(entity_obj.uuid)
+                entity_names.append(entity_obj.properties['name'])
+                self.entity_id_to_name[entity_obj.uuid] = entity_obj.properties['name']
+        return entity_ids, entity_names
 
-                seen_entities.add(entity_id)
-
-                relations = self._get_relations_for_entity(client, entity_id)
-                context.extend(relations)
-
-            return context
-
-        except Exception as e:
-            logger.error(f"Hybrid search failed: {str(e)}", exc_info=True)
-            return []
-
-    def _get_relations_for_entity(self, client: WeaviateClient, entity_id: str) -> List[Dict]:
-        """Get relations using cross-references."""
-        relations_collection = client.collections.get(RELATION_CLASS)
-        relations = []
-
-        base_refs = [
+    def retrieve_pairwise_relations(self, entity_ids):
+        """Retrieve pairwise relationships between entities."""
+        entity_pairs = set(itertools.permutations(entity_ids, 2))
+        combined_filter = (
+                Filter.by_ref("relation_subject").by_id().contains_any(entity_ids) &
+                Filter.by_ref("relation_object").by_id().contains_any(entity_ids)
+        )
+        references = [
             QueryReference(link_on="relation_subject", return_properties=["name", "type"]),
             QueryReference(link_on="relation_object", return_properties=["name", "type"]),
-            QueryReference(link_on="hasPublication", return_properties=["name"]),
+            QueryReference(link_on="hasPublication", return_properties=["name", "content"])
         ]
-
-        # Process both directions
-        for filter_cond in [
-            Filter.by_ref("relation_subject").by_id().equal(entity_id),  # Outgoing
-            Filter.by_ref("relation_object").by_id().equal(entity_id)  # Incoming
-        ]:
-            result = relations_collection.query.fetch_objects(
-                limit=5,
-                return_references=base_refs,
-                filters=filter_cond
+        try:
+            relations = self.relation_collection.query.fetch_objects(
+                filters=combined_filter,
+                return_properties=["relation_predicate"],
+                return_references=references,
+                limit=100
             )
-            relations.extend(self._process_relation_objects(result.objects))
+        except Exception as e:
+            print(f"Error executing pairwise query: {e}")
+            relations = []
 
-        return relations
+        seen = set()
+        pairwise_relations = []
+        involved_entities = set()
+        for o in relations.objects:
+            subject_id = o.references["relation_subject"].objects[0].uuid
+            object_id = o.references["relation_object"].objects[0].uuid
+            if (subject_id, object_id) in entity_pairs:
+                predicate = o.properties["relation_predicate"]
+                triple = (subject_id, predicate, object_id)
+                if triple not in seen:
+                    seen.add(triple)
+                    subject_name = o.references["relation_subject"].objects[0].properties["name"]
+                    object_name = o.references["relation_object"].objects[0].properties["name"]
+                    pairwise_relations.append((subject_name, predicate, object_name))
+                    involved_entities.add(subject_id)
+                    involved_entities.add(object_id)
+        return pairwise_relations, involved_entities
 
-    def _process_relation_objects(self, relations: list) -> List[Dict]:
-        """Process Weaviate relation objects into standardized dictionaries."""
-        processed = []
+    def retrieve_individual_relations(self, entity_ids, involved_entities):
+        """Retrieve individual relations for entities not in pairwise relations."""
+        entities_to_check = [eid for eid in entity_ids if eid not in involved_entities]
+        if not entities_to_check and involved_entities:
+            return {}
 
-        for rel in relations:
-
-            subject = self._get_reference_data(rel, "relation_subject")
-            obj = self._get_reference_data(rel, "relation_object")
-            pubs = [{"name" : self._clean_pub_name(rel.references.get("hasPublication").objects[0].properties.get("name", "Unknown"))}]
-
-            processed.append({
-                "type": "relation",
-                "predicate": rel.properties.get("relation_predicate"),
-                "subject": subject,
-                "object": obj,
-                "publications": pubs
-            })
-
-        return processed
-
-    def _get_reference_data(self, rel, ref_name: str) -> Dict:
-        """Safe extraction of reference data with defaults."""
-        ref = rel.references.get(ref_name)
-        if not ref or not ref.objects:
-            return {"name": "Unknown", "type": "Unknown"}
-
-        return {
-            "name": ref.objects[0].properties.get("name", "Unknown"),
-            "type": ref.objects[0].properties.get("type", "Unknown")
-        }
-
-    def _clean_pub_name(self, pub_name: str) -> str:
-        """Remove 'PUB_' prefix from publication names if present."""
-        return pub_name[4:] if pub_name.startswith("PUB_") else pub_name
-
-
-    def _format_context(self, client: WeaviateClient, context: List[Dict]) -> str:
-        """Format context."""
-        formatted = []
-        base_url_ct = "https://app.dimensions.ai/details/clinical_trial/"
-        base_url_pub = "https://app.dimensions.ai/details/publication/"
-
-        for item in context:
-            if item["type"] == "relation":
-                rel = item
-                predicate = rel["predicate"].replace('_', ' ').title()
-
-                # Extract names directly from subject/object
-                subject_name = f"{rel['subject']['name']} ({rel['subject']['type']})"
-                object_name = f"{rel['object']['name']} ({rel['object']['type']})"
-
-                # Format publications
-                pub_links = []
-                for pub in rel["publications"]:
-                    pub_name = pub.get('name', 'Unnamed Publication')
-
-                    if pub_name.startswith("pub."):
-                        base_url = base_url_pub
-                    else:
-                        base_url = base_url_ct
-
-                    pub_links.append(f"[{pub_name}]({base_url}{pub_name})")
-
-                rel_str = (
-                    f"{subject_name} → {predicate} → {object_name}\n"
-                    f"  - Supported by: {', '.join(pub_links) if pub_links else 'No publications'}"
+        entity_relations = {eid: [] for eid in entity_ids}
+        seen = set()
+        for eid in entity_ids:
+            entity_filter = (
+                    Filter.by_ref("relation_subject").by_id().equal(eid) |
+                    Filter.by_ref("relation_object").by_id().equal(eid)
+            )
+            try:
+                relations = self.relation_collection.query.fetch_objects(
+                    filters=entity_filter,
+                    return_properties=["relation_predicate"],
+                    return_references=[
+                        QueryReference(link_on="relation_subject", return_properties=["name", "type"]),
+                        QueryReference(link_on="relation_object", return_properties=["name", "type"]),
+                        QueryReference(link_on="hasPublication", return_properties=["name", "content"])
+                    ],
+                    limit=50
                 )
-                formatted.append(rel_str)
+                for o in relations.objects:
+                    subject_id = o.references["relation_subject"].objects[0].uuid
+                    object_id = o.references["relation_object"].objects[0].uuid
+                    predicate = o.properties["relation_predicate"]
+                    triple = (subject_id, predicate, object_id)
+                    if triple not in seen:
+                        seen.add(triple)
+                        subject_name = o.references["relation_subject"].objects[0].properties["name"]
+                        object_name = o.references["relation_object"].objects[0].properties["name"]
+                        entity_relations[eid].append((subject_name, predicate, object_name))
+            except Exception as e:
+                print(f"Error querying relations for entity {self.entity_id_to_name.get(eid, 'unknown')}: {e}")
+        return entity_relations
 
-            elif item["type"] == "entity":
-                e_name = item.get("name", "Unknown Entity")
-                e_type = item.get("type", "Unknown Type")
-                formatted.append(f"Entity: {e_name} ({e_type})")
+    def build_relation_string(self, pairwise_relations, entity_relations):
+        """Construct a string of all relations for summary generation."""
+        relation_string = ""
+        relation_counter = 1
 
-        return "\n\n".join(formatted)
+        for subj, pred, obj in pairwise_relations:
+            relation_string += f"{relation_counter}. {subj} {pred} {obj}\n"
+            relation_counter += 1
 
-    def _get_entity_name(self, client: WeaviateClient, entity_id: str) -> str:
-        """Get entity name."""
+        for eid, rels in entity_relations.items():
+            entity_name = self.entity_id_to_name.get(eid, "unknown")
+            if rels:
+                for subj, pred, obj in rels:
+                    relation_string += f"{relation_counter}. {subj} {pred} {obj}\n"
+                    relation_counter += 1
+            else:
+                relation_string += f"No relations found for {entity_name}\n"
+        return relation_string
+
+    def generate_summary(self, relation_string):
+        """Generate a summary of relevant relationships using Ollama."""
+        prompt = (
+            f"Given the question: '{self.question}'\n\n"
+            f"Below is a list of relationship descriptions:\n{relation_string}\n\n"
+            f"Based on the relationships provided, craft a concise, single-paragraph summary that answers the question. "
+            f"Focus on the collective significance of the most relevant relationships without mentioning or referencing specific relationship numbers or indices. "
+            f"Do not list relationships individually or quote them directly. "
+            f"Present the response as plain text in a natural, narrative style, avoiding technical terms like 'relationships' in the summary itself."
+        )
         try:
-            entity = client.collections.get(KG_CLASS_NAME).get(uuid=entity_id)
-            return entity.properties.get("name", "Unknown Entity")
+            response = self.ollama_client.generate(model='llama3.2', prompt=prompt)
+            response_text = response.get('response', '')
+            if not response_text:
+                raise ValueError("Empty response from Ollama")
+            return response_text.strip()
         except Exception as e:
-            logger.error(f"Error getting entity name: {str(e)}")
-            return "Unknown Entity"
+            return f"Error processing Ollama response: {e}"
 
-    def _extract_sources(self, context: List[Dict]) -> List[str]:
-        sources = set()
-        try:
-            for item in context or []:
-                if isinstance(item, dict) and item.get("type") == "relation":
-                    pubs = item.get("data", {}).get("hasPublication", [])
-                    sources.update(
-                        f"{pub.get('name', 'Unnamed Publication')}: {pub.get('description', 'No description')}"
-                        for pub in pubs if isinstance(pub, dict)
-                    )
-        except Exception as e:
-            logger.error(f"Source extraction error: {str(e)}")
-        return list(sources)
+    def analyze(self):
+        """Orchestrate the analysis process and return the summary."""
+        entity_results = self.retrieve_entities()
+        entity_ids, entity_names = self.get_entity_ids_and_names(entity_results)
+        pairwise_relations, involved_entities = self.retrieve_pairwise_relations(entity_ids)
+        entity_relations = self.retrieve_individual_relations(entity_ids, involved_entities)
+        relation_string = self.build_relation_string(pairwise_relations, entity_relations)
+        summary = self.generate_summary(relation_string)
+        self.client.close()
+        return summary
 
 
+# Example usage
 if __name__ == "__main__":
-    try:
-        rag = KGRAGSystem()
-        questions = [
-            "What are the causes of AMD?"
-        ]
-
-        for q in questions:
-            print(f"\n{'=' * 40}\nQuestion: {q}")
-            result = rag.query(q)
-            print(f"Answer: {result['answer']}")
-            if result["sources"]:
-                print("\nSources:")
-                for source in result["sources"]:
-                    print(f"- {source}")
-            print(f"\nContext: {result['context_relations']} relations")
-            print("=" * 40)
-
-    except Exception as e:
-        logger.critical(f"Application failed: {str(e)}")
+    question = "Can wet AMD lead to complete blindness?"
+    analyzer = GraphRAGSystem(question)
+    summary = analyzer.analyze()
+    print("Summary of relevant relationships:\n", summary)

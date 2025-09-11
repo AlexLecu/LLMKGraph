@@ -1,0 +1,2502 @@
+[
+    {
+        "question": "What is the primary area of the eye affected by AMD?",
+        "answer": "The macula, located in the central retina, is primarily affected by AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What distinguishes wet AMD from dry AMD?",
+        "answer": "Wet AMD involves abnormal blood vessel growth and leakage, while dry AMD features drusen deposits and retinal thinning.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What are drusen in the context of AMD?",
+        "answer": "Drusen are yellowish deposits of lipids and proteins that accumulate under the retina in dry AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What vision problem is most associated with AMD?",
+        "answer": "AMD most commonly causes central vision loss.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the leading treatment for wet AMD?",
+        "answer": "Anti-VEGF injections are the leading treatment for wet AMD to reduce blood vessel growth and leakage.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What nutrients are included in the AREDS formula?",
+        "answer": "The AREDS formula includes vitamins C and E, zinc, copper, and beta-carotene (replaced by lutein and zeaxanthin in AREDS2).",
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "What visual distortion is a symptom of wet AMD?",
+        "answer": "Metamorphopsia, where straight lines appear wavy, is a symptom of wet AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What imaging tool is commonly used to diagnose AMD?",
+        "answer": "Optical Coherence Tomography (OCT) is commonly used to image the retina for AMD diagnosis.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What percentage of AMD cases are wet AMD?",
+        "answer": "Wet AMD accounts for about 10-15% of all AMD cases.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What lifestyle factor most increases AMD risk?",
+        "answer": "Smoking is the lifestyle factor that most increases AMD risk.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is geographic atrophy in AMD?",
+        "answer": "Geographic atrophy is an advanced form of dry AMD where retinal cells die, causing vision loss.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What mineral in AREDS2 supports retinal health?",
+        "answer": "Zinc in the AREDS2 formula supports retinal health.",
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "What is a common early sign of wet AMD?",
+        "answer": "A common early sign of wet AMD is sudden distortion of central vision.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What demographic group has the highest AMD risk?",
+        "answer": "Caucasians over 60 have the highest risk of developing AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What does fluorescein angiography reveal in AMD?",
+        "answer": "Fluorescein angiography reveals blood vessel leakage in wet AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What pigment in the retina may protect against AMD?",
+        "answer": "Lutein is a retinal pigment that may protect against AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What grid helps monitor AMD progression?",
+        "answer": "The Amsler grid helps monitor AMD progression by detecting vision distortion.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What defines choroidal neovascularization in AMD?",
+        "answer": "Choroidal neovascularization is the growth of abnormal blood vessels from the choroid into the retina in wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What is the primary risk factor for AMD?",
+        "answer": "Aging is the primary risk factor for AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What dietary component may reduce AMD risk?",
+        "answer": "Omega-3 fatty acids may reduce AMD risk.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is a scotoma in relation to AMD?",
+        "answer": "A scotoma is a blind spot in the central vision caused by AMD.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What type of light exposure is linked to AMD risk?",
+        "answer": "Ultraviolet (UV) light exposure is linked to AMD risk.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What laser therapy treats wet AMD?",
+        "answer": "Photodynamic therapy uses lasers and light-sensitive drugs to treat wet AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is an early retinal finding in dry AMD?",
+        "answer": "Small drusen deposits are an early retinal finding in dry AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the purpose of low vision rehabilitation in AMD?",
+        "answer": "Low vision rehabilitation helps AMD patients maximize their remaining vision.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What ethnic group has the highest AMD prevalence?",
+        "answer": "Caucasians have the highest AMD prevalence.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is macular edema in wet AMD?",
+        "answer": "Macular edema is fluid accumulation in the macula due to leaking blood vessels in wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What vision symptom differentiates AMD from glaucoma?",
+        "answer": "Central vision loss differentiates AMD from glaucoma, which affects peripheral vision.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What protein is targeted by anti-VEGF drugs in AMD?",
+        "answer": "Vascular endothelial growth factor (VEGF) is targeted by anti-VEGF drugs in AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What lifestyle change most effectively slows AMD progression?",
+        "answer": "Quitting smoking most effectively slows AMD progression.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the typical schedule for anti-VEGF injections in wet AMD?",
+        "answer": "Anti-VEGF injections are typically given every 4-8 weeks for wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What retinal layer nourishes the macula in AMD?",
+        "answer": "The choroid nourishes the macula and is implicated in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What clinical trial refined the AREDS formula?",
+        "answer": "The AREDS2 trial refined the AREDS formula.",
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "What is a rare complication of wet AMD?",
+        "answer": "Retinal detachment is a rare complication of wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What antioxidants are key in the AREDS formula?",
+        "answer": "Vitamins C and E are key antioxidants in the AREDS formula.",
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "What vision symptom is uncommon in AMD?",
+        "answer": "Peripheral vision loss is uncommon in AMD, unlike central vision issues.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What retinal layer supports photoreceptors in AMD?",
+        "answer": "The retinal pigment epithelium supports photoreceptors and is damaged in AMD.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is a side effect of photodynamic therapy for AMD?",
+        "answer": "Temporary light sensitivity is a side effect of photodynamic therapy for AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the estimated AMD prevalence in people over 80?",
+        "answer": "About 25% of people over 80 have AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What nutrient was removed from AREDS in AREDS2?",
+        "answer": "Beta-carotene was removed from AREDS in the AREDS2 formula.",
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "What happens to photoreceptors in advanced AMD?",
+        "answer": "Photoreceptors degenerate in advanced AMD, leading to vision loss.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What visual aid is most used by AMD patients?",
+        "answer": "Magnifiers are the most used visual aid by AMD patients.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What condition forms scar tissue in wet AMD?",
+        "answer": "Macular fibrosis forms scar tissue in wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What cardiovascular condition increases AMD risk?",
+        "answer": "Hypertension increases AMD risk.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What procedure uses light-sensitive drugs for wet AMD?",
+        "answer": "Photodynamic therapy uses light-sensitive drugs for wet AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is a common finding in intermediate AMD?",
+        "answer": "Large drusen are a common finding in intermediate AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What syndrome causes hallucinations in AMD patients?",
+        "answer": "Charles Bonnet syndrome causes visual hallucinations in AMD patients.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What age is recommended for AMD screening?",
+        "answer": "Age 50 is recommended for AMD screening.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What surgery repositions the macula in severe AMD?",
+        "answer": "Macular translocation repositions the macula in severe AMD.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the purpose of sunglasses in AMD prevention?",
+        "answer": "Sunglasses reduce UV exposure to help prevent AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What gene is most associated with AMD risk?",
+        "answer": "The CFH gene is most associated with AMD risk.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What condition creates a hole in the macula in AMD?",
+        "answer": "A macular hole can form in the macula in some AMD cases.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What psychological effect can AMD have?",
+        "answer": "AMD can lead to depression due to vision loss.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What test evaluates retinal function in AMD?",
+        "answer": "An electroretinogram (ERG) evaluates retinal function in AMD.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What adaptation aids AMD patients with daily tasks?",
+        "answer": "High-contrast materials aid AMD patients with daily tasks.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What condition wrinkles the retina in AMD?",
+        "answer": "An epiretinal membrane wrinkles the retina in AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What nutrient in AREDS2 filters harmful light?",
+        "answer": "Zeaxanthin in AREDS2 filters harmful blue light.",
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "What causes blood leakage in wet AMD?",
+        "answer": "Macular hemorrhage causes blood leakage in wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What future therapy might treat dry AMD?",
+        "answer": "Stem cell therapy is a potential future treatment for dry AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What layer degenerates in geographic atrophy?",
+        "answer": "The retinal pigment epithelium degenerates in geographic atrophy.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What mobility aid assists AMD patients?",
+        "answer": "A white cane assists AMD patients with mobility.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What occupational factor may increase AMD risk?",
+        "answer": "Prolonged sun exposure may increase AMD risk.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What drug class manages wet AMD?",
+        "answer": "Anti-VEGF drugs manage wet AMD by reducing blood vessel growth.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What is seen on OCT imaging in wet AMD?",
+        "answer": "Subretinal fluid is seen on OCT imaging in wet AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What severe condition can wet AMD cause?",
+        "answer": "Retinal detachment is a severe condition wet AMD can cause.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What dietary habit increases AMD risk?",
+        "answer": "A high-fat diet increases AMD risk.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What test assesses color vision in AMD?",
+        "answer": "The Ishihara test assesses color vision changes in AMD.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What can untreated dry AMD progress to?",
+        "answer": "Untreated dry AMD can progress to geographic atrophy.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What condition blocks retinal vessels in AMD?",
+        "answer": "Retinal vascular occlusion blocks retinal vessels in AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What reading aid benefits AMD patients?",
+        "answer": "Large-print books benefit AMD patients.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What causes macular swelling in wet AMD?",
+        "answer": "Macular edema causes swelling in the macula in wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What is the benefit of regular eye exams for AMD?",
+        "answer": "Regular eye exams allow early detection of AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What retinal change is seen in dry AMD?",
+        "answer": "Retinal pigment epithelium clumping is seen in dry AMD.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What technology aids AMD patients with reading?",
+        "answer": "Screen readers aid AMD patients with reading.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What condition tears the retina in AMD?",
+        "answer": "A retinal tear can occur in severe AMD cases.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What is the benefit of exercise for AMD patients?",
+        "answer": "Exercise improves retinal blood flow for AMD patients.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What condition puckers the macula in AMD?",
+        "answer": "A macular pucker causes the macula to wrinkle in AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What future diagnostic tool might detect AMD?",
+        "answer": "Artificial intelligence might detect AMD in the future.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What condition dilates retinal vessels in AMD?",
+        "answer": "Retinal vascular dilation can occur in AMD.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What cooking aid assists AMD patients?",
+        "answer": "High-contrast cutting boards assist AMD patients with cooking.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What disrupts photoreceptors in AMD?",
+        "answer": "Photoreceptor disarray disrupts photoreceptors in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the benefit of quitting smoking for AMD?",
+        "answer": "Quitting smoking reduces oxidative stress, slowing AMD progression.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What causes blood leakage in the retina in wet AMD?",
+        "answer": "Retinal hemorrhage causes blood leakage in wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What driving aid helps AMD patients?",
+        "answer": "Bioptic telescopes help AMD patients with driving.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What retinal change occurs in dry AMD over time?",
+        "answer": "Retinal pigment epithelium hyperplasia can occur in dry AMD over time.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the benefit of leafy greens for AMD?",
+        "answer": "Leafy greens provide antioxidants that may reduce AMD risk.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What condition folds the retina in AMD?",
+        "answer": "A retinal fold, often linked to an epiretinal membrane, can occur in AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What future treatment might address wet AMD?",
+        "answer": "Gene therapy might address wet AMD in the future.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What causes fluid leakage from retinal vessels in AMD?",
+        "answer": "Retinal vascular leakage causes fluid leakage in AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What is the goal of occupational therapy for AMD patients?",
+        "answer": "The goal of occupational therapy is to help AMD patients adapt to vision loss.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What kills photoreceptors in AMD?",
+        "answer": "Photoreceptor degeneration kills photoreceptors in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the benefit of fish consumption for AMD?",
+        "answer": "Fish consumption provides omega-3 fatty acids that may slow AMD progression.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What detaches the retina in severe wet AMD?",
+        "answer": "Retinal detachment can occur in severe wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What magnifies text for AMD patients?",
+        "answer": "Electronic magnifiers magnify text for AMD patients.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What blocks retinal vessels in AMD?",
+        "answer": "Retinal vascular occlusion blocks retinal vessels in AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What is the benefit of AREDS supplements for AMD?",
+        "answer": "AREDS supplements slow the progression of intermediate to advanced AMD.",
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "What atrophies retinal pigment in dry AMD?",
+        "answer": "Retinal pigment epithelium atrophy affects retinal pigment in dry AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What writing aid helps AMD patients?",
+        "answer": "Bold markers help AMD patients with writing.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the role of the macula in vision?",
+        "answer": "The macula enables sharp central vision for tasks like reading and recognizing faces.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What characterizes early AMD?",
+        "answer": "Early AMD is characterized by small drusen and no noticeable vision loss.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the main symptom of intermediate AMD?",
+        "answer": "The main symptom of intermediate AMD is mild central vision blurriness.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What defines late-stage AMD?",
+        "answer": "Late-stage AMD is defined by significant central vision loss, either dry or wet.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the purpose of the Amsler grid test?",
+        "answer": "The Amsler grid test detects distortions or blind spots in central vision due to AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the typical age of onset for AMD?",
+        "answer": "The typical age of onset for AMD is over 60.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the primary goal of wet AMD treatments?",
+        "answer": "The primary goal of wet AMD treatments is to halt abnormal blood vessel growth and leakage.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What is the function of zinc in the AREDS formula?",
+        "answer": "Zinc supports retinal cell health and reduces AMD progression in the AREDS formula.",
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "What is a hallmark of wet AMD on retinal scans?",
+        "answer": "A hallmark of wet AMD on retinal scans is subretinal fluid or hemorrhages.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What is the most common visual aid for AMD patients?",
+        "answer": "The most common visual aid for AMD patients is a handheld magnifier.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What retinal change marks early dry AMD?",
+        "answer": "Small drusen deposits mark early dry AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the role of copper in AREDS supplements?",
+        "answer": "Copper prevents anemia caused by high zinc levels in AREDS supplements.",
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "What is a frequent complaint of AMD patients?",
+        "answer": "A frequent complaint of AMD patients is difficulty seeing in low light.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the purpose of fundus photography in AMD?",
+        "answer": "Fundus photography documents retinal changes like drusen or hemorrhages in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the main environmental risk factor for AMD?",
+        "answer": "The main environmental risk factor for AMD is prolonged UV light exposure.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the definition of legal blindness in AMD?",
+        "answer": "Legal blindness in AMD is defined as central vision worse than 20/200, even with correction.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the role of the choroid in AMD?",
+        "answer": "The choroid supplies blood to the retina and is involved in wet AMD\u2019s neovascularization.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is a common mobility challenge for AMD patients?",
+        "answer": "A common mobility challenge for AMD patients is navigating obstacles due to central vision loss.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the primary focus of AMD research?",
+        "answer": "The primary focus of AMD research is developing treatments to halt or reverse retinal damage.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the effect of AMD on night vision?",
+        "answer": "AMD can reduce night vision by damaging the macula\u2019s ability to adapt to low light.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the purpose of genetic testing in AMD?",
+        "answer": "Genetic testing identifies AMD risk genes like CFH to predict susceptibility.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the typical progression rate of dry AMD?",
+        "answer": "Dry AMD typically progresses slowly over years, varying by individual.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What is the role of vitamin E in AMD management?",
+        "answer": "Vitamin E acts as an antioxidant, protecting retinal cells in AMD management.",
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "What is a key feature of advanced wet AMD?",
+        "answer": "A key feature of advanced wet AMD is rapid central vision loss from hemorrhages.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What is the benefit of high-contrast tools for AMD patients?",
+        "answer": "High-contrast tools improve visibility for AMD patients with central vision loss.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the primary cause of AMD?",
+        "answer": "The primary cause of AMD is age-related retinal degeneration.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the role of beta-carotene in the original AREDS formula?",
+        "answer": "Beta-carotene served as an antioxidant in the original AREDS formula to slow AMD.",
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "What is a common early intervention for AMD?",
+        "answer": "A common early intervention for AMD is nutritional supplementation like AREDS.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the effect of AMD on depth perception?",
+        "answer": "AMD can impair depth perception by distorting central vision.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the purpose of visual field testing in AMD?",
+        "answer": "Visual field testing maps central vision loss caused by AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the typical duration of photodynamic therapy effects in AMD?",
+        "answer": "Photodynamic therapy effects in AMD typically last a few months, requiring repeat treatments.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the role of omega-3 fatty acids in AMD?",
+        "answer": "Omega-3 fatty acids reduce retinal inflammation and may slow AMD progression.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is a common emotional impact of AMD?",
+        "answer": "A common emotional impact of AMD is anxiety due to vision loss.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the purpose of sunglasses in AMD management?",
+        "answer": "Sunglasses protect the retina from UV damage in AMD management.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the effect of AMD on driving ability?",
+        "answer": "AMD impairs driving ability by reducing central vision needed for road awareness.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the role of the retinal pigment epithelium in AMD?",
+        "answer": "The retinal pigment epithelium nourishes photoreceptors and degenerates in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is a frequent finding in OCT scans of dry AMD?",
+        "answer": "A frequent finding in OCT scans of dry AMD is drusen beneath the retina.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the benefit of bold text for AMD patients?",
+        "answer": "Bold text enhances readability for AMD patients with reduced central vision.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the typical prognosis for wet AMD without treatment?",
+        "answer": "Without treatment, wet AMD typically leads to severe central vision loss within months.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What is the role of lutein in AMD prevention?",
+        "answer": "Lutein filters harmful light and protects the macula in AMD prevention.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is a common daily challenge for AMD patients?",
+        "answer": "A common daily challenge for AMD patients is reading small print.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the purpose of anti-VEGF drugs in AMD?",
+        "answer": "Anti-VEGF drugs inhibit blood vessel growth to manage wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What is the effect of AMD on face recognition?",
+        "answer": "AMD impairs face recognition by blurring central vision details.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the role of vitamin C in AMD?",
+        "answer": "Vitamin C acts as an antioxidant, reducing retinal damage in AMD.",
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "What is a typical feature of geographic atrophy on imaging?",
+        "answer": "A typical feature of geographic atrophy on imaging is sharply defined areas of retinal loss.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the benefit of large-print books for AMD patients?",
+        "answer": "Large-print books improve readability by compensating for central vision loss in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the purpose of retinal scans in AMD?",
+        "answer": "Retinal scans monitor drusen, fluid, or hemorrhages to assess AMD progression.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the effect of AMD on reading speed?",
+        "answer": "AMD slows reading speed by impairing central vision clarity.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the role of zeaxanthin in AMD management?",
+        "answer": "Zeaxanthin protects the macula from light damage in AMD management.",
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "What is a common adaptation for AMD patients in the kitchen?",
+        "answer": "A common adaptation is using high-contrast utensils for better visibility.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the purpose of macular translocation surgery?",
+        "answer": "Macular translocation surgery repositions the macula to healthier retinal areas in severe AMD.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the effect of AMD on color contrast?",
+        "answer": "AMD reduces color contrast by damaging the macula\u2019s cone cells.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the benefit of audio books for AMD patients?",
+        "answer": "Audio books allow AMD patients to access literature without relying on vision.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the role of the CFH gene in AMD?",
+        "answer": "The CFH gene regulates inflammation, and its mutations increase AMD risk.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is a typical finding in fluorescein angiography for wet AMD?",
+        "answer": "A typical finding is leakage from abnormal blood vessels in wet AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the benefit of quitting smoking for AMD patients?",
+        "answer": "Quitting smoking reduces retinal oxidative stress, slowing AMD progression.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the effect of AMD on peripheral vision?",
+        "answer": "AMD typically spares peripheral vision, focusing damage on the central field.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the purpose of stem cell research in AMD?",
+        "answer": "Stem cell research aims to regenerate damaged retinal cells in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the role of antioxidants in AMD prevention?",
+        "answer": "Antioxidants neutralize free radicals, protecting the retina from AMD damage.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is a common sign of wet AMD progression?",
+        "answer": "A common sign of wet AMD progression is sudden worsening of central vision.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What is the effect of AMD on visual acuity?",
+        "answer": "AMD reduces visual acuity by damaging the macula\u2019s sharp vision capability.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the purpose of bioptic telescopes for AMD patients?",
+        "answer": "Bioptic telescopes magnify distant objects, aiding AMD patients with tasks like driving.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the role of inflammation in AMD?",
+        "answer": "Inflammation damages retinal tissues, contributing to AMD development.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is a typical emotional response to AMD diagnosis?",
+        "answer": "A typical emotional response to AMD diagnosis is fear of vision loss.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the effect of AMD on daily independence?",
+        "answer": "AMD reduces daily independence by limiting vision for tasks like cooking or reading.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the purpose of occupational therapy in AMD?",
+        "answer": "Occupational therapy teaches adaptive skills to maintain independence in AMD patients.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the role of blood vessels in wet AMD?",
+        "answer": "Abnormal blood vessels in wet AMD leak fluid or blood, damaging the macula.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What is a common adaptation for AMD patients at home?",
+        "answer": "A common adaptation is installing brighter lighting to enhance visibility.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the benefit of a Mediterranean diet for AMD?",
+        "answer": "A Mediterranean diet provides antioxidants and omega-3s, reducing AMD risk.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the effect of AMD on social interactions?",
+        "answer": "AMD can reduce social interactions by impairing face recognition and communication.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the purpose of gene therapy research in AMD?",
+        "answer": "Gene therapy research aims to correct genetic defects causing AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the role of photoreceptors in AMD?",
+        "answer": "Photoreceptors detect light and degenerate in AMD, causing vision loss.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is a typical finding in advanced dry AMD?",
+        "answer": "A typical finding in advanced dry AMD is geographic atrophy with retinal cell loss.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the benefit of voice-activated devices for AMD patients?",
+        "answer": "Voice-activated devices reduce reliance on vision, aiding AMD patients with daily tasks.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the effect of AMD on fine motor skills?",
+        "answer": "AMD can impair fine motor skills by reducing visual precision for tasks like writing.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the purpose of dietary supplements in AMD?",
+        "answer": "Dietary supplements provide nutrients to slow AMD progression.",
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "What is the role of the optic nerve in AMD?",
+        "answer": "The optic nerve remains unaffected in AMD, as the disease targets the macula.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is a common sign of AMD progression?",
+        "answer": "A common sign of AMD progression is increased blurriness or distortion in central vision.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the benefit of contrast sensitivity testing in AMD?",
+        "answer": "Contrast sensitivity testing measures AMD\u2019s impact on distinguishing objects.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the effect of AMD on leisure activities?",
+        "answer": "AMD limits leisure activities like reading or watching TV by impairing central vision.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the purpose of adaptive technology in AMD?",
+        "answer": "Adaptive technology compensates for vision loss, enhancing AMD patient functionality.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the role of drusen in AMD development?",
+        "answer": "Drusen accumulate under the retina, disrupting function and contributing to AMD development.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is a typical retinal change in wet AMD?",
+        "answer": "A typical retinal change in wet AMD is the presence of choroidal neovascularization.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What is the benefit of regular monitoring in AMD?",
+        "answer": "Regular monitoring tracks AMD progression, enabling timely interventions.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the effect of AMD on work performance?",
+        "answer": "AMD reduces work performance by impairing vision for detailed tasks.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the main function of the retina in vision?",
+        "answer": "The retina converts light into electrical signals for the brain to interpret as vision.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the earliest detectable sign of AMD?",
+        "answer": "The earliest detectable sign of AMD is small drusen under the retina.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the primary symptom of wet AMD?",
+        "answer": "The primary symptom of wet AMD is sudden central vision distortion or blurriness.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What is the goal of AREDS2 supplements?",
+        "answer": "The goal of AREDS2 supplements is to slow progression from intermediate to advanced AMD.",
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "What is the most common test for AMD diagnosis?",
+        "answer": "The most common test for AMD diagnosis is optical coherence tomography (OCT).",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the typical progression of wet AMD?",
+        "answer": "Wet AMD typically progresses rapidly, often within weeks or months, if untreated.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What is the role of the macula in reading?",
+        "answer": "The macula provides sharp central vision needed for reading fine print.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the purpose of fluorescein angiography in AMD?",
+        "answer": "Fluorescein angiography identifies leaking blood vessels in wet AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the primary benefit of anti-VEGF therapy?",
+        "answer": "The primary benefit of anti-VEGF therapy is reducing vision loss in wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What is the most affected vision type in AMD?",
+        "answer": "Central vision is the most affected vision type in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the role of vitamin A in retinal health?",
+        "answer": "Vitamin A supports photoreceptor function, maintaining retinal health.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is a frequent visual complaint in early AMD?",
+        "answer": "A frequent visual complaint in early AMD is slight difficulty with detail perception.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the purpose of low vision aids in AMD?",
+        "answer": "Low vision aids enhance remaining vision for daily tasks in AMD patients.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the main genetic risk factor for AMD?",
+        "answer": "The main genetic risk factor for AMD is variants in the CFH gene.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the typical appearance of drusen on retinal imaging?",
+        "answer": "Drusen appear as yellowish spots under the retina on imaging.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the role of sunglasses in AMD prevention?",
+        "answer": "Sunglasses block UV light to reduce retinal damage in AMD prevention.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the primary cause of vision loss in wet AMD?",
+        "answer": "The primary cause of vision loss in wet AMD is macular damage from leaking blood vessels.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What is the benefit of early AMD detection?",
+        "answer": "Early AMD detection allows timely interventions to slow progression.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the role of photoreceptors in the macula?",
+        "answer": "Photoreceptors in the macula detect light for detailed central vision.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is a common treatment frequency for wet AMD?",
+        "answer": "A common treatment frequency for wet AMD is monthly anti-VEGF injections.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What is the purpose of nutritional counseling in AMD?",
+        "answer": "Nutritional counseling promotes a diet to support retinal health in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the effect of AMD on contrast sensitivity?",
+        "answer": "AMD reduces contrast sensitivity, making it hard to distinguish objects.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the role of the choroid in retinal health?",
+        "answer": "The choroid supplies oxygen and nutrients to the retina for its health.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is a typical finding in late dry AMD?",
+        "answer": "A typical finding in late dry AMD is geographic atrophy with retinal thinning.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the benefit of magnifiers for AMD patients?",
+        "answer": "Magnifiers enlarge objects, aiding vision for AMD patients.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the main dietary recommendation for AMD prevention?",
+        "answer": "The main dietary recommendation for AMD prevention is eating leafy greens rich in antioxidants.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the purpose of retinal photography in AMD?",
+        "answer": "Retinal photography tracks changes like drusen or hemorrhages in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the effect of AMD on visual field?",
+        "answer": "AMD reduces the central visual field, leaving peripheral vision intact.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the role of anti-inflammatory foods in AMD?",
+        "answer": "Anti-inflammatory foods reduce retinal inflammation, supporting AMD management.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is a common adaptation for AMD patients in reading?",
+        "answer": "A common adaptation is using electronic readers with adjustable text size.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the purpose of photodynamic therapy in AMD?",
+        "answer": "Photodynamic therapy targets abnormal blood vessels to slow wet AMD progression.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the effect of AMD on object recognition?",
+        "answer": "AMD impairs object recognition by blurring central vision details.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the role of regular exercise in AMD?",
+        "answer": "Regular exercise improves retinal blood flow, aiding AMD management.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is a frequent finding in wet AMD imaging?",
+        "answer": "A frequent finding in wet AMD imaging is choroidal neovascularization.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What is the benefit of screen magnification for AMD patients?",
+        "answer": "Screen magnification enlarges digital content, improving visibility for AMD patients.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the main limitation of current AMD treatments?",
+        "answer": "The main limitation of current AMD treatments is their inability to reverse existing damage.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the role of blood pressure control in AMD?",
+        "answer": "Blood pressure control reduces retinal vascular stress in AMD management.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is a common early symptom of dry AMD?",
+        "answer": "A common early symptom of dry AMD is mild blurriness in central vision.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the purpose of contrast sensitivity testing in AMD?",
+        "answer": "Contrast sensitivity testing assesses AMD\u2019s impact on distinguishing shades.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the effect of AMD on navigation?",
+        "answer": "AMD impairs navigation by reducing central vision for spatial awareness.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the role of family history in AMD risk?",
+        "answer": "Family history increases AMD risk through inherited genetic variants.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is a typical retinal finding in intermediate AMD?",
+        "answer": "A typical retinal finding in intermediate AMD is larger drusen deposits.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the benefit of voice recognition tech for AMD patients?",
+        "answer": "Voice recognition tech allows AMD patients to control devices without visual input.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the effect of AMD on glare sensitivity?",
+        "answer": "AMD increases glare sensitivity by damaging the macula\u2019s light regulation.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the purpose of mobility training in AMD?",
+        "answer": "Mobility training teaches AMD patients to navigate safely with reduced vision.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the role of dietary fats in AMD?",
+        "answer": "Healthy dietary fats like omega-3s support retinal health in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is a common late-stage AMD complication?",
+        "answer": "A common late-stage AMD complication is significant central vision loss.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the benefit of UV-protective lenses for AMD?",
+        "answer": "UV-protective lenses reduce retinal damage, aiding AMD prevention.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the effect of AMD on handwriting?",
+        "answer": "AMD impairs handwriting by reducing visual precision for fine movements.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the purpose of electroretinography in AMD?",
+        "answer": "Electroretinography measures retinal electrical activity to assess AMD damage.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the role of obesity in AMD risk?",
+        "answer": "Obesity increases AMD risk by promoting retinal inflammation.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is a typical adaptation for AMD patients in lighting?",
+        "answer": "A typical adaptation is using task lighting to enhance visibility.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the benefit of closed-circuit television for AMD?",
+        "answer": "Closed-circuit television magnifies images, aiding AMD patients with visual tasks.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the effect of AMD on spatial orientation?",
+        "answer": "AMD impairs spatial orientation by distorting central vision cues.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the purpose of antioxidant supplements in AMD?",
+        "answer": "Antioxidant supplements protect retinal cells from oxidative damage in AMD.",
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "What is the role of high cholesterol in AMD?",
+        "answer": "High cholesterol contributes to lipid buildup, increasing AMD risk.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is a common social challenge for AMD patients?",
+        "answer": "A common social challenge for AMD patients is difficulty recognizing people.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the benefit of adaptive software for AMD patients?",
+        "answer": "Adaptive software enhances accessibility, aiding AMD patients with digital tasks.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the effect of AMD on color discrimination?",
+        "answer": "AMD reduces color discrimination by damaging macular cone cells.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the purpose of visual rehabilitation in AMD?",
+        "answer": "Visual rehabilitation maximizes remaining vision for AMD patients\u2019 daily life.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the role of diabetes in AMD risk?",
+        "answer": "Diabetes may increase AMD risk by damaging retinal blood vessels.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is a typical OCT finding in early AMD?",
+        "answer": "A typical OCT finding in early AMD is small drusen beneath the retina.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the benefit of glare-reducing glasses for AMD?",
+        "answer": "Glare-reducing glasses improve comfort and visibility for AMD patients.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the effect of AMD on visual memory?",
+        "answer": "AMD can impair visual memory by reducing clear image perception.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the purpose of home monitoring in AMD?",
+        "answer": "Home monitoring tracks vision changes to catch AMD progression early.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the role of inflammation in AMD progression?",
+        "answer": "Inflammation accelerates retinal cell damage, driving AMD progression.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is a common workplace challenge for AMD patients?",
+        "answer": "A common workplace challenge is difficulty reading screens or documents.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the benefit of tactile markers for AMD patients?",
+        "answer": "Tactile markers provide non-visual cues, aiding AMD patients with navigation.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the effect of AMD on depth judgment?",
+        "answer": "AMD impairs depth judgment by distorting central vision cues.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the purpose of retinal implants in AMD research?",
+        "answer": "Retinal implants aim to restore vision by replacing damaged photoreceptors in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the role of smoking in AMD development?",
+        "answer": "Smoking increases oxidative stress, contributing to AMD development.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is a typical adaptation for AMD patients in mobility?",
+        "answer": "A typical adaptation is using a cane to detect obstacles.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the benefit of blue-light filters for AMD?",
+        "answer": "Blue-light filters reduce retinal damage, aiding AMD prevention.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the effect of AMD on visual processing speed?",
+        "answer": "AMD slows visual processing speed by impairing central vision clarity.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the purpose of support groups for AMD patients?",
+        "answer": "Support groups provide emotional and practical coping strategies for AMD patients.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the role of oxidative stress in AMD?",
+        "answer": "Oxidative stress damages retinal cells, promoting AMD onset.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is a common visual distortion in wet AMD?",
+        "answer": "A common visual distortion in wet AMD is seeing straight lines as wavy.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What is the benefit of adjustable lighting for AMD patients?",
+        "answer": "Adjustable lighting optimizes visibility, aiding AMD patients with tasks.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the effect of AMD on pattern recognition?",
+        "answer": "AMD impairs pattern recognition by blurring central vision details.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the purpose of laser therapy in AMD?",
+        "answer": "Laser therapy seals leaking blood vessels to slow wet AMD progression.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the role of sunlight in AMD risk?",
+        "answer": "Sunlight increases AMD risk by causing retinal oxidative damage.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is a typical emotional reaction to AMD progression?",
+        "answer": "A typical emotional reaction to AMD progression is frustration over vision loss.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the benefit of handheld scanners for AMD patients?",
+        "answer": "Handheld scanners magnify text, aiding AMD patients with reading.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the effect of AMD on visual attention?",
+        "answer": "AMD reduces visual attention by impairing central focus.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the primary function of cone cells in the macula?",
+        "answer": "Cone cells in the macula enable color vision and sharp detail perception.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the earliest stage of AMD called?",
+        "answer": "The earliest stage of AMD is called early AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the most noticeable symptom of late AMD?",
+        "answer": "The most noticeable symptom of late AMD is significant central vision loss.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the main purpose of the AREDS clinical trials?",
+        "answer": "The main purpose of the AREDS clinical trials is to test supplements for slowing AMD progression.",
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "What is the most widely used imaging technique for AMD?",
+        "answer": "The most widely used imaging technique for AMD is optical coherence tomography (OCT).",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the typical timeframe for wet AMD symptom onset?",
+        "answer": "Wet AMD symptoms typically onset within days to weeks.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What is the role of rod cells in retinal function?",
+        "answer": "Rod cells enable vision in low light and peripheral detection.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the purpose of the Amsler grid in daily use?",
+        "answer": "The Amsler grid monitors daily vision changes to detect AMD progression.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the primary outcome of untreated wet AMD?",
+        "answer": "The primary outcome of untreated wet AMD is severe central vision loss.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What is the most common age group affected by AMD?",
+        "answer": "The most common age group affected by AMD is people over 60.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the role of carotenoids in AMD prevention?",
+        "answer": "Carotenoids like lutein protect the retina from light damage in AMD prevention.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is a frequent visual issue in intermediate AMD?",
+        "answer": "A frequent visual issue in intermediate AMD is mild difficulty with fine details.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the purpose of telescopic lenses in AMD?",
+        "answer": "Telescopic lenses magnify distant objects to aid vision in AMD patients.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the main environmental contributor to AMD?",
+        "answer": "The main environmental contributor to AMD is chronic sun exposure.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the typical appearance of geographic atrophy?",
+        "answer": "Geographic atrophy appears as well-defined areas of retinal loss on imaging.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the benefit of yellow-tinted glasses for AMD patients?",
+        "answer": "Yellow-tinted glasses reduce glare, improving comfort for AMD patients.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the primary source of retinal nourishment?",
+        "answer": "The primary source of retinal nourishment is the choroid\u2019s blood supply.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the effect of AMD on straight-line perception?",
+        "answer": "AMD can make straight lines appear wavy due to macular distortion.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What is the role of genetic predisposition in AMD?",
+        "answer": "Genetic predisposition increases AMD likelihood through inherited risk factors.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is a common anti-VEGF drug used for wet AMD?",
+        "answer": "A common anti-VEGF drug for wet AMD is ranibizumab.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What is the purpose of dietary antioxidants in AMD?",
+        "answer": "Dietary antioxidants protect retinal cells from oxidative damage in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the effect of AMD on light adaptation?",
+        "answer": "AMD slows light adaptation by impairing macular function.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the role of the retinal pigment epithelium in vision?",
+        "answer": "The retinal pigment epithelium supports photoreceptors and recycles visual pigments.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is a typical sign of early wet AMD?",
+        "answer": "A typical sign of early wet AMD is sudden vision distortion.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What is the benefit of prism lenses for AMD patients?",
+        "answer": "Prism lenses shift images to usable vision areas for AMD patients.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the main lifestyle risk factor for AMD?",
+        "answer": "The main lifestyle risk factor for AMD is smoking.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the purpose of fundus autofluorescence in AMD?",
+        "answer": "Fundus autofluorescence assesses retinal pigment health in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the effect of AMD on central visual acuity?",
+        "answer": "AMD reduces central visual acuity, blurring detailed vision.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the role of fish oil in AMD management?",
+        "answer": "Fish oil provides omega-3s to reduce retinal inflammation in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is a common adaptation for AMD patients with technology?",
+        "answer": "A common adaptation is using text-to-speech software.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the purpose of laser photocoagulation in AMD?",
+        "answer": "Laser photocoagulation seals leaking blood vessels in wet AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the effect of AMD on shape recognition?",
+        "answer": "AMD impairs shape recognition by distorting central vision.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the role of weight management in AMD?",
+        "answer": "Weight management reduces inflammation, aiding AMD prevention.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is a frequent retinal finding in advanced AMD?",
+        "answer": "A frequent retinal finding in advanced AMD is photoreceptor loss.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the benefit of audio descriptions for AMD patients?",
+        "answer": "Audio descriptions narrate visuals, aiding AMD patients with media access.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the main challenge of dry AMD treatment?",
+        "answer": "The main challenge of dry AMD treatment is the lack of options to reverse damage.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the role of cardiovascular health in AMD?",
+        "answer": "Cardiovascular health supports retinal blood flow, impacting AMD risk.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is a common symptom of geographic atrophy?",
+        "answer": "A common symptom of geographic atrophy is fixed blind spots in central vision.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the purpose of visual acuity testing in AMD?",
+        "answer": "Visual acuity testing measures central vision loss in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the effect of AMD on motion detection?",
+        "answer": "AMD can impair motion detection in the central field.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the role of siblings in AMD risk assessment?",
+        "answer": "Siblings indicate genetic risk, aiding AMD risk assessment.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is a typical feature of wet AMD on OCT?",
+        "answer": "A typical feature of wet AMD on OCT is fluid pockets under the retina.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What is the benefit of smartphone apps for AMD patients?",
+        "answer": "Smartphone apps offer magnification and audio support for AMD patients.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the effect of AMD on brightness perception?",
+        "answer": "AMD can dull brightness perception by damaging macular cells.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the purpose of orientation training in AMD?",
+        "answer": "Orientation training helps AMD patients adapt to vision loss for navigation.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the role of nuts in AMD prevention?",
+        "answer": "Nuts provide antioxidants and healthy fats for AMD prevention.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is a common complication of advanced wet AMD?",
+        "answer": "A common complication of advanced wet AMD is permanent scarring.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What is the benefit of polarized lenses for AMD patients?",
+        "answer": "Polarized lenses reduce glare, enhancing vision for AMD patients.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the effect of AMD on texture perception?",
+        "answer": "AMD impairs texture perception by blurring central vision details.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the purpose of microperimetry in AMD?",
+        "answer": "Microperimetry maps retinal sensitivity to assess AMD progression.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the role of alcohol in AMD risk?",
+        "answer": "Excessive alcohol may increase AMD risk by causing oxidative stress.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is a typical adaptation for AMD patients in communication?",
+        "answer": "A typical adaptation is using audio messaging instead of text.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the benefit of wearable magnifiers for AMD?",
+        "answer": "Wearable magnifiers provide hands-free vision support for AMD patients.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the effect of AMD on visual scanning?",
+        "answer": "AMD slows visual scanning by impairing central vision efficiency.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the purpose of bionic eye research in AMD?",
+        "answer": "Bionic eye research aims to restore vision via artificial retinal stimulation in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the role of hypertension in AMD progression?",
+        "answer": "Hypertension stresses retinal vessels, worsening AMD progression.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is a common difficulty for AMD patients in public spaces?",
+        "answer": "A common difficulty is reading signs due to central vision loss.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the benefit of high-visibility markers for AMD patients?",
+        "answer": "High-visibility markers improve object detection for AMD patients.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the effect of AMD on visual focus?",
+        "answer": "AMD impairs visual focus by disrupting central macular function.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the purpose of home safety modifications in AMD?",
+        "answer": "Home safety modifications reduce hazards for AMD patients with vision loss.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the role of sleep in AMD management?",
+        "answer": "Adequate sleep supports retinal repair, aiding AMD management.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is a typical retinal change in early dry AMD?",
+        "answer": "A typical retinal change in early dry AMD is small drusen accumulation.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the benefit of anti-glare screens for AMD patients?",
+        "answer": "Anti-glare screens reduce strain, improving visibility for AMD patients.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the effect of AMD on visual alignment?",
+        "answer": "AMD disrupts visual alignment by distorting central perception.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the purpose of retinal sensitivity testing in AMD?",
+        "answer": "Retinal sensitivity testing evaluates macular function in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the role of stress in AMD progression?",
+        "answer": "Chronic stress may worsen AMD by increasing inflammation.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is a common travel challenge for AMD patients?",
+        "answer": "A common travel challenge is difficulty seeing directional signs.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the benefit of contrast-enhancing filters for AMD?",
+        "answer": "Contrast-enhancing filters sharpen images, aiding AMD patients\u2019 vision.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the effect of AMD on visual continuity?",
+        "answer": "AMD disrupts visual continuity with central blind spots.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the purpose of peer counseling in AMD?",
+        "answer": "Peer counseling offers emotional support and coping tips for AMD patients.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the role of blue light in AMD risk?",
+        "answer": "Blue light damages retinal cells, increasing AMD risk.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is a typical emotional impact of late AMD?",
+        "answer": "A typical emotional impact of late AMD is grief over vision loss.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the benefit of portable lighting for AMD patients?",
+        "answer": "Portable lighting improves visibility for AMD patients in dim settings.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the effect of AMD on visual tracking?",
+        "answer": "AMD impairs visual tracking by reducing central vision accuracy.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the purpose of retinal gene therapy in AMD?",
+        "answer": "Retinal gene therapy aims to correct genetic defects in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the role of aging in AMD onset?",
+        "answer": "Aging triggers retinal degeneration, leading to AMD onset.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is a common leisure activity challenge for AMD patients?",
+        "answer": "A common challenge is difficulty watching TV due to central vision loss.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the benefit of bold-line paper for AMD patients?",
+        "answer": "Bold-line paper enhances visibility, aiding AMD patients with writing.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the effect of AMD on visual perception speed?",
+        "answer": "AMD slows visual perception speed by impairing central processing.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the primary role of the macula in the eye?",
+        "answer": "The macula provides sharp central vision for detailed tasks.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the first clinical sign of AMD?",
+        "answer": "The first clinical sign of AMD is small drusen deposits.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the key symptom of advanced wet AMD?",
+        "answer": "The key symptom of advanced wet AMD is rapid central vision loss.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What is the main objective of AREDS2 trials?",
+        "answer": "The main objective of AREDS2 trials is to refine supplements to slow AMD.",
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "What is the standard diagnostic tool for AMD?",
+        "answer": "The standard diagnostic tool for AMD is optical coherence tomography (OCT).",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the usual speed of dry AMD progression?",
+        "answer": "Dry AMD usually progresses slowly over several years.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the function of the choroid in the retina?",
+        "answer": "The choroid delivers blood and nutrients to the retina.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the purpose of checking vision with an Amsler grid?",
+        "answer": "Checking vision with an Amsler grid detects early AMD-related distortions.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the primary goal of laser therapy in wet AMD?",
+        "answer": "The primary goal of laser therapy in wet AMD is to stop vessel leakage.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the most affected population by AMD?",
+        "answer": "The most affected population by AMD is adults over 60.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the role of flavonoids in AMD prevention?",
+        "answer": "Flavonoids act as antioxidants, protecting the retina in AMD prevention.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is a common visual difficulty in late dry AMD?",
+        "answer": "A common visual difficulty in late dry AMD is seeing blank spots.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the purpose of eccentric viewing in AMD?",
+        "answer": "Eccentric viewing trains AMD patients to use peripheral vision effectively.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the top preventable risk factor for AMD?",
+        "answer": "The top preventable risk factor for AMD is smoking.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the typical look of wet AMD on imaging?",
+        "answer": "Wet AMD typically shows fluid or blood under the retina on imaging.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What is the benefit of amber lenses for AMD patients?",
+        "answer": "Amber lenses filter blue light, reducing glare for AMD patients.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the primary nutrient source for the macula?",
+        "answer": "The primary nutrient source for the macula is the choroid\u2019s blood flow.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the effect of AMD on line straightness perception?",
+        "answer": "AMD can make straight lines appear bent or wavy.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What is the role of inherited traits in AMD?",
+        "answer": "Inherited traits increase AMD risk through genetic susceptibility.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is a widely used treatment for wet AMD?",
+        "answer": "A widely used treatment for wet AMD is anti-VEGF injections.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What is the purpose of zinc supplements in AMD?",
+        "answer": "Zinc supplements support retinal health and slow AMD progression.",
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "What is the effect of AMD on dim light vision?",
+        "answer": "AMD reduces dim light vision by impairing macular sensitivity.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the role of the Bruch\u2019s membrane in AMD?",
+        "answer": "Bruch\u2019s membrane supports the retina and thickens with drusen in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is a noticeable sign of intermediate wet AMD?",
+        "answer": "A noticeable sign of intermediate wet AMD is worsening central blurriness.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What is the benefit of optical aids for AMD patients?",
+        "answer": "Optical aids magnify images, assisting AMD patients with vision tasks.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the main behavioral change to reduce AMD risk?",
+        "answer": "The main behavioral change to reduce AMD risk is quitting smoking.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the purpose of indocyanine green angiography in AMD?",
+        "answer": "Indocyanine green angiography visualizes choroidal vessels in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the effect of AMD on fine detail vision?",
+        "answer": "AMD blurs fine detail vision by damaging the macula.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the role of leafy greens in AMD management?",
+        "answer": "Leafy greens provide lutein and zeaxanthin for AMD management.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is a common technological aid for AMD patients?",
+        "answer": "A common technological aid is a digital magnifier.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the purpose of thermal laser therapy in AMD?",
+        "answer": "Thermal laser therapy destroys abnormal vessels in wet AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the effect of AMD on edge detection?",
+        "answer": "AMD impairs edge detection by blurring central vision boundaries.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the role of stress management in AMD?",
+        "answer": "Stress management reduces inflammation, supporting AMD care.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is a frequent finding in early AMD imaging?",
+        "answer": "A frequent finding in early AMD imaging is small drusen spots.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the benefit of talking devices for AMD patients?",
+        "answer": "Talking devices provide audio output, aiding AMD patients with tasks.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the main barrier to curing AMD?",
+        "answer": "The main barrier to curing AMD is the inability to regenerate lost retinal cells.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the role of heart health in AMD prevention?",
+        "answer": "Heart health maintains retinal circulation, aiding AMD prevention.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is a common visual change in advanced dry AMD?",
+        "answer": "A common visual change in advanced dry AMD is large central blind spots.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the purpose of color vision testing in AMD?",
+        "answer": "Color vision testing assesses macular cone damage in AMD.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the effect of AMD on dynamic vision?",
+        "answer": "AMD reduces dynamic vision by impairing central tracking.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the role of parental history in AMD risk?",
+        "answer": "Parental history signals genetic risk factors for AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is a typical sign of late wet AMD on scans?",
+        "answer": "A typical sign of late wet AMD on scans is extensive subretinal fluid.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What is the benefit of tablet accessibility features for AMD?",
+        "answer": "Tablet accessibility features like zoom aid AMD patients with digital use.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the effect of AMD on light intensity perception?",
+        "answer": "AMD dulls light intensity perception by damaging macular cells.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the purpose of daily living skills training in AMD?",
+        "answer": "Daily living skills training helps AMD patients adapt to vision loss.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the role of seeds in AMD prevention?",
+        "answer": "Seeds offer antioxidants and healthy fats for AMD prevention.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is a common issue in untreated advanced AMD?",
+        "answer": "A common issue in untreated advanced AMD is legal blindness.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the benefit of tinted visors for AMD patients?",
+        "answer": "Tinted visors reduce glare, improving vision for AMD patients.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the effect of AMD on surface recognition?",
+        "answer": "AMD impairs surface recognition by blurring central texture details.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the purpose of dark adaptation testing in AMD?",
+        "answer": "Dark adaptation testing evaluates rod function in AMD.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the role of caffeine in AMD risk?",
+        "answer": "Excessive caffeine may increase AMD risk by raising oxidative stress.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is a typical adaptation for AMD patients in socializing?",
+        "answer": "A typical adaptation is relying on verbal cues over visual ones.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the benefit of head-mounted displays for AMD?",
+        "answer": "Head-mounted displays enhance vision with magnification for AMD patients.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the effect of AMD on object localization?",
+        "answer": "AMD impairs object localization by distorting central vision.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the purpose of retinal prosthetics in AMD research?",
+        "answer": "Retinal prosthetics aim to restore vision by stimulating remaining cells in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the role of high blood pressure in AMD?",
+        "answer": "High blood pressure damages retinal vessels, increasing AMD risk.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is a common obstacle for AMD patients in crowds?",
+        "answer": "A common obstacle is identifying individuals in crowds.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the benefit of raised markers for AMD patients?",
+        "answer": "Raised markers provide tactile guidance, aiding AMD patients.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the effect of AMD on visual concentration?",
+        "answer": "AMD reduces visual concentration by impairing central focus.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the purpose of environmental modifications in AMD?",
+        "answer": "Environmental modifications enhance safety and accessibility for AMD patients.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the role of rest in AMD management?",
+        "answer": "Rest supports retinal recovery, aiding AMD management.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is a typical retinal alteration in late dry AMD?",
+        "answer": "A typical retinal alteration in late dry AMD is geographic atrophy.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the benefit of glare shields for AMD patients?",
+        "answer": "Glare shields minimize light scatter, improving vision for AMD patients.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the effect of AMD on spatial mapping?",
+        "answer": "AMD disrupts spatial mapping by impairing central vision cues.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the purpose of retinal function testing in AMD?",
+        "answer": "Retinal function testing assesses photoreceptor health in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the role of anxiety in AMD progression?",
+        "answer": "Chronic anxiety may worsen AMD by increasing systemic inflammation.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is a common navigation challenge for AMD patients?",
+        "answer": "A common navigation challenge is avoiding obstacles due to vision loss.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the benefit of color-enhanced lenses for AMD?",
+        "answer": "Color-enhanced lenses boost contrast, aiding AMD patients\u2019 vision.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the effect of AMD on visual flow?",
+        "answer": "AMD disrupts visual flow with central vision gaps.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the purpose of community support for AMD patients?",
+        "answer": "Community support provides resources and encouragement for AMD patients.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the role of UV light in AMD development?",
+        "answer": "UV light causes retinal damage, contributing to AMD development.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is a typical psychological impact of AMD diagnosis?",
+        "answer": "A typical psychological impact of AMD diagnosis is worry about future vision.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the benefit of clip-on magnifiers for AMD patients?",
+        "answer": "Clip-on magnifiers enhance close-up vision for AMD patients.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the effect of AMD on motion perception speed?",
+        "answer": "AMD slows motion perception speed by impairing central vision.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the main task of the retina in the eye?",
+        "answer": "The retina captures light and sends visual signals to the brain.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the initial indicator of AMD on examination?",
+        "answer": "The initial indicator of AMD is small yellowish drusen.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the hallmark symptom of wet AMD?",
+        "answer": "The hallmark symptom of wet AMD is distorted or wavy central vision.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What is the primary aim of the AREDS studies?",
+        "answer": "The primary aim of the AREDS studies is to evaluate nutrients for AMD prevention.",
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "What is the most effective method to detect AMD?",
+        "answer": "The most effective method to detect AMD is optical coherence tomography (OCT).",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the typical duration of early AMD progression?",
+        "answer": "Early AMD progression typically spans years without noticeable symptoms.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the role of the optic nerve in relation to the macula?",
+        "answer": "The optic nerve transmits macular visual signals to the brain.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the purpose of using an Amsler grid at home?",
+        "answer": "Using an Amsler grid at home helps detect vision changes from AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the main effect of photodynamic therapy in wet AMD?",
+        "answer": "The main effect of photodynamic therapy in wet AMD is reducing vessel leakage.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the predominant demographic for AMD onset?",
+        "answer": "The predominant demographic for AMD onset is individuals over 55.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the role of polyphenols in AMD prevention?",
+        "answer": "Polyphenols reduce oxidative stress, aiding AMD prevention.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is a frequent visual problem in advanced AMD?",
+        "answer": "A frequent visual problem in advanced AMD is missing central vision patches.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the purpose of bioptic lenses in AMD?",
+        "answer": "Bioptic lenses enhance distance vision for AMD patients.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the leading modifiable risk factor for AMD?",
+        "answer": "The leading modifiable risk factor for AMD is cigarette smoking.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the characteristic appearance of dry AMD on scans?",
+        "answer": "Dry AMD characteristically shows drusen and retinal thinning on scans.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the benefit of green-tinted glasses for AMD patients?",
+        "answer": "Green-tinted glasses enhance contrast, benefiting AMD patients.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the primary blood supply for retinal cells?",
+        "answer": "The primary blood supply for retinal cells is the choroidal vasculature.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the effect of AMD on grid pattern perception?",
+        "answer": "AMD distorts grid patterns, making them appear irregular.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What is the role of genetic mutations in AMD?",
+        "answer": "Genetic mutations increase AMD risk by altering retinal function.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is a common injectable drug for wet AMD?",
+        "answer": "A common injectable drug for wet AMD is aflibercept.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What is the purpose of vitamin C in AMD care?",
+        "answer": "Vitamin C acts as an antioxidant, protecting the retina in AMD care.",
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "What is the effect of AMD on shadow perception?",
+        "answer": "AMD blurs shadow perception by impairing central vision contrast.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the role of the vitreous in retinal support?",
+        "answer": "The vitreous provides structural support and stability to the retina.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is a prominent sign of early dry AMD?",
+        "answer": "A prominent sign of early dry AMD is subtle central vision blurring.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the benefit of handheld readers for AMD patients?",
+        "answer": "Handheld readers magnify text, aiding AMD patients with reading.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the main habit to avoid for AMD prevention?",
+        "answer": "The main habit to avoid for AMD prevention is smoking.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the effect of AMD on reading small print?",
+        "answer": "AMD makes reading small print difficult by blurring central vision.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the role of berries in AMD prevention?",
+        "answer": "Berries provide antioxidants that protect retinal cells in AMD prevention.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is a common digital tool for AMD patients?",
+        "answer": "A common digital tool for AMD patients is a screen reader.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the purpose of anti-VEGF therapy in AMD?",
+        "answer": "Anti-VEGF therapy prevents abnormal vessel growth in wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What is the effect of AMD on outline recognition?",
+        "answer": "AMD impairs outline recognition by distorting central vision clarity.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the role of relaxation techniques in AMD?",
+        "answer": "Relaxation techniques reduce stress, potentially aiding AMD management.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is a frequent observation in late AMD imaging?",
+        "answer": "A frequent observation in late AMD imaging is significant retinal atrophy.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the benefit of auditory books for AMD patients?",
+        "answer": "Auditory books allow AMD patients to enjoy literature without visual effort.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the main hurdle in reversing AMD damage?",
+        "answer": "The main hurdle in reversing AMD damage is regenerating lost photoreceptors.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the role of vascular health in AMD?",
+        "answer": "Vascular health ensures retinal blood flow, influencing AMD risk.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is a common visual defect in late wet AMD?",
+        "answer": "A common visual defect in late wet AMD is a large central scotoma.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What is the purpose of glare testing in AMD?",
+        "answer": "Glare testing evaluates light sensitivity changes in AMD.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the effect of AMD on moving object perception?",
+        "answer": "AMD impairs moving object perception by reducing central clarity.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the role of grandparents in AMD risk evaluation?",
+        "answer": "Grandparents\u2019 AMD history suggests genetic risk for descendants.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is a typical feature of early wet AMD on OCT?",
+        "answer": "A typical feature of early wet AMD on OCT is minor subretinal fluid.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What is the benefit of computer accessibility tools for AMD?",
+        "answer": "Computer accessibility tools like voice commands aid AMD patients.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the effect of AMD on light contrast perception?",
+        "answer": "AMD reduces light contrast perception by damaging macular cells.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the purpose of adaptive living training in AMD?",
+        "answer": "Adaptive living training teaches AMD patients to manage daily tasks.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the role of whole grains in AMD prevention?",
+        "answer": "Whole grains provide nutrients that support retinal health in AMD prevention.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is a common consequence of untreated wet AMD?",
+        "answer": "A common consequence of untreated wet AMD is irreversible vision loss.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What is the benefit of UV-blocking hats for AMD patients?",
+        "answer": "UV-blocking hats shield eyes, reducing retinal damage for AMD patients.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the effect of AMD on boundary detection?",
+        "answer": "AMD impairs boundary detection by blurring central vision edges.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the role of sugar intake in AMD risk?",
+        "answer": "High sugar intake may increase AMD risk by promoting inflammation.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is a typical adaptation for AMD patients in eating?",
+        "answer": "A typical adaptation is using high-contrast plates for visibility.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the benefit of wearable tech for AMD patients?",
+        "answer": "Wearable tech provides real-time magnification for AMD patients.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the effect of AMD on item placement perception?",
+        "answer": "AMD distorts item placement perception by impairing central vision.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the purpose of artificial retina research in AMD?",
+        "answer": "Artificial retina research aims to restore sight in AMD via implants.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the role of arterial health in AMD?",
+        "answer": "Arterial health supports retinal circulation, affecting AMD progression.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is a common barrier for AMD patients in stores?",
+        "answer": "A common barrier is reading labels due to vision loss.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the benefit of textured guides for AMD patients?",
+        "answer": "Textured guides offer tactile navigation cues for AMD patients.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the effect of AMD on visual precision?",
+        "answer": "AMD reduces visual precision by impairing central macular function.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the purpose of home organization in AMD?",
+        "answer": "Home organization simplifies navigation for AMD patients with vision loss.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the role of hydration in AMD management?",
+        "answer": "Hydration supports overall eye health, aiding AMD management.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is a typical retinal shift in intermediate AMD?",
+        "answer": "A typical retinal shift in intermediate AMD is increased drusen size.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the benefit of light filters for AMD patients?",
+        "answer": "Light filters reduce glare, improving comfort for AMD patients.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the effect of AMD on spatial relationship perception?",
+        "answer": "AMD impairs spatial relationship perception by distorting central cues.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the purpose of retinal pigment evaluation in AMD?",
+        "answer": "Retinal pigment evaluation assesses damage progression in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the role of depression in AMD outcomes?",
+        "answer": "Depression may worsen AMD outcomes by reducing self-care adherence.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is a common outdoor challenge for AMD patients?",
+        "answer": "A common outdoor challenge is spotting uneven terrain.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the benefit of tinted filters for AMD patients?",
+        "answer": "Tinted filters enhance visual clarity for AMD patients.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the effect of AMD on visual rhythm?",
+        "answer": "AMD disrupts visual rhythm with central vision interruptions.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the purpose of family support for AMD patients?",
+        "answer": "Family support provides practical and emotional help for AMD patients.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the role of infrared light in AMD risk?",
+        "answer": "Infrared light may contribute to retinal stress, increasing AMD risk.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is a typical mental impact of AMD progression?",
+        "answer": "A typical mental impact of AMD progression is anxiety over independence.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the benefit of desktop magnifiers for AMD patients?",
+        "answer": "Desktop magnifiers enlarge visuals, aiding AMD patients with tasks.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the effect of AMD on motion tracking speed?",
+        "answer": "AMD slows motion tracking speed by impairing central vision.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the chief function of the macula in vision?",
+        "answer": "The macula provides detailed central vision for activities like reading.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the primary visual change in advanced AMD?",
+        "answer": "The primary visual change in advanced AMD is loss of central vision.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the core goal of the AREDS2 study?",
+        "answer": "The core goal of the AREDS2 study is to improve nutrient formulas for AMD.",
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "What is the preferred imaging method for AMD diagnosis?",
+        "answer": "The preferred imaging method for AMD diagnosis is optical coherence tomography.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the usual pace of wet AMD development?",
+        "answer": "Wet AMD usually develops rapidly over weeks to months.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What is the purpose of the retinal pigment epithelium?",
+        "answer": "The retinal pigment epithelium nourishes and supports photoreceptors.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the benefit of the Amsler grid for AMD patients?",
+        "answer": "The Amsler grid helps AMD patients spot vision distortions early.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the key outcome of anti-VEGF injections in wet AMD?",
+        "answer": "The key outcome of anti-VEGF injections is reduced vessel leakage in wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    }
+]

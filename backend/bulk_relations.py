@@ -60,13 +60,12 @@ def generate_relations_gpt_35_turbo(text):
     return chat_response
 
 
-def generate_relations_gpt_o1_mini(text):
+def generate_relations_gpt_4o_mini(text):
     model = "gpt-4o-mini"
     user_prompt = generate_user_prompt(text)
 
     chat_response = client_gpt.chat.completions.create(
         model=model,
-        max_tokens=2000,
         temperature=0,
         messages=[
             {"role": "system", "content": system_prompt.strip()},
@@ -192,13 +191,13 @@ def generate_responses_gpt_35_turbo(abstracts):
     return relations
 
 
-def generate_responses_gpt_4o1_mini(abstracts):
+def generate_responses_gpt_4o_mini(abstracts):
     relations = []
     i = 0
     for abstract in abstracts:
         i += 1
         print(i)
-        response = generate_relations_gpt_o1_mini(abstract["text"])
+        response = generate_relations_gpt_4o_mini(abstract["text"])
         matches = validate_output(str(response))
 
         pub_id = {
@@ -244,13 +243,15 @@ def extract_relations(content, model):
 
         return relations
     elif model == "model_c":
-        relations = generate_responses_gpt_4o1_mini(content)
+        relations = generate_responses_gpt_4o_mini(content)
 
         return relations
     elif model == "model_d":
         relations = generate_responses_deepseek_r1(content)
 
         return relations
+    else:
+        return []
 
 
 def create_sparql_queries_for_bulk_import(relations, batch_size=200):

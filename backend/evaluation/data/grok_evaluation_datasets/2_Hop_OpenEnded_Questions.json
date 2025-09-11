@@ -1,0 +1,2502 @@
+[
+    {
+        "question": "How does smoking contribute to AMD progression?",
+        "answer": "Smoking increases oxidative stress in the retina, which accelerates damage and AMD progression.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does wet AMD lead to rapid vision loss?",
+        "answer": "Wet AMD causes abnormal blood vessels to leak fluid or blood, damaging the macula and rapidly impairing central vision.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does aging affect the retina in AMD?",
+        "answer": "Aging leads to the accumulation of drusen and retinal cell degeneration, increasing AMD risk.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What happens when anti-VEGF injections are used for wet AMD?",
+        "answer": "Anti-VEGF injections block blood vessel growth, reducing fluid leakage and stabilizing vision in wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does UV exposure influence AMD development?",
+        "answer": "UV exposure damages the retinal pigment epithelium over time, contributing to AMD development.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Why does dry AMD sometimes progress to geographic atrophy?",
+        "answer": "Dry AMD progresses to geographic atrophy when drusen buildup causes retinal pigment epithelium and photoreceptor death.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does the AREDS formula benefit AMD patients?",
+        "answer": "The AREDS formula provides antioxidants and zinc, slowing the progression from intermediate to advanced AMD.",
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "What causes the wavy vision in wet AMD?",
+        "answer": "Leaking blood vessels distort the macula, leading to metamorphopsia or wavy vision in wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does OCT imaging assist in AMD management?",
+        "answer": "OCT imaging reveals retinal thickness and fluid, guiding treatment decisions in AMD management.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does smoking increase the severity of wet AMD?",
+        "answer": "Smoking heightens oxidative damage, worsening blood vessel abnormalities and leakage in wet AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does hypertension contribute to AMD risk?",
+        "answer": "Hypertension damages retinal blood vessels, increasing oxidative stress and AMD risk.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What leads to scotomas in advanced AMD?",
+        "answer": "Photoreceptor death in the macula creates blind spots or scotomas in advanced AMD.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "How does lutein in the diet affect AMD?",
+        "answer": "Lutein accumulates in the macula, filtering harmful light and reducing AMD progression.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does wet AMD sometimes cause retinal detachment?",
+        "answer": "Fluid and blood from leaking vessels can lift the retina, leading to detachment in wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does photodynamic therapy treat wet AMD?",
+        "answer": "Photodynamic therapy activates a drug with laser light, sealing abnormal blood vessels in wet AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What causes the progression from early to intermediate AMD?",
+        "answer": "Drusen growth and retinal pigment changes cause progression from early to intermediate AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does low vision rehabilitation improve quality of life in AMD?",
+        "answer": "Low vision rehabilitation teaches adaptive strategies, enhancing independence and quality of life in AMD.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Why does wet AMD lead to macular edema?",
+        "answer": "Leaking blood vessels release fluid into the macula, causing swelling known as macular edema in wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does aging increase vulnerability to wet AMD?",
+        "answer": "Aging weakens retinal tissues, making them more susceptible to abnormal blood vessel growth in wet AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What leads to Charles Bonnet syndrome in AMD patients?",
+        "answer": "Vision loss from AMD triggers the brain to create hallucinations, known as Charles Bonnet syndrome.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "How does quitting smoking benefit AMD patients?",
+        "answer": "Quitting smoking reduces oxidative stress, slowing retinal damage and AMD progression.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does hypertension worsen AMD outcomes?",
+        "answer": "Hypertension impairs retinal circulation, exacerbating damage and worsening AMD outcomes.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does omega-3 intake influence AMD progression?",
+        "answer": "Omega-3 fatty acids reduce inflammation in the retina, potentially slowing AMD progression.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What causes photoreceptor loss in geographic atrophy?",
+        "answer": "Retinal pigment epithelium death in dry AMD deprives photoreceptors of support, causing their loss.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does macular fibrosis affect vision in wet AMD?",
+        "answer": "Macular fibrosis forms scar tissue, permanently distorting and reducing central vision in wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Why does dry AMD lead to difficulty reading?",
+        "answer": "Drusen and retinal thinning impair the macula, reducing sharp central vision needed for reading in dry AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does the CFH gene influence AMD risk?",
+        "answer": "CFH gene mutations impair complement regulation, increasing inflammation and AMD risk.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What leads to macular holes in some AMD cases?",
+        "answer": "Retinal stress and thinning in AMD can stretch the macula, forming holes.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "How does depression develop in AMD patients?",
+        "answer": "Vision loss from AMD limits daily activities, leading to isolation and depression.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does wet AMD cause sudden vision changes?",
+        "answer": "Rapid blood vessel leakage in wet AMD disrupts the macula, causing sudden vision changes.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does exercise benefit retinal health in AMD?",
+        "answer": "Exercise improves blood flow to the retina, reducing oxidative stress and aiding AMD management.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What causes epiretinal membranes in AMD?",
+        "answer": "Retinal damage in AMD triggers glial cell growth, forming epiretinal membranes that wrinkle the retina.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does zeaxanthin protect against AMD?",
+        "answer": "Zeaxanthin filters blue light in the macula, reducing oxidative damage and AMD risk.",
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "Why does wet AMD lead to retinal hemorrhage?",
+        "answer": "Fragile new blood vessels in wet AMD rupture, causing retinal hemorrhage.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does stem cell therapy aim to treat dry AMD?",
+        "answer": "Stem cell therapy replaces damaged retinal cells, potentially restoring function in dry AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What leads to mobility issues in advanced AMD?",
+        "answer": "Central vision loss in advanced AMD impairs depth perception, causing mobility issues.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "How does sun exposure increase AMD severity?",
+        "answer": "Sun exposure damages retinal cells via UV light, worsening AMD severity over time.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does wet AMD cause subretinal fluid?",
+        "answer": "Leaking blood vessels in wet AMD deposit fluid beneath the retina, forming subretinal fluid.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does a high-fat diet contribute to AMD?",
+        "answer": "A high-fat diet increases oxidative stress in the retina, promoting AMD development.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What causes color vision changes in AMD?",
+        "answer": "Macular damage in AMD impairs cone cells, altering color vision perception.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "How does geographic atrophy lead to permanent vision loss?",
+        "answer": "Geographic atrophy destroys retinal cells, leaving irreparable gaps in vision.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does wet AMD increase the risk of retinal detachment?",
+        "answer": "Fluid pressure from leaking vessels in wet AMD can separate the retina, increasing detachment risk.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does large-print text assist AMD patients?",
+        "answer": "Large-print text compensates for central vision loss, making reading easier for AMD patients.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What leads to macular edema in wet AMD?",
+        "answer": "Vascular leakage in wet AMD floods the macula with fluid, causing macular edema.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does regular monitoring improve AMD outcomes?",
+        "answer": "Regular monitoring detects progression early, enabling timely treatments to preserve vision in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does dry AMD cause pigment clumping?",
+        "answer": "Retinal pigment epithelium damage in dry AMD leads to pigment aggregation, causing clumping.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "How does screen reader technology help AMD patients?",
+        "answer": "Screen readers convert text to speech, allowing AMD patients to access information despite vision loss.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What causes retinal tears in severe AMD?",
+        "answer": "Retinal stress from fluid or scarring in AMD can weaken tissue, leading to tears.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does a macular pucker affect vision in AMD?",
+        "answer": "A macular pucker wrinkles the retina, distorting central vision in AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Why does AI have potential in AMD diagnosis?",
+        "answer": "AI analyzes retinal images for subtle changes, improving early AMD detection accuracy.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does vascular dilation contribute to AMD complications?",
+        "answer": "Vascular dilation increases retinal pressure, potentially worsening fluid leakage in AMD.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What leads to difficulty cooking in AMD patients?",
+        "answer": "Central vision loss in AMD impairs detail perception, making cooking tasks harder.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does photoreceptor disarray affect AMD vision?",
+        "answer": "Photoreceptor disarray disrupts light detection, blurring central vision in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does quitting smoking slow AMD progression?",
+        "answer": "Quitting smoking lowers oxidative damage, reducing retinal stress and slowing AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does retinal hemorrhage impair vision in wet AMD?",
+        "answer": "Retinal hemorrhage floods the macula with blood, blocking light and impairing vision.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What leads to driving challenges in AMD patients?",
+        "answer": "Central vision loss in AMD reduces road visibility, causing driving challenges.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does pigment hyperplasia develop in dry AMD?",
+        "answer": "Retinal pigment epithelium overgrowth in dry AMD leads to pigment hyperplasia.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Why do leafy greens reduce AMD risk?",
+        "answer": "Leafy greens supply lutein and zeaxanthin, which protect the macula from oxidative damage.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does a retinal fold distort vision in AMD?",
+        "answer": "A retinal fold bends the macula, warping central vision in AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What causes gene therapy to be a potential AMD treatment?",
+        "answer": "Gene therapy targets genetic defects, potentially repairing retinal damage in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does vascular leakage worsen wet AMD?",
+        "answer": "Vascular leakage floods the retina with fluid, increasing damage and vision loss in wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Why does occupational therapy improve AMD patient independence?",
+        "answer": "Occupational therapy teaches adaptive techniques, compensating for vision loss and boosting independence.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "How does photoreceptor degeneration lead to vision loss in AMD?",
+        "answer": "Photoreceptor degeneration stops light detection, causing permanent vision loss in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What leads to better AMD outcomes with fish consumption?",
+        "answer": "Fish provides omega-3s, reducing retinal inflammation and improving AMD outcomes.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does retinal detachment occur in wet AMD?",
+        "answer": "Fluid pressure in wet AMD lifts the retina, leading to detachment.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Why do electronic magnifiers help AMD patients read?",
+        "answer": "Electronic magnifiers enlarge text, overcoming central vision loss in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does vascular occlusion affect AMD vision?",
+        "answer": "Vascular occlusion blocks retinal blood flow, starving cells and worsening vision in AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What causes AREDS supplements to slow AMD progression?",
+        "answer": "AREDS supplements provide antioxidants, reducing oxidative damage and slowing AMD progression.",
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "How does pigment atrophy impair vision in dry AMD?",
+        "answer": "Pigment atrophy destroys retinal support cells, leading to vision impairment in dry AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why do bold markers assist AMD patients with writing?",
+        "answer": "Bold markers enhance visibility, compensating for central vision loss in AMD.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "How does diabetes potentially affect AMD?",
+        "answer": "Diabetes may damage retinal vessels through poor blood sugar control, potentially increasing AMD risk.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What leads to reduced night vision in AMD?",
+        "answer": "Macular damage in AMD impairs rod cell function, reducing night vision.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does high cholesterol contribute to AMD?",
+        "answer": "High cholesterol promotes lipid buildup in the retina, increasing AMD risk.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does wet AMD lead to legal blindness?",
+        "answer": "Severe macular damage from wet AMD reduces central acuity, leading to legal blindness.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does family history influence AMD likelihood?",
+        "answer": "Genetic variants from family history increase susceptibility, raising AMD likelihood.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What causes difficulty recognizing faces in AMD?",
+        "answer": "Central vision loss in AMD impairs fine detail perception, making face recognition difficult.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "How does obesity affect AMD progression?",
+        "answer": "Obesity increases inflammation and oxidative stress, accelerating AMD progression.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does dry AMD lead to slower vision loss than wet AMD?",
+        "answer": "Dry AMD progresses gradually via drusen buildup, while wet AMD causes rapid damage from leakage.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does sunlight exposure worsen dry AMD?",
+        "answer": "Sunlight increases oxidative damage to the retina, worsening dry AMD over time.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What leads to improved AMD management with diet?",
+        "answer": "A nutrient-rich diet reduces oxidative stress, improving AMD management outcomes.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does blood pressure control benefit AMD patients?",
+        "answer": "Blood pressure control reduces retinal vascular damage, slowing AMD progression.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does wet AMD cause more severe distortion than dry AMD?",
+        "answer": "Wet AMD\u2019s rapid fluid leakage warps the macula more severely than dry AMD\u2019s gradual changes.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does aging affect the efficacy of AMD treatments?",
+        "answer": "Aging reduces retinal resilience, potentially lowering the efficacy of AMD treatments.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What causes the need for frequent anti-VEGF injections in wet AMD?",
+        "answer": "Recurrent blood vessel growth in wet AMD requires frequent anti-VEGF injections to control leakage.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does retinal pigment epithelium damage lead to AMD?",
+        "answer": "Retinal pigment epithelium damage disrupts photoreceptor support, initiating AMD progression.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Why does intermediate AMD increase monitoring frequency?",
+        "answer": "Intermediate AMD\u2019s larger drusen raise progression risk, necessitating more frequent monitoring.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does inflammation contribute to AMD severity?",
+        "answer": "Inflammation damages retinal tissues, accelerating cell loss and AMD severity.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does aging lead to drusen formation in AMD?",
+        "answer": "Aging impairs retinal waste clearance, causing lipid and protein buildup as drusen in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does wet AMD cause faster vision loss than dry AMD?",
+        "answer": "Wet AMD\u2019s abnormal blood vessels leak rapidly, damaging the macula faster than dry AMD\u2019s gradual drusen buildup.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does smoking exacerbate retinal damage in AMD?",
+        "answer": "Smoking increases free radicals, accelerating retinal cell damage and AMD progression.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What leads to improved vision stability with anti-VEGF in wet AMD?",
+        "answer": "Anti-VEGF reduces blood vessel leakage, stabilizing the macula and improving vision consistency in wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does UV light contribute to AMD progression?",
+        "answer": "UV light generates oxidative stress, damaging retinal cells and hastening AMD progression.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does dry AMD increase the risk of geographic atrophy?",
+        "answer": "Dry AMD\u2019s drusen accumulation kills retinal pigment epithelium, leading to geographic atrophy.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does the AREDS formula reduce AMD advancement?",
+        "answer": "The AREDS formula delivers antioxidants, neutralizing damage and slowing AMD advancement.",
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "What causes central vision distortion in wet AMD?",
+        "answer": "Leaking vessels displace the macula, causing central vision distortion in wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does OCT imaging improve AMD treatment outcomes?",
+        "answer": "OCT imaging detects fluid changes, allowing precise treatment adjustments to improve AMD outcomes.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does hypertension heighten AMD severity?",
+        "answer": "Hypertension strains retinal vessels, worsening oxidative damage and AMD severity.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does lutein intake affect retinal health in AMD?",
+        "answer": "Lutein strengthens the macula\u2019s protective layer, reducing damage and supporting retinal health in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What leads to blind spots in late-stage AMD?",
+        "answer": "Photoreceptor death in the macula creates scotomas, or blind spots, in late-stage AMD.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "How does photodynamic therapy reduce vision loss in wet AMD?",
+        "answer": "Photodynamic therapy seals leaking vessels, minimizing macular damage and vision loss in wet AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does wet AMD increase retinal detachment risk?",
+        "answer": "Fluid from leaking vessels lifts the retina, raising detachment risk in wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does low vision rehab enhance AMD patient independence?",
+        "answer": "Low vision rehab teaches adaptive techniques, improving daily function and independence in AMD patients.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What causes intermediate AMD to progress to late AMD?",
+        "answer": "Larger drusen and pigment changes impair retinal function, driving progression to late AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does smoking lead to worse wet AMD outcomes?",
+        "answer": "Smoking amplifies vascular damage, increasing leakage and worsening wet AMD outcomes.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does wet AMD cause macular edema?",
+        "answer": "Abnormal vessels leak fluid into the macula, swelling it and causing macular edema in wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does aging increase susceptibility to wet AMD?",
+        "answer": "Aging thins retinal tissues, making them prone to neovascularization in wet AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What leads to hallucinations in AMD patients?",
+        "answer": "Vision loss triggers brain compensation, producing hallucinations in AMD patients (Charles Bonnet syndrome).",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "How does omega-3 intake slow AMD progression?",
+        "answer": "Omega-3s reduce retinal inflammation, slowing cell damage and AMD progression.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does dry AMD impair reading ability?",
+        "answer": "Drusen disrupt macular function, blurring central vision and impairing reading in dry AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does the CFH gene contribute to AMD development?",
+        "answer": "CFH mutations increase inflammation, damaging the retina and contributing to AMD development.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What causes macular holes in advanced AMD?",
+        "answer": "Retinal thinning and tension tear the macula, forming holes in advanced AMD.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "How does vision loss lead to depression in AMD?",
+        "answer": "Vision loss restricts activities, causing isolation and depression in AMD patients.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does wet AMD cause sudden vision drops?",
+        "answer": "Rapid vessel leakage floods the macula, causing sudden vision drops in wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does exercise reduce AMD progression?",
+        "answer": "Exercise enhances retinal blood flow, reducing oxidative stress and AMD progression.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What leads to epiretinal membranes in AMD?",
+        "answer": "Retinal damage triggers scar tissue growth, forming epiretinal membranes in AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does zeaxanthin decrease AMD risk?",
+        "answer": "Zeaxanthin absorbs harmful light, protecting retinal cells and decreasing AMD risk.",
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "Why does wet AMD cause retinal hemorrhage?",
+        "answer": "Fragile new vessels rupture, spilling blood into the retina in wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does stem cell therapy aim to restore vision in AMD?",
+        "answer": "Stem cells replace lost retinal cells, potentially restoring vision in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What causes mobility challenges in late AMD?",
+        "answer": "Central vision loss impairs depth perception, causing mobility challenges in late AMD.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "How does sun exposure worsen AMD outcomes?",
+        "answer": "Sun exposure increases retinal oxidative damage, worsening AMD outcomes.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does wet AMD lead to subretinal fluid buildup?",
+        "answer": "Leaking vessels deposit fluid under the retina, causing subretinal buildup in wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does a high-fat diet increase AMD risk?",
+        "answer": "A high-fat diet promotes lipid accumulation, increasing retinal stress and AMD risk.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What causes color vision decline in AMD?",
+        "answer": "Macular damage disrupts cone cells, leading to color vision decline in AMD.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "How does geographic atrophy cause permanent vision loss?",
+        "answer": "Geographic atrophy kills retinal cells, creating unrepairable vision gaps in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does large-print text improve reading for AMD patients?",
+        "answer": "Large-print text bypasses central vision loss, enhancing readability for AMD patients.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does regular monitoring enhance AMD management?",
+        "answer": "Regular monitoring identifies changes early, optimizing treatments and AMD management.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What leads to pigment clumping in dry AMD?",
+        "answer": "Retinal pigment epithelium damage causes pigment to aggregate, clumping in dry AMD.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "How does screen reader tech assist AMD patients?",
+        "answer": "Screen readers convert text to audio, enabling AMD patients to access content without vision.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does wet AMD increase retinal tear risk?",
+        "answer": "Fluid pressure weakens retinal tissue, increasing tear risk in wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does a macular pucker distort vision in AMD?",
+        "answer": "A macular pucker wrinkles the retina, bending light and distorting vision in AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What causes AI to improve AMD diagnosis?",
+        "answer": "AI detects subtle retinal patterns, enhancing early and accurate AMD diagnosis.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does vascular dilation worsen AMD?",
+        "answer": "Vascular dilation increases retinal fluid pressure, exacerbating damage in AMD.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Why does AMD impair cooking ability?",
+        "answer": "Central vision loss reduces detail perception, impairing cooking ability in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What leads to better AMD outcomes with smoking cessation?",
+        "answer": "Smoking cessation lowers oxidative stress, improving retinal health and AMD outcomes.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does AMD cause driving difficulties?",
+        "answer": "Central vision loss obscures road details, causing driving difficulties in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What causes leafy greens to benefit AMD patients?",
+        "answer": "Leafy greens provide antioxidants, reducing retinal damage and benefiting AMD patients.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does a retinal fold affect vision in AMD?",
+        "answer": "A retinal fold distorts the macula, warping central vision in AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Why does gene therapy hold promise for AMD?",
+        "answer": "Gene therapy corrects genetic defects, potentially halting AMD progression.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does vascular leakage exacerbate wet AMD?",
+        "answer": "Vascular leakage floods the retina, worsening macular damage in wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What leads to independence with occupational therapy in AMD?",
+        "answer": "Occupational therapy teaches adaptive skills, restoring independence in AMD patients.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "How does photoreceptor degeneration cause vision loss in AMD?",
+        "answer": "Photoreceptor degeneration stops light detection, causing vision loss in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does fish consumption improve AMD prognosis?",
+        "answer": "Fish supplies omega-3s, reducing inflammation and improving AMD prognosis.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does retinal detachment develop in wet AMD?",
+        "answer": "Fluid pressure separates the retina, leading to detachment in wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What causes electronic magnifiers to aid AMD patients?",
+        "answer": "Electronic magnifiers enlarge text, overcoming vision loss and aiding AMD patients.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does vascular occlusion worsen AMD vision?",
+        "answer": "Vascular occlusion blocks retinal blood flow, starving cells and worsening AMD vision.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Why do AREDS supplements slow AMD?",
+        "answer": "AREDS supplements reduce oxidative damage, slowing retinal degeneration in AMD.",
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "How does pigment atrophy affect vision in dry AMD?",
+        "answer": "Pigment atrophy kills support cells, impairing vision in dry AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What leads to better writing with bold markers in AMD?",
+        "answer": "Bold markers increase visibility, aiding writing despite vision loss in AMD.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "How does diabetes increase AMD risk?",
+        "answer": "Diabetes damages retinal vessels, potentially increasing inflammation and AMD risk.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Why does AMD impair night vision?",
+        "answer": "Macular damage reduces rod cell function, impairing night vision in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does high cholesterol worsen AMD?",
+        "answer": "High cholesterol builds lipids in the retina, worsening AMD progression.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What causes wet AMD to lead to legal blindness?",
+        "answer": "Severe macular damage reduces acuity, leading to legal blindness in wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does family history increase AMD likelihood?",
+        "answer": "Inherited genetic variants increase retinal vulnerability, raising AMD likelihood.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does AMD impair face recognition?",
+        "answer": "Central vision loss blurs fine details, impairing face recognition in AMD.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "How does obesity accelerate AMD progression?",
+        "answer": "Obesity boosts inflammation, accelerating retinal damage and AMD progression.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What causes dry AMD to progress slower than wet AMD?",
+        "answer": "Dry AMD\u2019s gradual drusen buildup damages slower than wet AMD\u2019s rapid leakage.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does sunlight worsen dry AMD?",
+        "answer": "Sunlight increases oxidative stress, worsening retinal damage in dry AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does diet improve AMD management?",
+        "answer": "A nutrient-rich diet reduces retinal stress, improving AMD management.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does blood pressure control slow AMD?",
+        "answer": "Blood pressure control minimizes vascular damage, slowing AMD progression.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What causes wet AMD to distort vision more than dry AMD?",
+        "answer": "Wet AMD\u2019s fluid leakage warps the macula more than dry AMD\u2019s gradual changes.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does aging reduce AMD treatment efficacy?",
+        "answer": "Aging weakens retinal repair, reducing treatment efficacy in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why do anti-VEGF injections require frequent use in wet AMD?",
+        "answer": "Recurring vessel growth demands frequent anti-VEGF injections to control wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does retinal pigment damage initiate AMD?",
+        "answer": "Retinal pigment damage disrupts photoreceptor support, initiating AMD progression.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What leads to increased monitoring in intermediate AMD?",
+        "answer": "Larger drusen raise progression risk, leading to increased monitoring in intermediate AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does inflammation worsen AMD outcomes?",
+        "answer": "Inflammation accelerates retinal cell loss, worsening AMD outcomes.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does aging contribute to photoreceptor loss in AMD?",
+        "answer": "Aging reduces retinal cell turnover, leading to photoreceptor loss and AMD progression.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does wet AMD cause more rapid vision loss than dry AMD?",
+        "answer": "Wet AMD\u2019s leaking vessels damage the macula quickly, unlike dry AMD\u2019s slower drusen buildup.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does smoking increase drusen formation in AMD?",
+        "answer": "Smoking boosts oxidative stress, accelerating lipid buildup and drusen formation in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What leads to vision stabilization with anti-VEGF therapy in wet AMD?",
+        "answer": "Anti-VEGF halts vessel growth, reducing leakage and stabilizing vision in wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does UV exposure worsen retinal health in AMD?",
+        "answer": "UV exposure creates free radicals, damaging retinal cells and worsening AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does dry AMD progress to geographic atrophy in some cases?",
+        "answer": "Dry AMD\u2019s retinal pigment epithelium dies from drusen, leading to geographic atrophy.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does AREDS2 supplementation slow AMD progression?",
+        "answer": "AREDS2 provides antioxidants, reducing retinal damage and slowing AMD progression.",
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "What causes wavy lines in the vision of wet AMD patients?",
+        "answer": "Leaking vessels distort the macula, bending light and causing wavy lines in wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does OCT improve treatment precision in AMD?",
+        "answer": "OCT visualizes retinal layers, guiding precise interventions to manage AMD effectively.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does hypertension aggravate AMD symptoms?",
+        "answer": "Hypertension damages retinal vessels, intensifying inflammation and AMD symptoms.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does lutein protect the macula in AMD?",
+        "answer": "Lutein absorbs harmful light, shielding the macula from damage in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does photodynamic therapy minimize wet AMD damage?",
+        "answer": "Photodynamic therapy closes leaking vessels, reducing macular damage in wet AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does wet AMD heighten retinal detachment risk?",
+        "answer": "Fluid from leaking vessels separates the retina, increasing detachment risk in wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does low vision training improve AMD patient functionality?",
+        "answer": "Low vision training teaches adaptive skills, enhancing functionality despite AMD vision loss.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What causes early AMD to advance to intermediate AMD?",
+        "answer": "Drusen growth and retinal pigment changes impair function, advancing early AMD to intermediate.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does smoking worsen wet AMD progression?",
+        "answer": "Smoking increases vascular fragility, accelerating leakage and wet AMD progression.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does wet AMD lead to macular swelling?",
+        "answer": "Leaking vessels flood the macula with fluid, causing swelling in wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does aging increase the likelihood of wet AMD?",
+        "answer": "Aging weakens retinal barriers, promoting vessel growth and wet AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What leads to visual hallucinations in AMD patients?",
+        "answer": "Vision loss prompts brain overactivity, causing hallucinations in AMD (Charles Bonnet syndrome).",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "How does omega-3 intake benefit retinal function in AMD?",
+        "answer": "Omega-3s reduce inflammation, supporting retinal function and slowing AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does dry AMD reduce reading clarity?",
+        "answer": "Drusen impair macular sharpness, reducing reading clarity in dry AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does the CFH gene elevate AMD risk?",
+        "answer": "CFH mutations disrupt inflammation control, increasing retinal damage and AMD risk.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What causes macular holes in severe AMD?",
+        "answer": "Retinal tension from damage tears the macula, forming holes in severe AMD.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "How does vision loss increase anxiety in AMD patients?",
+        "answer": "Vision loss limits independence, raising anxiety in AMD patients.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does wet AMD cause abrupt vision changes?",
+        "answer": "Sudden vessel leakage disrupts the macula, causing abrupt vision changes in wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does exercise enhance AMD management?",
+        "answer": "Exercise boosts retinal circulation, reducing damage and enhancing AMD management.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What leads to epiretinal membrane formation in AMD?",
+        "answer": "Retinal injury triggers glial growth, forming epiretinal membranes in AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does zeaxanthin reduce AMD progression?",
+        "answer": "Zeaxanthin filters blue light, protecting retinal cells and reducing AMD progression.",
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "Why does wet AMD result in retinal bleeding?",
+        "answer": "Fragile new vessels burst, causing retinal bleeding in wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does stem cell therapy aim to repair AMD damage?",
+        "answer": "Stem cells regenerate retinal tissue, aiming to repair AMD damage.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What causes navigation issues in advanced AMD?",
+        "answer": "Central vision loss disrupts spatial cues, causing navigation issues in advanced AMD.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "How does sunlight exposure accelerate AMD damage?",
+        "answer": "Sunlight increases oxidative stress, accelerating retinal damage in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does wet AMD cause fluid under the retina?",
+        "answer": "Leaking vessels deposit fluid beneath the retina, characteristic of wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does a high-fat diet worsen AMD outcomes?",
+        "answer": "A high-fat diet increases retinal lipid stress, worsening AMD outcomes.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What causes reduced color perception in AMD?",
+        "answer": "Macular damage impairs cone cells, reducing color perception in AMD.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "How does geographic atrophy lead to vision gaps?",
+        "answer": "Geographic atrophy destroys retinal areas, creating permanent vision gaps in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does large-print text assist AMD patients?",
+        "answer": "Large-print text compensates for central vision loss, assisting AMD patients with reading.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does regular monitoring optimize AMD care?",
+        "answer": "Regular monitoring catches progression early, optimizing AMD care with timely treatments.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What leads to retinal pigment clumping in dry AMD?",
+        "answer": "Retinal pigment epithelium damage aggregates pigment, causing clumping in dry AMD.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "How does screen magnification aid AMD patients?",
+        "answer": "Screen magnification enlarges content, aiding AMD patients despite vision loss.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does wet AMD increase retinal tear likelihood?",
+        "answer": "Fluid pressure stretches the retina, increasing tear likelihood in wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does a macular pucker impair vision in AMD?",
+        "answer": "A macular pucker distorts the retina, impairing central vision in AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What causes AI to enhance AMD detection?",
+        "answer": "AI analyzes retinal scans for early signs, enhancing AMD detection accuracy.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does vascular dilation complicate AMD?",
+        "answer": "Vascular dilation increases fluid leakage, complicating retinal damage in AMD.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Why does AMD reduce cooking precision?",
+        "answer": "Central vision loss blurs details, reducing cooking precision in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does photoreceptor damage affect AMD vision?",
+        "answer": "Photoreceptor damage disrupts light detection, blurring vision in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What leads to slower AMD progression with smoking cessation?",
+        "answer": "Smoking cessation reduces oxidative damage, slowing AMD progression.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does retinal bleeding impair vision in wet AMD?",
+        "answer": "Retinal bleeding blocks light, severely impairing vision in wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Why does AMD hinder safe driving?",
+        "answer": "Central vision loss obscures road details, hindering safe driving in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does pigment hyperplasia alter the retina in dry AMD?",
+        "answer": "Pigment hyperplasia overgrows retinal pigment, altering structure in dry AMD.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What causes leafy greens to reduce AMD risk?",
+        "answer": "Leafy greens supply lutein, protecting the retina and reducing AMD risk.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does gene therapy offer hope for AMD treatment?",
+        "answer": "Gene therapy targets genetic causes, potentially repairing AMD damage.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does vascular leakage worsen wet AMD vision?",
+        "answer": "Vascular leakage floods the retina, worsening macular damage and vision in wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What leads to better daily function with occupational therapy in AMD?",
+        "answer": "Occupational therapy teaches adaptive strategies, improving daily function in AMD.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "How does photoreceptor loss cause permanent blindness in AMD?",
+        "answer": "Photoreceptor loss stops light detection, causing permanent blindness in AMD areas.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does fish intake improve AMD outcomes?",
+        "answer": "Fish provides omega-3s, reducing inflammation and improving AMD outcomes.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does retinal detachment occur in severe wet AMD?",
+        "answer": "Fluid lifts the retina, causing detachment in severe wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What causes electronic magnifiers to help AMD patients read?",
+        "answer": "Electronic magnifiers enlarge text, compensating for vision loss in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does vascular occlusion impair vision in AMD?",
+        "answer": "Vascular occlusion blocks retinal blood supply, impairing vision in AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Why do AREDS supplements benefit intermediate AMD?",
+        "answer": "AREDS supplements reduce oxidative stress, benefiting intermediate AMD progression.",
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "How does pigment atrophy cause vision loss in dry AMD?",
+        "answer": "Pigment atrophy destroys retinal support, causing vision loss in dry AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What leads to better writing with bold markers for AMD patients?",
+        "answer": "Bold markers enhance contrast, improving visibility for AMD patients\u2019 writing.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "How does diabetes worsen retinal damage in AMD?",
+        "answer": "Diabetes impairs retinal vessels, worsening inflammation and damage in AMD.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Why does AMD reduce night vision clarity?",
+        "answer": "Macular damage impairs rod cells, reducing night vision clarity in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does high cholesterol increase AMD severity?",
+        "answer": "High cholesterol deposits lipids, increasing retinal stress and AMD severity.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What causes wet AMD to result in legal blindness?",
+        "answer": "Severe macular damage reduces acuity, resulting in legal blindness in wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does family history contribute to AMD onset?",
+        "answer": "Genetic predisposition increases retinal vulnerability, contributing to AMD onset.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does AMD impair facial recognition?",
+        "answer": "Central vision loss blurs facial details, impairing recognition in AMD.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "How does obesity exacerbate AMD progression?",
+        "answer": "Obesity increases systemic inflammation, exacerbating retinal damage in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does sunlight exposure worsen dry AMD outcomes?",
+        "answer": "Sunlight increases retinal oxidative damage, worsening dry AMD outcomes.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does a healthy diet improve AMD prognosis?",
+        "answer": "A healthy diet reduces retinal stress, improving AMD prognosis.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does blood pressure control benefit AMD management?",
+        "answer": "Blood pressure control reduces vascular strain, benefiting AMD management.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What causes wet AMD to distort vision more severely?",
+        "answer": "Wet AMD\u2019s rapid fluid leakage warps the macula, distorting vision more severely.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does aging reduce the success of AMD treatments?",
+        "answer": "Aging impairs retinal healing, reducing the success of AMD treatments.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why do anti-VEGF injections need repetition in wet AMD?",
+        "answer": "Recurrent vessel growth requires repeated anti-VEGF injections in wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does retinal pigment damage trigger AMD?",
+        "answer": "Retinal pigment damage disrupts photoreceptor support, triggering AMD onset.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What leads to frequent monitoring in intermediate AMD?",
+        "answer": "Increased drusen size raises progression risk, leading to frequent monitoring in intermediate AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does inflammation accelerate AMD damage?",
+        "answer": "Inflammation damages retinal cells, accelerating AMD progression.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does aging lead to retinal pigment epithelium damage in AMD?",
+        "answer": "Aging reduces cell repair, causing retinal pigment epithelium damage and AMD onset.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does wet AMD progress faster than dry AMD?",
+        "answer": "Wet AMD\u2019s rapid vessel leakage damages the macula quicker than dry AMD\u2019s gradual degeneration.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does smoking contribute to photoreceptor damage in AMD?",
+        "answer": "Smoking increases oxidative stress, damaging photoreceptors and worsening AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What leads to reduced vision loss with anti-VEGF in wet AMD?",
+        "answer": "Anti-VEGF blocks vessel growth, reducing leakage and vision loss in wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does UV light exposure increase drusen in AMD?",
+        "answer": "UV light generates free radicals, promoting lipid buildup and drusen in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does dry AMD sometimes result in geographic atrophy?",
+        "answer": "Dry AMD\u2019s drusen kill retinal cells, leading to geographic atrophy.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does AREDS supplementation protect retinal health in AMD?",
+        "answer": "AREDS supplies antioxidants, protecting retinal cells and slowing AMD.",
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "What causes distorted central vision in wet AMD?",
+        "answer": "Leaking vessels warp the macula, distorting central vision in wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does OCT imaging enhance AMD diagnosis accuracy?",
+        "answer": "OCT reveals retinal details, improving early and accurate AMD diagnosis.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does hypertension worsen retinal damage in AMD?",
+        "answer": "Hypertension stresses retinal vessels, worsening damage and AMD progression.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does lutein intake improve macular function in AMD?",
+        "answer": "Lutein filters damaging light, improving macular function in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What leads to central blind spots in late AMD?",
+        "answer": "Macular cell loss blocks light, creating central blind spots in late AMD.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "How does photodynamic therapy slow wet AMD progression?",
+        "answer": "Photodynamic therapy seals abnormal vessels, slowing damage in wet AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does wet AMD elevate the risk of retinal separation?",
+        "answer": "Fluid from leaking vessels lifts the retina, elevating separation risk in wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does low vision rehab improve AMD patient quality of life?",
+        "answer": "Low vision rehab teaches adaptive skills, improving quality of life in AMD.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What causes intermediate AMD to worsen into late AMD?",
+        "answer": "Drusen expansion damages the retina, worsening intermediate AMD into late AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does smoking accelerate wet AMD damage?",
+        "answer": "Smoking weakens vessels, accelerating leakage and damage in wet AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does wet AMD result in macular edema?",
+        "answer": "Leaking vessels flood the macula, resulting in edema in wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does aging heighten wet AMD risk?",
+        "answer": "Aging thins retinal tissues, increasing vulnerability to wet AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What leads to phantom images in AMD patients?",
+        "answer": "Vision loss triggers brain compensation, leading to phantom images in AMD.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "How does omega-3 intake reduce AMD severity?",
+        "answer": "Omega-3s decrease inflammation, reducing retinal damage and AMD severity.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does dry AMD impair detailed vision?",
+        "answer": "Drusen disrupt macular clarity, impairing detailed vision in dry AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does the CFH gene increase AMD susceptibility?",
+        "answer": "CFH mutations heighten inflammation, increasing AMD susceptibility.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What causes macular tears in advanced AMD?",
+        "answer": "Retinal thinning stretches the macula, causing tears in advanced AMD.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "How does vision loss contribute to frustration in AMD patients?",
+        "answer": "Vision loss limits activities, contributing to frustration in AMD patients.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does wet AMD cause quick vision decline?",
+        "answer": "Rapid vessel leakage damages the macula, causing quick vision decline in wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does exercise mitigate AMD progression?",
+        "answer": "Exercise improves retinal blood flow, mitigating AMD progression.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What leads to epiretinal membrane growth in AMD?",
+        "answer": "Retinal damage stimulates scar tissue, leading to epiretinal membranes in AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does zeaxanthin shield against AMD damage?",
+        "answer": "Zeaxanthin absorbs harmful light, shielding retinal cells from AMD damage.",
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "How does stem cell therapy aim to treat AMD vision loss?",
+        "answer": "Stem cells replace damaged retinal cells, aiming to treat AMD vision loss.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What causes spatial disorientation in late AMD?",
+        "answer": "Central vision loss disrupts depth cues, causing spatial disorientation in late AMD.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "How does sun exposure worsen retinal degeneration in AMD?",
+        "answer": "Sun exposure increases oxidative damage, worsening retinal degeneration in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does wet AMD cause subretinal fluid accumulation?",
+        "answer": "Leaking vessels deposit fluid under the retina, causing accumulation in wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does a high-fat diet increase AMD severity?",
+        "answer": "A high-fat diet promotes retinal lipid buildup, increasing AMD severity.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What causes faded colors in AMD vision?",
+        "answer": "Macular damage reduces cone function, causing faded colors in AMD vision.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "How does geographic atrophy result in irreversible vision loss?",
+        "answer": "Geographic atrophy destroys retinal cells, resulting in irreversible vision loss.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does large-print text enhance readability in AMD?",
+        "answer": "Large-print text overcomes central vision loss, enhancing readability in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does regular monitoring improve AMD treatment success?",
+        "answer": "Regular monitoring detects changes early, improving AMD treatment success.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What leads to pigment aggregation in dry AMD?",
+        "answer": "Retinal pigment epithelium damage causes pigment aggregation in dry AMD.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "How does screen reader software assist AMD patients?",
+        "answer": "Screen readers convert text to speech, assisting AMD patients with access.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does wet AMD increase retinal rupture risk?",
+        "answer": "Fluid pressure weakens the retina, increasing rupture risk in wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does a macular pucker affect visual clarity in AMD?",
+        "answer": "A macular pucker warps the retina, reducing visual clarity in AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What causes AI to improve AMD screening?",
+        "answer": "AI detects retinal anomalies, improving AMD screening precision.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does vascular dilation exacerbate AMD symptoms?",
+        "answer": "Vascular dilation increases leakage, exacerbating retinal damage in AMD.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Why does AMD reduce meal preparation ability?",
+        "answer": "Central vision loss blurs details, reducing meal preparation ability in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does photoreceptor loss impair AMD vision?",
+        "answer": "Photoreceptor loss disrupts light detection, impairing AMD vision.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does retinal hemorrhage affect vision in wet AMD?",
+        "answer": "Retinal hemorrhage obscures light, affecting vision in wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Why does AMD impair driving safety?",
+        "answer": "Central vision loss reduces road visibility, impairing driving safety in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does pigment hyperplasia impact dry AMD?",
+        "answer": "Pigment hyperplasia alters retinal structure, impacting vision in dry AMD.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What causes leafy greens to mitigate AMD progression?",
+        "answer": "Leafy greens provide antioxidants, mitigating retinal damage in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does a retinal fold affect AMD vision?",
+        "answer": "A retinal fold distorts the macula, affecting central vision in AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Why does gene therapy hold potential for AMD recovery?",
+        "answer": "Gene therapy corrects retinal defects, holding potential for AMD recovery.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does vascular leakage worsen AMD damage?",
+        "answer": "Vascular leakage floods the retina, worsening macular damage in AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What leads to enhanced independence with occupational therapy in AMD?",
+        "answer": "Occupational therapy teaches adaptive techniques, enhancing independence in AMD.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "How does photoreceptor degeneration cause AMD blindness?",
+        "answer": "Photoreceptor degeneration halts light detection, causing blindness in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does fish consumption reduce AMD risk?",
+        "answer": "Fish provides omega-3s, reducing inflammation and AMD risk.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What causes magnifiers to improve reading in AMD?",
+        "answer": "Magnifiers enlarge text, improving reading despite AMD vision loss.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does vascular occlusion affect AMD progression?",
+        "answer": "Vascular occlusion starves retinal cells, affecting AMD progression.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Why do AREDS supplements help intermediate AMD patients?",
+        "answer": "AREDS supplements reduce oxidative damage, helping intermediate AMD patients.",
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "How does pigment atrophy lead to vision impairment in dry AMD?",
+        "answer": "Pigment atrophy kills retinal support cells, leading to vision impairment in dry AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What leads to improved writing with bold lines in AMD?",
+        "answer": "Bold lines increase contrast, improving writing for AMD patients.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "How does diabetes exacerbate AMD progression?",
+        "answer": "Diabetes damages retinal vessels, exacerbating inflammation and AMD progression.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Why does AMD reduce low-light vision?",
+        "answer": "Macular damage impairs rod cells, reducing low-light vision in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does high cholesterol worsen retinal health in AMD?",
+        "answer": "High cholesterol increases lipid deposits, worsening retinal health in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What causes wet AMD to lead to severe vision loss?",
+        "answer": "Severe macular damage from leakage leads to vision loss in wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does family history increase AMD prevalence?",
+        "answer": "Genetic variants from family history increase retinal risk, raising AMD prevalence.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does AMD hinder face perception?",
+        "answer": "Central vision loss blurs details, hindering face perception in AMD.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "How does obesity accelerate AMD damage?",
+        "answer": "Obesity boosts inflammation, accelerating retinal damage in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What causes dry AMD to have a slower progression rate?",
+        "answer": "Dry AMD\u2019s gradual drusen buildup damages slower than wet AMD\u2019s rapid changes.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does sunlight exposure increase dry AMD severity?",
+        "answer": "Sunlight heightens oxidative stress, increasing dry AMD severity.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does diet enhance AMD management outcomes?",
+        "answer": "Nutrient-rich diets reduce retinal damage, enhancing AMD management outcomes.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does blood pressure control improve AMD prognosis?",
+        "answer": "Blood pressure control reduces vascular damage, improving AMD prognosis.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What causes wet AMD to cause greater vision distortion?",
+        "answer": "Rapid fluid leakage warps the macula, causing greater distortion in wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does aging affect AMD treatment response?",
+        "answer": "Aging reduces retinal resilience, affecting AMD treatment response.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why do anti-VEGF treatments require ongoing use in wet AMD?",
+        "answer": "Persistent vessel growth requires ongoing anti-VEGF use in wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does retinal pigment damage initiate AMD progression?",
+        "answer": "Retinal pigment damage disrupts photoreceptors, initiating AMD progression.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What leads to heightened monitoring in intermediate AMD?",
+        "answer": "Larger drusen increase progression risk, leading to heightened monitoring in intermediate AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does inflammation worsen AMD vision loss?",
+        "answer": "Inflammation accelerates retinal cell death, worsening vision loss in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does aging contribute to macular thinning in AMD?",
+        "answer": "Aging reduces cell renewal, leading to macular thinning and AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does wet AMD cause faster damage than dry AMD?",
+        "answer": "Wet AMD\u2019s vessel leakage rapidly harms the macula, unlike dry AMD\u2019s slow buildup.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does smoking lead to retinal cell death in AMD?",
+        "answer": "Smoking increases oxidative damage, leading to retinal cell death in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What leads to vision preservation with anti-VEGF in wet AMD?",
+        "answer": "Anti-VEGF stops vessel leakage, preserving vision in wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does UV exposure exacerbate retinal stress in AMD?",
+        "answer": "UV exposure produces free radicals, exacerbating retinal stress in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does dry AMD progress to retinal atrophy?",
+        "answer": "Dry AMD\u2019s drusen destroy retinal support, progressing to atrophy.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does AREDS2 reduce retinal damage in AMD?",
+        "answer": "AREDS2 delivers antioxidants, reducing retinal damage and AMD progression.",
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "What causes bent line perception in wet AMD?",
+        "answer": "Leaking vessels distort the macula, causing bent line perception in wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does OCT improve AMD monitoring precision?",
+        "answer": "OCT tracks retinal changes, improving AMD monitoring precision.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does hypertension increase AMD progression?",
+        "answer": "Hypertension damages retinal vessels, increasing AMD progression.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does lutein enhance retinal protection in AMD?",
+        "answer": "Lutein blocks harmful light, enhancing retinal protection in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What leads to vision gaps in advanced AMD?",
+        "answer": "Macular cell loss creates vision gaps in advanced AMD.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "How does photodynamic therapy limit wet AMD vision loss?",
+        "answer": "Photodynamic therapy closes leaking vessels, limiting vision loss in wet AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does wet AMD raise retinal detachment odds?",
+        "answer": "Fluid from vessels lifts the retina, raising detachment odds in wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does low vision training boost AMD patient autonomy?",
+        "answer": "Low vision training teaches adaptive techniques, boosting autonomy in AMD patients.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What causes early AMD to escalate to intermediate AMD?",
+        "answer": "Drusen growth impairs retinal function, escalating early AMD to intermediate.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does smoking worsen wet AMD severity?",
+        "answer": "Smoking increases vessel fragility, worsening leakage and wet AMD severity.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does wet AMD lead to retinal swelling?",
+        "answer": "Leaking vessels flood the retina, leading to swelling in wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does aging increase wet AMD prevalence?",
+        "answer": "Aging weakens retinal barriers, increasing wet AMD prevalence.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What leads to visual illusions in AMD patients?",
+        "answer": "Vision loss activates brain compensation, leading to visual illusions in AMD.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "How does omega-3 intake lessen AMD progression?",
+        "answer": "Omega-3s reduce retinal inflammation, lessening AMD progression.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does dry AMD reduce visual sharpness?",
+        "answer": "Drusen impair macular function, reducing visual sharpness in dry AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does the CFH gene heighten AMD risk?",
+        "answer": "CFH gene mutations increase inflammation, heightening AMD risk.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What causes macular perforations in severe AMD?",
+        "answer": "Retinal stress tears the macula, causing perforations in severe AMD.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "How does vision loss lead to emotional distress in AMD?",
+        "answer": "Vision loss restricts independence, leading to emotional distress in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does wet AMD cause sudden vision worsening?",
+        "answer": "Sudden vessel leakage damages the macula, causing vision worsening in wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does exercise slow AMD advancement?",
+        "answer": "Exercise enhances retinal circulation, slowing AMD advancement.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What leads to epiretinal membrane development in AMD?",
+        "answer": "Retinal injury triggers scar tissue, leading to epiretinal membranes in AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does zeaxanthin mitigate AMD progression?",
+        "answer": "Zeaxanthin filters damaging light, mitigating AMD progression.",
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "How does stem cell therapy seek to reverse AMD damage?",
+        "answer": "Stem cells regenerate retinal tissue, seeking to reverse AMD damage.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What causes mobility issues in advanced AMD?",
+        "answer": "Central vision loss impairs spatial awareness, causing mobility issues in advanced AMD.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "How does sunlight accelerate AMD retinal damage?",
+        "answer": "Sunlight increases oxidative stress, accelerating AMD retinal damage.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does wet AMD cause fluid buildup beneath the retina?",
+        "answer": "Leaking vessels deposit fluid, causing buildup beneath the retina in wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does a high-fat diet worsen AMD prognosis?",
+        "answer": "A high-fat diet increases retinal lipids, worsening AMD prognosis.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What causes color dullness in AMD patients?",
+        "answer": "Macular damage impairs cone cells, causing color dullness in AMD.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "How does geographic atrophy lead to permanent blindness?",
+        "answer": "Geographic atrophy kills retinal cells, leading to permanent blindness in affected areas.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does regular monitoring enhance AMD outcomes?",
+        "answer": "Regular monitoring catches progression early, enhancing AMD outcomes.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What leads to retinal pigment clustering in dry AMD?",
+        "answer": "Retinal pigment epithelium damage causes clustering in dry AMD.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "How does screen magnification help AMD patients?",
+        "answer": "Screen magnification enlarges visuals, helping AMD patients despite vision loss.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does wet AMD heighten retinal tear risk?",
+        "answer": "Fluid pressure stretches the retina, heightening tear risk in wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does a macular pucker distort AMD vision?",
+        "answer": "A macular pucker wrinkles the retina, distorting AMD vision.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What causes AI to advance AMD diagnosis?",
+        "answer": "AI identifies retinal patterns, advancing AMD diagnosis accuracy.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does vascular dilation aggravate AMD?",
+        "answer": "Vascular dilation increases fluid leakage, aggravating AMD damage.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Why does AMD impair culinary skills?",
+        "answer": "Central vision loss reduces detail perception, impairing culinary skills in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does photoreceptor damage affect AMD sight?",
+        "answer": "Photoreceptor damage disrupts light processing, affecting AMD sight.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What leads to slower AMD progression with quitting smoking?",
+        "answer": "Quitting smoking reduces oxidative stress, slowing AMD progression.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does retinal bleeding disrupt vision in wet AMD?",
+        "answer": "Retinal bleeding blocks light, disrupting vision in wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Why does AMD compromise driving ability?",
+        "answer": "Central vision loss obscures details, compromising driving ability in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does pigment hyperplasia alter vision in dry AMD?",
+        "answer": "Pigment hyperplasia disrupts retinal structure, altering vision in dry AMD.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What causes leafy greens to slow AMD?",
+        "answer": "Leafy greens supply antioxidants, slowing retinal damage in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does a retinal fold impair AMD vision?",
+        "answer": "A retinal fold bends the macula, impairing AMD vision.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Why does gene therapy promise AMD improvement?",
+        "answer": "Gene therapy targets genetic flaws, promising AMD improvement.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does vascular leakage intensify AMD vision loss?",
+        "answer": "Vascular leakage floods the retina, intensifying vision loss in AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What leads to better function with occupational therapy in AMD?",
+        "answer": "Occupational therapy provides adaptive skills, leading to better function in AMD.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "How does photoreceptor loss cause irreversible AMD vision loss?",
+        "answer": "Photoreceptor loss halts light detection, causing irreversible AMD vision loss.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does fish intake benefit AMD patients?",
+        "answer": "Fish provides omega-3s, reducing inflammation and benefiting AMD patients.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does retinal detachment occur in advanced wet AMD?",
+        "answer": "Fluid pressure separates the retina, causing detachment in advanced wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What causes electronic magnifiers to aid AMD reading?",
+        "answer": "Electronic magnifiers enlarge text, aiding reading in AMD patients.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why do AREDS supplements support AMD management?",
+        "answer": "AREDS supplements reduce oxidative damage, supporting AMD management.",
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "How does pigment atrophy impair dry AMD vision?",
+        "answer": "Pigment atrophy destroys retinal support, impairing dry AMD vision.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What leads to better writing with high-contrast tools in AMD?",
+        "answer": "High-contrast tools enhance visibility, leading to better writing in AMD.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "How does diabetes increase AMD severity?",
+        "answer": "Diabetes harms retinal vessels, increasing inflammation and AMD severity.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Why does AMD diminish night vision?",
+        "answer": "Macular damage reduces rod function, diminishing night vision in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does high cholesterol aggravate AMD?",
+        "answer": "High cholesterol builds retinal lipids, aggravating AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What causes wet AMD to result in profound vision loss?",
+        "answer": "Severe macular damage from leakage results in profound vision loss in wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does family history elevate AMD risk?",
+        "answer": "Genetic predisposition from family history elevates retinal risk for AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does AMD obscure facial details?",
+        "answer": "Central vision loss blurs fine details, obscuring facial details in AMD.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "How does obesity worsen AMD outcomes?",
+        "answer": "Obesity increases inflammation, worsening retinal damage and AMD outcomes.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What causes dry AMD to progress more slowly than wet AMD?",
+        "answer": "Dry AMD\u2019s gradual drusen accumulation progresses slower than wet AMD\u2019s rapid leakage.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does sunlight exposure heighten dry AMD damage?",
+        "answer": "Sunlight increases oxidative damage, heightening dry AMD damage.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does blood pressure control aid AMD management?",
+        "answer": "Blood pressure control minimizes vascular harm, aiding AMD management.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does aging reduce AMD treatment effectiveness?",
+        "answer": "Aging weakens retinal repair, reducing AMD treatment effectiveness.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why do anti-VEGF injections need frequent administration in wet AMD?",
+        "answer": "Recurring vessel growth necessitates frequent anti-VEGF injections in wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does retinal pigment damage trigger AMD onset?",
+        "answer": "Retinal pigment damage disrupts photoreceptor support, triggering AMD onset.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What leads to increased vigilance in intermediate AMD?",
+        "answer": "Growing drusen heighten progression risk, leading to increased vigilance in intermediate AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does inflammation exacerbate AMD progression?",
+        "answer": "Inflammation accelerates retinal cell loss, exacerbating AMD progression.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does aging lead to retinal cell loss in AMD?",
+        "answer": "Aging slows cell regeneration, leading to retinal cell loss in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does wet AMD damage vision more quickly than dry AMD?",
+        "answer": "Wet AMD\u2019s rapid vessel leakage harms the macula faster than dry AMD\u2019s gradual changes.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does smoking contribute to macular degeneration in AMD?",
+        "answer": "Smoking increases oxidative stress, contributing to macular degeneration in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What leads to vision stability with anti-VEGF therapy in wet AMD?",
+        "answer": "Anti-VEGF halts vessel growth, leading to vision stability in wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does UV light exposure worsen macular health in AMD?",
+        "answer": "UV light generates free radicals, worsening macular health in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does dry AMD advance to geographic atrophy?",
+        "answer": "Dry AMD\u2019s drusen kill retinal cells, advancing to geographic atrophy.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does AREDS2 supplementation decrease AMD progression?",
+        "answer": "AREDS2 provides antioxidants, decreasing retinal damage and AMD progression.",
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "What causes wavy vision in wet AMD patients?",
+        "answer": "Leaking vessels distort the macula, causing wavy vision in wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does OCT enhance early AMD detection?",
+        "answer": "OCT reveals subtle retinal changes, enhancing early AMD detection.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does hypertension aggravate AMD damage?",
+        "answer": "Hypertension stresses retinal vessels, aggravating AMD damage.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does lutein protect against AMD vision loss?",
+        "answer": "Lutein absorbs damaging light, protecting against AMD vision loss.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does photodynamic therapy reduce wet AMD progression?",
+        "answer": "Photodynamic therapy seals leaking vessels, reducing wet AMD progression.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does low vision therapy improve AMD patient independence?",
+        "answer": "Low vision therapy teaches adaptive skills, improving independence in AMD patients.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What causes intermediate AMD to progress to advanced AMD?",
+        "answer": "Drusen expansion damages the retina, causing progression to advanced AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does smoking exacerbate wet AMD symptoms?",
+        "answer": "Smoking weakens vessels, exacerbating leakage and wet AMD symptoms.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does wet AMD result in macular swelling?",
+        "answer": "Leaking vessels flood the macula, resulting in swelling in wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does aging elevate wet AMD likelihood?",
+        "answer": "Aging thins retinal tissues, elevating wet AMD likelihood.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does omega-3 intake mitigate AMD damage?",
+        "answer": "Omega-3s reduce inflammation, mitigating retinal damage in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does dry AMD impair central vision clarity?",
+        "answer": "Drusen disrupt macular function, impairing central vision clarity in dry AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does the CFH gene contribute to AMD onset?",
+        "answer": "CFH gene mutations increase inflammation, contributing to AMD onset.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does vision loss increase depression in AMD patients?",
+        "answer": "Vision loss limits daily function, increasing depression in AMD patients.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does wet AMD lead to rapid vision decline?",
+        "answer": "Rapid vessel leakage damages the macula, leading to vision decline in wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does exercise reduce AMD severity?",
+        "answer": "Exercise improves retinal blood flow, reducing AMD severity.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does zeaxanthin prevent AMD worsening?",
+        "answer": "Zeaxanthin filters blue light, preventing retinal damage and AMD worsening.",
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "Why does wet AMD cause retinal hemorrhages?",
+        "answer": "Fragile vessels burst, causing retinal hemorrhages in wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does stem cell therapy aim to restore AMD vision?",
+        "answer": "Stem cells replace lost retinal cells, aiming to restore AMD vision.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What causes navigation difficulties in late AMD?",
+        "answer": "Central vision loss obscures spatial cues, causing navigation difficulties in late AMD.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "How does sunlight worsen retinal health in AMD?",
+        "answer": "Sunlight increases oxidative damage, worsening retinal health in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does wet AMD lead to subretinal fluid?",
+        "answer": "Leaking vessels deposit fluid under the retina, leading to subretinal fluid in wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does a high-fat diet increase AMD damage?",
+        "answer": "A high-fat diet promotes lipid buildup, increasing AMD damage.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What causes reduced color vibrancy in AMD?",
+        "answer": "Macular damage impairs cone cells, reducing color vibrancy in AMD.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Why does large-print text assist AMD patients with reading?",
+        "answer": "Large-print text compensates for central vision loss, assisting AMD patients with reading.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does screen magnification support AMD patients?",
+        "answer": "Screen magnification enlarges content, supporting AMD patients with vision loss.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does wet AMD elevate retinal rupture risk?",
+        "answer": "Fluid pressure weakens the retina, elevating rupture risk in wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does a macular pucker affect AMD vision clarity?",
+        "answer": "A macular pucker distorts the retina, affecting AMD vision clarity.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What causes AI to improve AMD identification?",
+        "answer": "AI analyzes retinal scans, improving AMD identification accuracy.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does vascular dilation worsen AMD progression?",
+        "answer": "Vascular dilation increases leakage, worsening retinal damage in AMD.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Why does AMD reduce cooking accuracy?",
+        "answer": "Central vision loss blurs details, reducing cooking accuracy in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What leads to reduced AMD progression with smoking cessation?",
+        "answer": "Smoking cessation lowers oxidative stress, reducing AMD progression.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does retinal hemorrhage affect wet AMD vision?",
+        "answer": "Retinal hemorrhage blocks light, affecting wet AMD vision.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Why does AMD hinder safe navigation?",
+        "answer": "Central vision loss reduces spatial awareness, hindering safe navigation in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does pigment hyperplasia impact dry AMD vision?",
+        "answer": "Pigment hyperplasia alters retinal function, impacting dry AMD vision.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Why does gene therapy offer potential for AMD treatment?",
+        "answer": "Gene therapy corrects genetic defects, offering potential for AMD treatment.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does vascular leakage exacerbate AMD vision loss?",
+        "answer": "Vascular leakage floods the retina, exacerbating AMD vision loss.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What leads to enhanced living with occupational therapy in AMD?",
+        "answer": "Occupational therapy teaches coping strategies, enhancing living in AMD.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Why does fish consumption reduce AMD progression?",
+        "answer": "Fish supplies omega-3s, reducing inflammation and AMD progression.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What causes magnifiers to improve AMD reading ability?",
+        "answer": "Magnifiers enlarge text, improving reading ability despite AMD vision loss.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does vascular occlusion impact AMD vision?",
+        "answer": "Vascular occlusion reduces retinal blood flow, impacting AMD vision.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Why do AREDS supplements aid intermediate AMD?",
+        "answer": "AREDS supplements combat oxidative stress, aiding intermediate AMD.",
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "How does pigment atrophy affect dry AMD sight?",
+        "answer": "Pigment atrophy destroys retinal support, affecting dry AMD sight.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What leads to better writing with contrast aids in AMD?",
+        "answer": "Contrast aids enhance visibility, leading to better writing in AMD.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "How does diabetes worsen AMD outcomes?",
+        "answer": "Diabetes damages retinal vessels, worsening inflammation and AMD outcomes.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Why does AMD reduce vision in dim conditions?",
+        "answer": "Macular damage impairs rod cells, reducing vision in dim conditions in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does high cholesterol increase AMD progression?",
+        "answer": "High cholesterol deposits lipids, increasing AMD progression.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What causes wet AMD to lead to severe blindness?",
+        "answer": "Severe macular damage from leakage leads to blindness in wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does family history heighten AMD susceptibility?",
+        "answer": "Genetic variants from family history heighten retinal susceptibility to AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does obesity exacerbate AMD severity?",
+        "answer": "Obesity increases inflammation, exacerbating AMD severity.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does sunlight exposure increase dry AMD progression?",
+        "answer": "Sunlight boosts oxidative stress, increasing dry AMD progression.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does a healthy diet enhance AMD outcomes?",
+        "answer": "A healthy diet reduces retinal damage, enhancing AMD outcomes.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does blood pressure control benefit AMD prognosis?",
+        "answer": "Blood pressure control reduces vascular stress, benefiting AMD prognosis.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does aging affect AMD treatment success?",
+        "answer": "Aging reduces retinal healing, affecting AMD treatment success.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why do anti-VEGF treatments require repeated doses in wet AMD?",
+        "answer": "Persistent vessel regrowth requires repeated anti-VEGF doses in wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What leads to closer monitoring in intermediate AMD?",
+        "answer": "Larger drusen raise progression risk, leading to closer monitoring in intermediate AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does inflammation accelerate AMD vision loss?",
+        "answer": "Inflammation hastens retinal cell death, accelerating AMD vision loss.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does aging contribute to macular cell death in AMD?",
+        "answer": "Aging reduces cell repair, contributing to macular cell death in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does wet AMD progress more rapidly than dry AMD?",
+        "answer": "Wet AMD\u2019s vessel leakage damages the macula faster than dry AMD\u2019s slow degeneration.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does smoking lead to retinal damage in AMD?",
+        "answer": "Smoking generates oxidative stress, leading to retinal damage in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What leads to vision retention with anti-VEGF in wet AMD?",
+        "answer": "Anti-VEGF blocks vessel growth, leading to vision retention in wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does UV exposure increase retinal vulnerability in AMD?",
+        "answer": "UV exposure creates free radicals, increasing retinal vulnerability in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does dry AMD transition to retinal atrophy?",
+        "answer": "Dry AMD\u2019s drusen destroy retinal cells, transitioning to atrophy.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does AREDS2 protect against AMD advancement?",
+        "answer": "AREDS2 supplies antioxidants, protecting against AMD advancement.",
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "What causes curved line perception in wet AMD?",
+        "answer": "Leaking vessels warp the macula, causing curved line perception in wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does OCT improve AMD progression tracking?",
+        "answer": "OCT shows retinal layer changes, improving AMD progression tracking.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does hypertension worsen AMD symptoms?",
+        "answer": "Hypertension damages retinal vessels, worsening AMD symptoms.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does lutein safeguard macular health in AMD?",
+        "answer": "Lutein filters harmful light, safeguarding macular health in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What leads to central vision gaps in advanced AMD?",
+        "answer": "Macular cell loss blocks light, leading to central vision gaps in advanced AMD.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "How does photodynamic therapy curb wet AMD damage?",
+        "answer": "Photodynamic therapy closes abnormal vessels, curbing wet AMD damage.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does wet AMD heighten retinal separation risk?",
+        "answer": "Fluid from vessels lifts the retina, heightening separation risk in wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does low vision rehab enhance AMD patient functionality?",
+        "answer": "Low vision rehab teaches adaptive tools, enhancing functionality in AMD patients.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What causes early AMD to develop into late AMD?",
+        "answer": "Drusen growth impairs retinal function, developing early AMD into late AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does smoking intensify wet AMD progression?",
+        "answer": "Smoking increases vessel fragility, intensifying leakage and wet AMD progression.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does wet AMD cause retinal edema?",
+        "answer": "Leaking vessels flood the retina, causing edema in wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does aging increase wet AMD susceptibility?",
+        "answer": "Aging weakens retinal barriers, increasing wet AMD susceptibility.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does omega-3 intake decrease AMD risk?",
+        "answer": "Omega-3s reduce retinal inflammation, decreasing AMD risk.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does dry AMD reduce visual acuity?",
+        "answer": "Drusen impair macular clarity, reducing visual acuity in dry AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does the CFH gene elevate AMD likelihood?",
+        "answer": "CFH gene mutations boost inflammation, elevating AMD likelihood.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What causes macular tears in late AMD?",
+        "answer": "Retinal thinning stretches the macula, causing tears in late AMD.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "How does vision loss lead to anxiety in AMD patients?",
+        "answer": "Vision loss restricts independence, leading to anxiety in AMD patients.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does wet AMD result in swift vision loss?",
+        "answer": "Swift vessel leakage damages the macula, resulting in vision loss in wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does exercise lessen AMD progression?",
+        "answer": "Exercise enhances retinal circulation, lessening AMD progression.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does zeaxanthin reduce AMD severity?",
+        "answer": "Zeaxanthin shields retinal cells from light damage, reducing AMD severity.",
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "Why does wet AMD lead to retinal bleeding?",
+        "answer": "Fragile vessels rupture, leading to retinal bleeding in wet AMD.",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "How does stem cell therapy target AMD vision recovery?",
+        "answer": "Stem cells regenerate retinal tissue, targeting AMD vision recovery.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What causes balance issues in advanced AMD?",
+        "answer": "Central vision loss disrupts spatial cues, causing balance issues in advanced AMD.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "How does sunlight accelerate AMD damage?",
+        "answer": "Sunlight increases oxidative stress, accelerating AMD damage.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does a high-fat diet exacerbate AMD progression?",
+        "answer": "A high-fat diet increases lipid deposits, exacerbating AMD progression.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What causes muted colors in AMD vision?",
+        "answer": "Macular damage reduces cone function, causing muted colors in AMD vision.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "How does geographic atrophy result in vision loss?",
+        "answer": "Geographic atrophy kills retinal cells, resulting in vision loss.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Why does large-print text improve readability in AMD?",
+        "answer": "Large-print text overcomes central vision loss, improving readability in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does regular monitoring enhance AMD treatment?",
+        "answer": "Regular monitoring detects progression early, enhancing AMD treatment.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What causes AI to refine AMD diagnosis?",
+        "answer": "AI detects retinal anomalies, refining AMD diagnosis precision.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "How does vascular dilation aggravate AMD damage?",
+        "answer": "Vascular dilation boosts leakage, aggravating AMD damage.",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Why does AMD impair meal prep skills?",
+        "answer": "Central vision loss reduces detail perception, impairing meal prep skills in AMD.",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    }
+]
