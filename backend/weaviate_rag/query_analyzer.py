@@ -18,6 +18,7 @@ def analyze_query(query: str) -> Dict[str, Any]:
     keywords = []
     for token in doc:
         if (token.pos_ in ["NOUN", "PROPN"] or
+                token.tag_ == "VBG" or
                 (token.pos_ == "ADJ" and token.text.lower() not in nlp.Defaults.stop_words)):
             keywords.append(token.text)
 
