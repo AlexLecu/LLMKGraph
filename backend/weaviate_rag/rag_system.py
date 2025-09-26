@@ -1,3 +1,5 @@
+import types
+
 import weaviate
 from weaviate.classes.query import Filter, QueryReference
 import itertools
@@ -8,8 +10,12 @@ from ollama import Client
 from together import Together
 from openai import OpenAI
 from weaviate_rag.query_analyzer import analyze_query
-
-
+from google import genai
+from google.genai import types
+from huggingface_hub import InferenceClient
+import re
+from dotenv import load_dotenv
+load_dotenv()
 class GraphRAGSystem:
 
     def __init__(self, question, model_config=None):
@@ -22,6 +28,13 @@ class GraphRAGSystem:
             self.api_client = Together(api_key=self.model_config['api_key'])
         elif self.model_config['provider'] == 'openai':
             self.api_client = OpenAI(api_key=self.model_config['api_key'])
+        elif self.model_config['provider'] == 'google':
+            self.api_client = genai.Client(api_key=self.model_config['api_key'])
+        elif self.model_config['provider'] == 'hf-api':
+            if model_config['cloud']:
+                self.api_client = InferenceClient(provider=model_config['cloud'], api_key=self.model_config['api_key'])
+            else:
+                self.api_client = InferenceClient(provider="hf-inference", api_key=self.model_config['api_key'])
         else:  # ollama
             self.ollama_client = Client()
 
@@ -195,6 +208,13 @@ class GraphRAGSystem:
                     relation_counter += 1
         return relation_string
 
+
+    def remove_think_tags(self, response):
+        cleaned_content = re.sub(r'<think>.*?</think>', '', response, flags=re.DOTALL)
+
+        return cleaned_content
+
+
     def generate_summary(self, relation_string):
         """Generate a summary using the configured model."""
         prompt = (
@@ -226,6 +246,28 @@ class GraphRAGSystem:
                     text={"verbosity": "low"},
                 )
                 return response.output_text
+            elif self.model_config['provider'] == 'google':
+                response = self.api_client.models.generate_content(
+                    model=self.model_config['model_name'],
+                    contents=prompt,
+                    config=types.GenerateContentConfig(
+                        temperature=0.1,
+                        max_output_tokens=300
+                    )
+                )
+                return response.text
+            elif self.model_config['provider'] == 'hf-api':
+                completion = self.api_client.chat.completions.create(
+                    model=self.model_config['model_name'],
+                    messages=[
+                        {"role": "system", "content": "You are a medical knowledge assistant."},
+                        {"role": "user", "content": prompt}
+                    ],
+                    temperature=0.1,
+                    max_tokens=300,
+                )
+
+                return self.remove_think_tags(completion.choices[0].message.content)
 
             else:  # ollama
                 response = self.ollama_client.generate(
