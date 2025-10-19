@@ -1,3 +1,5 @@
+import types
+
 import weaviate
 from weaviate.classes.query import Filter, QueryReference
 import itertools
@@ -5,13 +7,38 @@ import tempfile
 import atexit
 import shutil
 from ollama import Client
+from together import Together
+from openai import OpenAI
 from weaviate_rag.query_analyzer import analyze_query
-
+from google import genai
+from google.genai import types
+from huggingface_hub import InferenceClient
+import re
+from dotenv import load_dotenv
+load_dotenv()
 class GraphRAGSystem:
-    def __init__(self, question):
+
+    def __init__(self, question, model_config=None):
         """Initialize the analyzer with a question and set up Weaviate and Ollama clients."""
         self.question = question
-        self.acronyms ={
+        self.model_config = model_config or {'provider': 'ollama', 'model_name': 'llama3.2'}
+
+        # Initialize API clients based on provider
+        if self.model_config['provider'] == 'together':
+            self.api_client = Together(api_key=self.model_config['api_key'])
+        elif self.model_config['provider'] == 'openai':
+            self.api_client = OpenAI(api_key=self.model_config['api_key'])
+        elif self.model_config['provider'] == 'google':
+            self.api_client = genai.Client(api_key=self.model_config['api_key'])
+        elif self.model_config['provider'] == 'hf-api':
+            if model_config['cloud']:
+                self.api_client = InferenceClient(provider=model_config['cloud'], api_key=self.model_config['api_key'])
+            else:
+                self.api_client = InferenceClient(provider="hf-inference", api_key=self.model_config['api_key'])
+        else:  # ollama
+            self.ollama_client = Client()
+
+        self.acronyms = {
             "wet amd": "wet age-related macular degeneration",
             "early amd": "early age-related macular degeneration",
             "cnv": "choroidal neovascularization",
@@ -26,10 +53,10 @@ class GraphRAGSystem:
             "vma": "vitreomacular adhesion",
             "me": "macular edema",
         }
+
         self.temp_dir = tempfile.mkdtemp()
         atexit.register(shutil.rmtree, self.temp_dir, ignore_errors=True)
         self.client = weaviate.connect_to_local()
-        self.ollama_client = Client()
         self.entity_collection = self.client.collections.get("Entity")
         self.relation_collection = self.client.collections.get("Relation")
         self.entity_id_to_name = {}
@@ -44,24 +71,34 @@ class GraphRAGSystem:
         return expanded_terms
 
     def retrieve_entities(self):
-        """Retrieve entities based on predefined noun phrases from the question."""
+        """Retrieve entities based on noun phrases AND keywords from the question."""
         query_analysis = analyze_query(self.question)
+
+        terms_to_search = []
+
         if query_analysis.get('noun_phrases', []):
-            expanded_noun_phrases = self.expand_terms(query_analysis['noun_phrases'])
-        elif query_analysis.get('keywords', []):
-            expanded_noun_phrases = self.expand_terms(query_analysis['keywords'])
-        else:
-            # Fallback to the raw question if no noun phrases or keywords
-            expanded_noun_phrases = self.expand_terms([self.question])
+            terms_to_search.extend(query_analysis['noun_phrases'])
+
+        if query_analysis.get('keywords', []):
+            for keyword in query_analysis['keywords']:
+                if not any(keyword.lower() in phrase.lower() for phrase in terms_to_search):
+                    terms_to_search.append(keyword)
+
+        if not terms_to_search:
+            terms_to_search = [self.question]
+
+        expanded_terms = self.expand_terms(terms_to_search)
+
         entity_results = {}
-        for noun_phrase in expanded_noun_phrases:
+        for term in expanded_terms:
             entity_search_res = self.entity_collection.query.bm25(
-                query=noun_phrase,
+                query=term,
                 limit=5,
                 return_properties=["name", "type"]
             )
             if entity_search_res.objects:
-                entity_results[noun_phrase] = entity_search_res.objects
+                entity_results[term] = entity_search_res.objects
+
         return entity_results
 
     def get_entity_ids_and_names(self, entity_results):
@@ -169,12 +206,17 @@ class GraphRAGSystem:
                 for subj, pred, obj in rels:
                     relation_string += f"{relation_counter}. {subj} {pred} {obj}\n"
                     relation_counter += 1
-            else:
-                relation_string += f"No relations found for {entity_name}\n"
         return relation_string
 
+
+    def remove_think_tags(self, response):
+        cleaned_content = re.sub(r'<think>.*?</think>', '', response, flags=re.DOTALL)
+
+        return cleaned_content
+
+
     def generate_summary(self, relation_string):
-        """Generate a summary of relevant relationships using Ollama."""
+        """Generate a summary using the configured model."""
         prompt = (
             f"Given the question: '{self.question}'\n\n"
             f"Below is a list of relationship descriptions:\n{relation_string}\n\n"
@@ -184,13 +226,58 @@ class GraphRAGSystem:
             f"Present the response as plain text in a natural, narrative style, avoiding technical terms like 'relationships' in the summary itself."
         )
         try:
-            response = self.ollama_client.generate(model='llama3.2', prompt=prompt)
-            response_text = response.get('response', '')
-            if not response_text:
-                raise ValueError("Empty response from Ollama")
-            return response_text.strip()
+            if self.model_config['provider'] == 'together':
+                response = self.api_client.chat.completions.create(
+                    model=self.model_config['model_name'],
+                    messages=[
+                        {"role": "system", "content": "You are a medical knowledge assistant."},
+                        {"role": "user", "content": prompt}
+                    ],
+                    temperature=0.1,
+                    max_tokens=300
+                )
+                return response.choices[0].message.content.strip()
+
+            elif self.model_config['provider'] == 'openai':
+                response = self.api_client.responses.create(
+                    model=self.model_config['model_name'],
+                    input=prompt,
+                    reasoning={"effort": "medium"},
+                    text={"verbosity": "low"},
+                )
+                return response.output_text
+            elif self.model_config['provider'] == 'google':
+                response = self.api_client.models.generate_content(
+                    model=self.model_config['model_name'],
+                    contents=prompt,
+                    config=types.GenerateContentConfig(
+                        temperature=0.1,
+                        max_output_tokens=300
+                    )
+                )
+                return response.text
+            elif self.model_config['provider'] == 'hf-api':
+                completion = self.api_client.chat.completions.create(
+                    model=self.model_config['model_name'],
+                    messages=[
+                        {"role": "system", "content": "You are a medical knowledge assistant."},
+                        {"role": "user", "content": prompt}
+                    ],
+                    temperature=0.1,
+                    max_tokens=300,
+                )
+
+                return self.remove_think_tags(completion.choices[0].message.content)
+
+            else:  # ollama
+                response = self.ollama_client.generate(
+                    model=self.model_config['model_name'],
+                    prompt=prompt
+                )
+                return response.get('response', '').strip()
+
         except Exception as e:
-            return f"Error processing Ollama response: {e}"
+            return f"Error processing response: {e}"
 
     def analyze(self):
         """Orchestrate the analysis process and return the summary."""

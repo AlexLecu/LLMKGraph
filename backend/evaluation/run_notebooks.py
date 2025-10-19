@@ -4,8 +4,10 @@ from datetime import datetime
 
 # List of notebook paths in the desired execution order
 notebooks = [
-    "/Users/alexlecu/PycharmProjects/LLMKGraph/backend/evaluation/evaluation_notebooks/multiprocessing/1hop_open.ipynb",
-    "/Users/alexlecu/PycharmProjects/LLMKGraph/backend/evaluation/evaluation_notebooks/multiprocessing/2hop_open.ipynb",
+    "/Users/alexlecu/PycharmProjects/LLMKGraph/backend/evaluation/evaluation_notebooks/evaluation_results/SmolLM3-3B/1Hop_Ragas_smollm.ipynb",
+    "/Users/alexlecu/PycharmProjects/LLMKGraph/backend/evaluation/evaluation_notebooks/evaluation_results/SmolLM3-3B/2Hop_Ragas_smollm.ipynb",
+    "/Users/alexlecu/PycharmProjects/LLMKGraph/backend/evaluation/evaluation_notebooks/evaluation_results/Qwen3-3B/1Hop_Ragas_qwen.ipynb",
+    "/Users/alexlecu/PycharmProjects/LLMKGraph/backend/evaluation/evaluation_notebooks/evaluation_results/Qwen3-3B/2Hop_Ragas_qwen.ipynb",
 ]
 
 # Create an output directory for executed notebooks

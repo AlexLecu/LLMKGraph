@@ -1,0 +1,2502 @@
+[
+    {
+        "question": "Which retinal layer is most affected by AMD? a) Ganglion cell layer b) Macula c) Outer plexiform layer d) Choroid",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the primary visual symptom of wet AMD? a) Peripheral vision loss b) Sudden central vision distortion c) Color blindness d) Night blindness",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Which condition is dry AMD most likely to progress to? a) Glaucoma b) Geographic atrophy c) Cataracts d) Retinal detachment",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is a key environmental risk factor for AMD? a) High altitude b) Smoking c) Cold weather d) Noise exposure",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which type of AMD typically progresses more rapidly? a) Dry AMD b) Wet AMD c) Early AMD d) Intermediate AMD",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What is the current status of a cure for advanced AMD? a) Fully curable b) Partially curable c) No cure exists d) Cure in trials",
+        "answer": "C",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which therapy is commonly used for wet AMD? a) Anti-VEGF injections b) Topical steroids c) Acupuncture d) Hearing aids",
+        "answer": "A",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Which vision type is least affected by AMD? a) Central vision b) Peripheral vision c) Depth perception d) Color vision",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What genetic factor increases AMD risk? a) Family history b) Hair color c) Blood type d) Height",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which diagnostic method is ineffective for AMD? a) OCT b) Amsler grid c) Blood pressure test d) Fundus photography",
+        "answer": "C",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What tool is used to monitor AMD-related distortion? a) Stethoscope b) Amsler grid c) Thermometer d) ECG",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which AMD type is more prevalent? a) Wet AMD b) Dry AMD c) Both equally d) Neither",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What is the effect of sunglasses on AMD prevention? a) Fully prevents b) Reduces risk c) No effect d) Increases risk",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which systemic condition heightens AMD risk? a) Asthma b) Diabetes c) Arthritis d) Migraines",
+        "answer": "B",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the primary treatment focus for dry AMD? a) Surgery b) Slowing progression c) Reversing damage d) Pain relief",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What retinal feature is characteristic of dry AMD? a) Fluid leakage b) Drusen deposits c) Blood vessel rupture d) Corneal opacity",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "At what age does AMD risk significantly increase? a) 30 b) 40 c) 50 d) 60",
+        "answer": "C",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which symptom is most associated with wet AMD? a) Gradual peripheral loss b) Sudden central blur c) Eye redness d) Floaters",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is AMD transmissible between people? a) Yes, highly b) Yes, mildly c) No d) Only genetically",
+        "answer": "C",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which lifestyle factor exacerbates AMD? a) Regular exercise b) Obesity c) Adequate sleep d) Hydration",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can surgery fully reverse AMD damage? a) Yes b) No c) Sometimes d) Only early stages",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What visual ability does AMD often impair? a) Color perception b) Hearing acuity c) Taste sensitivity d) Peripheral motion",
+        "answer": "A",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Which is not a cause of AMD? a) Aging b) Genetics c) Screen time d) UV exposure",
+        "answer": "C",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What imaging technique is critical for AMD diagnosis? a) X-ray b) MRI c) OCT d) Ultrasound",
+        "answer": "C",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What does wet AMD typically involve? a) Drusen reduction b) Fluid leakage c) Lens thickening d) Iris damage",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Which gender has a slightly higher AMD prevalence? a) Men b) Women c) Equal d) Unknown",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Are over-the-counter eye drops effective for AMD? a) Yes b) No c) Sometimes d) Only early stages",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Which cardiovascular condition increases AMD risk? a) Low blood pressure b) Hypertension c) Arrhythmia d) Anemia",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What metabolic factor is linked to AMD? a) High cholesterol b) Low sodium c) High potassium d) Low glucose",
+        "answer": "A",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can dietary fish oil alone halt AMD? a) Yes b) No c) Sometimes d) Only with supplements",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which eye structure remains unaffected by AMD? a) Macula b) Optic nerve c) Retinal pigment epithelium d) Choroid",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What therapy targets blood vessels in wet AMD? a) Chemotherapy b) Photodynamic therapy c) Radiation d) Massage",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does AMD increase physical risks in the elderly? a) Falls b) Hearing loss c) Muscle weakness d) Appetite loss",
+        "answer": "A",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Is AMD typically unilateral at onset? a) Yes b) No c) Always d) Rarely",
+        "answer": "A",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What supplement regimen slows dry AMD? a) AREDS b) Multivitamins c) Calcium pills d) Iron tablets",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "Which ethnicity has the highest AMD incidence? a) African Americans b) Caucasians c) Asians d) Hispanics",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does wet AMD inevitably cause total blindness? a) Yes b) No c) Often d) Rarely",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What visual distortion is typical of AMD? a) Double vision b) Wavy lines c) Flashing lights d) Tunnel vision",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is AMD caused by infectious agents? a) Yes b) No c) Sometimes d) Unknown",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which functional ability does AMD impair? a) Depth perception b) Hearing sensitivity c) Olfactory detection d) Tactile response",
+        "answer": "A",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can AMD occur in young children? a) Yes b) No c) Rarely d) Only genetically",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does AMD necessitate visual aids? a) Yes b) No c) Sometimes d) Never",
+        "answer": "C",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What environmental exposure is linked to AMD? a) Noise pollution b) UV light c) Air humidity d) Temperature extremes",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can exercise alone reverse AMD? a) Yes b) No c) Partially d) Only early stages",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which vision type is least impacted by AMD? a) Night vision b) Peripheral vision c) Central vision d) Contrast sensitivity",
+        "answer": "B",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What exam detects AMD? a) Blood draw b) Dilated eye exam c) Hearing test d) Skin biopsy",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is dim light reading a cause of AMD? a) Yes b) No c) Sometimes d) Unknown",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which daily task does AMD most impair? a) Face recognition b) Hearing conversations c) Smelling food d) Tasting flavors",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Are antibiotics effective against AMD? a) Yes b) No c) Sometimes d) Only wet AMD",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What demographic factor most influences AMD? a) Age b) Height c) Weight d) Hair color",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which retinal change is specific to wet AMD? a) Drusen increase b) Choroidal neovascularization c) Optic disc swelling d) Lens opacity",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What is the effect of avoiding sunlight on AMD? a) Prevents completely b) Reduces risk c) No impact d) Worsens condition",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which nutrient is not part of AREDS? a) Vitamin C b) Vitamin E c) Vitamin D d) Zinc",
+        "answer": "C",
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "What diagnostic sign does fluorescein angiography reveal in wet AMD? a) Drusen size b) Fluid leakage c) Lens clarity d) Corneal thickness",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which region has higher AMD prevalence? a) Developing countries b) Developed countries c) Tropical areas d) Polar regions",
+        "answer": "B",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can wet AMD be fully reversed? a) Yes b) No c) Sometimes d) Only early stages",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What retinal structure is central to AMD pathology? a) Optic disc b) Macula c) Fovea d) Peripheral retina",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is poor hygiene a cause of AMD? a) Yes b) No c) Sometimes d) Unknown",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What assistive device helps AMD patients? a) Hearing aids b) Low vision aids c) Wheelchairs d) Inhalers",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which daily activity is most affected by AMD? a) Driving b) Tasting food c) Hearing music d) Smelling flowers",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does alcohol consumption directly cause AMD? a) Yes b) No c) Sometimes d) Only heavy use",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What hereditary factor contributes to AMD? a) Eye color b) Genetic predisposition c) Skin tone d) Hair texture",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which retinal event occurs in wet AMD? a) Drusen dissolution b) Subretinal hemorrhage c) Optic nerve atrophy d) Lens detachment",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is staring at bright lights a direct cause of AMD? a) Yes b) No c) Sometimes d) Unknown",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What screening method identifies AMD early? a) Blood test b) Eye exam c) Hearing test d) Skin scan",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does AMD cause floaters as a primary symptom? a) Yes b) No c) Sometimes d) Only late stages",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which eye trait may elevate AMD risk? a) Dark eyes b) Light eyes c) Myopia d) Astigmatism",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can vitamin C alone cure AMD? a) Yes b) No c) Sometimes d) Only with zinc",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What visual defect does AMD often produce? a) Peripheral tunnel b) Central blind spots c) Flashing lights d) Double images",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is excessive sugar intake a direct AMD cause? a) Yes b) No c) Sometimes d) Unknown",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What lifestyle change reduces AMD risk? a) More screen time b) Smoking cessation c) Less exercise d) High-fat diet",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does AMD exclusively impair night vision? a) Yes b) No c) Sometimes d) Only wet AMD",
+        "answer": "B",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What retinal scan detects AMD? a) CT scan b) Retina scan c) PET scan d) MRI",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can diet alone manage wet AMD? a) Yes b) No c) Sometimes d) Only early stages",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which adaptation does AMD affect? a) Low light vision b) Hearing acuity c) Taste sensitivity d) Balance control",
+        "answer": "A",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Is lack of sleep a primary AMD cause? a) Yes b) No c) Sometimes d) Unknown",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What routine check monitors AMD? a) Blood test b) Eye checkup c) Hearing exam d) Skin test",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does dry AMD cause retinal bleeding? a) Yes b) No c) Sometimes d) Only late stages",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Which group has lower AMD rates? a) Caucasians b) African Americans c) Asians d) Europeans",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD cause hallucinations in late stages? a) Yes b) No c) Rarely d) Only wet AMD",
+        "answer": "A",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is AMD exclusive to those over 80? a) Yes b) No c) Usually d) Rarely",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What cellular process is linked to AMD? a) Oxidative stress b) Bone growth c) Muscle repair d) Skin regeneration",
+        "answer": "A",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Is acupuncture a standard AMD treatment? a) Yes b) No c) Sometimes d) Only experimental",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Which mental health issue may AMD increase? a) Depression b) Anxiety c) Memory loss d) All of the above",
+        "answer": "A",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Do contact lenses cause AMD? a) Yes b) No c) Sometimes d) Only long-term use",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What photographic method aids AMD diagnosis? a) Fundus photography b) X-ray imaging c) Thermal imaging d) Ultrasound",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does wet AMD cause retinal scarring? a) Yes b) No c) Rarely d) Only early stages",
+        "answer": "A",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is vitamin D deficiency a direct AMD cause? a) Yes b) No c) Sometimes d) Unknown",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which spatial ability does AMD affect? a) Distance judgment b) Sound localization c) Taste distinction d) Smell detection",
+        "answer": "A",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Does dry AMD always become wet AMD? a) Yes b) No c) Often d) Rarely",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the estimated U.S. AMD case count? a) 1 million b) 5 million c) 11 million d) 20 million",
+        "answer": "C",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can avoiding all fats prevent wet AMD? a) Yes b) No c) Sometimes d) Only with diet",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which retinal feature is most indicative of early dry AMD? a) Fluid leakage b) Drusen deposits c) Retinal tears d) Optic disc swelling",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is a hallmark symptom of wet AMD? a) Gradual peripheral loss b) Wavy central vision c) Improved contrast d) Eye redness",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Which stage of dry AMD precedes geographic atrophy? a) Early b) Intermediate c) Advanced d) Initial",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What habit significantly increases AMD risk? a) Drinking coffee b) Smoking c) Walking daily d) Reading books",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which form of AMD is characterized by neovascularization? a) Dry AMD b) Wet AMD c) Early AMD d) Late AMD",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is there a definitive cure for intermediate AMD? a) Yes b) No c) In development d) Only for wet AMD",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What injection targets wet AMD\u2019s blood vessels? a) Insulin b) Anti-VEGF c) Steroids d) Antibiotics",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Which vision aspect is preserved longest in AMD? a) Central acuity b) Peripheral vision c) Color distinction d) Depth perception",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What hereditary trait is linked to AMD? a) Family history b) Eye shape c) Hair length d) Skin color",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which test is irrelevant for AMD diagnosis? a) OCT b) Skin biopsy c) Amsler grid d) Fluorescein angiography",
+        "answer": "B",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What home tool monitors AMD progression? a) Thermometer b) Amsler grid c) Blood pressure cuff d) Pulse oximeter",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which AMD type affects the majority of patients? a) Wet AMD b) Dry AMD c) Mixed AMD d) Neither",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can UV-blocking sunglasses eliminate AMD risk? a) Yes b) No c) Partially d) Only with diet",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which chronic illness is associated with higher AMD risk? a) Diabetes b) Allergies c) Bronchitis d) Osteoporosis",
+        "answer": "A",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the main goal of dry AMD management? a) Cure b) Slow progression c) Reverse vision loss d) Reduce pain",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What accumulates in the retina in dry AMD? a) Blood clots b) Drusen c) Tears d) Calcium deposits",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What age group is most susceptible to AMD onset? a) 20-30 b) 30-40 c) 50-60 d) 60+",
+        "answer": "D",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which event is typical of wet AMD onset? a) Gradual drusen growth b) Sudden vision loss c) Peripheral blur d) Eye irritation",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can AMD spread through contact? a) Yes b) No c) Rarely d) Only genetically",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which metabolic state increases AMD likelihood? a) Obesity b) Low BMI c) High hydration d) Low cholesterol",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is surgical intervention a cure for AMD? a) Yes b) No c) Partially d) Only wet AMD",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What visual function does AMD often alter? a) Color perception b) Auditory perception c) Taste sensitivity d) Peripheral speed",
+        "answer": "A",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Does excessive computer use directly cause AMD? a) Yes b) No c) Sometimes d) Only prolonged use",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which imaging method is essential for AMD evaluation? a) OCT b) CT scan c) MRI d) X-ray",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What does wet AMD frequently cause in the retina? a) Drusen shrinkage b) Subretinal fluid c) Lens clouding d) Optic nerve swelling",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Which demographic shows a slight AMD prevalence edge? a) Men b) Women c) No difference d) Children",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Are OTC eye drops a standard AMD treatment? a) Yes b) No c) Sometimes d) Only for dry AMD",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Which vascular condition is a known AMD risk factor? a) Hypotension b) Hypertension c) Varicose veins d) Anemia",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What lipid-related condition correlates with AMD? a) High cholesterol b) Low triglycerides c) High HDL d) Low LDL",
+        "answer": "A",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can omega-3 supplements alone prevent AMD? a) Yes b) No c) Partially d) Only with vitamins",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which eye component is spared in AMD progression? a) Macula b) Optic nerve c) Retinal pigment epithelium d) Choroid",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What laser-based therapy treats wet AMD? a) LASIK b) Photodynamic therapy c) PRK d) Cataract surgery",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does AMD heighten accident risk in older adults? a) Falls b) Burns c) Cuts d) Bruises",
+        "answer": "A",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Is AMD typically confined to one eye initially? a) Yes b) No c) Always d) Rarely",
+        "answer": "A",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Which nutritional protocol aids dry AMD? a) AREDS b) Low-carb diet c) High-protein diet d) Vegan diet",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "Which racial group has elevated AMD rates? a) Caucasians b) African Americans c) Asians d) Native Americans",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does wet AMD always result in complete blindness? a) Yes b) No c) Often d) Rarely",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What visual anomaly does AMD commonly produce? a) Straight lines appear wavy b) Peripheral darkening c) Flashing spots d) Double vision",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is AMD a bacterial condition? a) Yes b) No c) Sometimes d) Only wet AMD",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which spatial skill does AMD disrupt? a) Depth perception b) Sound direction c) Smell intensity d) Touch sensitivity",
+        "answer": "A",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can AMD affect preschool-aged children? a) Yes b) No c) Rarely d) Only with genetics",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does AMD often require assistive devices? a) Yes b) No c) Sometimes d) Never",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What light exposure is an AMD risk factor? a) Blue light b) UV light c) Infrared light d) Visible light",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can physical activity alone halt AMD? a) Yes b) No c) Partially d) Only early stages",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which vision type is most preserved in AMD? a) Night vision b) Peripheral vision c) Central vision d) Contrast vision",
+        "answer": "B",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What clinical procedure diagnoses AMD? a) Blood test b) Dilated eye exam c) Urine analysis d) ECG",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does reading in low light cause AMD? a) Yes b) No c) Sometimes d) Only prolonged",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which recognition task does AMD hinder? a) Face recognition b) Sound recognition c) Smell recognition d) Taste recognition",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Are antibiotics a viable AMD therapy? a) Yes b) No c) Sometimes d) Only for wet AMD",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What primary factor drives AMD prevalence? a) Age b) Diet c) Exercise d) Sleep",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which process underlies wet AMD? a) Drusen growth b) Neovascularization c) Lens hardening d) Optic nerve damage",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Does avoiding all sunlight prevent AMD? a) Yes b) No c) Partially d) Only with sunglasses",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which vitamin is excluded from AREDS formulation? a) Vitamin A b) Vitamin B12 c) Vitamin C d) Vitamin E",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "What does fluorescein angiography highlight in wet AMD? a) Drusen density b) Vascular leakage c) Lens opacity d) Corneal thinning",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which areas report higher AMD rates? a) Rural tropics b) Urban developed regions c) Arctic zones d) Desert climates",
+        "answer": "B",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can wet AMD damage be completely undone? a) Yes b) No c) Sometimes d) Only early stages",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What retinal region is central to AMD? a) Optic disc b) Macula c) Peripheral retina d) Ciliary body",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is sanitation a direct AMD trigger? a) Yes b) No c) Sometimes d) Only poor hygiene",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What vision aid benefits AMD patients? a) Hearing aids b) Magnifiers c) Crutches d) Inhalers",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which daily function does AMD most disrupt? a) Driving b) Hearing c) Tasting d) Smelling",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does heavy drinking directly induce AMD? a) Yes b) No c) Sometimes d) Only with smoking",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What genetic link heightens AMD risk? a) Eye color b) Family history c) Skin type d) Hair density",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which retinal complication occurs in wet AMD? a) Drusen reduction b) Subretinal hemorrhage c) Optic atrophy d) Lens detachment",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is bright light exposure a primary AMD cause? a) Yes b) No c) Sometimes d) Only prolonged",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What routine screening detects AMD early? a) Blood test b) Eye exam c) Hearing test d) Skin check",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Are floaters a common AMD symptom? a) Yes b) No c) Sometimes d) Only late stages",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which iris color may correlate with AMD risk? a) Brown b) Blue c) Green d) Hazel",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can vitamin A alone reverse AMD? a) Yes b) No c) Sometimes d) Only with zinc",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What visual impairment does AMD frequently cause? a) Peripheral loss b) Central scotomas c) Flashing lights d) Double vision",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does high sugar consumption directly trigger AMD? a) Yes b) No c) Sometimes d) Only with obesity",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What behavioral change mitigates AMD risk? a) Increased smoking b) Quitting smoking c) Less sleep d) More screen time",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is night vision the primary loss in AMD? a) Yes b) No c) Sometimes d) Only wet AMD",
+        "answer": "B",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What scan type is used for AMD detection? a) MRI b) Retina scan c) CT scan d) PET scan",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can dietary changes alone control wet AMD? a) Yes b) No c) Sometimes d) Only early stages",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which visual adaptation does AMD impair? a) Low-light adjustment b) Sound localization c) Taste acuity d) Balance control",
+        "answer": "A",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Is insufficient sleep a direct AMD cause? a) Yes b) No c) Sometimes d) Only chronic",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What regular assessment tracks AMD? a) Blood test b) Eye checkup c) Hearing exam d) Skin test",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does dry AMD typically involve retinal hemorrhages? a) Yes b) No c) Sometimes d) Only late stages",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Which population has reduced AMD incidence? a) Caucasians b) African Americans c) Europeans d) Asians",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can late-stage AMD lead to visual hallucinations? a) Yes b) No c) Rarely d) Only wet AMD",
+        "answer": "A",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is AMD restricted to those over 80? a) Yes b) No c) Usually d) Rarely",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What biological process contributes to AMD? a) Oxidative stress b) Bone remodeling c) Muscle growth d) Skin repair",
+        "answer": "A",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Is massage therapy a recognized AMD treatment? a) Yes b) No c) Sometimes d) Only experimental",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Which emotional condition may AMD exacerbate? a) Depression b) Euphoria c) Confidence d) Alertness",
+        "answer": "A",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Do glasses directly cause AMD? a) Yes b) No c) Sometimes d) Only long-term use",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What imaging technique supports AMD diagnosis? a) Fundus photography b) X-ray c) Thermal scan d) Ultrasound",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does wet AMD often result in retinal scarring? a) Yes b) No c) Rarely d) Only early stages",
+        "answer": "A",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is calcium deficiency a primary AMD cause? a) Yes b) No c) Sometimes d) Unknown",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which perceptual ability does AMD affect? a) Distance estimation b) Sound pitch c) Taste intensity d) Smell acuity",
+        "answer": "A",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Does dry AMD inevitably progress to wet AMD? a) Yes b) No c) Often d) Rarely",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the approximate U.S. prevalence of AMD? a) 2 million b) 6 million c) 11 million d) 15 million",
+        "answer": "C",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can avoiding all dairy prevent wet AMD? a) Yes b) No c) Sometimes d) Only with diet",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What retinal change is a hallmark of early AMD? a) Neovascularization b) Drusen accumulation c) Optic nerve atrophy d) Corneal thinning",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which symptom distinguishes wet AMD from dry AMD? a) Gradual vision decline b) Sudden central distortion c) Peripheral haze d) Eye fatigue",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What is the final stage of advanced dry AMD? a) Choroidal rupture b) Geographic atrophy c) Retinal detachment d) Macular edema",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which lifestyle choice is a significant AMD risk factor? a) Smoking b) Daily meditation c) Drinking tea d) Moderate exercise",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which AMD type involves abnormal blood vessel growth? a) Early AMD b) Wet AMD c) Dry AMD d) Intermediate AMD",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is there a complete cure for late-stage AMD? a) Yes b) No c) In trials d) Only for dry AMD",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What medication is a primary treatment for wet AMD? a) Anti-VEGF injections b) Painkillers c) Antihistamines d) Eye drops",
+        "answer": "A",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Which vision component is least impacted by AMD? a) Central vision b) Peripheral vision c) Contrast sensitivity d) Color acuity",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What inherited factor raises AMD likelihood? a) Family history b) Eye size c) Hair type d) Skin texture",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which diagnostic approach is useless for AMD? a) Amsler grid b) OCT c) Hearing test d) Fundus photography",
+        "answer": "C",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What simple test tracks AMD-related vision changes? a) Blood sugar test b) Amsler grid c) Reflex test d) Temperature check",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which AMD variant is most common among patients? a) Wet AMD b) Dry AMD c) Both equally d) Neither",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can wearing sunglasses fully prevent AMD onset? a) Yes b) No c) Sometimes d) Only with diet",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which metabolic disorder is tied to increased AMD risk? a) Diabetes b) Thyroid disease c) Anemia d) Gout",
+        "answer": "A",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the focus of dry AMD therapy? a) Full reversal b) Slowing progression c) Pain management d) Surgical repair",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What retinal deposit is typical in dry AMD? a) Blood clots b) Drusen c) Lipid plaques d) Calcium crystals",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "At what age does AMD typically become more prevalent? a) 40 b) 50 c) 60 d) 70",
+        "answer": "C",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What marks the onset of wet AMD? a) Slow peripheral fade b) Rapid central blur c) Eye dryness d) Floaters",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is AMD a contagious condition? a) Yes b) No c) Rarely d) Only through contact",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which body condition elevates AMD risk? a) Obesity b) Low weight c) High fitness d) Normal cholesterol",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can surgery restore vision lost to AMD? a) Yes b) No c) Partially d) Only wet AMD",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What perceptual change does AMD often induce? a) Color distortion b) Sound muffling c) Taste alteration d) Peripheral narrowing",
+        "answer": "A",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Is prolonged screen exposure a proven AMD cause? a) Yes b) No c) Sometimes d) Only with UV",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What advanced imaging confirms AMD? a) OCT b) MRI c) X-ray d) Ultrasound",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What retinal effect does wet AMD produce? a) Drusen dissolution b) Fluid buildup c) Lens opacity d) Optic nerve damage",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Which sex has a marginally higher AMD rate? a) Men b) Women c) Equal d) Unknown",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Are over-the-counter drops effective for AMD treatment? a) Yes b) No c) Sometimes d) Only dry AMD",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Which circulatory issue boosts AMD risk? a) Low pressure b) Hypertension c) Low pulse d) High oxygen",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What blood lipid level correlates with AMD? a) High cholesterol b) Low cholesterol c) High triglycerides d) Low HDL",
+        "answer": "A",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can fish oil alone stop AMD progression? a) Yes b) No c) Partially d) Only with AREDS",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which eye part is unaffected by AMD? a) Macula b) Optic nerve c) Choroid d) Retina",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What light-based treatment addresses wet AMD? a) LASIK b) Photodynamic therapy c) UV therapy d) Laser correction",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does AMD elevate physical hazards for seniors? a) Falls b) Fractures c) Sprains d) Bruising",
+        "answer": "A",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Does AMD usually start in one eye only? a) Yes b) No c) Always d) Rarely",
+        "answer": "A",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What supplement formula helps manage dry AMD? a) AREDS b) High-dose calcium c) Iron supplements d) Protein shakes",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "Which population has the highest AMD prevalence? a) Caucasians b) African Americans c) Asians d) Latinos",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does wet AMD guarantee total vision loss? a) Yes b) No c) Often d) Rarely",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What visual effect does AMD often cause? a) Wavy lines b) Peripheral loss c) Flickering lights d) Blurred edges",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is AMD a viral disease? a) Yes b) No c) Sometimes d) Only wet AMD",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which spatial perception does AMD alter? a) Depth perception b) Sound location c) Smell direction d) Touch precision",
+        "answer": "A",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can AMD occur in infants? a) Yes b) No c) Rarely d) Only genetically",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does AMD typically require optical aids? a) Yes b) No c) Sometimes d) Never",
+        "answer": "C",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What environmental factor contributes to AMD? a) Noise b) UV light c) Humidity d) Cold",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can exercise alone cure AMD? a) Yes b) No c) Partially d) Only early stages",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which vision aspect remains most intact with AMD? a) Central vision b) Peripheral vision c) Night vision d) Color vision",
+        "answer": "B",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What exam confirms AMD presence? a) Blood test b) Dilated eye exam c) Hearing test d) Skin test",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does dim lighting directly cause AMD? a) Yes b) No c) Sometimes d) Only prolonged",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which identification task does AMD complicate? a) Face recognition b) Sound identification c) Smell identification d) Taste identification",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Are antibiotics a standard AMD treatment? a) Yes b) No c) Sometimes d) Only for wet AMD",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What demographic trait most affects AMD risk? a) Age b) Height c) Weight d) Eye color",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which retinal event defines wet AMD? a) Drusen increase b) Neovascularization c) Optic nerve swelling d) Lens clouding",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can total sunlight avoidance prevent AMD? a) Yes b) No c) Partially d) Only with diet",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which nutrient is absent from AREDS supplements? a) Vitamin C b) Vitamin E c) Vitamin K d) Zinc",
+        "answer": "C",
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "What does fluorescein angiography detect in wet AMD? a) Drusen size b) Blood vessel leakage c) Lens clarity d) Corneal damage",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which regions see higher AMD incidence? a) Tropical rural b) Developed urban c) Arctic rural d) Desert urban",
+        "answer": "B",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can wet AMD be fully reversed with current treatments? a) Yes b) No c) Sometimes d) Only early stages",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What retinal area is primarily involved in AMD? a) Optic disc b) Macula c) Peripheral retina d) Iris",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is poor hygiene a direct cause of AMD? a) Yes b) No c) Sometimes d) Only severe cases",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What device assists AMD-related vision loss? a) Hearing aids b) Low vision aids c) Braces d) Pacemakers",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which daily activity does AMD most impair? a) Driving b) Listening c) Tasting d) Smelling",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does excessive alcohol directly trigger AMD? a) Yes b) No c) Sometimes d) Only with smoking",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What genetic predisposition increases AMD risk? a) Eye color b) Family history c) Skin pigmentation d) Hair thickness",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which retinal issue is specific to wet AMD? a) Drusen growth b) Subretinal hemorrhage c) Optic nerve thinning d) Lens detachment",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is staring at screens a primary AMD cause? a) Yes b) No c) Sometimes d) Only prolonged",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What regular checkup identifies AMD early? a) Blood test b) Eye exam c) Hearing test d) Skin exam",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Are floaters a typical AMD symptom? a) Yes b) No c) Sometimes d) Only late stages",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which eye color may heighten AMD risk? a) Brown b) Blue c) Green d) Gray",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can vitamin E alone cure AMD? a) Yes b) No c) Sometimes d) Only with zinc",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What vision defect is common in AMD? a) Peripheral blur b) Central blind spots c) Flashing lights d) Double images",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does high fat intake directly cause AMD? a) Yes b) No c) Sometimes d) Only with obesity",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What lifestyle adjustment lowers AMD risk? a) More smoking b) Quitting smoking c) Less exercise d) High sugar diet",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is night vision loss the main AMD effect? a) Yes b) No c) Sometimes d) Only wet AMD",
+        "answer": "B",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What retinal imaging aids AMD diagnosis? a) CT scan b) Retina scan c) MRI d) PET scan",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can diet alone reverse wet AMD? a) Yes b) No c) Sometimes d) Only early stages",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which visual skill does AMD affect? a) Low-light vision b) Sound detection c) Taste perception d) Balance",
+        "answer": "A",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Is sleep deprivation a direct AMD cause? a) Yes b) No c) Sometimes d) Only chronic",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What routine evaluation monitors AMD? a) Blood test b) Eye checkup c) Hearing exam d) Skin test",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does dry AMD typically cause retinal bleeding? a) Yes b) No c) Sometimes d) Only late stages",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Which group has lower AMD prevalence? a) Caucasians b) African Americans c) Asians d) Europeans",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can advanced AMD lead to visual hallucinations? a) Yes b) No c) Rarely d) Only wet AMD",
+        "answer": "A",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is AMD limited to those over 80? a) Yes b) No c) Usually d) Rarely",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What cellular stress is linked to AMD? a) Oxidative stress b) Bone stress c) Muscle stress d) Skin stress",
+        "answer": "A",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Is herbal therapy a standard AMD cure? a) Yes b) No c) Sometimes d) Only experimental",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Which psychological issue may AMD worsen? a) Depression b) Happiness c) Focus d) Energy",
+        "answer": "A",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Do contact lenses directly induce AMD? a) Yes b) No c) Sometimes d) Only long-term",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What photographic technique assists AMD diagnosis? a) Fundus photography b) X-ray c) Infrared scan d) Ultrasound",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does wet AMD frequently cause retinal scarring? a) Yes b) No c) Rarely d) Only early stages",
+        "answer": "A",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is vitamin B12 deficiency a direct AMD cause? a) Yes b) No c) Sometimes d) Unknown",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which spatial skill does AMD disrupt? a) Distance judgment b) Sound direction c) Taste distinction d) Smell detection",
+        "answer": "A",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Does dry AMD always progress to wet AMD? a) Yes b) No c) Often d) Rarely",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the estimated U.S. AMD prevalence? a) 3 million b) 7 million c) 11 million d) 18 million",
+        "answer": "C",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can avoiding all protein prevent wet AMD? a) Yes b) No c) Sometimes d) Only with diet",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which retinal sign is most associated with intermediate AMD? a) Fluid buildup b) Large drusen c) Optic nerve damage d) Corneal haze",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is a distinguishing feature of wet AMD onset? a) Slow peripheral loss b) Rapid central distortion c) Color enhancement d) Eye irritation",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What advanced condition does dry AMD potentially lead to? a) Retinal tear b) Geographic atrophy c) Glaucoma d) Cataract",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which behavior is a well-established AMD risk? a) Smoking b) Yoga c) Drinking water d) Light exercise",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which AMD form features choroidal neovascularization? a) Dry AMD b) Wet AMD c) Early AMD d) Late dry AMD",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is there a definitive cure for AMD as of 2025? a) Yes b) No c) In trials d) Only wet AMD",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What drug class treats wet AMD by targeting blood vessels? a) Anti-VEGF b) Antibiotics c) Steroids d) Analgesics",
+        "answer": "A",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Which visual field is most preserved in AMD? a) Central b) Peripheral c) Color d) Depth",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What familial trait heightens AMD risk? a) Family history b) Eye shape c) Skin tone d) Hair color",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which method is not used to diagnose AMD? a) OCT b) Amsler grid c) Lung function test d) Fundus photography",
+        "answer": "C",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What patient tool monitors AMD symptoms at home? a) Blood pressure monitor b) Amsler grid c) Thermometer d) Glucose meter",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which AMD type dominates in prevalence? a) Wet AMD b) Dry AMD c) Both equally d) Neither",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can UV protection eliminate AMD risk entirely? a) Yes b) No c) Partially d) Only with diet",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which systemic disease correlates with higher AMD risk? a) Diabetes b) Asthma c) Arthritis d) Flu",
+        "answer": "A",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the primary aim of dry AMD management? a) Cure b) Slow progression c) Reverse damage d) Relieve discomfort",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What retinal marker is prominent in dry AMD? a) Blood leakage b) Drusen c) Nerve swelling d) Lens opacity",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Above what age does AMD risk sharply rise? a) 40 b) 50 c) 60 d) 70",
+        "answer": "C",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is a key indicator of wet AMD onset? a) Gradual blur b) Sudden vision drop c) Peripheral fade d) Eye redness",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is AMD communicable between individuals? a) Yes b) No c) Rarely d) Only genetically",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which physical state increases AMD risk? a) Obesity b) Low weight c) High fitness d) Normal BMI",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can surgery fully correct AMD vision loss? a) Yes b) No c) Partially d) Only wet AMD",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What visual change is common with AMD? a) Color distortion b) Sound distortion c) Taste change d) Peripheral loss",
+        "answer": "A",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Does excessive TV watching directly cause AMD? a) Yes b) No c) Sometimes d) Only prolonged",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What imaging technology is vital for AMD detection? a) OCT b) X-ray c) MRI d) CT scan",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What does wet AMD often introduce to the retina? a) Drusen reduction b) Fluid leakage c) Lens thickening d) Optic nerve swelling",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Which gender shows a slight AMD prevalence increase? a) Men b) Women c) Equal d) Unknown",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Are over-the-counter eye drops a cure for AMD? a) Yes b) No c) Sometimes d) Only dry AMD",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Which cardiovascular factor elevates AMD risk? a) Low pressure b) Hypertension c) Low heart rate d) High oxygen",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What lipid condition is linked to AMD risk? a) High cholesterol b) Low cholesterol c) High LDL d) Low triglycerides",
+        "answer": "A",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can dietary zinc alone prevent AMD? a) Yes b) No c) Partially d) Only with AREDS",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which eye structure is typically spared in AMD? a) Macula b) Optic nerve c) Choroid d) Retina",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What therapy uses light to treat wet AMD? a) LASIK b) Photodynamic therapy c) UV therapy d) Laser surgery",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does AMD increase specific risks for the elderly? a) Falls b) Hearing loss c) Muscle strain d) Skin rash",
+        "answer": "A",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Is AMD usually unilateral at first? a) Yes b) No c) Always d) Rarely",
+        "answer": "A",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What supplement plan supports dry AMD management? a) AREDS b) High-dose vitamin D c) Calcium tablets d) Protein supplements",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "Which ethnic group has a higher AMD incidence? a) Caucasians b) African Americans c) Asians d) Hispanics",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does wet AMD always lead to complete blindness? a) Yes b) No c) Often d) Rarely",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What visual alteration does AMD frequently cause? a) Wavy lines b) Peripheral tunnel c) Flashing lights d) Double vision",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is AMD caused by fungal infection? a) Yes b) No c) Sometimes d) Only wet AMD",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which visual ability does AMD impair? a) Depth perception b) Sound perception c) Taste perception d) Smell perception",
+        "answer": "A",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can AMD affect young children? a) Yes b) No c) Rarely d) Only with genetics",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does AMD often necessitate vision aids? a) Yes b) No c) Sometimes d) Never",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What light exposure increases AMD risk? a) UV light b) Infrared light c) Blue light d) Visible light",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can physical fitness alone reverse AMD? a) Yes b) No c) Partially d) Only early stages",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which vision type is least altered by AMD? a) Central vision b) Peripheral vision c) Night vision d) Color vision",
+        "answer": "B",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What procedure is key to AMD diagnosis? a) Blood test b) Dilated eye exam c) Hearing test d) Skin biopsy",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does reading in dim light directly induce AMD? a) Yes b) No c) Sometimes d) Only prolonged",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which recognition skill does AMD disrupt? a) Face recognition b) Sound recognition c) Smell recognition d) Taste recognition",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which retinal layer shows early signs of AMD? a) Inner plexiform b) Retinal pigment epithelium c) Ganglion cell layer d) Cornea",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is a primary visual clue of wet AMD? a) Peripheral shadow b) Central wavy lines c) Enhanced night vision d) Eye strain",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What is the end-stage outcome of severe dry AMD? a) Macular hole b) Geographic atrophy c) Retinal detachment d) Choroidal hemorrhage",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which habit is a proven AMD risk factor? a) Smoking b) Swimming c) Reading daily d) Drinking juice",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which AMD type is marked by blood vessel proliferation? a) Early AMD b) Wet AMD c) Dry AMD d) Intermediate AMD",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is there a known cure for advanced AMD today? a) Yes b) No c) Under testing d) Only for wet AMD",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What injection therapy is standard for wet AMD? a) Anti-VEGF b) Insulin c) Cortisone d) Antibiotics",
+        "answer": "A",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Which vision area is typically spared in AMD? a) Central b) Peripheral c) Color d) Contrast",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What genetic element increases AMD likelihood? a) Family history b) Eye size c) Hair length d) Blood group",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which test is irrelevant for AMD screening? a) OCT b) Bone density scan c) Amsler grid d) Fluorescein angiography",
+        "answer": "B",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What self-test helps monitor AMD progression? a) Pulse check b) Amsler grid c) Blood sugar test d) Reflex test",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which AMD form is most widespread? a) Wet AMD b) Dry AMD c) Both equal d) Neither",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can UV-blocking glasses fully prevent AMD? a) Yes b) No c) Sometimes d) Only with diet",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which chronic condition is linked to elevated AMD risk? a) Diabetes b) Eczema c) Migraines d) Sinusitis",
+        "answer": "A",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the main therapeutic goal for dry AMD? a) Full cure b) Slow progression c) Vision restoration d) Symptom relief",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What retinal deposit characterizes dry AMD? a) Blood clots b) Drusen c) Fatty plaques d) Calcium deposits",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "At what age does AMD risk significantly escalate? a) 30 b) 40 c) 50 d) 60",
+        "answer": "C",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What signals the start of wet AMD? a) Gradual peripheral fade b) Sudden central blur c) Eye dryness d) Floaters",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can AMD be transmitted person-to-person? a) Yes b) No c) Rarely d) Only genetically",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which weight condition raises AMD risk? a) Obesity b) Underweight c) Normal weight d) High muscle mass",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can surgery fully reverse AMD effects? a) Yes b) No c) Partially d) Only wet AMD",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What visual skill does AMD often compromise? a) Color perception b) Hearing clarity c) Taste sensitivity d) Peripheral motion",
+        "answer": "A",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Does heavy smartphone use directly trigger AMD? a) Yes b) No c) Sometimes d) Only prolonged",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What imaging tool is critical for AMD diagnosis? a) OCT b) MRI c) X-ray d) Ultrasound",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What does wet AMD typically cause in the retina? a) Drusen shrinkage b) Fluid leakage c) Lens opacity d) Optic nerve damage",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Which gender has a slightly higher AMD incidence? a) Men b) Women c) Equal d) Unknown",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Are over-the-counter eye drops effective against AMD? a) Yes b) No c) Sometimes d) Only dry AMD",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Which vascular condition heightens AMD risk? a) Hypotension b) Hypertension c) Low pulse d) High oxygen",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What lipid profile is associated with AMD? a) High cholesterol b) Low cholesterol c) High HDL d) Low LDL",
+        "answer": "A",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can omega-3 intake alone halt AMD? a) Yes b) No c) Partially d) Only with vitamins",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which eye structure is generally unaffected by AMD? a) Macula b) Optic nerve c) Choroid d) Retina",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What light-activated therapy treats wet AMD? a) LASIK b) Photodynamic therapy c) UV exposure d) Laser correction",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does AMD elevate accident risk in older adults? a) Falls b) Cuts c) Burns d) Sprains",
+        "answer": "A",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Is AMD typically limited to one eye at onset? a) Yes b) No c) Always d) Rarely",
+        "answer": "A",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What nutritional strategy aids dry AMD? a) AREDS b) High-carb diet c) Low-fat diet d) Vitamin B12",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "Which racial group faces higher AMD rates? a) Caucasians b) African Americans c) Asians d) Native Americans",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What visual distortion is frequent in AMD? a) Wavy lines b) Peripheral blur c) Flashing spots d) Double vision",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is AMD a bacterial infection? a) Yes b) No c) Sometimes d) Only wet AMD",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which spatial ability does AMD affect? a) Depth perception b) Sound direction c) Smell intensity d) Touch accuracy",
+        "answer": "A",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can AMD occur in toddlers? a) Yes b) No c) Rarely d) Only genetically",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does AMD commonly require visual assistance? a) Yes b) No c) Sometimes d) Never",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What environmental exposure is tied to AMD risk? a) Noise b) UV light c) Cold air d) Dust",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can exercise alone stop AMD progression? a) Yes b) No c) Partially d) Only early stages",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which vision type is most intact in AMD? a) Central b) Peripheral c) Night d) Color",
+        "answer": "B",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What clinical exam detects AMD? a) Blood test b) Dilated eye exam c) Hearing test d) Skin test",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does low-light reading cause AMD? a) Yes b) No c) Sometimes d) Only prolonged",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which identification task does AMD hinder? a) Face recognition b) Sound identification c) Smell identification d) Taste identification",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Are antibiotics effective for AMD treatment? a) Yes b) No c) Sometimes d) Only for wet AMD",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What demographic factor most drives AMD? a) Age b) Height c) Weight d) Hair color",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which retinal process defines wet AMD? a) Drusen increase b) Neovascularization c) Optic nerve thinning d) Lens hardening",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can avoiding sunlight entirely prevent AMD? a) Yes b) No c) Partially d) Only with diet",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which vitamin is not in the AREDS formula? a) Vitamin C b) Vitamin E c) Vitamin D d) Zinc",
+        "answer": "C",
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "What does fluorescein angiography reveal in wet AMD? a) Drusen density b) Vascular leakage c) Lens clarity d) Corneal thickness",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which areas have higher AMD rates? a) Rural tropics b) Developed urban c) Arctic zones d) Desert regions",
+        "answer": "B",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Can wet AMD be completely reversed today? a) Yes b) No c) Sometimes d) Only early stages",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What retinal region does AMD target? a) Optic disc b) Macula c) Peripheral retina d) Ciliary body",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Is poor sanitation a direct AMD cause? a) Yes b) No c) Sometimes d) Only severe cases",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What aid helps AMD vision loss? a) Hearing aids b) Magnifiers c) Crutches d) Inhalers",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which daily task does AMD most affect? a) Driving b) Hearing c) Tasting d) Smelling",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Does excessive caffeine directly cause AMD? a) Yes b) No c) Sometimes d) Only with smoking",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What genetic factor boosts AMD risk? a) Eye color b) Family history c) Skin type d) Hair density",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which retinal event occurs in wet AMD? a) Drusen reduction b) Subretinal hemorrhage c) Optic atrophy d) Lens detachment",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is bright light exposure a direct AMD trigger? a) Yes b) No c) Sometimes d) Only prolonged",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What screening detects AMD early? a) Blood test b) Eye exam c) Hearing test d) Skin check",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Are floaters a primary AMD symptom? a) Yes b) No c) Sometimes d) Only late stages",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which eye trait may increase AMD risk? a) Dark eyes b) Light eyes c) Myopia d) Hyperopia",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can vitamin C alone stop AMD? a) Yes b) No c) Sometimes d) Only with zinc",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What visual issue does AMD often create? a) Peripheral loss b) Central scotomas c) Flashing lights d) Double vision",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Can AMD occur in toddlers? a) Yes b) No c) Rarely d) Only with genetics",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which retinal feature is an early indicator of AMD? a) Choroidal rupture b) Small drusen c) Optic disc swelling d) Corneal opacity",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What symptom is most characteristic of wet AMD onset? a) Gradual peripheral blur b) Sudden central distortion c) Improved color vision d) Eye redness",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What is the advanced stage of dry AMD progression? a) Retinal tear b) Geographic atrophy c) Macular edema d) Glaucoma",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which lifestyle factor significantly raises AMD risk? a) Smoking b) Jogging c) Drinking tea d) Writing",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which AMD type involves new blood vessel growth? a) Dry AMD b) Wet AMD c) Early AMD d) Intermediate AMD",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Is there a complete cure for AMD as of March 2025? a) Yes b) No c) In trials d) Only for dry AMD",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What treatment targets wet AMD\u2019s vascular growth? a) Anti-VEGF injections b) Painkillers c) Eye drops d) Antihistamines",
+        "answer": "A",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Which vision aspect is least affected by AMD? a) Central vision b) Peripheral vision c) Depth perception d) Color vision",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What inherited trait increases AMD risk? a) Family history b) Eye shape c) Skin tone d) Hair texture",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which diagnostic method is unrelated to AMD? a) OCT b) Amsler grid c) Liver function test d) Fundus photography",
+        "answer": "C",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What simple tool tracks AMD-related vision changes? a) Thermometer b) Amsler grid c) Blood pressure monitor d) Heart rate tracker",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which AMD variant is most common? a) Wet AMD b) Dry AMD c) Both equally d) Neither",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Can sunglasses completely eliminate AMD risk? a) Yes b) No c) Partially d) Only with diet",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which metabolic condition is associated with higher AMD risk? a) Diabetes b) Allergies c) Asthma d) Thyroid issues",
+        "answer": "A",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the primary focus of dry AMD treatment? a) Cure b) Slow progression c) Reverse vision loss d) Pain relief",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the primary part of the eye affected by AMD? a) Cornea b) Macula c) Optic nerve d) Lens",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which type of AMD is characterized by the growth of abnormal blood vessels? a) Dry AMD b) Wet AMD c) Intermediate AMD d) Early AMD",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What is the yellowish deposit commonly found in the retina of dry AMD patients? a) Hemorrhages b) Drusen c) Exudates d) Plaques",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which of the following is a leading cause of blindness in people over 60 in developed countries? a) Glaucoma b) Cataracts c) AMD d) Diabetic retinopathy",
+        "answer": "C",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the most widely used treatment to stop blood vessel leakage in wet AMD? a) Anti-VEGF injections b) Antibiotics c) Steroid drops d) Vitamin supplements",
+        "answer": "A",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Which vitamin is included in the AREDS formula to help slow AMD progression? a) Vitamin K b) Vitamin E c) Vitamin B6 d) Vitamin D",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "What is the term for the wavy appearance of straight lines in wet AMD? a) Scotoma b) Metamorphopsia c) Photopsia d) Nyctalopia",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which imaging method provides a detailed cross-sectional view of the retina in AMD diagnosis? a) Fundus photography b) Optical Coherence Tomography (OCT) c) Fluorescein angiography d) Ultrasound",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What percentage of AMD cases progress to the advanced stage within 10 years? a) 5-10% b) 15-20% c) 25-30% d) 40-50%",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which environmental factor is strongly associated with an increased risk of AMD? a) Smoking b) High altitude c) Cold weather d) Loud noise",
+        "answer": "A",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the name of the advanced form of dry AMD that causes cell death in the retina? a) Choroidal neovascularization b) Geographic atrophy c) Macular edema d) Retinal detachment",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which mineral is part of the AREDS2 formula for AMD? a) Iron b) Zinc c) Calcium d) Magnesium",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "What is the typical first sign of wet AMD noticed by patients? a) Blurred peripheral vision b) Distorted central vision c) Flashing lights d) Double vision",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Which group has a higher risk of developing AMD? a) Men b) Women c) No significant gender difference d) Children",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the purpose of fluorescein angiography in AMD diagnosis? a) To measure eye pressure b) To visualize blood vessel leakage c) To assess corneal thickness d) To evaluate lens clarity",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which antioxidant pigment in the retina may protect against AMD? a) Lutein b) Melanin c) Hemoglobin d) Chlorophyll",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the name of the grid used to detect vision distortion in AMD? a) Snellen chart b) Amsler grid c) Ishihara plate d) Pelli-Robson chart",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which condition is a hallmark of wet AMD but not dry AMD? a) Drusen formation b) Choroidal neovascularization c) Retinal thinning d) Pigment clumping",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What is the leading risk factor for AMD? a) Diabetes b) Aging c) High cholesterol d) Alcohol consumption",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which dietary component is linked to a lower risk of AMD progression? a) Saturated fats b) Omega-3 fatty acids c) Simple sugars d) Caffeine",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the term for the central blind spot caused by advanced AMD? a) Scotoma b) Glaucoma c) Floaters d) Aura",
+        "answer": "A",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Which type of light exposure may increase the risk of AMD? a) Infrared b) Ultraviolet (UV) c) Red light d) Green light",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the name of the laser treatment used to destroy abnormal blood vessels in wet AMD? a) Photodynamic therapy b) LASIK c) PRK d) LASEK",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which of the following is a common early finding in dry AMD? a) Large drusen b) Retinal hemorrhage c) Macular edema d) Optic disc swelling",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the primary goal of low vision rehabilitation for AMD patients? a) Restore full vision b) Prevent further vision loss c) Maximize remaining vision d) Cure the disease",
+        "answer": "C",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Which ethnic group has the highest prevalence of AMD? a) Caucasians b) African Americans c) Asians d) Native Americans",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the name of the fluid accumulation in the macula seen in wet AMD? a) Macular edema b) Vitreous hemorrhage c) Retinal detachment d) Choroidal effusion",
+        "answer": "A",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Which of the following is a symptom of AMD rather than glaucoma? a) Loss of peripheral vision b) Loss of central vision c) Eye pain d) Halos around lights",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the name of the protein targeted by anti-VEGF drugs in wet AMD? a) Collagen b) Vascular endothelial growth factor c) Keratin d) Elastin",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Which lifestyle change is most effective in reducing AMD risk? a) Reducing salt intake b) Quitting smoking c) Drinking more coffee d) Increasing screen time",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the typical frequency of anti-VEGF injections for wet AMD? a) Once a year b) Every 4-8 weeks c) Every 6 months d) Once every 2 years",
+        "answer": "B",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Which part of the retina nourishes the macula and is implicated in wet AMD? a) Choroid b) Sclera c) Iris d) Ciliary body",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the name of the clinical trial that refined the AREDS formula? a) AREDS2 b) DRCR.net c) ETDRS d) VISTA",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "Which of the following is a rare complication of wet AMD? a) Retinal detachment b) Cataract formation c) Corneal abrasion d) Optic neuritis",
+        "answer": "A",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "What is the primary source of antioxidants in the AREDS formula? a) Fruits b) Vitamins C and E c) Fish oil d) Dairy",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "Which symptom is NOT typically associated with AMD? a) Difficulty recognizing faces b) Distorted vision c) Peripheral vision loss d) Trouble reading fine print",
+        "answer": "C",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the name of the retinal layer that supports photoreceptors and is damaged in AMD? a) Retinal pigment epithelium b) Ganglion cell layer c) Inner nuclear layer d) Outer plexiform layer",
+        "answer": "A",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Which of the following is a potential side effect of photodynamic therapy for AMD? a) Increased appetite b) Temporary light sensitivity c) Hair loss d) Joint pain",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the estimated prevalence of AMD in people over 80? a) 5% b) 10% c) 25% d) 50%",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which nutrient was removed from the original AREDS formula in AREDS2? a) Beta-carotene b) Vitamin C c) Zinc d) Vitamin E",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "What is the term for the death of photoreceptors in advanced AMD? a) Photoreceptor degeneration b) Retinal necrosis c) Choroidal atrophy d) Optic atrophy",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which of the following is a common visual aid for AMD patients? a) Hearing aids b) Magnifiers c) Pacemakers d) Crutches",
+        "answer": "B",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the name of the condition where scar tissue forms in the macula in wet AMD? a) Macular fibrosis b) Macular edema c) Macular hole d) Macular atrophy",
+        "answer": "A",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Which cardiovascular condition is a risk factor for AMD? a) Hypertension b) Low blood pressure c) Anemia d) Thrombosis",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the name of the procedure that uses light-sensitive drugs to treat wet AMD? a) Laser photocoagulation b) Photodynamic therapy c) Vitrectomy d) Scleral buckle",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which of the following is a hallmark of early dry AMD on examination? a) Small drusen b) Large hemorrhages c) Macular swelling d) Optic disc pallor",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the name of the visual hallucination syndrome sometimes seen in AMD patients? a) Charles Bonnet syndrome b) Stargardt disease c) Leber's congenital amaurosis d) Retinitis pigmentosa",
+        "answer": "A",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Which of the following is a recommended screening age for AMD? a) 30 b) 40 c) 50 d) 60",
+        "answer": "C",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the name of the surgery occasionally used to move the macula in severe AMD? a) Macular translocation b) Corneal transplant c) Lens replacement d) Trabeculectomy",
+        "answer": "A",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Which of the following is a common finding in intermediate AMD? a) Large drusen b) Retinal detachment c) Choroidal rupture d) Optic nerve swelling",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the primary purpose of sunglasses in AMD prevention? a) Improve night vision b) Reduce UV exposure c) Enhance color perception d) Prevent dry eyes",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which gene mutation is most commonly linked to AMD risk? a) CFH b) BRCA2 c) TP53 d) LDLR",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the name of the condition where the macula develops a hole, sometimes linked to AMD? a) Macular hole b) Macular pucker c) Macular edema d) Macular fibrosis",
+        "answer": "A",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Which of the following is a potential psychological effect of AMD? a) Increased confidence b) Depression c) Improved memory d) Enhanced concentration",
+        "answer": "B",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the name of the test that evaluates retinal function in AMD? a) Electroretinogram (ERG) b) Visual evoked potential (VEP) c) Tonometry d) Pachymetry",
+        "answer": "A",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Which of the following is a common adaptive strategy for AMD patients? a) Using high-contrast materials b) Avoiding bright lights c) Reducing physical activity d) Limiting social interaction",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the name of the condition where the retina wrinkles in AMD? a) Epiretinal membrane b) Retinal tear c) Choroidal rupture d) Vitreous detachment",
+        "answer": "A",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Which nutrient in the AREDS2 formula helps filter blue light? a) Zeaxanthin b) Vitamin C c) Copper d) Zinc",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/research/clinical-trials/age-related-eye-disease-studies-aredsareds2"
+    },
+    {
+        "question": "What is the name of the condition where blood leaks into the retina in wet AMD? a) Macular hemorrhage b) Macular edema c) Macular atrophy d) Macular hole",
+        "answer": "A",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Which of the following is a potential future therapy for dry AMD? a) Stem cell therapy b) Laser surgery c) Cataract removal d) Glaucoma drainage",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the name of the retinal layer that degenerates in geographic atrophy? a) Retinal pigment epithelium b) Inner limiting membrane c) Outer nuclear layer d) Ganglion cell layer",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which of the following is a common mobility aid for AMD patients? a) White cane b) Wheelchair c) Hearing aid d) Prosthetic limb",
+        "answer": "A",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "What is the name of the condition where the macula thins in dry AMD? a) Geographic atrophy b) Macular edema c) Macular fibrosis d) Macular hemorrhage",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which occupational factor may increase AMD risk? a) Prolonged sun exposure b) Night shift work c) Heavy lifting d) Sedentary work",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the name of the drug class used to reduce blood vessel growth in wet AMD? a) Anti-VEGF b) Antibiotics c) Antihistamines d) Analgesics",
+        "answer": "A",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Which of the following is a common finding in wet AMD on OCT imaging? a) Subretinal fluid b) Optic disc drusen c) Corneal thinning d) Lens opacities",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the name of the condition where the retina detaches in severe wet AMD? a) Retinal detachment b) Retinal tear c) Retinal schisis d) Retinal hole",
+        "answer": "A",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Which dietary habit is linked to a higher risk of AMD? a) High fat intake b) High fiber intake c) High protein intake d) High carbohydrate intake",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the name of the test that assesses color vision, sometimes affected in AMD? a) Ishihara test b) Amsler grid c) Snellen chart d) Visual field test",
+        "answer": "A",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Which of the following is a potential complication of untreated dry AMD? a) Progression to geographic atrophy b) Corneal ulcer c) Optic nerve damage d) Lens dislocation",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the name of the condition where the retina's blood vessels occlude in AMD? a) Retinal vascular occlusion b) Choroidal neovascularization c) Retinal hemorrhage d) Macular edema",
+        "answer": "A",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Which of the following is a common reading aid for AMD patients? a) Large-print books b) Ear plugs c) Walking sticks d) Compression socks",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the name of the condition where the macula swells in wet AMD? a) Macular edema b) Macular atrophy c) Macular hole d) Macular pucker",
+        "answer": "A",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Which of the following is a potential benefit of regular eye exams for AMD? a) Early detection b) Complete cure c) Vision restoration d) Disease reversal",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the name of the condition where the retina's pigment clumps in dry AMD? a) Pigment epithelial detachment b) Retinal pigment epithelium clumping c) Choroidal atrophy d) Photoreceptor loss",
+        "answer": "B",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Which of the following is a common adaptive technology for AMD patients? a) Screen readers b) Pacemakers c) Insulin pumps d) Hearing aids",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the name of the condition where the retina tears in severe AMD? a) Retinal tear b) Retinal detachment c) Retinal schisis d) Retinal hole",
+        "answer": "A",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Which of the following is a potential benefit of exercise for AMD? a) Improved retinal blood flow b) Increased drusen formation c) Higher UV exposure d) Reduced antioxidant levels",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the name of the condition where the macula puckers in AMD? a) Macular pucker b) Macular edema c) Macular hole d) Macular fibrosis",
+        "answer": "A",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Which of the following is a potential future diagnostic tool for AMD? a) Artificial intelligence b) Blood pressure monitoring c) Pulse oximetry d) EEG",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the name of the condition where the retina's blood vessels dilate in AMD? a) Retinal vascular dilation b) Choroidal neovascularization c) Retinal hemorrhage d) Macular edema",
+        "answer": "B",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Which of the following is a common cooking aid for AMD patients? a) High-contrast cutting boards b) Noise-canceling headphones c) Orthopedic shoes d) Blood glucose monitors",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the name of the condition where the retina's photoreceptors disorganize in AMD? a) Photoreceptor disarray b) Retinal pigment epithelium atrophy c) Choroidal atrophy d) Macular edema",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "Which of the following is a potential benefit of quitting smoking for AMD? a) Reduced oxidative stress b) Increased drusen c) Higher blood pressure d) Worsened vision",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the name of the condition where the retina's blood leaks in wet AMD? a) Retinal hemorrhage b) Macular edema c) Choroidal rupture d) Vitreous detachment",
+        "answer": "A",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Which of the following is a common driving aid for AMD patients? a) Bioptic telescopes b) Glucose meters c) Oxygen tanks d) Knee braces",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the name of the condition where the retina's pigment overgrows in dry AMD? a) Retinal pigment epithelium hyperplasia b) Choroidal atrophy c) Photoreceptor degeneration d) Macular edema",
+        "answer": "A",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    },
+    {
+        "question": "Which of the following is a potential benefit of leafy greens for AMD? a) Increased antioxidants b) Higher cholesterol c) Reduced blood flow d) Increased UV damage",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the name of the condition where the retina's layers fold in AMD? a) Retinal fold b) Macular pucker c) Epiretinal membrane d) All of the above",
+        "answer": "D",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Which of the following is a potential future treatment for wet AMD? a) Gene therapy b) Antibiotic therapy c) Chemotherapy d) Radiation therapy",
+        "answer": "A",
+        "source": "https://www.nei.nih.gov/learn-about-eye-health/eye-conditions-and-diseases/age-related-macular-degeneration"
+    },
+    {
+        "question": "What is the name of the condition where the retina's blood vessels leak fluid in AMD? a) Retinal vascular leakage b) Choroidal neovascularization c) Retinal tear d) Macular atrophy",
+        "answer": "A",
+        "source": "https://my.clevelandclinic.org/health/diseases/15246-macular-degeneration"
+    },
+    {
+        "question": "Which of the following is a common occupational therapy goal for AMD patients? a) Adapting to vision loss b) Increasing muscle strength c) Improving lung capacity d) Enhancing taste perception",
+        "answer": "A",
+        "source": "https://www.hopkinsmedicine.org/health/conditions-and-diseases/agerelated-macular-degeneration-amd"
+    }
+]
