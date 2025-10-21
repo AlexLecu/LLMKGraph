@@ -16,4 +16,4 @@ mistralai<=1.9.11
 matplotlib<=3.10.7
 seaborn<=0.13.2
 weaviate-client<=4.10.4
-chainlit<=2.1.0
+chainlit<=2.8.3
