@@ -1,5 +1,7 @@
-import weaviate
 import logging
+import os
+
+from weaviate_client import get_weaviate_client
 from SPARQLWrapper import SPARQLWrapper, JSON
 from dotenv import load_dotenv
 from queries import SPARQL_QUERY_ENTITIES, SPARQL_QUERY_RELATIONS, SPARQL_QUERY_PUBLICATIONS
@@ -7,12 +9,13 @@ from queries import SPARQL_QUERY_ENTITIES, SPARQL_QUERY_RELATIONS, SPARQL_QUERY_
 logger = logging.getLogger(__name__)
 
 
-GRAPHDB_SPARQL_ENDPOINT = "http://localhost:7200/repositories/amd_repo_gpt_4o_mini"
-WEAVIATE_URL = "http://localhost:8080"
-
 load_dotenv()
 
-client = weaviate.connect_to_local()
+GRAPHDB_URL = os.getenv("GRAPHDB_URL", "http://localhost:7200")
+GRAPHDB_REPO = os.getenv("GRAPHDB_REPO", "amd_repo_gpt_4o_mini")
+GRAPHDB_SPARQL_ENDPOINT = f"{GRAPHDB_URL}/repositories/{GRAPHDB_REPO}"
+
+client = get_weaviate_client()
 
 sparql = SPARQLWrapper(GRAPHDB_SPARQL_ENDPOINT)
 sparql.setReturnFormat(JSON)

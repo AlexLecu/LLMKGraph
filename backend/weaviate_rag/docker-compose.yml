@@ -5,7 +5,7 @@ services:
       dockerfile: weaviate_rag/Dockerfile
     container_name: amd-chatbot
     ports:
-      - "80:7860"
+      - "${CHATBOT_PORT:-8000}:7860"
     environment:
       - PYTHONUNBUFFERED=1
       - PORT=7860
