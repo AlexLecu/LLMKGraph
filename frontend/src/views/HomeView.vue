@@ -1070,12 +1070,21 @@ async function addRelationsToKG() {
   background: rgba(255, 255, 255, 0.92);
 }
 
+/* The overlay sits on the white canvas, so its text stays dark in both themes */
 .graph-overlay h3 {
   font-size: 17px;
+  color: #0f172a;
 }
 
 .graph-overlay p {
   max-width: 460px;
+  color: #475569;
+}
+
+.graph-overlay code.inline {
+  background: #f1f5f9;
+  border-color: #e2e8f0;
+  color: #0f172a;
 }
 
 .spinner {
