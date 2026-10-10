@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the paper below."
+title: "LLMKGraph: Knowledge Graph-Augmented Retrieval for Evidence-Based AMD Information"
+type: software
+repository-code: "https://github.com/AlexLecu/LLMKGraph"
+authors:
+  - family-names: Lecu
+    given-names: Alexandru
+    affiliation: Technical University of Cluj-Napoca
+  - family-names: Groza
+    given-names: Adrian
+    affiliation: Technical University of Cluj-Napoca
+  - family-names: Hawizy
+    given-names: Lezan
+preferred-citation:
+  type: article
+  title: "Reducing Hallucinations in Medical AI: A Knowledge Graph-Augmented Retrieval System for Evidence-Based Age-Related Macular Degeneration Information"
+  authors:
+    - family-names: Lecu
+      given-names: Alexandru
+    - family-names: Groza
+      given-names: Adrian
+    - family-names: Hawizy
+      given-names: Lezan
+  journal: IEEE Access
+  year: 2025
+  volume: 13
+  start: 210624
+  end: 210639
+  issn: 2169-3536
+  doi: 10.1109/ACCESS.2025.3643370
+  url: "https://ieeexplore.ieee.org/document/11298209"
