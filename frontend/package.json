@@ -20,7 +20,7 @@
     "@vitejs/plugin-vue": "^6.0.10",
     "@vue/tsconfig": "^0.8.1",
     "npm-run-all2": "^9.0.3",
-    "typescript": "^5.9.2",
+    "typescript": "^7.0.2",
     "vis-data": "^8.0.5",
     "vis-network": "^10.1.2",
     "vite": "^7.3.7",
