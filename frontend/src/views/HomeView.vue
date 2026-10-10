@@ -293,8 +293,8 @@ function drawRecords(records: RelationRecord[], replace: boolean, origin: string
       if (nodes.value!.get(uri) || newNodes.some((n) => n.id === uri)) continue;
       const node: any = makeNode(uri, entityKind(type));
       if (spawn) {
-        node.x = spawn.x + (Math.random() - 0.5) * 60;
-        node.y = spawn.y + (Math.random() - 0.5) * 60;
+        node.x = spawn.x;
+        node.y = spawn.y;
       }
       newNodes.push(node);
       added.nodes.push(uri);
@@ -309,7 +309,7 @@ function drawRecords(records: RelationRecord[], replace: boolean, origin: string
   updateLegend();
   const first = !network;
   mountNetwork();
-  if (!first && (newNodes.length || newEdges.length)) settleLayout(added.nodes);
+  if (!first && origin && added.nodes.length) placeAroundNode(origin, added.nodes);
   return added;
 }
 
@@ -341,6 +341,10 @@ function mountNetwork() {
     layout: { improvedLayout: true },
   };
   network = new Network(graphContainer.value, { nodes: nodes.value, edges: edges.value }, options as any);
+  if (import.meta.env.DEV) {
+    // Dev-only hook so the graph can be driven from the console / automated tests
+    (window as any).__kg = { network, toggleNode, fitGraph, nodes: nodes.value, edges: edges.value };
+  }
   network.on('hoverNode', (params: any) => focusNeighbourhood(params.node));
   network.on('blurNode', () => focusNeighbourhood(null));
   network.on('dragStart', () => focusNeighbourhood(null));
@@ -368,19 +372,61 @@ function mountNetwork() {
 
 let fitOnSettle = true;
 
-/** Re-run the layout for newly added nodes only: everything already on the
- *  canvas is pinned while physics runs, so the picture never jumps around. */
-function settleLayout(freshNodeIds: string[] = []) {
-  if (!network || !nodes.value) return;
-  const fresh = new Set(freshNodeIds);
-  const pinned: string[] = [];
-  nodes.value.forEach((n: any) => { if (!fresh.has(n.id)) pinned.push(n.id); });
-  nodes.value.update(pinned.map((id) => ({ id, fixed: { x: true, y: true } })));
-  network.once('stabilized', () => {
-    nodes.value?.update(pinned.map((id) => ({ id, fixed: { x: false, y: false } })));
+/** Place freshly added nodes on an arc around `origin`, opening away from the
+ *  side where its existing neighbours sit. Purely geometric: nothing else moves. */
+function placeAroundNode(origin: string, freshIds: string[]) {
+  if (!network || !nodes.value || !freshIds.length) return;
+  const pos = network.getPositions();
+  const o = pos[origin];
+  if (!o) return;
+  const fresh = new Set(freshIds);
+  const neighbours = (network.getConnectedNodes(origin) as string[]).filter((id) => !fresh.has(id) && pos[id]);
+  // Outward direction = opposite of the centroid of existing neighbours
+  let dx = 0, dy = 0;
+  for (const id of neighbours) { dx += pos[id]!.x - o.x; dy += pos[id]!.y - o.y; }
+  const base = neighbours.length ? Math.atan2(-dy, -dx) : -Math.PI / 2;
+  const n = freshIds.length;
+  const span = n === 1 ? 0 : Math.min(Math.PI * 1.5, Math.max(Math.PI * 0.6, n * 0.35));
+  // Chord between neighbouring fresh nodes ~150px so labels do not collide
+  const radius = n === 1 ? 200 : Math.max(220, (190 * (n - 1)) / span);
+  const sorted = [...freshIds].sort((a, b) => String(nodes.value!.get(a)?.label ?? a).localeCompare(String(nodes.value!.get(b)?.label ?? b)));
+  const taken = Object.entries(pos).filter(([id]) => !fresh.has(id)).map(([, p]) => p);
+  const placed: { x: number; y: number }[] = [];
+  const updates = sorted.map((id, i) => {
+    const angle = base - span / 2 + (n === 1 ? 0 : (span * i) / (n - 1));
+    let r = radius;
+    let x = 0, y = 0;
+    // Nudge outwards while too close to anything already on the canvas
+    for (let attempt = 0; attempt < 4; attempt++) {
+      x = o.x + Math.cos(angle) * r;
+      y = o.y + Math.sin(angle) * r;
+      const clash = [...taken, ...placed].some((q) => Math.abs(q.x - x) < 180 && Math.abs(q.y - y) < 48);
+      if (!clash) break;
+      r += 70;
+    }
+    placed.push({ x, y });
+    return { id, x, y, fixed: { x: false, y: false } };
   });
-  network.setOptions({ physics: { enabled: true } });
-  network.stabilize(150);
+  nodes.value.update(updates);
+  panIntoView([origin, ...freshIds]);
+}
+
+/** Pan (never zoom) so that the given nodes are visible, if they are not already. */
+function panIntoView(ids: string[]) {
+  if (!network || !graphContainer.value) return;
+  const pos = network.getPositions(ids);
+  const pts = ids.map((id) => pos[id]).filter(Boolean) as { x: number; y: number }[];
+  if (!pts.length) return;
+  const { clientWidth: w, clientHeight: h } = graphContainer.value;
+  const margin = 40;
+  const outside = pts.some((p) => {
+    const d = network!.canvasToDOM(p);
+    return d.x < margin || d.y < margin || d.x > w - margin || d.y > h - margin;
+  });
+  if (!outside) return;
+  const cx = pts.reduce((a, p) => a + p.x, 0) / pts.length;
+  const cy = pts.reduce((a, p) => a + p.y, 0) / pts.length;
+  network.moveTo({ position: { x: cx, y: cy }, scale: network.getScale(), animation: { duration: 350, easingFunction: 'easeInOutQuad' } });
 }
 
 /** Highlight a node's neighbourhood on hover; restore on blur. */
@@ -461,7 +507,6 @@ function collapseNode(nodeId: string) {
   for (const n of memory.nodes) delete nodeStates.value[n];
   delete expandedData.value[nodeId];
   updateLegend();
-  settleLayout();
 }
 
 // ---------------------------------------------------------------------------
