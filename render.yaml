@@ -1,0 +1,21 @@
+# Render Blueprint: free web service running the AMD chatbot container.
+# Dashboard -> New -> Blueprint -> pick this repository. Render reads this file,
+# asks for CHAT_API_KEY, builds deploy/chatbot/Dockerfile and deploys it.
+services:
+  - type: web
+    name: llmkgraph-amd-chat
+    runtime: docker
+    plan: free
+    dockerfilePath: ./deploy/chatbot/Dockerfile
+    dockerContext: .
+    healthCheckPath: /
+    autoDeploy: true
+    envVars:
+      - key: CHAT_PROVIDER
+        value: openai-compatible
+      - key: CHAT_API_BASE_URL
+        value: https://generativelanguage.googleapis.com/v1beta/openai/
+      - key: CHAT_MODELS
+        value: gemini-3.8-flash,gemini-3.1-flash-lite
+      - key: CHAT_API_KEY
+        sync: false   # entered once in the Render dashboard, never stored in git
