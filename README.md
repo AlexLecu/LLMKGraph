@@ -9,11 +9,13 @@
 [![Docker](https://img.shields.io/badge/docker-compose-2496ED.svg)](https://docs.docker.com/compose/)
 [![CI](https://github.com/AlexLecu/LLMKGraph/actions/workflows/ci.yml/badge.svg)](https://github.com/AlexLecu/LLMKGraph/actions/workflows/ci.yml)
 
-[🌐 Live Demo](https://amd-chat.ddns.net) · [🎥 Paper Overview](https://www.youtube.com/watch?v=PbS0i7zZnZk) · [🎬 Platform Demo](https://www.youtube.com/watch?v=0qlS2vuFpTo) · [📄 Paper](https://doi.org/10.1109/ACCESS.2025.3643370) · [📚 Citation](#-citation) · [🚀 Deploy](DEPLOYMENT.md)
+[🌐 Live Demo](https://alexlecu.github.io/LLMKGraph/) · [💬 Chatbot](https://llmkgraph-amd-chat.onrender.com/) · [🎥 Paper Overview](https://www.youtube.com/watch?v=PbS0i7zZnZk) · [🎬 Platform Demo](https://www.youtube.com/watch?v=0qlS2vuFpTo) · [📄 Paper](https://doi.org/10.1109/ACCESS.2025.3643370) · [📚 Citation](#-citation) · [🚀 Deploy](DEPLOYMENT.md)
 
 **Official code for the paper** "[Reducing Hallucinations in Medical AI: A Knowledge Graph-Augmented Retrieval System for Evidence-Based Age-Related Macular Degeneration Information](https://doi.org/10.1109/ACCESS.2025.3643370)", *IEEE Access* **13**, 210624–210639, 2025.
 
 <img src="assets/system_architecture.svg" alt="LLMKGraph system architecture" width="90%">
+
+*Try it: the [web interface](https://alexlecu.github.io/LLMKGraph/) is on GitHub Pages and the [chatbot](https://llmkgraph-amd-chat.onrender.com/) runs on a free Render instance (it sleeps when idle, so the first request may take a minute).*
 
 *Three layers: LLM-based knowledge graph construction over AMD literature, a Graph-RAG chatbot grounded in that graph, and the web interfaces and evaluation suite built on top.*
 
