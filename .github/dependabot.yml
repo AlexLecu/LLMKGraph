@@ -4,6 +4,9 @@ updates:
     directories:
       - "/backend"
       - "/backend/weaviate_rag"
+    # Only open a PR when the new release falls outside the allowed range
+    # (i.e. a new major); ">=x,<major" ranges already accept minors/patches.
+    versioning-strategy: increase-if-necessary
     schedule:
       interval: "weekly"
       time: "07:30"
@@ -14,9 +17,14 @@ updates:
     groups:
       python-minor-and-patch:
         update-types: ["minor", "patch"]
+    ignore:
+      # mistralai 3.x removed the `Mistral` client used in bulk_relations.py (PR #73)
+      - dependency-name: "mistralai"
+        update-types: ["version-update:semver-major"]
 
   - package-ecosystem: "npm"
     directory: "/frontend"
+    versioning-strategy: increase-if-necessary
     schedule:
       interval: "weekly"
       time: "07:30"
@@ -27,6 +35,12 @@ updates:
     groups:
       npm-minor-and-patch:
         update-types: ["minor", "patch"]
+    ignore:
+      # Majors that break the current toolchain (see closed PRs #66, #67)
+      - dependency-name: "typescript"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "vue-router"
+        update-types: ["version-update:semver-major"]
 
   - package-ecosystem: "docker"
     directories:
