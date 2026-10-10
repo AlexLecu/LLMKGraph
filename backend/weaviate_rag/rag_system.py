@@ -19,43 +19,11 @@ load_dotenv()
 
 import os
 
-def get_weaviate_client():
-    """Get a Weaviate client based on environment configuration.
+try:
+    from weaviate_rag.weaviate_client import get_weaviate_client
+except ImportError:  # run as a plain script from this directory
+    from weaviate_client import get_weaviate_client
 
-    - WEAVIATE_URL + WEAVIATE_API_KEY  -> Weaviate Cloud (free 14-day sandbox)
-    - WEAVIATE_MODE=embedded           -> in-process Weaviate, data persisted in
-                                          WEAVIATE_DATA_PATH (Linux only; handy
-                                          for a single-container deploy)
-    - WEAVIATE_HOST (default localhost) -> a running Weaviate server
-    """
-    cloud_url = os.getenv('WEAVIATE_URL')
-    if cloud_url:
-        from weaviate.classes.init import Auth
-        return weaviate.connect_to_weaviate_cloud(
-            cluster_url=cloud_url,
-            auth_credentials=Auth.api_key(os.environ['WEAVIATE_API_KEY']),
-        )
-
-    if os.getenv('WEAVIATE_MODE', '').lower() == 'embedded':
-        return weaviate.connect_to_embedded(
-            persistence_data_path=os.getenv('WEAVIATE_DATA_PATH', './weaviate_data'),
-        )
-
-    weaviate_host = os.getenv('WEAVIATE_HOST', 'localhost')
-    weaviate_port = int(os.getenv('WEAVIATE_HTTP_PORT', '8080'))
-    weaviate_grpc_port = int(os.getenv('WEAVIATE_GRPC_PORT', '50051'))
-
-    if weaviate_host == 'localhost':
-        return weaviate.connect_to_local(port=weaviate_port, grpc_port=weaviate_grpc_port)
-    else:
-        return weaviate.connect_to_custom(
-            http_host=weaviate_host,
-            http_port=weaviate_port,
-            http_secure=False,
-            grpc_host=weaviate_host,
-            grpc_port=weaviate_grpc_port,
-            grpc_secure=False
-        )
 
 class GraphRAGSystem:
 

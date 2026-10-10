@@ -1,38 +1,74 @@
 <script setup lang="ts">
-import { ref, onMounted, nextTick } from 'vue';
+import { ref, computed, onMounted, nextTick } from 'vue';
 import 'vue-loading-overlay/dist/css/index.css';
 import { useLoading } from 'vue-loading-overlay';
 import axios from 'axios';
 import { Network } from 'vis-network';
 import { DataSet } from 'vis-data';
-import { API_URL, GRAPHDB_URL } from '@/config';
+import AppSidebar from '@/components/AppSidebar.vue';
+import { API_URL } from '@/config';
+import {
+  ONT_NS, ALL_STYLES, ENTITY_STYLES, localName, prettyLabel, entityKind, makeNode,
+  type GraphNode,
+} from '@/graph/palette';
 
-interface Edge {
+/** One causal relation, whether stored reified (REL_ node) or as a direct triple. */
+interface RelationRecord {
+  id: string;            // relation URI (reified) or "subject|predicate|object" (legacy triple)
+  reified: boolean;
+  subject: string;
+  subjectType: string | null;
+  predicate: string;
+  object: string;
+  objectType: string | null;
+  publication: string | null;
+}
+
+/** What vis-network draws: one edge per relation. */
+interface GraphEdge {
   id: string;
   from: string;
   to: string;
-  label: string;
-  predicate: string;
+  label: string;         // predicate local name, drawn on the canvas
+  title?: string;        // hover tooltip
+  predicate: string;     // predicate URI
+  relation: string | null;   // REL_... local name when reified
+  publication: string | null;
 }
 
 interface Repository {
   id: string;
 }
 
-// Reactive State Variables
+type GraphState = 'loading' | 'ready' | 'empty' | 'error';
+type ApiStatus = 'unknown' | 'ok' | 'down';
+
+const RDF_TYPE = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type';
+const CAUSAL_PREDICATES = ['cause', 'affect', 'prevent', 'aggravate', 'diagnose', 'improve', 'present', 'progression', 'test', 'treat'];
+const TYPE_FILTER = (v: string) =>
+  `OPTIONAL { ?${v} a ?${v}Type . FILTER(STRSTARTS(STR(?${v}Type), "${ONT_NS}") && ?${v}Type != <${ONT_NS}Entity>) }`;
+
+// ---------------------------------------------------------------------------
+// State
+// ---------------------------------------------------------------------------
 const abstract = ref('');
 const responseText = ref('');
 const statusText = ref('');
+const statusKind = ref<'info' | 'success' | 'error'>('info');
 const validationError = ref('');
 const searchValidationError = ref('');
 const repositories = ref<Repository[]>([]);
 const currentRepoId = ref('amd_repo_mistral');
 const queryText = ref('');
 const filterType = ref('');
-const results = ref<{ relation: string; subject: string; predicate: string; object: string; publication: string }[]>([]);
-const selectedEdge = ref<Edge | null>(null);
-const loadingGraph = ref(true);
+const results = ref<RelationRecord[]>([]);
+const selectedResultIndex = ref<number | null>(null);
+const selectedEdge = ref<GraphEdge | null>(null);
+const graphState = ref<GraphState>('loading');
+const graphError = ref('');
+const apiStatus = ref<ApiStatus>('unknown');
 const nodeStates = ref<Record<string, string>>({});
+const legendKinds = ref<string[]>([]);
 
 const abstractFile = ref<File | null>(null);
 const relationsFile = ref<File | Blob | null>(null);
@@ -40,281 +76,403 @@ const selectedModel = ref<string>('');
 const abstractDownloadLink = ref<string | null>(null);
 const relationsFileReady = ref(false);
 const uploadStatus = ref<string | null>(null);
-const infoVisible = ref(false);
-const deepSeekInfoVisible = ref(false);
-const repoInfoVisible = ref(false);
 
-// Loading Indicator & Graph Refs
 const $loading = useLoading();
 let statusTimeout: number | null = null;
 const graphContainer = ref<HTMLElement | null>(null);
 let network: Network | null = null;
 const nodes = ref<DataSet<any> | null>(null);
-const edges = ref<DataSet<Edge> | null>(null);
-const expandedData = ref<Record<string, { nodes: any[]; edges: any[] }>>({});
+const edges = ref<DataSet<GraphEdge> | null>(null);
+const expandedData = ref<Record<string, { nodes: string[]; edges: string[] }>>({});
 
-// Utility Functions
-function getLocalName(uri: string): string {
-  const hashIndex = uri.lastIndexOf('#');
-  if (hashIndex !== -1) return uri.substring(hashIndex + 1);
-  const slashIndex = uri.lastIndexOf('/');
-  if (slashIndex !== -1) return uri.substring(slashIndex + 1);
-  return uri;
-}
-
-function clearStatusTextAfterDelay() {
-  if (statusTimeout) clearTimeout(statusTimeout);
-  statusTimeout = setTimeout(() => {
-    statusText.value = '';
-  }, 5000);
-}
-
-// Data Fetching & Initialization
-onMounted(() => {
-  fetchData();
-  fetchRepositories();
+const selectedRelationText = computed(() => {
+  const e = selectedEdge.value;
+  if (!e) return '';
+  const src = e.publication ? `  ·  source: ${localName(e.publication)}` : '';
+  return `${prettyLabel(localName(e.from))}  →  ${e.label}  →  ${prettyLabel(localName(e.to))}${src}`;
 });
+
+const legendItems = computed(() =>
+  legendKinds.value.map((k) => ({ kind: k, ...ALL_STYLES[k] })),
+);
+
+// ---------------------------------------------------------------------------
+// Helpers
+// ---------------------------------------------------------------------------
+function setStatus(text: string, kind: 'info' | 'success' | 'error' = 'info') {
+  statusText.value = text;
+  statusKind.value = kind;
+  if (statusTimeout) clearTimeout(statusTimeout);
+  statusTimeout = window.setTimeout(() => { statusText.value = ''; }, 5000);
+}
+
+/** Read-only SPARQL through the API proxy (the browser never calls GraphDB directly). */
+function sparqlGet(repoId: string, query: string) {
+  return axios.post(`${API_URL}/api/sparql`, { repo_id: repoId, query }, { timeout: 60000 });
+}
+
+function describeAxiosError(error: any): string {
+  if (error?.response?.data?.error) return String(error.response.data.error);
+  if (error?.response) return `The API answered ${error.response.status} for repository "${currentRepoId.value}".`;
+  return `No answer from the API at ${API_URL}.`;
+}
+
+/** SPARQL JSON bindings -> relation records (both schemas). */
+function recordsFromBindings(bindings: any[]): RelationRecord[] {
+  const out: RelationRecord[] = [];
+  const seen = new Set<string>();
+  for (const b of bindings) {
+    const subject = b.subject?.value;
+    const predicate = b.predicate?.value;
+    const object = b.object?.value;
+    if (!subject || !predicate || !object) continue;
+    if (predicate === RDF_TYPE) continue;
+    const relation = b.relation?.value as string | undefined;
+    const id = relation ?? `${subject}|${predicate}|${object}`;
+    if (seen.has(id)) continue; // several rdf:type rows per entity collapse into one
+    seen.add(id);
+    out.push({
+      id,
+      reified: !!relation,
+      subject,
+      subjectType: b.subjectType?.value ?? null,
+      predicate,
+      object,
+      objectType: b.objectType?.value ?? null,
+      publication: b.publication?.value ?? null,
+    });
+  }
+  return out;
+}
+
+function edgeFromRecord(r: RelationRecord): GraphEdge {
+  const label = localName(r.predicate);
+  const source = r.publication ? ` · source: ${localName(r.publication)}` : '';
+  return {
+    id: r.id,
+    from: r.subject,
+    to: r.object,
+    label,
+    title: `${prettyLabel(localName(r.subject))} ${label} ${prettyLabel(localName(r.object))}${source}`,
+    predicate: r.predicate,
+    relation: r.reified ? localName(r.id) : null,
+    publication: r.publication,
+  };
+}
+
+// ---------------------------------------------------------------------------
+// Startup
+// ---------------------------------------------------------------------------
+onMounted(() => {
+  checkApi();
+  fetchRepositories();
+  fetchData();
+});
+
+async function checkApi() {
+  try {
+    await axios.get(`${API_URL}/api/health`, { timeout: 4000 });
+    apiStatus.value = 'ok';
+  } catch {
+    apiStatus.value = 'down';
+  }
+}
 
 async function fetchRepositories() {
   try {
-    const response = await axios.get<Repository[]>(`${API_URL}/api/available_repositories`);
+    const response = await axios.get<Repository[]>(`${API_URL}/api/available_repositories`, { timeout: 8000 });
     repositories.value = response.data;
+    if (repositories.value.length && !repositories.value.some((r) => r.id === currentRepoId.value)) {
+      // Prefer an AMD repository when GraphDB also hosts other projects
+      const preferred = repositories.value.find((r) => /amd/i.test(r.id)) ?? repositories.value[0]!;
+      currentRepoId.value = preferred.id;
+      fetchData();
+    }
   } catch (error) {
-    console.error("Error fetching repositories:", error);
+    console.error('Error fetching repositories:', error);
   }
 }
 
 function activateRepository(repoId: string) {
+  if (repoId === currentRepoId.value) return;
   currentRepoId.value = repoId;
+  results.value = [];
+  selectedResultIndex.value = null;
+  deselectEdge();
   fetchData();
 }
 
-async function fetchData(query: string | null = null) {
-  const endpointUrl = `${GRAPHDB_URL}/repositories/${currentRepoId.value}`;
-  const defaultQuery = `
-    PREFIX c: <http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD#>
+// ---------------------------------------------------------------------------
+// Queries
+// ---------------------------------------------------------------------------
+/** Relations around one entity (reified + legacy triples), both directions. */
+function neighbourhoodQuery(entityUri: string, limit: number) {
+  const preds = CAUSAL_PREDICATES.map((p) => `c:${p}`).join(', ');
+  return `
+    PREFIX c: <${ONT_NS}>
     PREFIX prov: <http://www.w3.org/ns/prov#>
-    SELECT ?relation ?subject ?predicate ?object ?publication WHERE {
-      { 
-        BIND(c:age_related_macular_degeneration AS ?subject)
-        ?subject ?predicate ?object .
-        FILTER(?predicate IN (c:cause, c:affect, c:prevent, c:aggravate, 
-                              c:diagnose, c:improve, c:present, c:progression, 
-                              c:test, c:treat))
-        OPTIONAL { ?subject prov:wasDerivedFrom ?publication }
-      }
-      UNION
-      { 
-        BIND(c:age_related_macular_degeneration AS ?subject)
+    SELECT ?relation ?subject ?predicate ?object ?publication ?subjectType ?objectType WHERE {
+      {
         ?relation a c:RELATION ;
                   c:relation_subject ?subject ;
                   c:relation_predicate ?predicate ;
                   c:relation_object ?object .
+        FILTER(?subject = <${entityUri}> || ?object = <${entityUri}>)
         OPTIONAL { ?relation prov:wasDerivedFrom ?publication }
       }
-    }
-    LIMIT 10
-  `.replace(/\s+/g, ' ');
-
-  try {
-    const response = await axios.get(endpointUrl, {
-      params: { query: defaultQuery },
-      headers: { 
-        Accept: 'application/sparql-results+json',
-        'Content-Type': 'application/x-www-form-urlencoded'
-      },
-      paramsSerializer: (params: Record<string, string>) =>
-        Object.keys(params)
-          .map(key => `${key}=${encodeURIComponent(params[key] ?? "")}`)
-          .join('&')
-    });
-    processData(response.data);
-    loadingGraph.value = false;
-  } catch (error) {
-    console.error('Error fetching data:', error);
-    loadingGraph.value = false;
-  }
-}
-
-function processData(data: any) {
-  const nodesArray: any[] = [];
-  const edgesArray: any[] = [];
-  const nodeIds = new Set<string>();
-
-  // Define the full URIs for each relation role
-  const predicateURIs = {
-    relation_subject: "http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD#relation_subject",
-    relation_predicate: "http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD#relation_predicate",
-    relation_object: "http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD#relation_object",
-    wasDerivedFrom: "http://www.w3.org/ns/prov#wasDerivedFrom"
-  };
-
-  data.results.bindings.forEach((binding: any) => {
-    const { relation, subject, predicate, object, publication } = {
-      relation: binding.relation?.value,
-      subject: binding.subject?.value,
-      predicate: binding.predicate?.value,
-      object: binding.object?.value,
-      publication: binding.publication?.value,
-    };
-
-    if (subject && predicate && object) {
-      if (relation) {
-        // Use a label for the relation node – here we show "Relation" plus publication info if available.
-        const relationLabel = publication
-          ? `Relation (Pub: ${getLocalName(publication)})`
-          : "Relation";
-        // Create nodes: relation, subject, predicate, object
-        addNode(nodesArray, nodeIds, relation, relationLabel, "#FF9900", "diamond");
-        addNode(nodesArray, nodeIds, subject, getLocalName(subject), "#6AA84F", "ellipse");
-        addNode(nodesArray, nodeIds, predicate, getLocalName(predicate), "#9900FF", "box");
-        addNode(nodesArray, nodeIds, object, getLocalName(object), "#6AA84F", "ellipse");
-
-        // Create edges using the correct full URIs for each role
-        edgesArray.push({
-          from: relation,
-          to: subject,
-          label: "relation_subject",
-          predicate: predicateURIs.relation_subject
-        });
-        edgesArray.push({
-          from: relation,
-          to: predicate,
-          label: "relation_predicate",
-          predicate: predicateURIs.relation_predicate
-        });
-        edgesArray.push({
-          from: relation,
-          to: object,
-          label: "relation_object",
-          predicate: predicateURIs.relation_object
-        });
-        if (publication) {
-          addNode(nodesArray, nodeIds, publication, getLocalName(publication), "#1E90FF", "square");
-          edgesArray.push({
-            from: relation,
-            to: publication,
-            label: "wasDerivedFrom",
-            predicate: predicateURIs.wasDerivedFrom
-          });
-        }
-      } else {
-        // For simple triples without an explicit relation node
-        addNode(nodesArray, nodeIds, subject, getLocalName(subject), "#6AA84F", "ellipse");
-        addNode(nodesArray, nodeIds, object, getLocalName(object), "#6AA84F", "ellipse");
-        edgesArray.push({
-          from: subject,
-          to: object,
-          label: getLocalName(predicate),
-          predicate: predicate
-        });
+      UNION
+      {
+        ?subject ?predicate ?object .
+        FILTER(?subject = <${entityUri}> || ?object = <${entityUri}>)
+        FILTER(?predicate IN (${preds}))
+        OPTIONAL { ?subject prov:wasDerivedFrom ?publication }
       }
+      ${TYPE_FILTER('subject')}
+      ${TYPE_FILTER('object')}
     }
-  });
-
-  nextTick(() => renderGraph(nodesArray, edgesArray));
+    LIMIT ${limit}
+  `.replace(/\s+/g, ' ');
 }
 
-function addNode(nodesArray: any[], nodeIds: Set<string>, uri: string, label: string, color: string, shape: string) {
-  if (!nodeIds.has(uri)) {
-    nodesArray.push({
-      id: uri,
-      label,
-      color,
-      shape,
-      font: { color: "#333", size: 14 }
-    });
-    nodeIds.add(uri);
+// ---------------------------------------------------------------------------
+// Default graph (neighbourhood of the AMD node)
+// ---------------------------------------------------------------------------
+async function fetchData() {
+  graphState.value = 'loading';
+  graphError.value = '';
+  try {
+    const response = await sparqlGet(currentRepoId.value, neighbourhoodQuery(`${ONT_NS}age_related_macular_degeneration`, 15));
+    const records = recordsFromBindings(response.data?.results?.bindings ?? []);
+    if (!records.length) {
+      clearGraph();
+      graphState.value = 'empty';
+      return;
+    }
+    nextTick(() => drawRecords(records, true));
+    graphState.value = 'ready';
+  } catch (error: any) {
+    console.error('Error fetching data:', error);
+    clearGraph();
+    graphState.value = 'error';
+    graphError.value = describeAxiosError(error);
   }
 }
 
-// Graph Visualization
-function renderGraph(nodesArray: any[], edgesArray: any[]) {
-  if (!graphContainer.value) {
-    console.error('Graph container is not available.');
-    return;
-  }
+// ---------------------------------------------------------------------------
+// Rendering
+// ---------------------------------------------------------------------------
+function ensureDataSets() {
   if (!nodes.value) nodes.value = new DataSet();
   if (!edges.value) edges.value = new DataSet();
+}
 
-  nodes.value.clear();
-  edges.value.clear();
-  nodes.value.add(nodesArray);
-  edges.value.add(edgesArray);
+function updateLegend() {
+  const kinds = new Set<string>();
+  nodes.value?.forEach((n: any) => kinds.add(n.kind ?? 'ENTITY'));
+  const order = [...Object.keys(ENTITY_STYLES), 'ENTITY'];
+  legendKinds.value = order.filter((k) => kinds.has(k));
+}
 
-  const data = { nodes: nodes.value, edges: edges.value };
+/** Add the records' entities and edges to the canvas; `replace` clears it first. */
+function drawRecords(records: RelationRecord[], replace: boolean, origin: string | null = null): { nodes: string[]; edges: string[] } {
+  ensureDataSets();
+  // Spawn new nodes next to the node that was expanded, so they grow out of it
+  const spawn = origin && network ? network.getPositions([origin])[origin] : undefined;
+  if (replace) {
+    nodes.value!.clear();
+    edges.value!.clear();
+    nodeStates.value = {};
+    expandedData.value = {};
+    fitOnSettle = true;
+  }
+  const added = { nodes: [] as string[], edges: [] as string[] };
+  const newNodes: GraphNode[] = [];
+  const newEdges: GraphEdge[] = [];
+  for (const r of records) {
+    for (const [uri, type] of [[r.subject, r.subjectType], [r.object, r.objectType]] as const) {
+      if (nodes.value!.get(uri) || newNodes.some((n) => n.id === uri)) continue;
+      const node: any = makeNode(uri, entityKind(type));
+      if (spawn) {
+        node.x = spawn.x;
+        node.y = spawn.y;
+      }
+      newNodes.push(node);
+      added.nodes.push(uri);
+      nodeStates.value[uri] = 'collapsed';
+    }
+    if (edges.value!.get(r.id) || newEdges.some((e) => e.id === r.id)) continue;
+    newEdges.push(edgeFromRecord(r));
+    added.edges.push(r.id);
+  }
+  nodes.value!.add(newNodes);
+  edges.value!.add(newEdges);
+  updateLegend();
+  const first = !network;
+  mountNetwork();
+  if (!first && origin && added.nodes.length) placeAroundNode(origin, added.nodes);
+  return added;
+}
 
+function mountNetwork() {
+  if (!graphContainer.value || !nodes.value || !edges.value) return;
+  if (network) return;
   const options = {
     nodes: {
-      shape: 'dot',
-      size: 25,
-      font: { size: 14, face: 'Helvetica', color: '#333' },
+      shape: 'ellipse',
       borderWidth: 2,
-      shadow: { enabled: true, color: 'rgba(0,0,0,0.3)' }
+      margin: { top: 6, right: 10, bottom: 6, left: 10 },
+      shadow: { enabled: true, color: 'rgba(15,23,42,0.15)', size: 6, x: 0, y: 2 },
+      font: { size: 15, face: 'Helvetica, Arial, sans-serif', color: '#1f2937' },
     },
     edges: {
-      arrows: 'to',
-      smooth: {
-        enabled: true,
-        type: "continuous",
-        roundness: 0.5
-      },
-      font: { size: 12, align: 'middle' },
-      color: { color: '#848484', highlight: '#848484' },
-      width: 2
+      arrows: { to: { enabled: true, scaleFactor: 0.7 } },
+      smooth: { enabled: true, type: 'continuous', roundness: 0.25 },
+      font: { size: 12, align: 'horizontal', color: '#475569', strokeWidth: 4, strokeColor: '#ffffff' },
+      color: { color: '#94a3b8', highlight: '#2563eb', hover: '#2563eb' },
+      selectionWidth: 2,
+      width: 1.6,
     },
     physics: {
-      stabilization: { iterations: 100, updateInterval: 25 },
-      barnesHut: { gravitationalConstant: -1500, springLength: 150 }
+      solver: 'barnesHut',
+      barnesHut: { gravitationalConstant: -6000, centralGravity: 0.15, springLength: 190, springConstant: 0.03, damping: 0.5, avoidOverlap: 0.6 },
+      stabilization: { iterations: 300, updateInterval: 25, fit: false },
     },
-    interaction: { hover: true, tooltipDelay: 200 },
-    layout: { improvedLayout: true }
+    interaction: { hover: true, tooltipDelay: 150, zoomSpeed: 0.6 },
+    layout: { improvedLayout: true },
   };
-
-  if (!network) {
-    network = new Network(graphContainer.value, data, options);
-  } else {
-    network.setData(data);
+  network = new Network(graphContainer.value, { nodes: nodes.value, edges: edges.value }, options as any);
+  if (import.meta.env.DEV) {
+    // Dev-only hook so the graph can be driven from the console / automated tests
+    (window as any).__kg = { network, toggleNode, fitGraph, nodes: nodes.value, edges: edges.value };
   }
-
-  network.off('click');
+  network.on('hoverNode', (params: any) => focusNeighbourhood(params.node));
+  network.on('blurNode', () => focusNeighbourhood(null));
+  network.on('dragStart', () => focusNeighbourhood(null));
   network.on('click', async (params: any) => {
     if (params.nodes.length > 0) {
-      const nodeId = params.nodes[0];
-      await toggleNode(nodeId);
+      focusNeighbourhood(null);
+      await toggleNode(params.nodes[0]);
     } else if (params.edges.length > 0) {
-      const edgeId = params.edges[0];
-      selectEdge(edgeId);
+      selectEdge(params.edges[0]);
     } else {
       deselectEdge();
     }
   });
+  // Physics only runs until the layout settles; otherwise the graph drifts forever.
+  // The view is re-fitted only when the canvas was redrawn from scratch, so the
+  // user's zoom and pan survive expanding or collapsing a node.
+  network.on('stabilized', () => {
+    network?.setOptions({ physics: { enabled: false } });
+    if (fitOnSettle) {
+      fitOnSettle = false;
+      network?.fit({ animation: false });
+    }
+  });
+}
+
+let fitOnSettle = true;
+
+/** Place freshly added nodes on an arc around `origin`, opening away from the
+ *  side where its existing neighbours sit. Purely geometric: nothing else moves. */
+function placeAroundNode(origin: string, freshIds: string[]) {
+  if (!network || !nodes.value || !freshIds.length) return;
+  const pos = network.getPositions();
+  const o = pos[origin];
+  if (!o) return;
+  const fresh = new Set(freshIds);
+  const neighbours = (network.getConnectedNodes(origin) as string[]).filter((id) => !fresh.has(id) && pos[id]);
+  // Outward direction = opposite of the centroid of existing neighbours
+  let dx = 0, dy = 0;
+  for (const id of neighbours) { dx += pos[id]!.x - o.x; dy += pos[id]!.y - o.y; }
+  const base = neighbours.length ? Math.atan2(-dy, -dx) : -Math.PI / 2;
+  const n = freshIds.length;
+  const span = n === 1 ? 0 : Math.min(Math.PI * 1.5, Math.max(Math.PI * 0.6, n * 0.35));
+  // Chord between neighbouring fresh nodes ~150px so labels do not collide
+  const radius = n === 1 ? 200 : Math.max(220, (190 * (n - 1)) / span);
+  const sorted = [...freshIds].sort((a, b) => String(nodes.value!.get(a)?.label ?? a).localeCompare(String(nodes.value!.get(b)?.label ?? b)));
+  // Approximate half-width of a node from its label (canvas units at scale 1)
+  const halfWidth = (id: string) => (String(nodes.value!.get(id)?.label ?? '').length * 7.6 + 30) / 2;
+  const taken = Object.entries(pos).filter(([id]) => !fresh.has(id)).map(([id, p]) => ({ x: p.x, y: p.y, hw: halfWidth(id) }));
+  const placed: { x: number; y: number; hw: number }[] = [];
+  const updates = sorted.map((id, i) => {
+    const angle = base - span / 2 + (n === 1 ? 0 : (span * i) / (n - 1));
+    const hw = halfWidth(id);
+    let r = radius;
+    let x = 0, y = 0;
+    // Nudge outwards while overlapping anything already on the canvas
+    for (let attempt = 0; attempt < 5; attempt++) {
+      x = o.x + Math.cos(angle) * r;
+      y = o.y + Math.sin(angle) * r;
+      const clash = [...taken, ...placed].some((q) => Math.abs(q.x - x) < q.hw + hw + 16 && Math.abs(q.y - y) < 46);
+      if (!clash) break;
+      r += 60;
+    }
+    placed.push({ x, y, hw });
+    return { id, x, y, fixed: { x: false, y: false } };
+  });
+  nodes.value.update(updates);
+  panIntoView([origin, ...freshIds]);
+}
+
+/** Pan (never zoom) so that the given nodes are visible, if they are not already. */
+function panIntoView(ids: string[]) {
+  if (!network || !graphContainer.value) return;
+  const pos = network.getPositions(ids);
+  const pts = ids.map((id) => pos[id]).filter(Boolean) as { x: number; y: number }[];
+  if (!pts.length) return;
+  const { clientWidth: w, clientHeight: h } = graphContainer.value;
+  const margin = 40;
+  const outside = pts.some((p) => {
+    const d = network!.canvasToDOM(p);
+    return d.x < margin || d.y < margin || d.x > w - margin || d.y > h - margin;
+  });
+  if (!outside) return;
+  const cx = pts.reduce((a, p) => a + p.x, 0) / pts.length;
+  const cy = pts.reduce((a, p) => a + p.y, 0) / pts.length;
+  network.moveTo({ position: { x: cx, y: cy }, scale: network.getScale(), animation: { duration: 350, easingFunction: 'easeInOutQuad' } });
+}
+
+/** Highlight a node's neighbourhood on hover; restore on blur. */
+function focusNeighbourhood(nodeId: string | null) {
+  if (!nodes.value || !edges.value || !network) return;
+  if (nodeId === null) {
+    nodes.value.update(nodes.value.map((n: any) => ({ id: n.id, opacity: 1 })));
+    edges.value.update(edges.value.map((e: any) => ({ id: e.id, color: { color: '#94a3b8', highlight: '#2563eb', hover: '#2563eb' }, font: { color: '#475569' } })));
+    return;
+  }
+  const near = new Set<string>([nodeId, ...(network.getConnectedNodes(nodeId) as string[])]);
+  nodes.value.update(nodes.value.map((n: any) => ({ id: n.id, opacity: near.has(n.id) ? 1 : 0.18 })));
+  edges.value.update(edges.value.map((e: any) => {
+    const on = e.from === nodeId || e.to === nodeId;
+    return { id: e.id, color: on ? { color: '#2563eb', highlight: '#2563eb', hover: '#2563eb' } : { color: 'rgba(148,163,184,0.25)', highlight: '#2563eb', hover: '#2563eb' }, font: { color: on ? '#1d4ed8' : 'rgba(71,85,105,0.3)' } };
+  }));
+}
+
+function fitGraph() {
+  network?.fit({ animation: { duration: 400, easingFunction: 'easeInOutQuad' } });
 }
 
 function selectEdge(edgeId: string) {
-  if (edges.value) {
-    const edge = edges.value.get(edgeId);
-    if (edge) {
-      selectedEdge.value = edge;
-      
-      let displayLabel = "";
-
-      if (edge.label === "relation_predicate") {
-        displayLabel = `${getLocalName(edge.from)} ${edge.label} ${getLocalName(edge.predicate)}`;
-      } else {
-        displayLabel = `${getLocalName(edge.from)} ${edge.label} ${getLocalName(edge.to)}`;
-      }
-      responseText.value = displayLabel;
-    }
-  }
+  const edge = edges.value?.get(edgeId);
+  if (edge) selectedEdge.value = edge;
 }
 
 function deselectEdge() {
   selectedEdge.value = null;
-  responseText.value = '';
+  network?.unselectAll();
 }
 
-// Node Expansion / Collapse
+function clearGraph() {
+  nodes.value?.clear();
+  edges.value?.clear();
+  nodeStates.value = {};
+  expandedData.value = {};
+  legendKinds.value = [];
+}
+
+// ---------------------------------------------------------------------------
+// Node expansion / collapse
+// ---------------------------------------------------------------------------
 async function toggleNode(nodeId: string) {
   if (nodeStates.value[nodeId] === 'expanded') {
     collapseNode(nodeId);
@@ -325,119 +483,45 @@ async function toggleNode(nodeId: string) {
   }
 }
 
-function addNodesAndEdgesFromMemory(memory: { nodes: any[]; edges: any[] }) {
-  if (nodes.value && memory.nodes.length) {
-    nodes.value.add(memory.nodes);
-  }
-  if (edges.value && memory.edges.length) {
-    edges.value.add(memory.edges);
-  }
-}
+const expanding = ref(false);
 
 async function expandNode(nodeId: string) {
-  if (expandedData.value[nodeId]) {
-    addNodesAndEdgesFromMemory(expandedData.value[nodeId]);
-  } else {
-    const connectedBindings = await fetchConnectedNodes(nodeId);
-    const memory: { nodes: any[]; edges: any[] } = { nodes: [], edges: [] };
-    const newNodes: any[] = [];
-    const newEdges: any[] = [];
-    const nodeIds = new Set(nodes.value?.getIds() || []);
-
-    connectedBindings.forEach((binding: any) => {
-      const s = binding.subject.value;
-      const p = binding.predicate.value;
-      const o = binding.object.value;
-      if (!nodeIds.has(s)) {
-        const nodeObj = { id: s, label: getLocalName(s), shape: 'ellipse', color: '#6AA84F' };
-        newNodes.push(nodeObj);
-        nodeIds.add(s);
-        nodeStates.value[s] = 'collapsed';
-        memory.nodes.push(nodeObj);
-      }
-      if (!nodeIds.has(o)) {
-        const nodeObj = { id: o, label: getLocalName(o), shape: 'ellipse', color: '#6AA84F' };
-        newNodes.push(nodeObj);
-        nodeIds.add(o);
-        nodeStates.value[o] = 'collapsed';
-        memory.nodes.push(nodeObj);
-      }
-      const edgeObj = { from: s, to: o, label: getLocalName(p), predicate: p };
-      newEdges.push(edgeObj);
-      memory.edges.push(edgeObj);
-    });
-    if (nodes.value && newNodes.length) nodes.value.add(newNodes);
-    if (edges.value && newEdges.length) edges.value.add(newEdges);
-    expandedData.value[nodeId] = memory;
-  }
-}
-
-async function fetchConnectedNodes(nodeId: string) {
-  const endpointUrl = `${GRAPHDB_URL}/repositories/${currentRepoId.value}`;
-  const baseURI = 'http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD#';
-  const isURI = /^(http|https):\/\/.+$/.test(nodeId);
-  const formattedNodeId = isURI ? nodeId : `${baseURI}${nodeId}`;
-  const sparqlQuery = `
-    SELECT ?subject ?predicate ?object WHERE {
-      { ?subject ?predicate ?object . FILTER(?subject = <${formattedNodeId}> ) }
-      UNION
-      { ?subject ?predicate ?object . FILTER(?object = <${formattedNodeId}> ) }
-    } LIMIT 100
-  `;
-
+  if (expandedData.value[nodeId]) return; // already on the canvas
+  expanding.value = true;
   try {
-    const response = await axios.get(endpointUrl, {
-      params: { query: sparqlQuery },
-      headers: { Accept: 'application/sparql-results+json' }
-    });
-    return response.data.results.bindings;
+    const response = await sparqlGet(currentRepoId.value, neighbourhoodQuery(nodeId, 60));
+    const records = recordsFromBindings(response.data?.results?.bindings ?? []);
+    const added = drawRecords(records, false, nodeId);
+    expandedData.value[nodeId] = added;
+    if (!added.edges.length) setStatus('No further relations for this node.', 'info');
   } catch (error) {
-    console.error('Error fetching connected nodes:', error);
-    return [];
+    console.error('Error expanding node:', error);
+    setStatus('Could not load the neighbours of this node.', 'error');
+  } finally {
+    expanding.value = false;
   }
-}
-
-function addNodesAndEdges(bindings: any[]) {
-  if (!nodes.value || !edges.value) return;
-  const newNodes: any[] = [];
-  const newEdges: any[] = [];
-  const nodeIds = new Set(nodes.value.getIds());
-
-  bindings.forEach((binding: any) => {
-    const s = binding.subject.value;
-    const p = binding.predicate.value;
-    const o = binding.object.value;
-    if (!nodeIds.has(s)) {
-      newNodes.push({ id: s, label: getLocalName(s), shape: 'ellipse', color: '#6AA84F' });
-      nodeIds.add(s);
-      nodeStates.value[s] = 'collapsed';
-    }
-    if (!nodeIds.has(o)) {
-      newNodes.push({ id: o, label: getLocalName(o), shape: 'ellipse', color: '#6AA84F' });
-      nodeIds.add(o);
-      nodeStates.value[o] = 'collapsed';
-    }
-    newEdges.push({ from: s, to: o, label: getLocalName(p), predicate: p });
-  });
-  nodes.value.add(newNodes);
-  edges.value.add(newEdges);
 }
 
 function collapseNode(nodeId: string) {
-  if (!expandedData.value[nodeId] || !nodes.value || !edges.value) return;
-  const { nodes: memoryNodes, edges: memoryEdges } = expandedData.value[nodeId];
-  const edgeIds = memoryEdges.map(edge => edge.id || `${edge.from}-${edge.to}-${edge.label}`);
-  edges.value.remove(edgeIds);
-  const nodeIds = memoryNodes.map(node => node.id);
-  nodes.value.remove(nodeIds);
+  const memory = expandedData.value[nodeId];
+  if (!memory || !nodes.value || !edges.value) return;
+  edges.value.remove(memory.edges);
+  nodes.value.remove(memory.nodes);
+  for (const n of memory.nodes) delete nodeStates.value[n];
+  delete expandedData.value[nodeId];
+  updateLegend();
 }
 
+// ---------------------------------------------------------------------------
+// Search
+// ---------------------------------------------------------------------------
 function performSearch() {
   if (!queryText.value.trim()) {
     searchValidationError.value = 'Please enter a search term.';
     return;
   }
   searchValidationError.value = '';
+  selectedResultIndex.value = null;
   const loader = $loading.show();
 
   const params = new URLSearchParams();
@@ -446,312 +530,107 @@ function performSearch() {
   params.append('repo_id', currentRepoId.value);
 
   fetch(`${API_URL}/api/search?${params.toString()}`)
-    .then(response => response.json())
-    .then((data) => {
-      // Map each field to its local name only.
-      results.value = data.map((result: any) => ({
-        relation: getLocalName(result.relation),
-        subject: getLocalName(result.subject),
-        predicate: getLocalName(result.predicate),
-        object: getLocalName(result.object),
-        publication: result.publicationId ? getLocalName(result.publicationId) : ''
+    .then((response) => {
+      if (!response.ok) throw new Error(`API answered ${response.status}`);
+      return response.json();
+    })
+    .then((data: any[]) => {
+      results.value = data.map((r) => ({
+        id: r.relation,
+        reified: true,
+        subject: r.subject,
+        subjectType: r.subjectType ?? null,
+        predicate: r.predicate,
+        object: r.object,
+        objectType: r.objectType ?? null,
+        publication: r.publicationId || null,
       }));
-
-      const nodesArray: any[] = [];
-      const edgesArray: any[] = [];
-      const nodeIds = new Set<string>();
-
-      data.forEach((result: any) => {
-        const rel = getLocalName(result.relation);
-        const s = getLocalName(result.subject);
-        const p = getLocalName(result.predicate);
-        const o = getLocalName(result.object);
-        const pub = result.publicationId ? getLocalName(result.publicationId) : '';
-
-        // Create central Relation Node
-        if (!nodeIds.has(rel)) {
-          nodesArray.push({
-            id: rel,
-            label: rel,
-            shape: 'diamond',
-            color: '#FF9900'
-          });
-          nodeIds.add(rel);
-        }
-        // Create Subject Node
-        if (!nodeIds.has(s)) {
-          nodesArray.push({
-            id: s,
-            label: s,
-            shape: 'ellipse',
-            color: '#6AA84F'
-          });
-          nodeIds.add(s);
-          nodeStates.value[s] = 'collapsed';
-        }
-        // Create Predicate Node
-        if (!nodeIds.has(p)) {
-          nodesArray.push({
-            id: p,
-            label: p,
-            shape: 'box',
-            color: '#9900FF'
-          });
-          nodeIds.add(p);
-          nodeStates.value[p] = 'collapsed';
-        }
-        // Create Object Node
-        if (!nodeIds.has(o)) {
-          nodesArray.push({
-            id: o,
-            label: o,
-            shape: 'ellipse',
-            color: '#6AA84F'
-          });
-          nodeIds.add(o);
-          nodeStates.value[o] = 'collapsed';
-        }
-        // Edge from Relation -> Subject
-        edgesArray.push({
-          from: rel,
-          to: s,
-          label: "relation_subject",
-          predicate: p  // using predicate local name here if needed
-        });
-        // Edge from Relation -> Predicate
-        edgesArray.push({
-          from: rel,
-          to: p,
-          label: "relation_predicate",
-          predicate: p
-        });
-        // Edge from Relation -> Object
-        edgesArray.push({
-          from: rel,
-          to: o,
-          label: "relation_object",
-          predicate: p
-        });
-        // Edge from Relation -> Publication (if exists)
-        if (pub) {
-          if (!nodeIds.has(pub)) {
-            nodesArray.push({
-              id: pub,
-              label: pub,
-              shape: 'square',
-              color: '#1E90FF'
-            });
-            nodeIds.add(pub);
-            nodeStates.value[pub] = 'collapsed';
-          }
-          edgesArray.push({
-            from: rel,
-            to: pub,
-            label: "wasDerivedFrom",
-            predicate: "publication"
-          });
-        }
-      });
-
-      if (edgesArray.length === 0) {
-        statusText.value = 'No results found.';
+      if (!results.value.length) {
+        setStatus('No results found.', 'info');
         clearGraph();
+        graphState.value = 'empty';
       } else {
-        statusText.value = 'Search completed successfully!';
-        renderGraph(nodesArray, edgesArray);
+        setStatus(`${results.value.length} relation(s) found.`, 'success');
+        drawRecords(results.value, true);
+        graphState.value = 'ready';
       }
     })
     .catch((error) => {
       console.error('Error during search:', error);
-      statusText.value = 'Error during search.';
+      setStatus('Search failed. Is the backend API running?', 'error');
     })
-    .finally(() => {
-      loader.hide();
-      clearStatusTextAfterDelay();
-    });
+    .finally(() => loader.hide());
 }
 
-
-function selectRelation(result: any) {
-  clearGraph();
-  const nodesArray: any[] = [];
-  const edgesArray: any[] = [];
-  const nodeIds = new Set<string>();
-
-  // Extract values from the result object.
-  const relNum = result.relation; // The raw relation number (ID)
-  const subject = result.subject;
-  const predicate = result.predicate; // The relation type (e.g., "cause")
-  const object = result.object;
-  const pub = result.publication;
-
-  // Create central node: Relation Number
-  if (!nodeIds.has(relNum)) {
-    nodesArray.push({
-      id: relNum,
-      label: getLocalName(relNum),
-      shape: 'diamond',
-      color: '#FF9900'
-    });
-    nodeIds.add(relNum);
-  }
-
-  // Create Subject Node
-  if (!nodeIds.has(subject)) {
-    nodesArray.push({
-      id: subject,
-      label: getLocalName(subject),
-      shape: 'ellipse',
-      color: '#6AA84F'
-    });
-    nodeIds.add(subject);
-  }
-
-  // Create Object Node
-  if (!nodeIds.has(object)) {
-    nodesArray.push({
-      id: object,
-      label: getLocalName(object),
-      shape: 'ellipse',
-      color: '#6AA84F'
-    });
-    nodeIds.add(object);
-  }
-
-  // Create Relation Type Node (separate node to show the relation label)
-  const relTypeId = "type_" + relNum;
-  if (!nodeIds.has(relTypeId)) {
-    nodesArray.push({
-      id: relTypeId,
-      label: getLocalName(predicate),
-      shape: 'box',
-      color: '#9900FF'
-    });
-    nodeIds.add(relTypeId);
-  }
-
-  // Create Publication Node if available
-  if (pub && !nodeIds.has(pub)) {
-    nodesArray.push({
-      id: pub,
-      label: getLocalName(pub),
-      shape: 'square',
-      color: '#1E90FF'
-    });
-    nodeIds.add(pub);
-  }
-
-  // Create edges from the central relation number node to the others.
-  edgesArray.push({
-    from: relNum,
-    to: subject,
-    label: "relation_subject",
-    predicate: predicate
-  });
-  edgesArray.push({
-    from: relNum,
-    to: relTypeId,
-    label: "relation_predicate",
-    predicate: predicate
-  });
-  edgesArray.push({
-    from: relNum,
-    to: object,
-    label: "relation_object",
-    predicate: predicate
-  });
-  if (pub) {
-    edgesArray.push({
-      from: relNum,
-      to: pub,
-      label: "wasDerivedFrom",
-      predicate: "publication"
-    });
-  }
-
-  renderGraph(nodesArray, edgesArray);
+function clearSearch() {
+  queryText.value = '';
+  filterType.value = '';
+  results.value = [];
+  selectedResultIndex.value = null;
+  searchValidationError.value = '';
+  deselectEdge();
+  fetchData();
 }
 
+/** Show a single search result on the canvas and highlight the row. */
+function selectRelation(result: RelationRecord, index: number) {
+  selectedResultIndex.value = index;
+  deselectEdge();
+  drawRecords([result], true);
+  graphState.value = 'ready';
+  nextTick(() => selectEdge(result.id));
+}
+
+// ---------------------------------------------------------------------------
+// Relation deletion
+// ---------------------------------------------------------------------------
 async function deleteSelectedEdge() {
-  if (!selectedEdge.value) {
-    statusText.value = 'No edge selected for deletion.';
-    clearStatusTextAfterDelay();
+  const edge = selectedEdge.value;
+  if (!edge) {
+    setStatus('Select an edge in the graph first.', 'info');
     return;
   }
+  if (!window.confirm(`Delete this relation from "${currentRepoId.value}"?\n\n${selectedRelationText.value}`)) return;
 
-  const edge = selectedEdge.value;
-  console.log('Attempting to delete edge:', edge);
-
-  // Build payload based on edge type using the same logic as in your selectEdge function
-  let payload;
-  if (edge.label === "relation_predicate") {
-    payload = {
-      subject: edge.from,
-      predicate: edge.label, // "relation_predicate"
-      object: edge.predicate,
-      repo_id: currentRepoId.value
-    };
-  } else {
-    payload = {
-      subject: edge.from,
-      predicate: edge.label,
-      object: edge.to,
-      repo_id: currentRepoId.value
-    };
-  }
-  console.log('Payload for deletion:', payload);
-
-  // Show loader before starting the request
+  const payload = {
+    subject: localName(edge.from),
+    predicate: localName(edge.predicate),
+    object: localName(edge.to),
+    relation: edge.relation,
+    repo_id: currentRepoId.value,
+  };
   const loader = $loading.show();
-
   try {
-    const response = await axios.post(
-      `${API_URL}/api/deleteRelation`,
-      payload,
-      { headers: { 'Content-Type': 'application/json' } }
-    );
-
+    const response = await axios.post(`${API_URL}/api/deleteRelation`, payload, { headers: { 'Content-Type': 'application/json' } });
     if (response.status === 200) {
-      // Use the DataSet's remove method
-      if (edges.value) {
-        edges.value.remove(edge.id);
-      }
+      edges.value?.remove(edge.id);
+      results.value = results.value.filter((r) => r.id !== edge.id);
       deselectEdge();
-      statusText.value = 'Relation deleted successfully!';
-      console.log('Edge deleted successfully.');
+      setStatus('Relation deleted.', 'success');
     } else {
-      console.warn('Deletion request returned non-200 status:', response.status);
-      statusText.value = 'Failed to delete relation.';
+      setStatus('Failed to delete relation.', 'error');
     }
-  } catch (error) {
+  } catch (error: any) {
     console.error('Error deleting relation:', error);
-    statusText.value = 'Error deleting relation.';
+    setStatus(error?.response?.data?.error || 'Error deleting relation.', 'error');
   } finally {
     loader.hide();
-    clearStatusTextAfterDelay();
   }
-}
-
-function clearGraph() {
-  if (nodes.value) nodes.value.clear();
-  if (edges.value) edges.value.clear();
-  if (network) network.setData({ nodes: [], edges: [] });
 }
 
 function refreshGraph() {
-  loadingGraph.value = true;
   if (queryText.value.trim()) {
     performSearch();
   } else {
     fetchData().then(() => {
-      loadingGraph.value = false;
-      statusText.value = 'Default graph loaded successfully!';
-      clearStatusTextAfterDelay();
+      if (graphState.value === 'ready') setStatus('Default graph loaded.', 'success');
     });
   }
 }
 
-// KG Operations & Relation Extraction
+// ---------------------------------------------------------------------------
+// Relation extraction from a pasted abstract (GPT-4o-mini via the API)
+// ---------------------------------------------------------------------------
 function validateAbstract() {
   if (!abstract.value.trim()) {
     validationError.value = 'Abstract cannot be empty.';
@@ -763,7 +642,7 @@ function validateAbstract() {
 function validateRelations() {
   try {
     JSON.parse(responseText.value);
-  } catch (e) {
+  } catch {
     validationError.value = 'Relations must be valid JSON.';
     return false;
   }
@@ -777,703 +656,578 @@ function showRelations() {
   fetch(`${API_URL}/api/showRelations`, {
     method: 'POST',
     body: JSON.stringify(abstract.value),
-    headers: { 'Content-Type': 'application/json' }
+    headers: { 'Content-Type': 'application/json' },
   })
-    .then(response => response.json())
-    .then(response => {
+    .then((response) => {
+      if (!response.ok) throw new Error(`API answered ${response.status}`);
+      return response.json();
+    })
+    .then((response) => {
       responseText.value = JSON.stringify(response, null, 2);
-      statusText.value = 'Relations fetched successfully!';
+      setStatus('Relations extracted. Review them, then click "Add to graph".', 'success');
     })
-    .catch(() => {
-      statusText.value = 'Error fetching relations.';
-    })
-    .finally(() => {
-      loader.hide();
-      clearStatusTextAfterDelay();
-    });
+    .catch(() => setStatus('Error extracting relations. Check the API and the OPENAI_API_KEY.', 'error'))
+    .finally(() => loader.hide());
 }
 
 function addRelations() {
   if (!validateRelations()) return;
   validationError.value = '';
   const loader = $loading.show();
-  const payload = {
-    repo_id: currentRepoId.value,
-    relations: JSON.parse(responseText.value)
-  };
+  const payload = { repo_id: currentRepoId.value, relations: JSON.parse(responseText.value) };
   fetch(`${API_URL}/api/addRelations`, {
     method: 'POST',
     body: JSON.stringify(payload),
-    headers: { 'Content-Type': 'application/json' }
+    headers: { 'Content-Type': 'application/json' },
   })
-    .then(response => response.json())
-    .then(data => {
-      statusText.value = data.status === "Successfully completed"
-        ? "Relations successfully added to the knowledge graph!"
-        : "There was an issue adding relations.";
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.status === 'Successfully completed') {
+        setStatus('Relations added to the knowledge graph.', 'success');
+        fetchData();
+      } else {
+        setStatus(data.error || 'There was an issue adding relations.', 'error');
+      }
     })
-    .catch(() => {
-      statusText.value = 'Error adding relations.';
-    })
-    .finally(() => {
-      loader.hide();
-      clearStatusTextAfterDelay();
-    });
+    .catch(() => setStatus('Error adding relations.', 'error'))
+    .finally(() => loader.hide());
 }
 
 function reasonKg() {
   validationError.value = '';
   const loader = $loading.show();
-  const params = new URLSearchParams();
-  params.append('repo_id', currentRepoId.value);
-  fetch(`${API_URL}/api/reason?${params.toString()}`, {
-    method: 'GET',
-  })
-    .then(response => response.json())
-    .then(data => {
-      statusText.value = data.status === "Successfully completed"
-        ? "Reasoning operation completed successfully!"
-        : "There was an issue running the reasoner.";
+  const params = new URLSearchParams({ repo_id: currentRepoId.value });
+  fetch(`${API_URL}/api/reason?${params.toString()}`)
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.status === 'Successfully completed') {
+        setStatus('Reasoning completed; inferred triples were added.', 'success');
+        fetchData();
+      } else {
+        setStatus(data.error || 'There was an issue running the reasoner.', 'error');
+      }
     })
-    .catch(() => {
-      statusText.value = 'Error running the reasoner.';
-    })
-    .finally(() => {
-      loader.hide();
-      clearStatusTextAfterDelay();
-    });
+    .catch(() => setStatus('Error running the reasoner.', 'error'))
+    .finally(() => loader.hide());
 }
 
-// File Upload & Extraction
+// ---------------------------------------------------------------------------
+// Batch extraction from a file + bulk upload
+// ---------------------------------------------------------------------------
 function handleAbstractUpload(event: Event) {
-  const fileInput = event.target as HTMLInputElement;
-  abstractFile.value = fileInput.files?.[0] ?? null;
+  abstractFile.value = (event.target as HTMLInputElement).files?.[0] ?? null;
 }
 
 function handleRelationsUpload(event: Event) {
-  const fileInput = event.target as HTMLInputElement;
-  relationsFile.value = fileInput.files?.[0] ?? null;
+  relationsFile.value = (event.target as HTMLInputElement).files?.[0] ?? null;
+  relationsFileReady.value = !!relationsFile.value;
 }
 
 async function uploadAbstractFile() {
-  const loader = $loading.show();
   if (!abstractFile.value || !selectedModel.value) return;
+  const loader = $loading.show();
   const formData = new FormData();
-  formData.append("file", abstractFile.value);
-  formData.append("model", selectedModel.value);
+  formData.append('file', abstractFile.value);
+  formData.append('model', selectedModel.value);
+  uploadStatus.value = null;
   try {
-    const response = await axios.post(`${API_URL}/api/upload_abstract`, formData, {
-      responseType: "blob",
-    });
-    const extractedFile = new Blob([response.data], { type: "application/json" });
+    const response = await axios.post(`${API_URL}/api/upload_abstract`, formData, { responseType: 'blob' });
+    const extractedFile = new Blob([response.data], { type: 'application/json' });
     abstractDownloadLink.value = URL.createObjectURL(extractedFile);
     relationsFile.value = extractedFile;
     relationsFileReady.value = true;
+    uploadStatus.value = 'Extraction finished. Download the file to review it, or add it to the graph directly.';
   } catch (error) {
-    console.error("Error extracting relations from abstract:", error);
+    console.error('Error extracting relations from abstract:', error);
+    uploadStatus.value = 'Extraction failed. Check the API logs and the provider key for the selected model.';
   } finally {
     loader.hide();
-    clearStatusTextAfterDelay();
   }
 }
 
 async function addRelationsToKG() {
-  if (!relationsFile.value || !currentRepoId.value) {
-    console.error('No relations file or repository ID provided.');
-    return;
-  }
+  if (!relationsFile.value || !currentRepoId.value) return;
+  const loader = $loading.show();
   const formData = new FormData();
-  formData.append("file", relationsFile.value);
-  formData.append("repo_id", currentRepoId.value);
+  formData.append('file', relationsFile.value);
+  formData.append('repo_id', currentRepoId.value);
   try {
     const response = await axios.post(`${API_URL}/api/upload_relations`, formData);
-    uploadStatus.value = response.data.message || "Failed to add relations.";
-  } catch (error) {
-    console.error("Error adding relations to KG:", error);
-    uploadStatus.value = "Error adding relations to KG.";
+    uploadStatus.value = response.data.status === 'Successfully completed'
+      ? `Relations added to "${currentRepoId.value}".`
+      : (response.data.error || 'Failed to add relations.');
+    fetchData();
+  } catch (error: any) {
+    console.error('Error adding relations to KG:', error);
+    uploadStatus.value = error?.response?.data?.error || 'Error adding relations to the knowledge graph.';
+  } finally {
+    loader.hide();
   }
-}
-
-function toggleInfo() {
-  infoVisible.value = !infoVisible.value;
-}
-
-function toggleDeepSeekInfo() {
-  deepSeekInfoVisible.value = !deepSeekInfoVisible.value;
-}
-
-function toggleRepoInfo() {
-  repoInfoVisible.value = !repoInfoVisible.value;
 }
 </script>
 
 <template>
-  <div class="app-container">
-    <aside class="sidebar">
-      <router-link to="/" class="sidebar-link">Home</router-link>
-      <router-link to="/chat" class="sidebar-link">Chat</router-link>
-      <router-link to="/evaluation" class="sidebar-link">Evaluation</router-link>
-    </aside>
+  <div class="app-shell">
+    <AppSidebar />
 
-    <div class="main-content">
-      <div class="left-part">
-        <section class="iframe-section">
-          <h2 class="section-title">Knowledge Graph Visualization</h2>
-          <div ref="graphContainer" class="visualization-container"></div>
-          <button @click="refreshGraph" class="action-button">Refresh Graph</button>
+    <main class="page">
+      <div v-if="apiStatus === 'down'" class="banner banner-warn">
+        <span>
+          ⚠️ The backend API is not reachable at <code>{{ API_URL }}</code>. Search, extraction and
+          reasoning are disabled until it is up (<code>cd backend && flask run -p 5555</code>).
+        </span>
+        <button class="btn btn-secondary btn-sm" type="button" @click="checkApi">Retry</button>
+      </div>
+
+      <header class="page-head">
+        <div>
+          <h1>AMD Knowledge Graph</h1>
+          <p class="muted">Causal relations extracted from AMD literature, stored in GraphDB.</p>
+        </div>
+        <div class="repos" v-if="repositories.length">
+          <span class="muted">Repository</span>
+          <button
+            v-for="repo in repositories"
+            :key="repo.id"
+            type="button"
+            class="pill"
+            :class="{ active: repo.id === currentRepoId }"
+            @click="activateRepository(repo.id)"
+          >
+            {{ repo.id }}
+          </button>
+        </div>
+        <div v-else class="repos">
+          <span class="muted">Repository <code class="inline">{{ currentRepoId }}</code></span>
+        </div>
+      </header>
+
+      <div class="layout">
+        <!-- ================= Graph ================= -->
+        <section class="card graph-card">
+          <div class="card-head">
+            <h2 class="card-title">Graph</h2>
+            <div class="btn-row">
+              <span v-if="expanding" class="muted">Loading neighbours…</span>
+              <button class="btn btn-secondary btn-sm" type="button" @click="fitGraph" :disabled="graphState !== 'ready'">Fit</button>
+              <button class="btn btn-secondary btn-sm" type="button" @click="refreshGraph">Refresh</button>
+            </div>
+          </div>
+
+          <div class="graph-wrap">
+            <div ref="graphContainer" class="graph-canvas"></div>
+
+            <div v-if="graphState === 'loading'" class="graph-overlay">
+              <div class="spinner"></div>
+              <p>Loading graph…</p>
+            </div>
+            <div v-else-if="graphState === 'error'" class="graph-overlay">
+              <h3>Graph data is not available</h3>
+              <p class="muted">{{ graphError }}</p>
+              <p class="muted">
+                Make sure the API (<code class="inline">flask run -p 5555</code>) and GraphDB are running,
+                and that <code class="inline">GRAPHDB_URL</code> in <code class="inline">.env</code> points at GraphDB.
+              </p>
+              <button class="btn btn-primary btn-sm" type="button" @click="fetchData">Retry</button>
+            </div>
+            <div v-else-if="graphState === 'empty'" class="graph-overlay">
+              <h3>Nothing to show</h3>
+              <p class="muted">
+                Repository <code class="inline">{{ currentRepoId }}</code> has no relations around the AMD node
+                (or the search returned nothing). Import <code class="inline">data/amd_repo.rdf</code> in GraphDB
+                or add relations from the panel on the right.
+              </p>
+              <button class="btn btn-secondary btn-sm" type="button" @click="fetchData">Reload</button>
+            </div>
+          </div>
+
+          <div class="graph-foot">
+            <ul class="legend" v-if="legendItems.length">
+              <li v-for="item in legendItems" :key="item.kind">
+                <span class="swatch" :class="'swatch-' + item.shape" :style="{ background: item.color, borderColor: item.border }"></span>
+                {{ item.label }}
+              </li>
+            </ul>
+            <p class="muted hint">One arrow per relation, labelled with its type · click a node to expand or collapse its neighbours · click an arrow to select it · scroll to zoom.</p>
+          </div>
+
+          <div v-if="selectedEdge" class="selection">
+            <span class="selection-text">{{ selectedRelationText }}</span>
+            <div class="btn-row">
+              <button class="btn btn-secondary btn-sm" type="button" @click="deselectEdge">Clear</button>
+              <button class="btn btn-danger btn-sm" type="button" @click="deleteSelectedEdge">Delete relation</button>
+            </div>
+          </div>
+
+          <div v-if="statusText" class="msg" :class="'msg-' + statusKind">{{ statusText }}</div>
         </section>
 
-        <section class="search-section">
-          <h2 class="section-title">Search and Filtering</h2>
-          <div class="input-area">
-            <label for="search-input" class="input-label">Search</label>
-            <input type="text" v-model="queryText" id="search-input" placeholder="Enter search term" @keyup.enter="performSearch" class="search-input">
-          </div>
-          <div class="filter-area">
-            <label for="filter-select" class="input-label">Filter By</label>
-            <select v-model="filterType" id="filter-select" class="filter-select">
-              <option value="">All</option>
-              <option value="node">Node</option>
-              <option value="relation">Relation</option>
-              <option value="entity">Entity</option>
-            </select>
-          </div>
-          <div class="buttons-container">
-            <button @click="performSearch" class="action-button">Search</button>
-          </div>
-          <div v-if="searchValidationError" class="validation-error">
-            <p>{{ searchValidationError }}</p>
-          </div>
-          <div v-if="results.length" class="results-section">
-            <h3 class="section-title">Results:</h3>
-            <div class="results-table-container">
+        <!-- ================= Side panels ================= -->
+        <aside class="side">
+          <section class="card">
+            <div class="card-head">
+              <h2 class="card-title">Search</h2>
+              <button v-if="results.length || queryText" class="btn btn-secondary btn-sm" type="button" @click="clearSearch">Clear</button>
+            </div>
+            <div class="search-row">
+              <input
+                v-model="queryText"
+                type="search"
+                class="input"
+                placeholder="e.g. drusen, smoking"
+                @keyup.enter="performSearch"
+              />
+              <select v-model="filterType" class="select select-narrow" aria-label="Filter by">
+                <option value="">Any field</option>
+                <option value="node">Subject</option>
+                <option value="relation">Relation type</option>
+                <option value="entity">Object</option>
+              </select>
+              <button class="btn btn-primary" type="button" @click="performSearch" :disabled="apiStatus === 'down'">Search</button>
+            </div>
+            <p v-if="searchValidationError" class="msg msg-error">{{ searchValidationError }}</p>
+
+            <div v-if="results.length" class="results">
               <table class="results-table">
                 <thead>
                   <tr>
                     <th>Subject</th>
-                    <th>Predicate</th>
+                    <th>Relation</th>
                     <th>Object</th>
-                    <th>Publication</th>
+                    <th>Source</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr v-for="(result, index) in results"
-                      :key="index"
-                      @click="selectRelation(result)"
-                      style="cursor: pointer;">
-                    <td>{{ result.subject }}</td>
-                    <td>{{ result.predicate }}</td>
-                    <td>{{ result.object }}</td>
-                    <td>{{ result.publication }}</td>
+                  <tr
+                    v-for="(result, index) in results"
+                    :key="result.id + index"
+                    :class="{ selected: index === selectedResultIndex }"
+                    @click="selectRelation(result, index)"
+                  >
+                    <td>{{ prettyLabel(localName(result.subject)) }}</td>
+                    <td><span class="tag">{{ localName(result.predicate) }}</span></td>
+                    <td>{{ prettyLabel(localName(result.object)) }}</td>
+                    <td class="muted">{{ result.publication ? localName(result.publication) : '—' }}</td>
                   </tr>
                 </tbody>
               </table>
             </div>
-          </div>
-        </section>
+          </section>
+
+          <section class="card">
+            <div class="card-head">
+              <h2 class="card-title">Extract from an abstract</h2>
+            </div>
+            <p class="card-sub">Paste an abstract; relations are extracted with GPT-4o-mini and can be edited before they are added to the graph.</p>
+            <div class="field">
+              <textarea v-model="abstract" class="textarea" rows="5" placeholder="Paste an AMD abstract here…"></textarea>
+            </div>
+            <div class="btn-row">
+              <button class="btn btn-primary" type="button" @click="showRelations" :disabled="apiStatus === 'down'">Extract relations</button>
+              <button class="btn btn-secondary" type="button" @click="addRelations" :disabled="!responseText || apiStatus === 'down'">Add to graph</button>
+              <button class="btn btn-secondary" type="button" @click="reasonKg" :disabled="apiStatus === 'down'" title="Run the HermiT reasoner on the current repository">Run reasoner</button>
+            </div>
+            <p v-if="validationError" class="msg msg-error">{{ validationError }}</p>
+            <div class="field" style="margin-top: 12px">
+              <label for="response-text">Extracted relations (JSON, editable)</label>
+              <textarea v-model="responseText" id="response-text" class="textarea textarea-mono" rows="7" placeholder="[ { &quot;entity1_name&quot;: …, &quot;relation_type&quot;: …, &quot;entity2_name&quot;: … } ]"></textarea>
+            </div>
+          </section>
+
+          <section class="card">
+            <div class="card-head">
+              <h2 class="card-title">Batch extraction &amp; upload</h2>
+            </div>
+            <p class="card-sub">Extract relations from a JSON file of abstracts with the model of your choice, then load the result into the selected repository. Provider keys come from <code class="inline">.env</code>.</p>
+            <div class="field">
+              <label for="modelSelect">Extraction model</label>
+              <select v-model="selectedModel" id="modelSelect" class="select">
+                <option value="" disabled>Select a model</option>
+                <option value="model_a">GPT-3.5 Turbo (fine-tuned)</option>
+                <option value="model_b">Mistral Nemo (fine-tuned)</option>
+                <option value="model_c">GPT-4o-mini</option>
+                <option value="model_d">DeepSeek V3 (deepseek-chat)</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="abstractFile">Abstracts file (JSON)</label>
+              <input type="file" id="abstractFile" accept=".json,application/json" class="file-input" @change="handleAbstractUpload" />
+            </div>
+            <div class="btn-row">
+              <button class="btn btn-primary" type="button" @click="uploadAbstractFile" :disabled="!abstractFile || !selectedModel || apiStatus === 'down'">Extract relations</button>
+              <a v-if="abstractDownloadLink" :href="abstractDownloadLink" download="extracted_relations.json" class="btn btn-secondary">Download result</a>
+            </div>
+
+            <div class="field" style="margin-top: 14px">
+              <label for="relationsFile">Relations file (JSON) — extracted above or your own</label>
+              <input type="file" id="relationsFile" accept=".json,application/json" class="file-input" @change="handleRelationsUpload" />
+            </div>
+            <div class="btn-row">
+              <button class="btn btn-primary" type="button" @click="addRelationsToKG" :disabled="!relationsFile || apiStatus === 'down'">Add relations to graph</button>
+              <span v-if="relationsFileReady" class="muted">File ready for upload.</span>
+            </div>
+            <p v-if="uploadStatus" class="msg msg-info">{{ uploadStatus }}</p>
+          </section>
+        </aside>
       </div>
-
-      <section class="controls-section">
-        <div class="header-container">
-          <div class="info-container">
-            <button class="info-button" @click="toggleDeepSeekInfo">
-              <svg class="info-icon" viewBox="0 0 24 24" width="18" height="18">
-                <circle cx="12" cy="12" r="10" fill="none" stroke="#007bff" stroke-width="2"/>
-                <text x="12" y="16" text-anchor="middle" fill="#007bff" font-size="12" font-family="Arial" font-weight="bold">i</text>
-              </svg>
-            </button>
-            <transition name="fade">
-              <div v-if="deepSeekInfoVisible" class="popover">
-                <p>Relations are extracted using DeepSeek-R1:7B</p>
-                <button class="close-button" @click="toggleDeepSeekInfo">&times;</button>
-              </div>
-            </transition>
-          </div>
-          <h2 class="section-title">Knowledge Graph Operations</h2>
-        </div>
-
-        <div class="input-area">
-          <textarea v-model="abstract" id="abstract-input" placeholder="Enter abstract" class="abstract-textarea"></textarea>
-        </div>
-        <div class="buttons-container">
-          <button @click="showRelations" class="action-button">Show Relations</button>
-          <button @click="addRelations" class="action-button">Add Relations</button>
-          <button @click="reasonKg" class="action-button">Reason KG</button>
-          <button @click="deleteSelectedEdge" class="action-button delete-button" :disabled="!selectedEdge">Delete Relation</button>
-        </div>
-        <div v-if="validationError" class="validation-error">
-          <p>{{ validationError }}</p>
-        </div>
-        <div class="output-area">
-          <div class="textarea-container">
-            <textarea v-model="responseText" id="response-text" placeholder="Relations" class="response-textarea"></textarea>
-          </div>
-          <div class="textarea-container">
-            <label for="status-text" class="input-label">Status</label>
-            <textarea v-model="statusText" id="status-text" readonly class="status-textarea"></textarea>
-          </div>
-        </div>
-      </section>
-
-      <section class="repositories-section">
-        <div class="header-container">
-          <div class="info-container left">
-            <button class="info-button" @click="toggleRepoInfo">
-              <svg class="info-icon" viewBox="0 0 24 24" width="18" height="18">
-                <circle cx="12" cy="12" r="10" fill="none" stroke="#007bff" stroke-width="2"/>
-                <text x="12" y="16" text-anchor="middle" fill="#007bff" font-size="12" font-family="Arial" font-weight="bold">i</text>
-              </svg>
-            </button>
-            <transition name="fade">
-              <div v-if="repoInfoVisible" class="popover left">
-                <p>Select the repository you wish to use from GraphDB.</p>
-                <button class="close-button" @click="toggleRepoInfo">&times;</button>
-              </div>
-            </transition>
-          </div>
-          <h2 class="section-title">Available Repositories</h2>
-        </div>
-        <div class="repositories-container">
-          <button v-for="repo in repositories" :key="repo.id" @click="activateRepository(repo.id)" :class="['repo-button', { active: repo.id === currentRepoId }]" class="repo-button">
-            {{ repo.id }}
-          </button>
-        </div>
-        <div class="header-container">
-        <div class="info-container">
-            <button class="info-button" @click="toggleInfo">
-              <svg class="info-icon" viewBox="0 0 24 24" width="18" height="18">
-                <circle cx="12" cy="12" r="10" fill="none" stroke="#007bff" stroke-width="2"/>
-                <text x="12" y="16" text-anchor="middle" fill="#007bff" font-size="12" font-family="Arial" font-weight="bold">i</text>
-              </svg>
-            </button>
-            <transition name="fade">
-              <div v-if="infoVisible" class="popover">
-                <p>API keys must be provided in the .env file for this section to work correctly.</p>
-                <button class="close-button" @click="toggleInfo">&times;</button>
-              </div>
-            </transition>
-          </div>
-          <h2 class="section-title">Relation Extraction and Upload</h2>
-        </div>
-        <div class="form-group">
-          <label for="modelSelect">Select Model for Extraction:</label>
-          <select v-model="selectedModel" id="modelSelect" class="select-input">
-            <option value="" disabled>Select a model</option>
-            <option value="model_a">GPT3.5 Turbo (Fine-Tuned)</option>
-            <option value="model_b">Mistral-Nemo (Fine-Tuned)</option>
-            <option value="model_c">GPT 4o1-mini</option>
-            <option value="model_d">DeepSeek R1</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="abstractFile">Upload Abstract File:</label>
-          <input type="file" id="abstractFile" @change="handleAbstractUpload" class="file-input" />
-          <button @click="uploadAbstractFile" :disabled="!abstractFile || !selectedModel" class="action-button">
-            Extract Relations from Abstract
-          </button>
-        </div>
-        <div v-if="abstractDownloadLink" class="download-section">
-          <a :href="abstractDownloadLink" download="extracted_relations.json" class="download-link">
-            Download Extracted Relations
-          </a>
-        </div>
-        <p v-if="relationsFileReady" class="status-message">
-          Extracted relations are ready for upload. You can replace the file if needed.
-        </p>
-        <div class="form-group">
-          <label for="relationsFile">Upload or Modify Extracted Relations File:</label>
-          <input type="file" id="relationsFile" @change="handleRelationsUpload" class="file-input" />
-          <button @click="addRelationsToKG" :disabled="!relationsFile" class="action-button">
-            Add Relations to Knowledge Graph
-          </button>
-        </div>
-        <div v-if="uploadStatus" class="upload-status">
-          {{ uploadStatus }}
-        </div>
-      </section>
-    </div>
+    </main>
   </div>
 </template>
 
-<style>
-/* Global Reset and Base Styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+<style scoped>
+.page-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
 }
-html, body {
-  height: 100%;
-  width: 100%;
-  overflow-x: hidden;
-  font-family: 'Roboto', sans-serif;
-  background-color: #f7f9fc;
-  color: #333;
+
+.page-head h1 {
+  font-size: 24px;
 }
-.header-container {
+
+.repos {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 6px;
+  flex-wrap: wrap;
 }
 
-.section-title {
-  margin: 0;
-  font-size: 1.5em;
-  flex: 1;
-}
-
-.info-container {
-  position: relative;
-}
-
-/* Refined info button */
-.info-button {
-  background: none;
-  border: none;
+.pill {
+  padding: 5px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--border-strong);
+  background: var(--surface);
+  font-size: 13px;
+  font-weight: 600;
   cursor: pointer;
-  padding: 4px;
-  border-radius: 50%;
-  transition: background-color 0.2s;
 }
 
-.info-button:hover {
-  background-color: rgba(0, 123, 255, 0.1);
+.pill.active {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #fff;
 }
 
-.info-icon {
-  display: block;
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 18px;
+  align-items: start;
 }
 
-/* Adjusted popover with wider dimensions */
-.popover {
-  position: absolute;
-  top: 110%;
-  left: 0;
-  width: 320px; /* Fixed width for a horizontal layout */
+@media (min-width: 1100px) {
+  .layout {
+    grid-template-columns: minmax(0, 1.7fr) minmax(360px, 1fr);
+  }
+
+  .graph-card {
+    position: sticky;
+    top: 24px;
+  }
+}
+
+.side {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  min-width: 0;
+}
+
+/* ---- Graph card ---- */
+.graph-wrap {
+  position: relative;
+  height: 560px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
   background: #fff;
-  border: 1px solid #e0e0e0;
-  padding: 10px 15px;
-  border-radius: 4px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  z-index: 100;
-  font-size: 0.8em;
-  line-height: 1.3;
+  overflow: hidden;
+}
+
+@media (max-width: 1099px) {
+  .graph-wrap {
+    height: 440px;
+  }
+}
+
+.graph-canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.graph-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 24px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.graph-overlay h3 {
+  font-size: 17px;
+}
+
+.graph-overlay p {
+  max-width: 460px;
+}
+
+.spinner {
+  width: 28px;
+  height: 28px;
+  border: 3px solid var(--border);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.graph-foot {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 10px;
 }
 
-.popover p {
-  margin: 0;
-  white-space: normal;
-  flex: 1;
-}
-
-/* Optional: A slight adjustment for the arrow, if needed, removed for a cleaner design */
-/* .popover::before and .popover::after { ... } */
-
-.close-button {
-  background: none;
-  border: none;
-  font-size: 1em;
-  color: #888;
-  cursor: pointer;
-  margin-left: 10px;
-  padding: 0;
-}
-
-.close-button:hover {
-  color: #555;
-}
-
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.3s ease;
-}
-
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
-}
-
-/* Focus styles for accessibility */
-:focus {
-  outline: 3px solid #007bff;
-  outline-offset: 2px;
-}
-
-/* App Layout */
-.app-container {
+.legend {
+  list-style: none;
   display: flex;
-  min-height: 100vh;
-  width: 100vw;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  font-size: 12.5px;
 }
 
-/* Sidebar Styling */
-.sidebar {
-  width: 200px;
-  background-color: #343a40;
-  color: #fff;
-  padding: 20px;
-  height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  box-shadow: 2px 0 10px rgba(0,0,0,0.1);
-  display: flex;
-  flex-direction: column;
-}
-.sidebar-link {
-  display: block;
-  padding: 15px 20px;
-  margin-bottom: 15px;
-  color: #f8f9fa;
-  text-decoration: none;
-  border-radius: 6px;
-  transition: background 0.3s ease;
-}
-.sidebar-link:hover, .sidebar-link:focus {
-  background-color: #007bff;
+.legend li {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
 
-/* Main Content Area */
-.main-content {
-  margin-left: 200px;
-  padding: 20px;
-  display: flex;
-  gap: 20px;
-  width: calc(100% - 200px);
-  /* Allow vertical scrolling */
-  overflow-y: auto;
-  max-height: 100vh;
+.swatch {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: 2px solid;
+  border-radius: 50%;
 }
 
-/* Left Part: Graph & Search */
-.left-part {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  /* Ensure this column never pushes out the header */
-  max-height: 100vh;
-  overflow-y: auto;
+.swatch-box {
+  border-radius: 2px;
 }
-.visualization-container {
-  width: 100%;
-  height: 50vh;  /* Fixed height for graph */
-  border: 2px solid #e0e0e0;
-  border-radius: 8px;
-  background-color: #fff;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  padding: 10px;
+
+.swatch-square {
+  border-radius: 0;
+}
+
+.swatch-diamond {
+  border-radius: 2px;
+  transform: rotate(45deg) scale(0.85);
+}
+
+.hint {
+  font-size: 12.5px;
+}
+
+.selection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+  padding: 10px 12px;
+  border: 1px solid var(--primary);
+  border-radius: var(--radius-sm);
+  background: var(--primary-soft);
+}
+
+.selection-text {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  word-break: break-word;
+}
+
+/* ---- Search ---- */
+.search-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  gap: 8px;
+}
+
+.select-narrow {
+  width: auto;
+}
+
+@media (max-width: 480px) {
+  .search-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.results {
+  margin-top: 12px;
+  max-height: 320px;
   overflow: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
 }
 
-/* Right Part: Operations */
-.controls-section {
-  width: 50%;
-  background-color: #f0f2f5;
-  padding: 25px;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  overflow-y: auto;
-  max-height: 100vh;
-}
-
-/* Section Titles */
-.section-title {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 20px;
-  border-bottom: 2px solid #007bff;
-  padding-bottom: 10px;
-}
-
-/* Input Areas */
-.input-area, .textarea-container, .filter-area {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.input-label {
-  font-size: 16px;
-  font-weight: 500;
-}
-.abstract-textarea, .response-textarea, .status-textarea {
-  padding: 15px;
-  border: 1px solid #ced4da;
-  border-radius: 8px;
-  font-size: 16px;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-.abstract-textarea:focus, .response-textarea:focus, .status-textarea:focus {
-  border-color: #007bff;
-  box-shadow: 0 0 0 3px rgba(0,123,255,0.25);
-}
-.response-textarea {
-  height: 250px;
-  background-color: #f8f9fa;
-}
-.status-textarea {
-  height: 120px;
-  background-color: #eaf5ea;
-  color: #28a745;
-  font-weight: 500;
-}
-
-/* Search and Filter */
-.search-input, .filter-select {
-  padding: 12px;
-  border: 1px solid #ced4da;
-  border-radius: 8px;
-  font-size: 16px;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-.search-input:focus, .filter-select:focus {
-  border-color: #007bff;
-  box-shadow: 0 0 0 3px rgba(0,123,255,0.25);
-}
-
-/* Buttons */
-.buttons-container {
-  display: flex;
-  gap: 15px;
-}
-.action-button {
-  padding: 12px 25px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  background-color: #007bff;
-  color: #fff;
-  font-size: 16px;
-  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
-}
-.action-button:hover, .action-button:focus {
-  background-color: #0056b3;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 8px rgba(0,123,255,0.2);
-}
-.delete-button:disabled {
-  background-color: #6c757d;
-  cursor: not-allowed;
-}
-
-/* Results Table */
-.results-table-container {
-  max-height: 50vh;
-  overflow-y: auto;
-  border: 1px solid #ced4da;
-  border-radius: 8px;
-}
 .results-table {
   width: 100%;
   border-collapse: collapse;
+  font-size: 13px;
 }
+
 .results-table th,
 .results-table td {
-  padding: 10px;
-  border: 1px solid #dee2e6;
-  font-size: 16px;
-  white-space: nowrap;
+  padding: 7px 10px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
 }
+
 .results-table th {
-  background-color: #f8f9fa;
-  font-weight: bold;
-}
-.results-table tbody tr:hover {
-  background-color: #f1f3f5;
+  position: sticky;
+  top: 0;
+  background: var(--surface-muted);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-muted);
 }
 
-/* Repositories Section */
-.repositories-section {
-  padding: 20px;
-  background-color: #f9fafb;
-  border-radius: 8px;
-  margin-top: 20px;
-  text-align: center;
-}
-.repositories-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
-}
-.repo-button {
-  min-width: 120px;
-  padding: 12px 16px;
-  background-color: #e5e7eb;
-  border: none;
-  border-radius: 6px;
+.results-table tbody tr {
   cursor: pointer;
-  transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
-}
-.repo-button:hover {
-  background-color: #d1d5db;
-  transform: translateY(-2px);
-}
-.repo-button.active {
-  background-color: #3b82f6;
-  color: #fff;
-  transform: scale(1.05);
-  box-shadow: 0 6px 12px rgba(59,130,246,0.4);
 }
 
-/* File Upload & Download */
-.select-input, .file-input {
-  padding: 10px;
-  border: 1px solid #d1d5db;
-  border-radius: 6px;
-  background-color: #fff;
-  font-size: 1em;
-  transition: border-color 0.3s, box-shadow 0.3s;
+.results-table tbody tr:hover {
+  background: var(--surface-muted);
 }
-.select-input:focus, .file-input:focus {
-  border-color: #3b82f6;
-  box-shadow: 0 0 0 3px rgba(59,130,246,0.25);
+
+.results-table tbody tr.selected {
+  background: var(--primary-soft);
 }
-.download-section {
-  margin-bottom: 15px;
-}
-.download-link {
+
+.tag {
   display: inline-block;
-  padding: 10px 15px;
-  background-color: #10b981;
-  color: #fff;
-  border-radius: 6px;
-  text-decoration: none;
-  transition: background 0.3s, transform 0.2s;
-}
-.download-link:hover {
-  background-color: #059669;
-  transform: translateY(-2px);
-}
-.status-message, .upload-status {
-  text-align: center;
-  margin-top: 10px;
-  font-weight: 500;
-}
-
-/* Responsive Design */
-@media (max-width: 1200px) {
-  .main-content {
-    flex-direction: column;
-  }
-  .left-part, .controls-section {
-    width: 100%;
-  }
-}
-@media (max-width: 768px) {
-  .sidebar {
-    width: 100%;
-    height: auto;
-    position: static;
-  }
-  .main-content {
-    margin-left: 0;
-  }
-  .action-button, .repo-button {
-    width: 100%;
-  }
+  padding: 1px 8px;
+  border-radius: 999px;
+  background: #ede9fe;
+  color: #6d28d9;
+  font-size: 12px;
+  font-weight: 600;
 }
 </style>

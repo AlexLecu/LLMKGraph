@@ -106,6 +106,28 @@ The Streamlit evaluation app (`backend/streamlit/`) has the same GraphDB
 dependency, so it lives on the same VM (port 8502) or on
 <https://share.streamlit.io> if GraphDB is reachable over the internet.
 
+## Updating the self-hosted chatbot (current setup)
+
+The chatbot has so far been served from a machine of your own: the
+`amd-chatbot` container (built from `backend/weaviate_rag/docker-compose.yml`),
+with Weaviate from `docker-compose-weaviate.yml` and Ollama running on the host.
+To roll out new code there without touching the data:
+
+```bash
+cd LLMKGraph
+bash backend/weaviate_rag/update.sh     # git pull, rebuild image, restart container
+```
+
+Only the chatbot image is rebuilt; the Weaviate volume and the Ollama models stay
+as they are. Two things to know:
+
+* `docker-compose-weaviate.yml` keeps its data in an **anonymous** Docker volume.
+  Never run `docker compose -f docker-compose-weaviate.yml down -v` on that
+  machine, and back the volume up before upgrading Weaviate
+  (`docker run --rm -v <volume>:/d -v $PWD:/b alpine tar czf /b/weaviate-backup.tgz /d`).
+* The build context is `backend/`; `backend/.dockerignore` keeps the research
+  artefacts (evaluation notebooks, extracted relations, scripts) out of the image.
+
 ## Security checklist before exposing anything
 
 * Never commit `.env` (it is git-ignored now); use `.env.example` as the template.
