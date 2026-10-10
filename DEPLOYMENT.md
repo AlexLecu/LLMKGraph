@@ -11,7 +11,7 @@ The project has four moving parts with very different hosting needs:
 
 There is no serverless free tier that runs GraphDB or local Ollama models, so a
 100 % free deployment means: static frontend on Pages, chatbot in one free
-container on Render with a hosted LLM API, and the GraphDB-backed API either on a
+container on Render with Groq's free LLM API, and the GraphDB-backed API either on a
 free VM or left local.
 
 ---
@@ -44,8 +44,9 @@ and the blueprint [`render.yaml`](render.yaml).
 
 1. Render dashboard → **New → Blueprint** → connect the GitHub repository.
    Render reads `render.yaml` and asks for the one secret, `CHAT_API_KEY`
-   (a Gemini API key; the blueprint already points at Gemini's OpenAI-compatible
-   endpoint and the `gemini-3.8-flash` / `gemini-3.1-flash-lite` models).
+   (a Groq API key, free at console.groq.com; the blueprint already points at
+   Groq's OpenAI-compatible endpoint and the `openai/gpt-oss-120b` /
+   `openai/gpt-oss-20b` models).
 2. Deploy. The service URL looks like `https://llmkgraph-amd-chat.onrender.com`.
 3. Put that URL in the GitHub Actions variable `VITE_CHAT_URL` and re-run the
    Pages workflow, so the Chat tab of the published frontend embeds it.
