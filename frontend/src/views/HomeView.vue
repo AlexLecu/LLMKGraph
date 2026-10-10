@@ -210,26 +210,33 @@ function activateRepository(repoId: string) {
 // ---------------------------------------------------------------------------
 // Queries
 // ---------------------------------------------------------------------------
-/** Relations around one entity (reified + legacy triples), both directions. */
+/** Relations around one entity (reified + legacy triples), both directions.
+ *  Every branch starts from the bound entity so triple-store indexes are used
+ *  (matters a lot for the in-process rdflib store on small CPUs). */
 function neighbourhoodQuery(entityUri: string, limit: number) {
-  const preds = CAUSAL_PREDICATES.map((p) => `c:${p}`).join(', ');
+  const e = `<${entityUri}>`;
+  const preds = CAUSAL_PREDICATES.map((p) => `c:${p}`).join(' ');
   return `
     PREFIX c: <${ONT_NS}>
     PREFIX prov: <http://www.w3.org/ns/prov#>
     SELECT ?relation ?subject ?predicate ?object ?publication ?subjectType ?objectType WHERE {
       {
-        ?relation a c:RELATION ;
-                  c:relation_subject ?subject ;
-                  c:relation_predicate ?predicate ;
-                  c:relation_object ?object .
-        FILTER(?subject = <${entityUri}> || ?object = <${entityUri}>)
+        ?relation c:relation_subject ${e} ; c:relation_predicate ?predicate ; c:relation_object ?object .
+        BIND(${e} AS ?subject)
         OPTIONAL { ?relation prov:wasDerivedFrom ?publication }
-      }
-      UNION
-      {
-        ?subject ?predicate ?object .
-        FILTER(?subject = <${entityUri}> || ?object = <${entityUri}>)
-        FILTER(?predicate IN (${preds}))
+      } UNION {
+        ?relation c:relation_object ${e} ; c:relation_predicate ?predicate ; c:relation_subject ?subject .
+        BIND(${e} AS ?object)
+        OPTIONAL { ?relation prov:wasDerivedFrom ?publication }
+      } UNION {
+        VALUES ?predicate { ${preds} }
+        ${e} ?predicate ?object .
+        BIND(${e} AS ?subject)
+        OPTIONAL { ${e} prov:wasDerivedFrom ?publication }
+      } UNION {
+        VALUES ?predicate { ${preds} }
+        ?subject ?predicate ${e} .
+        BIND(${e} AS ?object)
         OPTIONAL { ?subject prov:wasDerivedFrom ?publication }
       }
       ${TYPE_FILTER('subject')}
