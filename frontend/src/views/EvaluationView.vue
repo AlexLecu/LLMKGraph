@@ -1,4 +1,6 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { EVAL_URL } from '@/config';
+</script>
 
 
 <template>
@@ -10,7 +12,7 @@
     </aside>
 
     <div class="chat-content">
-      <iframe ref="myIframe" src="http://localhost:8502/?embed=true&embed_options=show_toolbar"></iframe>
+      <iframe ref="myIframe" :src="EVAL_URL"></iframe>
     </div>
 
   </div>

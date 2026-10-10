@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify, make_response, send_file
 from enrich_kg_gpt import return_relations, add_relations_to_kg
 from disambiguation.reason import reason_and_update
-from search_kg import query_knowledge_graph, delete_relation_kg
+from search_kg import query_knowledge_graph, delete_relation_kg, validate_repo_id
 from bulk_relations import extract_relations, add_bulk_relations_to_kg
 from flask_cors import CORS
 import requests
@@ -10,11 +10,25 @@ import json
 import os
 
 app = Flask(__name__)
-CORS(app)
+# Restrict browser origins in production via CORS_ORIGINS="https://my-frontend.example"
+# (comma separated). "*" keeps the permissive development behaviour.
+_cors_origins = [o.strip() for o in os.getenv("CORS_ORIGINS", "*").split(",") if o.strip()]
+CORS(app, origins="*" if _cors_origins == ["*"] else _cors_origins)
 
 
 GRAPHDB_URL = os.getenv('GRAPHDB_URL', 'http://localhost:7200')
 AVAILABLE_MODELS = ["model_a", "model_b", "model_c", "model_d"]
+
+
+@app.errorhandler(ValueError)
+def handle_value_error(error):
+    # Raised by validate_repo_id / validate_local_name on malformed identifiers
+    return jsonify({"error": str(error)}), 400
+
+
+@app.route('/api/health', methods=['GET'])
+def health():
+    return jsonify({"status": "ok"})
 
 
 @app.route('/api/showRelations', methods=['POST'])
@@ -30,7 +44,7 @@ def show_relations():
 @app.route('/api/addRelations', methods=['POST'])
 def add_relations():
     json_file = request.get_json()
-    add_relations_to_kg(json_file["relations"], json_file["repo_id"])
+    add_relations_to_kg(json_file["relations"], validate_repo_id(json_file["repo_id"]))
 
     response = make_response("{\"status\": \"Successfully completed\"}")
 
@@ -39,7 +53,7 @@ def add_relations():
 
 @app.route('/api/reason', methods=['GET'])
 def reason_kg():
-    repo_id = request.args.get('repo_id', '')
+    repo_id = validate_repo_id(request.args.get('repo_id', ''))
 
     reason_and_update(repo_id)
     response = make_response("{\"status\": \"Successfully completed\"}")
@@ -126,9 +140,12 @@ def upload_relations():
         return jsonify({"error": "File and repository ID are required"}), 400
 
     file = request.files['file']
-    repo_id = request.form.get("repo_id")
+    repo_id = validate_repo_id(request.form.get("repo_id"))
 
-    relations = json.load(file)
+    try:
+        relations = json.load(file)
+    except json.JSONDecodeError:
+        return jsonify({"error": "Invalid JSON file"}), 400
     add_bulk_relations_to_kg(relations, repo_id)
 
     response = make_response("{\"status\": \"Successfully completed\"}")
@@ -137,4 +154,8 @@ def upload_relations():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    # Debug mode exposes the Werkzeug interactive debugger (remote code execution
+    # for anyone who can reach the port). Keep it off unless FLASK_DEBUG=1.
+    app.run(host=os.getenv("FLASK_HOST", "127.0.0.1"),
+            port=int(os.getenv("PORT", "5555")),
+            debug=os.getenv("FLASK_DEBUG", "0") == "1")

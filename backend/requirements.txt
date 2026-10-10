@@ -1,19 +1,33 @@
-streamlit<=1.32.2
-flask<=3.0.2
-flask-cors<=5.0.0
-langchain<=0.3.19
-langchain-openai<=1.0.0
-langchain_huggingface<=0.0.3
-langchain_community<=0.2.7
-openai<=2.5.0
-SPARQLWrapper<=2.0.0
-owlready2<=0.45
-rdflib<=7.1.3
-notebook<=7.1.2
-faiss-cpu<=1.12.0
-python-dotenv<=1.0.1
-mistralai<=1.9.11
-matplotlib<=3.10.7
-seaborn<=0.13.2
-weaviate-client<=4.10.4
-chainlit<=2.8.3
+# Pinned with *minimum* versions at or above the patched releases reported by
+# GitHub Dependabot (Oct 2026), plus an upper bound on the next major version.
+# Using ">=" instead of "<=" is what actually makes Dependabot alerts go away:
+# a "<=" pin says "any version up to X", which still allows vulnerable ones.
+
+# Web / UI
+flask>=3.1.3,<4
+flask-cors>=6.0.0,<7
+gunicorn>=23.0.0,<24
+streamlit>=1.54.0,<2
+chainlit>=2.10.1,<3
+
+# LLM / LangChain (langchain 1.x; `langchain.chains` moved to langchain-classic)
+langchain>=1.3.9,<2
+langchain-classic>=1.0.0,<2
+langchain-openai>=1.1.14,<2
+langchain-huggingface>=1.0.0,<2
+langchain-community>=0.4.0,<1
+openai>=2.5.0,<4
+mistralai>=1.9.11,<2
+
+# Knowledge graph
+SPARQLWrapper>=2.0.0,<3
+owlready2>=0.45
+rdflib>=7.1.3,<8
+weaviate-client>=4.10.4,<5
+faiss-cpu>=1.12.0
+
+# Misc
+python-dotenv>=1.2.2,<2
+notebook>=7.1.2,<8
+matplotlib>=3.10.7,<4
+seaborn>=0.13.2,<1

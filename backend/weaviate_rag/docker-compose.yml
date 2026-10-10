@@ -1,0 +1,25 @@
+services:
+  chatbot:
+    build:
+      context: ../
+      dockerfile: weaviate_rag/Dockerfile
+    container_name: amd-chatbot
+    ports:
+      - "80:7860"
+    environment:
+      - PYTHONUNBUFFERED=1
+      - PORT=7860
+      # Weaviate runs on host - connect via host.docker.internal
+      - WEAVIATE_HOST=host.docker.internal
+      - WEAVIATE_HTTP_PORT=8080
+      - WEAVIATE_GRPC_PORT=50051
+      # Ollama runs on host
+      - OLLAMA_HOST=http://host.docker.internal:11434
+      # API keys (loaded from .env file)
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - HUGGINGFACEHUB_API_TOKEN=${HUGGINGFACEHUB_API_TOKEN}
+      - TOGETHER_API_KEY=${TOGETHER_API_KEY}
+      - GOOGLE_API_KEY=${GOOGLE_API_KEY}
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: unless-stopped

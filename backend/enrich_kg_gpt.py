@@ -1,3 +1,5 @@
+import ast
+import logging
 import os
 import uuid
 
@@ -31,12 +33,36 @@ def generate_relations(text):
     return chat_response
 
 
+REQUIRED_RELATION_KEYS = {"entity1_name", "entity1_type", "relation_type", "entity2_name", "entity2_type"}
+
+
+def parse_relation_line(relation_string):
+    """Safely parse one model-generated relation line into a dict.
+
+    The model is asked to return Python-dict-like lines. `ast.literal_eval`
+    only evaluates literals (no function calls / imports), unlike `eval`, so a
+    malicious or malformed model output cannot execute code.
+    """
+    try:
+        value = ast.literal_eval(relation_string)
+    except (ValueError, SyntaxError) as exc:
+        logging.warning("Skipping unparsable relation line %r: %s", relation_string[:120], exc)
+        return None
+    if not isinstance(value, dict) or not REQUIRED_RELATION_KEYS.issubset(value):
+        logging.warning("Skipping relation with missing keys: %r", relation_string[:120])
+        return None
+    return value
+
+
 def convert_relations(response):
     relations = []
     relation_strings = response.choices[0].message.content.strip().split('\n')
     for relation_string in relation_strings:
-        if relation_string != '':
-            relation_dict = eval(relation_string)
+        relation_string = relation_string.strip()
+        if relation_string == '':
+            continue
+        relation_dict = parse_relation_line(relation_string)
+        if relation_dict is not None:
             relations.append(relation_dict)
 
     return relations
