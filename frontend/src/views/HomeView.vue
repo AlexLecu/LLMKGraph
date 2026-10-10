@@ -6,7 +6,7 @@ import axios from 'axios';
 import { Network } from 'vis-network';
 import { DataSet } from 'vis-data';
 import AppSidebar from '@/components/AppSidebar.vue';
-import { API_URL, GRAPHDB_URL } from '@/config';
+import { API_URL } from '@/config';
 import {
   ONT_NS, ALL_STYLES, ENTITY_STYLES, localName, prettyLabel, entityKind, makeNode,
   type GraphNode,
@@ -115,12 +115,9 @@ function clearStatusTextAfterDelay() {
   }, 5000);
 }
 
+/** Read-only SPARQL through the API proxy (the browser never calls GraphDB directly). */
 function sparqlGet(repoId: string, query: string) {
-  return axios.get(`${GRAPHDB_URL}/repositories/${repoId}`, {
-    params: { query },
-    headers: { Accept: 'application/sparql-results+json' },
-    timeout: 15000,
-  });
+  return axios.post(`${API_URL}/api/sparql`, { repo_id: repoId, query }, { timeout: 60000 });
 }
 
 // ---------------------------------------------------------------------------
@@ -146,7 +143,9 @@ async function fetchRepositories() {
     const response = await axios.get<Repository[]>(`${API_URL}/api/available_repositories`, { timeout: 8000 });
     repositories.value = response.data;
     if (repositories.value.length && !repositories.value.some((r) => r.id === currentRepoId.value)) {
-      currentRepoId.value = repositories.value[0]!.id;
+      // Prefer an AMD repository when GraphDB also hosts other projects
+      const preferred = repositories.value.find((r) => /amd/i.test(r.id)) ?? repositories.value[0]!;
+      currentRepoId.value = preferred.id;
       fetchData();
     }
   } catch (error) {
@@ -190,8 +189,8 @@ async function fetchData() {
                   c:relation_object ?object .
         OPTIONAL { ?relation prov:wasDerivedFrom ?publication }
       }
-      OPTIONAL { ?subject a ?subjectType . FILTER(STRSTARTS(STR(?subjectType), "${ONT_NS}")) }
-      OPTIONAL { ?object a ?objectType . FILTER(STRSTARTS(STR(?objectType), "${ONT_NS}")) }
+      OPTIONAL { ?subject a ?subjectType . FILTER(STRSTARTS(STR(?subjectType), "${ONT_NS}") && ?subjectType != <${ONT_NS}Entity>) }
+      OPTIONAL { ?object a ?objectType . FILTER(STRSTARTS(STR(?objectType), "${ONT_NS}") && ?objectType != <${ONT_NS}Entity>) }
     }
     LIMIT 10
   `.replace(/\s+/g, ' ');
@@ -215,10 +214,9 @@ async function fetchData() {
 }
 
 function describeAxiosError(error: any): string {
-  if (error?.response) {
-    return `GraphDB answered ${error.response.status} for repository "${currentRepoId.value}".`;
-  }
-  return `No answer from ${GRAPHDB_URL}.`;
+  if (error?.response?.data?.error) return String(error.response.data.error);
+  if (error?.response) return `The API answered ${error.response.status} for repository "${currentRepoId.value}".`;
+  return `No answer from the API at ${API_URL}.`;
 }
 
 function processData(data: any) {
@@ -432,8 +430,8 @@ async function fetchConnectedNodes(nodeId: string) {
       { ?subject ?predicate ?object . FILTER(?subject = <${formattedNodeId}>) }
       UNION
       { ?subject ?predicate ?object . FILTER(?object = <${formattedNodeId}>) }
-      OPTIONAL { ?subject a ?subjectType . FILTER(STRSTARTS(STR(?subjectType), "${ONT_NS}")) }
-      OPTIONAL { ?object a ?objectType . FILTER(STRSTARTS(STR(?objectType), "${ONT_NS}")) }
+      OPTIONAL { ?subject a ?subjectType . FILTER(STRSTARTS(STR(?subjectType), "${ONT_NS}") && ?subjectType != <${ONT_NS}Entity>) }
+      OPTIONAL { ?object a ?objectType . FILTER(STRSTARTS(STR(?objectType), "${ONT_NS}") && ?objectType != <${ONT_NS}Entity>) }
     } LIMIT 100
   `;
   try {
@@ -804,11 +802,11 @@ async function addRelationsToKG() {
               <p>Loading graph…</p>
             </div>
             <div v-else-if="graphState === 'error'" class="graph-overlay">
-              <h3>GraphDB is not reachable</h3>
+              <h3>Graph data is not available</h3>
               <p class="muted">{{ graphError }}</p>
               <p class="muted">
-                Start GraphDB (<code class="inline">docker compose up graphdb</code>) or set
-                <code class="inline">VITE_GRAPHDB_URL</code>, then retry.
+                Make sure the API (<code class="inline">flask run -p 5555</code>) and GraphDB are running,
+                and that <code class="inline">GRAPHDB_URL</code> in <code class="inline">.env</code> points at GraphDB.
               </p>
               <button class="btn btn-primary btn-sm" type="button" @click="fetchData">Retry</button>
             </div>

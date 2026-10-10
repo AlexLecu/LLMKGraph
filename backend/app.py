@@ -4,6 +4,7 @@ from disambiguation.reason import reason_and_update
 from search_kg import query_knowledge_graph, delete_relation_kg, validate_repo_id
 from bulk_relations import extract_relations, add_bulk_relations_to_kg
 from flask_cors import CORS
+import re
 import requests
 import tempfile
 import json
@@ -61,6 +62,33 @@ def reason_kg():
     return response
 
 
+@app.route('/api/sparql', methods=['POST'])
+def sparql_proxy():
+    """Read-only SPARQL proxy so the browser never talks to GraphDB directly
+    (no CORS setup needed, GraphDB can stay private)."""
+    body = request.get_json(silent=True) or {}
+    repo_id = validate_repo_id(body.get("repo_id", ""))
+    query = body.get("query", "")
+    if not isinstance(query, str) or not query.strip():
+        return jsonify({"error": "query is required"}), 400
+    # Prefix declarations may precede the query form; look for the first keyword
+    form = re.search(r'\b(SELECT|ASK|CONSTRUCT|DESCRIBE|INSERT|DELETE|LOAD|CLEAR|DROP|CREATE)\b', query, re.I)
+    if not form or form.group(1).upper() not in ("SELECT", "ASK", "CONSTRUCT", "DESCRIBE"):
+        return jsonify({"error": "Only read-only SPARQL queries are allowed here"}), 400
+    try:
+        response = requests.post(
+            f"{GRAPHDB_URL}/repositories/{repo_id}",
+            data={"query": query},
+            headers={"Accept": "application/sparql-results+json"},
+            timeout=60,
+        )
+    except requests.RequestException as e:
+        return jsonify({"error": f"GraphDB not reachable: {e}"}), 502
+    if response.status_code != 200:
+        return jsonify({"error": f"GraphDB answered {response.status_code}", "detail": response.text[:500]}), 502
+    return app.response_class(response.content, status=200, mimetype="application/sparql-results+json")
+
+
 @app.route('/api/search', methods=['GET'])
 def search():
     query_text = request.args.get('q', '')
@@ -93,7 +121,7 @@ def delete_relation():
 @app.route("/api/available_repositories", methods=["GET"])
 def available_repositories():
     try:
-        response = requests.get(f"{GRAPHDB_URL}/rest/repositories/", headers={"Accept": "application/json"})
+        response = requests.get(f"{GRAPHDB_URL}/rest/repositories", headers={"Accept": "application/json"}, timeout=15)
         if response.status_code == 200:
             repos = response.json()
             available_repos = [

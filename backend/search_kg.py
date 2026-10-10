@@ -32,7 +32,11 @@ def construct_sparql_query(query_text, filter_type):
     # Two escaping layers: regex metacharacters first, then the SPARQL string
     # literal (backslash and double quote). re.escape alone produces sequences
     # such as "\ " that are not valid inside a SPARQL string.
-    pattern = re.escape(query_text).replace('\\', '\\\\').replace('"', '\\"')
+    # Entities are stored as sanitized local names (spaces, hyphens and other
+    # punctuation become "_"), so normalise the search term the same way:
+    # "anti-VEGF therapy" -> "anti_vegf_therapy".
+    normalised = re.sub(r'[\s\W]+', '_', query_text.strip()).strip('_')
+    pattern = re.escape(normalised).replace('\\', '\\\\').replace('"', '\\"')
     regex = lambda var: f'regex(str(?{var}), "{pattern}", "i")'
     if filter_type == 'node':
         condition = regex('subject')
@@ -52,8 +56,8 @@ def construct_sparql_query(query_text, filter_type):
                 ont:relation_predicate ?predicate ;
                 ont:relation_object ?object .
         OPTIONAL {{ ?relation prov:wasDerivedFrom ?publication . }}
-        OPTIONAL {{ ?subject a ?subjectType . FILTER(STRSTARTS(STR(?subjectType), "{ONT_NAMESPACE}")) }}
-        OPTIONAL {{ ?object a ?objectType . FILTER(STRSTARTS(STR(?objectType), "{ONT_NAMESPACE}")) }}
+        OPTIONAL {{ ?subject a ?subjectType . FILTER(STRSTARTS(STR(?subjectType), "{ONT_NAMESPACE}") && ?subjectType != ont:Entity) }}
+        OPTIONAL {{ ?object a ?objectType . FILTER(STRSTARTS(STR(?objectType), "{ONT_NAMESPACE}") && ?objectType != ont:Entity) }}
         FILTER ( {condition} )
     }} LIMIT 100
     """
