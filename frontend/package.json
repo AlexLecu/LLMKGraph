@@ -15,10 +15,10 @@
     "vue-loading-overlay": "^6.0.6"
   },
   "devDependencies": {
-    "@tsconfig/node20": "^20.1.6",
+    "@tsconfig/node20": "^20.1.10",
     "@types/node": "^24.3.1",
     "@vitejs/plugin-vue": "^6.0.10",
-    "@vue/tsconfig": "^0.8.1",
+    "@vue/tsconfig": "^0.9.1",
     "npm-run-all2": "^9.0.3",
     "typescript": "^5.9.2",
     "vis-data": "^8.0.5",
