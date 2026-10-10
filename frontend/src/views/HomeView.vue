@@ -12,44 +12,41 @@ import {
   type GraphNode,
 } from '@/graph/palette';
 
-interface Edge {
-  id?: string;
-  from: string;
-  to: string;
-  /** Short label drawn on the canvas. */
-  label: string;
-  /** Original predicate local name (relation_subject, cause, …), used by the API. */
-  rel: string;
+/** One causal relation, whether stored reified (REL_ node) or as a direct triple. */
+interface RelationRecord {
+  id: string;            // relation URI (reified) or "subject|predicate|object" (legacy triple)
+  reified: boolean;
+  subject: string;
+  subjectType: string | null;
   predicate: string;
+  object: string;
+  objectType: string | null;
+  publication: string | null;
 }
 
-const EDGE_LABELS: Record<string, string> = {
-  relation_subject: 'subject',
-  relation_predicate: 'type',
-  relation_object: 'object',
-  wasDerivedFrom: 'source',
-};
-
-function makeEdge(from: string, to: string, rel: string, predicate: string): Edge {
-  return { from, to, rel, predicate, label: EDGE_LABELS[rel] ?? prettyLabel(rel) };
+/** What vis-network draws: one edge per relation. */
+interface GraphEdge {
+  id: string;
+  from: string;
+  to: string;
+  label: string;         // predicate local name, drawn on the canvas
+  title?: string;        // hover tooltip
+  predicate: string;     // predicate URI
+  relation: string | null;   // REL_... local name when reified
+  publication: string | null;
 }
 
 interface Repository {
   id: string;
 }
 
-interface SearchResult {
-  relation: string;
-  subject: string;
-  predicate: string;
-  object: string;
-  publication: string;
-  subjectType: string | null;
-  objectType: string | null;
-}
-
 type GraphState = 'loading' | 'ready' | 'empty' | 'error';
 type ApiStatus = 'unknown' | 'ok' | 'down';
+
+const RDF_TYPE = 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type';
+const CAUSAL_PREDICATES = ['cause', 'affect', 'prevent', 'aggravate', 'diagnose', 'improve', 'present', 'progression', 'test', 'treat'];
+const TYPE_FILTER = (v: string) =>
+  `OPTIONAL { ?${v} a ?${v}Type . FILTER(STRSTARTS(STR(?${v}Type), "${ONT_NS}") && ?${v}Type != <${ONT_NS}Entity>) }`;
 
 // ---------------------------------------------------------------------------
 // State
@@ -64,9 +61,9 @@ const repositories = ref<Repository[]>([]);
 const currentRepoId = ref('amd_repo_mistral');
 const queryText = ref('');
 const filterType = ref('');
-const results = ref<SearchResult[]>([]);
+const results = ref<RelationRecord[]>([]);
 const selectedResultIndex = ref<number | null>(null);
-const selectedEdge = ref<Edge | null>(null);
+const selectedEdge = ref<GraphEdge | null>(null);
 const graphState = ref<GraphState>('loading');
 const graphError = ref('');
 const apiStatus = ref<ApiStatus>('unknown');
@@ -85,14 +82,14 @@ let statusTimeout: number | null = null;
 const graphContainer = ref<HTMLElement | null>(null);
 let network: Network | null = null;
 const nodes = ref<DataSet<any> | null>(null);
-const edges = ref<DataSet<Edge> | null>(null);
-const expandedData = ref<Record<string, { nodes: any[]; edges: any[] }>>({});
+const edges = ref<DataSet<GraphEdge> | null>(null);
+const expandedData = ref<Record<string, { nodes: string[]; edges: string[] }>>({});
 
 const selectedRelationText = computed(() => {
   const e = selectedEdge.value;
   if (!e) return '';
-  const target = e.rel === 'relation_predicate' ? e.predicate : e.to;
-  return `${prettyLabel(localName(e.from))}  →  ${e.rel}  →  ${prettyLabel(localName(target))}`;
+  const src = e.publication ? `  ·  source: ${localName(e.publication)}` : '';
+  return `${prettyLabel(localName(e.from))}  →  ${e.label}  →  ${prettyLabel(localName(e.to))}${src}`;
 });
 
 const legendItems = computed(() =>
@@ -105,19 +102,62 @@ const legendItems = computed(() =>
 function setStatus(text: string, kind: 'info' | 'success' | 'error' = 'info') {
   statusText.value = text;
   statusKind.value = kind;
-  clearStatusTextAfterDelay();
-}
-
-function clearStatusTextAfterDelay() {
   if (statusTimeout) clearTimeout(statusTimeout);
-  statusTimeout = window.setTimeout(() => {
-    statusText.value = '';
-  }, 5000);
+  statusTimeout = window.setTimeout(() => { statusText.value = ''; }, 5000);
 }
 
 /** Read-only SPARQL through the API proxy (the browser never calls GraphDB directly). */
 function sparqlGet(repoId: string, query: string) {
   return axios.post(`${API_URL}/api/sparql`, { repo_id: repoId, query }, { timeout: 60000 });
+}
+
+function describeAxiosError(error: any): string {
+  if (error?.response?.data?.error) return String(error.response.data.error);
+  if (error?.response) return `The API answered ${error.response.status} for repository "${currentRepoId.value}".`;
+  return `No answer from the API at ${API_URL}.`;
+}
+
+/** SPARQL JSON bindings -> relation records (both schemas). */
+function recordsFromBindings(bindings: any[]): RelationRecord[] {
+  const out: RelationRecord[] = [];
+  const seen = new Set<string>();
+  for (const b of bindings) {
+    const subject = b.subject?.value;
+    const predicate = b.predicate?.value;
+    const object = b.object?.value;
+    if (!subject || !predicate || !object) continue;
+    if (predicate === RDF_TYPE) continue;
+    const relation = b.relation?.value as string | undefined;
+    const id = relation ?? `${subject}|${predicate}|${object}`;
+    if (seen.has(id)) continue; // several rdf:type rows per entity collapse into one
+    seen.add(id);
+    out.push({
+      id,
+      reified: !!relation,
+      subject,
+      subjectType: b.subjectType?.value ?? null,
+      predicate,
+      object,
+      objectType: b.objectType?.value ?? null,
+      publication: b.publication?.value ?? null,
+    });
+  }
+  return out;
+}
+
+function edgeFromRecord(r: RelationRecord): GraphEdge {
+  const label = localName(r.predicate);
+  const source = r.publication ? ` · source: ${localName(r.publication)}` : '';
+  return {
+    id: r.id,
+    from: r.subject,
+    to: r.object,
+    label,
+    title: `${prettyLabel(localName(r.subject))} ${label} ${prettyLabel(localName(r.object))}${source}`,
+    predicate: r.predicate,
+    relation: r.reified ? localName(r.id) : null,
+    publication: r.publication,
+  };
 }
 
 // ---------------------------------------------------------------------------
@@ -163,47 +203,52 @@ function activateRepository(repoId: string) {
 }
 
 // ---------------------------------------------------------------------------
+// Queries
+// ---------------------------------------------------------------------------
+/** Relations around one entity (reified + legacy triples), both directions. */
+function neighbourhoodQuery(entityUri: string, limit: number) {
+  const preds = CAUSAL_PREDICATES.map((p) => `c:${p}`).join(', ');
+  return `
+    PREFIX c: <${ONT_NS}>
+    PREFIX prov: <http://www.w3.org/ns/prov#>
+    SELECT ?relation ?subject ?predicate ?object ?publication ?subjectType ?objectType WHERE {
+      {
+        ?relation a c:RELATION ;
+                  c:relation_subject ?subject ;
+                  c:relation_predicate ?predicate ;
+                  c:relation_object ?object .
+        FILTER(?subject = <${entityUri}> || ?object = <${entityUri}>)
+        OPTIONAL { ?relation prov:wasDerivedFrom ?publication }
+      }
+      UNION
+      {
+        ?subject ?predicate ?object .
+        FILTER(?subject = <${entityUri}> || ?object = <${entityUri}>)
+        FILTER(?predicate IN (${preds}))
+        OPTIONAL { ?subject prov:wasDerivedFrom ?publication }
+      }
+      ${TYPE_FILTER('subject')}
+      ${TYPE_FILTER('object')}
+    }
+    LIMIT ${limit}
+  `.replace(/\s+/g, ' ');
+}
+
+// ---------------------------------------------------------------------------
 // Default graph (neighbourhood of the AMD node)
 // ---------------------------------------------------------------------------
 async function fetchData() {
   graphState.value = 'loading';
   graphError.value = '';
-  const defaultQuery = `
-    PREFIX c: <${ONT_NS}>
-    PREFIX prov: <http://www.w3.org/ns/prov#>
-    SELECT ?relation ?subject ?predicate ?object ?publication ?subjectType ?objectType WHERE {
-      {
-        BIND(c:age_related_macular_degeneration AS ?subject)
-        ?subject ?predicate ?object .
-        FILTER(?predicate IN (c:cause, c:affect, c:prevent, c:aggravate,
-                              c:diagnose, c:improve, c:present, c:progression,
-                              c:test, c:treat))
-        OPTIONAL { ?subject prov:wasDerivedFrom ?publication }
-      }
-      UNION
-      {
-        BIND(c:age_related_macular_degeneration AS ?subject)
-        ?relation a c:RELATION ;
-                  c:relation_subject ?subject ;
-                  c:relation_predicate ?predicate ;
-                  c:relation_object ?object .
-        OPTIONAL { ?relation prov:wasDerivedFrom ?publication }
-      }
-      OPTIONAL { ?subject a ?subjectType . FILTER(STRSTARTS(STR(?subjectType), "${ONT_NS}") && ?subjectType != <${ONT_NS}Entity>) }
-      OPTIONAL { ?object a ?objectType . FILTER(STRSTARTS(STR(?objectType), "${ONT_NS}") && ?objectType != <${ONT_NS}Entity>) }
-    }
-    LIMIT 10
-  `.replace(/\s+/g, ' ');
-
   try {
-    const response = await sparqlGet(currentRepoId.value, defaultQuery);
-    const bindings = response.data?.results?.bindings ?? [];
-    if (!bindings.length) {
+    const response = await sparqlGet(currentRepoId.value, neighbourhoodQuery(`${ONT_NS}age_related_macular_degeneration`, 15));
+    const records = recordsFromBindings(response.data?.results?.bindings ?? []);
+    if (!records.length) {
       clearGraph();
       graphState.value = 'empty';
       return;
     }
-    processData(response.data);
+    nextTick(() => drawRecords(records, true));
     graphState.value = 'ready';
   } catch (error: any) {
     console.error('Error fetching data:', error);
@@ -213,118 +258,79 @@ async function fetchData() {
   }
 }
 
-function describeAxiosError(error: any): string {
-  if (error?.response?.data?.error) return String(error.response.data.error);
-  if (error?.response) return `The API answered ${error.response.status} for repository "${currentRepoId.value}".`;
-  return `No answer from the API at ${API_URL}.`;
-}
-
-function processData(data: any) {
-  const nodesArray: GraphNode[] = [];
-  const edgesArray: Edge[] = [];
-  const nodeIds = new Set<string>();
-
-  const predicateURIs = {
-    relation_subject: `${ONT_NS}relation_subject`,
-    relation_predicate: `${ONT_NS}relation_predicate`,
-    relation_object: `${ONT_NS}relation_object`,
-    wasDerivedFrom: 'http://www.w3.org/ns/prov#wasDerivedFrom',
-  };
-
-  data.results.bindings.forEach((binding: any) => {
-    const relation = binding.relation?.value;
-    const subject = binding.subject?.value;
-    const predicate = binding.predicate?.value;
-    const object = binding.object?.value;
-    const publication = binding.publication?.value;
-    const subjectType = binding.subjectType?.value;
-    const objectType = binding.objectType?.value;
-    if (!subject || !predicate || !object) return;
-
-    if (relation) {
-      addNode(nodesArray, nodeIds, makeNode(relation, 'RELATION'));
-      addNode(nodesArray, nodeIds, makeNode(subject, entityKind(subjectType)));
-      addNode(nodesArray, nodeIds, makeNode(predicate, 'PREDICATE'));
-      addNode(nodesArray, nodeIds, makeNode(object, entityKind(objectType)));
-      edgesArray.push(makeEdge(relation, subject, 'relation_subject', predicateURIs.relation_subject));
-      edgesArray.push(makeEdge(relation, predicate, 'relation_predicate', predicateURIs.relation_predicate));
-      edgesArray.push(makeEdge(relation, object, 'relation_object', predicateURIs.relation_object));
-      if (publication) {
-        addNode(nodesArray, nodeIds, makeNode(publication, 'PUBLICATION'));
-        edgesArray.push(makeEdge(relation, publication, 'wasDerivedFrom', predicateURIs.wasDerivedFrom));
-      }
-    } else {
-      addNode(nodesArray, nodeIds, makeNode(subject, entityKind(subjectType)));
-      addNode(nodesArray, nodeIds, makeNode(object, entityKind(objectType)));
-      edgesArray.push(makeEdge(subject, object, localName(predicate), predicate));
-    }
-  });
-
-  nextTick(() => renderGraph(nodesArray, edgesArray));
-}
-
-function addNode(nodesArray: GraphNode[], nodeIds: Set<string>, node: GraphNode) {
-  if (nodeIds.has(node.id)) return;
-  nodesArray.push(node);
-  nodeIds.add(node.id);
-}
-
 // ---------------------------------------------------------------------------
 // Rendering
 // ---------------------------------------------------------------------------
+function ensureDataSets() {
+  if (!nodes.value) nodes.value = new DataSet();
+  if (!edges.value) edges.value = new DataSet();
+}
+
 function updateLegend() {
   const kinds = new Set<string>();
   nodes.value?.forEach((n: any) => kinds.add(n.kind ?? 'ENTITY'));
-  const order = [...Object.keys(ENTITY_STYLES), 'ENTITY', 'RELATION', 'PREDICATE', 'PUBLICATION'];
+  const order = [...Object.keys(ENTITY_STYLES), 'ENTITY'];
   legendKinds.value = order.filter((k) => kinds.has(k));
 }
 
-function renderGraph(nodesArray: GraphNode[], edgesArray: Edge[]) {
-  if (!graphContainer.value) {
-    console.error('Graph container is not available.');
-    return;
+/** Add the records' entities and edges to the canvas; `replace` clears it first. */
+function drawRecords(records: RelationRecord[], replace: boolean): { nodes: string[]; edges: string[] } {
+  ensureDataSets();
+  if (replace) {
+    nodes.value!.clear();
+    edges.value!.clear();
+    nodeStates.value = {};
+    expandedData.value = {};
   }
-  if (!nodes.value) nodes.value = new DataSet();
-  if (!edges.value) edges.value = new DataSet();
-
-  nodes.value.clear();
-  edges.value.clear();
-  nodes.value.add(nodesArray);
-  edges.value.add(edgesArray);
+  const added = { nodes: [] as string[], edges: [] as string[] };
+  const newNodes: GraphNode[] = [];
+  const newEdges: GraphEdge[] = [];
+  for (const r of records) {
+    for (const [uri, type] of [[r.subject, r.subjectType], [r.object, r.objectType]] as const) {
+      if (nodes.value!.get(uri) || newNodes.some((n) => n.id === uri)) continue;
+      newNodes.push(makeNode(uri, entityKind(type)));
+      added.nodes.push(uri);
+      nodeStates.value[uri] = 'collapsed';
+    }
+    if (edges.value!.get(r.id) || newEdges.some((e) => e.id === r.id)) continue;
+    newEdges.push(edgeFromRecord(r));
+    added.edges.push(r.id);
+  }
+  nodes.value!.add(newNodes);
+  edges.value!.add(newEdges);
   updateLegend();
+  mountNetwork();
+  return added;
+}
 
-  const data = { nodes: nodes.value, edges: edges.value };
+function mountNetwork() {
+  if (!graphContainer.value || !nodes.value || !edges.value) return;
+  if (network) return;
   const options = {
     nodes: {
-      shape: 'dot',
-      size: 22,
+      shape: 'ellipse',
       borderWidth: 2,
-      shadow: { enabled: true, color: 'rgba(15,23,42,0.18)', size: 8, x: 0, y: 2 },
+      margin: { top: 6, right: 10, bottom: 6, left: 10 },
+      shadow: { enabled: true, color: 'rgba(15,23,42,0.15)', size: 6, x: 0, y: 2 },
       font: { size: 15, face: 'Helvetica, Arial, sans-serif', color: '#1f2937' },
     },
     edges: {
-      arrows: 'to',
-      smooth: { enabled: true, type: 'continuous', roundness: 0.5 },
-      font: { size: 11, align: 'middle', color: '#475569', strokeWidth: 3, strokeColor: '#ffffff' },
+      arrows: { to: { enabled: true, scaleFactor: 0.7 } },
+      smooth: { enabled: true, type: 'dynamic' },
+      font: { size: 12, align: 'horizontal', color: '#475569', strokeWidth: 4, strokeColor: '#ffffff' },
       color: { color: '#94a3b8', highlight: '#2563eb', hover: '#2563eb' },
       selectionWidth: 2,
-      width: 1.5,
+      width: 1.6,
     },
     physics: {
-      stabilization: { iterations: 120, updateInterval: 25 },
-      barnesHut: { gravitationalConstant: -2200, springLength: 160, springConstant: 0.03 },
+      solver: 'forceAtlas2Based',
+      forceAtlas2Based: { gravitationalConstant: -80, centralGravity: 0.008, springLength: 170, springConstant: 0.06, avoidOverlap: 0.9 },
+      stabilization: { iterations: 200, updateInterval: 25 },
     },
     interaction: { hover: true, tooltipDelay: 150, zoomSpeed: 0.6 },
     layout: { improvedLayout: true },
   };
-
-  if (!network) {
-    network = new Network(graphContainer.value, data, options as any);
-  } else {
-    network.setData(data);
-  }
-
-  network.off('click');
+  network = new Network(graphContainer.value, { nodes: nodes.value, edges: edges.value }, options as any);
   network.on('click', async (params: any) => {
     if (params.nodes.length > 0) {
       await toggleNode(params.nodes[0]);
@@ -334,6 +340,7 @@ function renderGraph(nodesArray: GraphNode[], edgesArray: Edge[]) {
       deselectEdge();
     }
   });
+  network.on('stabilized', () => network?.fit({ animation: false }));
 }
 
 function fitGraph() {
@@ -342,13 +349,20 @@ function fitGraph() {
 
 function selectEdge(edgeId: string) {
   const edge = edges.value?.get(edgeId);
-  if (!edge) return;
-  selectedEdge.value = edge;
+  if (edge) selectedEdge.value = edge;
 }
 
 function deselectEdge() {
   selectedEdge.value = null;
   network?.unselectAll();
+}
+
+function clearGraph() {
+  nodes.value?.clear();
+  edges.value?.clear();
+  nodeStates.value = {};
+  expandedData.value = {};
+  legendKinds.value = [];
 }
 
 // ---------------------------------------------------------------------------
@@ -364,91 +378,27 @@ async function toggleNode(nodeId: string) {
   }
 }
 
-function addNodesAndEdgesFromMemory(memory: { nodes: any[]; edges: any[] }) {
-  if (nodes.value && memory.nodes.length) nodes.value.add(memory.nodes);
-  if (edges.value && memory.edges.length) edges.value.add(memory.edges);
-}
-
 async function expandNode(nodeId: string) {
-  if (expandedData.value[nodeId]) {
-    addNodesAndEdgesFromMemory(expandedData.value[nodeId]);
-    updateLegend();
-    return;
-  }
-  const connectedBindings = await fetchConnectedNodes(nodeId);
-  const memory: { nodes: any[]; edges: any[] } = { nodes: [], edges: [] };
-  const newNodes: GraphNode[] = [];
-  const newEdges: Edge[] = [];
-  const nodeIds = new Set<string>((nodes.value?.getIds() as string[]) || []);
-
-  connectedBindings.forEach((binding: any) => {
-    const s = binding.subject.value;
-    const p = binding.predicate.value;
-    const o = binding.object.value;
-    // rdf:type statements are used for colouring, not drawn as edges
-    if (p === 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type') return;
-    const sKind = guessKind(s, binding.subjectType?.value, p, 'subject');
-    const oKind = guessKind(o, binding.objectType?.value, p, 'object');
-    if (!nodeIds.has(s)) {
-      const nodeObj = makeNode(s, sKind);
-      newNodes.push(nodeObj);
-      nodeIds.add(s);
-      nodeStates.value[s] = 'collapsed';
-      memory.nodes.push(nodeObj);
-    }
-    if (!nodeIds.has(o)) {
-      const nodeObj = makeNode(o, oKind);
-      newNodes.push(nodeObj);
-      nodeIds.add(o);
-      nodeStates.value[o] = 'collapsed';
-      memory.nodes.push(nodeObj);
-    }
-    const edgeObj: Edge = makeEdge(s, o, localName(p), p);
-    newEdges.push(edgeObj);
-    memory.edges.push(edgeObj);
-  });
-  if (nodes.value && newNodes.length) nodes.value.add(newNodes);
-  if (edges.value && newEdges.length) edges.value.add(newEdges);
-  expandedData.value[nodeId] = memory;
-  updateLegend();
-}
-
-/** Decide how to draw a neighbour reached through an arbitrary predicate. */
-function guessKind(uri: string, typeUri: string | undefined, predicate: string, role: 'subject' | 'object'): string {
-  const name = localName(uri);
-  if (name.startsWith('REL_')) return 'RELATION';
-  if (name.startsWith('PUB_') || predicate.endsWith('wasDerivedFrom') && role === 'object') return 'PUBLICATION';
-  if (predicate.endsWith('relation_predicate') && role === 'object') return 'PREDICATE';
-  return entityKind(typeUri);
-}
-
-async function fetchConnectedNodes(nodeId: string) {
-  const isURI = /^(http|https):\/\/.+$/.test(nodeId);
-  const formattedNodeId = isURI ? nodeId : `${ONT_NS}${nodeId}`;
-  const sparqlQuery = `
-    SELECT ?subject ?predicate ?object ?subjectType ?objectType WHERE {
-      { ?subject ?predicate ?object . FILTER(?subject = <${formattedNodeId}>) }
-      UNION
-      { ?subject ?predicate ?object . FILTER(?object = <${formattedNodeId}>) }
-      OPTIONAL { ?subject a ?subjectType . FILTER(STRSTARTS(STR(?subjectType), "${ONT_NS}") && ?subjectType != <${ONT_NS}Entity>) }
-      OPTIONAL { ?object a ?objectType . FILTER(STRSTARTS(STR(?objectType), "${ONT_NS}") && ?objectType != <${ONT_NS}Entity>) }
-    } LIMIT 100
-  `;
+  if (expandedData.value[nodeId]) return; // already on the canvas
   try {
-    const response = await sparqlGet(currentRepoId.value, sparqlQuery);
-    return response.data.results.bindings;
+    const response = await sparqlGet(currentRepoId.value, neighbourhoodQuery(nodeId, 60));
+    const records = recordsFromBindings(response.data?.results?.bindings ?? []);
+    const added = drawRecords(records, false);
+    expandedData.value[nodeId] = added;
+    if (!added.edges.length) setStatus('No further relations for this node.', 'info');
   } catch (error) {
-    console.error('Error fetching connected nodes:', error);
+    console.error('Error expanding node:', error);
     setStatus('Could not load the neighbours of this node.', 'error');
-    return [];
   }
 }
 
 function collapseNode(nodeId: string) {
-  if (!expandedData.value[nodeId] || !nodes.value || !edges.value) return;
-  const { nodes: memoryNodes, edges: memoryEdges } = expandedData.value[nodeId];
-  edges.value.remove(memoryEdges.map((edge) => edge.id || `${edge.from}-${edge.to}-${edge.rel}`));
-  nodes.value.remove(memoryNodes.map((node) => node.id));
+  const memory = expandedData.value[nodeId];
+  if (!memory || !nodes.value || !edges.value) return;
+  edges.value.remove(memory.edges);
+  nodes.value.remove(memory.nodes);
+  for (const n of memory.nodes) delete nodeStates.value[n];
+  delete expandedData.value[nodeId];
   updateLegend();
 }
 
@@ -476,42 +426,22 @@ function performSearch() {
     })
     .then((data: any[]) => {
       results.value = data.map((r) => ({
-        relation: r.relation,
+        id: r.relation,
+        reified: true,
         subject: r.subject,
+        subjectType: r.subjectType ?? null,
         predicate: r.predicate,
         object: r.object,
-        publication: r.publicationId || '',
-        subjectType: r.subjectType ?? null,
         objectType: r.objectType ?? null,
+        publication: r.publicationId || null,
       }));
-
-      const nodesArray: GraphNode[] = [];
-      const edgesArray: Edge[] = [];
-      const nodeIds = new Set<string>();
-
-      results.value.forEach((r) => {
-        addNode(nodesArray, nodeIds, makeNode(r.relation, 'RELATION'));
-        addNode(nodesArray, nodeIds, makeNode(r.subject, entityKind(r.subjectType)));
-        addNode(nodesArray, nodeIds, makeNode(r.predicate, 'PREDICATE'));
-        addNode(nodesArray, nodeIds, makeNode(r.object, entityKind(r.objectType)));
-        nodeStates.value[r.subject] = 'collapsed';
-        nodeStates.value[r.object] = 'collapsed';
-        edgesArray.push(makeEdge(r.relation, r.subject, 'relation_subject', r.predicate));
-        edgesArray.push(makeEdge(r.relation, r.predicate, 'relation_predicate', r.predicate));
-        edgesArray.push(makeEdge(r.relation, r.object, 'relation_object', r.predicate));
-        if (r.publication) {
-          addNode(nodesArray, nodeIds, makeNode(r.publication, 'PUBLICATION'));
-          edgesArray.push(makeEdge(r.relation, r.publication, 'wasDerivedFrom', 'publication'));
-        }
-      });
-
-      if (edgesArray.length === 0) {
+      if (!results.value.length) {
         setStatus('No results found.', 'info');
         clearGraph();
         graphState.value = 'empty';
       } else {
         setStatus(`${results.value.length} relation(s) found.`, 'success');
-        renderGraph(nodesArray, edgesArray);
+        drawRecords(results.value, true);
         graphState.value = 'ready';
       }
     })
@@ -532,31 +462,13 @@ function clearSearch() {
   fetchData();
 }
 
-/** Show a single search result as a small star graph and highlight the row. */
-function selectRelation(result: SearchResult, index: number) {
+/** Show a single search result on the canvas and highlight the row. */
+function selectRelation(result: RelationRecord, index: number) {
   selectedResultIndex.value = index;
   deselectEdge();
-  const nodesArray: GraphNode[] = [];
-  const edgesArray: Edge[] = [];
-  const nodeIds = new Set<string>();
-
-  addNode(nodesArray, nodeIds, makeNode(result.relation, 'RELATION'));
-  addNode(nodesArray, nodeIds, makeNode(result.subject, entityKind(result.subjectType)));
-  addNode(nodesArray, nodeIds, makeNode(result.object, entityKind(result.objectType)));
-  const relTypeId = 'type_' + result.relation;
-  addNode(nodesArray, nodeIds, makeNode(relTypeId, 'PREDICATE', localName(result.predicate)));
-  nodeStates.value[result.subject] = 'collapsed';
-  nodeStates.value[result.object] = 'collapsed';
-
-  edgesArray.push(makeEdge(result.relation, result.subject, 'relation_subject', result.predicate));
-  edgesArray.push(makeEdge(result.relation, relTypeId, 'relation_predicate', result.predicate));
-  edgesArray.push(makeEdge(result.relation, result.object, 'relation_object', result.predicate));
-  if (result.publication) {
-    addNode(nodesArray, nodeIds, makeNode(result.publication, 'PUBLICATION'));
-    edgesArray.push(makeEdge(result.relation, result.publication, 'wasDerivedFrom', 'publication'));
-  }
-  renderGraph(nodesArray, edgesArray);
+  drawRecords([result], true);
   graphState.value = 'ready';
+  nextTick(() => selectEdge(result.id));
 }
 
 // ---------------------------------------------------------------------------
@@ -570,15 +482,19 @@ async function deleteSelectedEdge() {
   }
   if (!window.confirm(`Delete this relation from "${currentRepoId.value}"?\n\n${selectedRelationText.value}`)) return;
 
-  const payload = edge.rel === 'relation_predicate'
-    ? { subject: localName(edge.from), predicate: edge.rel, object: localName(edge.predicate), repo_id: currentRepoId.value }
-    : { subject: localName(edge.from), predicate: edge.rel, object: localName(edge.to), repo_id: currentRepoId.value };
-
+  const payload = {
+    subject: localName(edge.from),
+    predicate: localName(edge.predicate),
+    object: localName(edge.to),
+    relation: edge.relation,
+    repo_id: currentRepoId.value,
+  };
   const loader = $loading.show();
   try {
     const response = await axios.post(`${API_URL}/api/deleteRelation`, payload, { headers: { 'Content-Type': 'application/json' } });
     if (response.status === 200) {
-      if (edge.id && edges.value) edges.value.remove(edge.id);
+      edges.value?.remove(edge.id);
+      results.value = results.value.filter((r) => r.id !== edge.id);
       deselectEdge();
       setStatus('Relation deleted.', 'success');
     } else {
@@ -590,13 +506,6 @@ async function deleteSelectedEdge() {
   } finally {
     loader.hide();
   }
-}
-
-function clearGraph() {
-  nodes.value?.clear();
-  edges.value?.clear();
-  network?.setData({ nodes: [], edges: [] });
-  legendKinds.value = [];
 }
 
 function refreshGraph() {
@@ -828,7 +737,7 @@ async function addRelationsToKG() {
                 {{ item.label }}
               </li>
             </ul>
-            <p class="muted hint">Click a node to expand or collapse its neighbours · click an edge to select a relation · scroll to zoom.</p>
+            <p class="muted hint">One arrow per relation, labelled with its type · click a node to expand or collapse its neighbours · click an arrow to select it · scroll to zoom.</p>
           </div>
 
           <div v-if="selectedEdge" class="selection">
@@ -880,14 +789,14 @@ async function addRelationsToKG() {
                 <tbody>
                   <tr
                     v-for="(result, index) in results"
-                    :key="result.relation + index"
+                    :key="result.id + index"
                     :class="{ selected: index === selectedResultIndex }"
                     @click="selectRelation(result, index)"
                   >
                     <td>{{ prettyLabel(localName(result.subject)) }}</td>
                     <td><span class="tag">{{ localName(result.predicate) }}</span></td>
                     <td>{{ prettyLabel(localName(result.object)) }}</td>
-                    <td class="muted">{{ localName(result.publication) || '—' }}</td>
+                    <td class="muted">{{ result.publication ? localName(result.publication) : '—' }}</td>
                   </tr>
                 </tbody>
               </table>

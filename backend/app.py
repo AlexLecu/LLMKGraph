@@ -110,8 +110,9 @@ def delete_relation():
     object_ = data.get('object')
 
     repo_id = data.get("repo_id")
+    relation = data.get("relation")  # REL_... id for reified relations (optional)
 
-    delete_relation_kg(subject, predicate, object_, repo_id)
+    delete_relation_kg(subject, predicate, object_, repo_id, relation=relation)
 
     response = make_response("{\"status\": \"Successfully completed\"}")
 

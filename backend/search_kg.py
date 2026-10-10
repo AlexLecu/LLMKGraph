@@ -98,21 +98,30 @@ def query_knowledge_graph(query_text, filter_type, repo_id):
     return data
 
 
-def delete_relation_kg(subject, predicate, object_, repo_id):
+def delete_relation_kg(subject, predicate, object_, repo_id, relation=None):
+    """Delete one relation. With `relation` (a REL_... local name) the reified
+    relation node and all its triples are removed; otherwise the direct triple
+    subject-predicate-object (legacy schema) is deleted."""
     validate_repo_id(repo_id)
-    validate_local_name(subject, "subject")
-    validate_local_name(predicate, "predicate")
-    validate_local_name(object_, "object")
-    print(f"Deleting relation: {subject} {predicate} {object_}")
     sparql_post = SPARQLWrapper(f"{GRAPHDB_URL}/repositories/{repo_id}/statements")
-    
-    delete_query = f"""
-        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-        PREFIX ont: <{ONT_NAMESPACE}>
-        DELETE WHERE {{
-            ont:{subject} ont:{predicate} ont:{object_} .
-        }}
-    """
+
+    if relation:
+        validate_local_name(relation, "relation")
+        delete_query = f"""
+            PREFIX ont: <{ONT_NAMESPACE}>
+            DELETE WHERE {{ ont:{relation} ?p ?o . }}
+        """
+    else:
+        validate_local_name(subject, "subject")
+        validate_local_name(predicate, "predicate")
+        validate_local_name(object_, "object")
+        delete_query = f"""
+            PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+            PREFIX ont: <{ONT_NAMESPACE}>
+            DELETE WHERE {{
+                ont:{subject} ont:{predicate} ont:{object_} .
+            }}
+        """
     sparql_post.setQuery(delete_query)
     sparql_post.setMethod(POST)
     sparql_post.query()
