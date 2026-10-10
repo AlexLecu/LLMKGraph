@@ -8,6 +8,7 @@
 [![Python 3.10–3.13](https://img.shields.io/badge/python-3.10%E2%80%933.13-blue.svg)](https://www.python.org/downloads/)
 [![Docker](https://img.shields.io/badge/docker-compose-2496ED.svg)](https://docs.docker.com/compose/)
 [![CI](https://github.com/AlexLecu/LLMKGraph/actions/workflows/ci.yml/badge.svg)](https://github.com/AlexLecu/LLMKGraph/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
 [🌐 Live Demo](https://alexlecu.github.io/LLMKGraph/) · [💬 Chatbot](https://llmkgraph-amd-chat.onrender.com/) · [🎥 Paper Overview](https://www.youtube.com/watch?v=PbS0i7zZnZk) · [🎬 Platform Demo](https://www.youtube.com/watch?v=0qlS2vuFpTo) · [📄 Paper](https://doi.org/10.1109/ACCESS.2025.3643370) · [📚 Citation](#-citation) · [🚀 Deploy](DEPLOYMENT.md)
 
@@ -264,6 +265,12 @@ Machine-readable metadata is in [CITATION.cff](CITATION.cff).
 ## 🔒 Security & Dependencies
 
 Dependencies are pinned with minimum versions at the patched releases flagged by GitHub security advisories; Dependabot watches the Python, npm, Docker and GitHub Actions manifests, and CI fails the frontend build on high-severity `npm audit` findings. Keep `FLASK_DEBUG=0` and set `CORS_ORIGINS` to your frontend origin before exposing the API.
+
+## 📄 License
+
+Code is released under the [MIT License](LICENSE). The extracted relations and
+evaluation datasets in this repository are shared for research use; the source
+abstracts and clinical-trial texts remain subject to their publishers' terms.
 
 ## 📬 Contact
 
