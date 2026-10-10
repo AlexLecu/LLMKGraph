@@ -13,7 +13,9 @@ from openai.types.chat import ChatCompletionSystemMessageParam, ChatCompletionUs
 
 load_dotenv()
 
-client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
+from bulk_relations import _LazyClient  # noqa: E402
+
+client = _LazyClient(lambda: OpenAI(api_key=os.environ["OPENAI_API_KEY"]))
 GRAPHDB_URL = os.getenv('GRAPHDB_URL', 'http://localhost:7200')
 
 

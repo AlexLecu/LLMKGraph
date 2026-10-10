@@ -25,8 +25,9 @@ COPY backend/prompts.py /app/backend/prompts.py
 COPY backend/disambiguation /app/backend/disambiguation
 COPY backend/weaviate_rag /app/backend/weaviate_rag
 COPY deploy/chatbot/start.sh /app/backend/start.sh
-# Relations shipped with the repository (100 AMD clinical trials, DeepSeek V3 extraction)
-COPY data/Extracted_Relations/2025-03-12/Deepseek_V3_Relations_ct.json /app/backend/data/all_relations.json
+# Relations shipped with the repository (DeepSeek V3 extraction: 100 clinical trials + 999 abstracts)
+COPY data/Extracted_Relations/2025-03-12/Deepseek_V3_Relations_ct.json \
+     data/Extracted_Relations/2025-03-12/Deepseek_V3_Relations_pubs.json /app/backend/data/
 
 WORKDIR /app/backend/weaviate_rag
 ENV PYTHONUNBUFFERED=1 \

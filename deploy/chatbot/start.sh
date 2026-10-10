@@ -22,7 +22,7 @@ curl -sf http://127.0.0.1:8080/v1/.well-known/ready > /dev/null || { echo "Weavi
 
 echo "== loading the knowledge graph (schema + relations)"
 python create_schema.py
-python ingest_from_json.py /app/backend/data/all_relations.json
+python ingest_from_json.py /app/backend/data/Deepseek_V3_Relations_ct.json /app/backend/data/Deepseek_V3_Relations_pubs.json
 
 echo "== starting Chainlit on port ${PORT:-7860}"
 exec chainlit run chatbot.py --host 0.0.0.0 --port "${PORT:-7860}" --headless

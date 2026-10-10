@@ -6,7 +6,8 @@ The project has four moving parts with very different hosting needs:
 |---|---|---|---|
 | Vue frontend | `frontend/` | static files | **GitHub Pages** (workflow included) |
 | Chainlit chatbot | `backend/weaviate_rag/` | Python, Weaviate, an LLM | **Render** free web service (single container, Weaviate bundled) + Gemini free API |
-| Flask API + Streamlit | `backend/` | Python, Java, GraphDB | **Oracle Cloud Always Free VM** (or any VPS) with `docker-compose` |
+| Flask API (graph explorer) | `backend/` | Python (+ GraphDB for the writable setup) | **Render** free web service, read-only, embedded triplestore |
+| Streamlit comparison + writable API | `backend/` | Python, Java, GraphDB | a VM / your own machine with `docker-compose` |
 | GraphDB | docker image | ~2 GB RAM Java server | same VM as above |
 
 There is no serverless free tier that runs GraphDB or local Ollama models, so a
@@ -58,7 +59,25 @@ The shipped data is `data/Extracted_Relations/2025-03-12/Deepseek_V3_Relations_c
 (100 AMD clinical trials). To ship a different set, point the `COPY` line in the
 Dockerfile at another relations JSON in the repository.
 
-## 3. Flask API + GraphDB (the part that needs a real machine)
+## 2b. Graph explorer API on Render (read-only demo)
+
+The second service in `render.yaml`, `llmkgraph-api`, is the Flask API built from
+[`deploy/api/Dockerfile`](deploy/api/Dockerfile) with two switches:
+
+* `EMBEDDED_STORE=1`: GraphDB is replaced by an in-process rdflib triplestore
+  ([`backend/embedded_store.py`](backend/embedded_store.py)) loaded at start-up from
+  the relation JSON files in the repository (two repositories: `amd_clinical_trials`
+  and `amd_abstracts`). Start-up takes a few seconds, ~220 MB RAM.
+* `READ_ONLY=1`: search, SPARQL proxy and repository listing work; extraction,
+  adding/deleting relations and the reasoner answer 403. The frontend reads
+  `read_only` from `/api/health` and hides those panels.
+
+Once the service is live, set the GitHub Actions variables `VITE_API_URL`
+(e.g. `https://llmkgraph-api.onrender.com`) and `VITE_HIDE_EVALUATION=true`
+(the Streamlit comparison app is not part of the public demo) and re-run the
+Pages workflow.
+
+## 3. Flask API + GraphDB (full, writable setup)
 
 GraphDB is a Java server that wants ~2 GB RAM, which rules out the 512 MB
 "free web service" tiers (Render, Railway trial, Fly). Options, cheapest first:
