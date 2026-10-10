@@ -36,7 +36,13 @@ ENV PYTHONUNBUFFERED=1 \
     WEAVIATE_HOST=localhost \
     WEAVIATE_HTTP_PORT=8080 \
     WEAVIATE_GRPC_PORT=50051 \
-    WEAVIATE_VECTORIZER=none
-EXPOSE 7860
+    WEAVIATE_VECTORIZER=none \
+    PERSISTENCE_DATA_PATH=/data/weaviate
 
+# Load the knowledge graph into Weaviate at *build* time (full CPU), so the
+# container only has to open the data directory when it starts (seconds, even
+# on a 0.1-CPU free instance). start.sh skips ingestion when the marker exists.
+RUN bash /app/backend/start.sh --build-only
+
+EXPOSE 7860
 CMD ["bash", "/app/backend/start.sh"]
