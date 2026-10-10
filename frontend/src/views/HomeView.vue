@@ -274,8 +274,10 @@ function updateLegend() {
 }
 
 /** Add the records' entities and edges to the canvas; `replace` clears it first. */
-function drawRecords(records: RelationRecord[], replace: boolean): { nodes: string[]; edges: string[] } {
+function drawRecords(records: RelationRecord[], replace: boolean, origin: string | null = null): { nodes: string[]; edges: string[] } {
   ensureDataSets();
+  // Spawn new nodes next to the node that was expanded, so they grow out of it
+  const spawn = origin && network ? network.getPositions([origin])[origin] : undefined;
   if (replace) {
     nodes.value!.clear();
     edges.value!.clear();
@@ -289,7 +291,12 @@ function drawRecords(records: RelationRecord[], replace: boolean): { nodes: stri
   for (const r of records) {
     for (const [uri, type] of [[r.subject, r.subjectType], [r.object, r.objectType]] as const) {
       if (nodes.value!.get(uri) || newNodes.some((n) => n.id === uri)) continue;
-      newNodes.push(makeNode(uri, entityKind(type)));
+      const node: any = makeNode(uri, entityKind(type));
+      if (spawn) {
+        node.x = spawn.x + (Math.random() - 0.5) * 60;
+        node.y = spawn.y + (Math.random() - 0.5) * 60;
+      }
+      newNodes.push(node);
       added.nodes.push(uri);
       nodeStates.value[uri] = 'collapsed';
     }
@@ -302,7 +309,7 @@ function drawRecords(records: RelationRecord[], replace: boolean): { nodes: stri
   updateLegend();
   const first = !network;
   mountNetwork();
-  if (!first && (newNodes.length || newEdges.length)) settleLayout();
+  if (!first && (newNodes.length || newEdges.length)) settleLayout(added.nodes);
   return added;
 }
 
@@ -319,7 +326,7 @@ function mountNetwork() {
     },
     edges: {
       arrows: { to: { enabled: true, scaleFactor: 0.7 } },
-      smooth: { enabled: true, type: 'dynamic' },
+      smooth: { enabled: true, type: 'continuous', roundness: 0.25 },
       font: { size: 12, align: 'horizontal', color: '#475569', strokeWidth: 4, strokeColor: '#ffffff' },
       color: { color: '#94a3b8', highlight: '#2563eb', hover: '#2563eb' },
       selectionWidth: 2,
@@ -334,8 +341,12 @@ function mountNetwork() {
     layout: { improvedLayout: true },
   };
   network = new Network(graphContainer.value, { nodes: nodes.value, edges: edges.value }, options as any);
+  network.on('hoverNode', (params: any) => focusNeighbourhood(params.node));
+  network.on('blurNode', () => focusNeighbourhood(null));
+  network.on('dragStart', () => focusNeighbourhood(null));
   network.on('click', async (params: any) => {
     if (params.nodes.length > 0) {
+      focusNeighbourhood(null);
       await toggleNode(params.nodes[0]);
     } else if (params.edges.length > 0) {
       selectEdge(params.edges[0]);
@@ -357,11 +368,35 @@ function mountNetwork() {
 
 let fitOnSettle = true;
 
-/** Re-run the layout briefly after nodes/edges were added, then freeze again. */
-function settleLayout() {
-  if (!network) return;
+/** Re-run the layout for newly added nodes only: everything already on the
+ *  canvas is pinned while physics runs, so the picture never jumps around. */
+function settleLayout(freshNodeIds: string[] = []) {
+  if (!network || !nodes.value) return;
+  const fresh = new Set(freshNodeIds);
+  const pinned: string[] = [];
+  nodes.value.forEach((n: any) => { if (!fresh.has(n.id)) pinned.push(n.id); });
+  nodes.value.update(pinned.map((id) => ({ id, fixed: { x: true, y: true } })));
+  network.once('stabilized', () => {
+    nodes.value?.update(pinned.map((id) => ({ id, fixed: { x: false, y: false } })));
+  });
   network.setOptions({ physics: { enabled: true } });
-  network.stabilize(200);
+  network.stabilize(150);
+}
+
+/** Highlight a node's neighbourhood on hover; restore on blur. */
+function focusNeighbourhood(nodeId: string | null) {
+  if (!nodes.value || !edges.value || !network) return;
+  if (nodeId === null) {
+    nodes.value.update(nodes.value.map((n: any) => ({ id: n.id, opacity: 1 })));
+    edges.value.update(edges.value.map((e: any) => ({ id: e.id, color: { color: '#94a3b8', highlight: '#2563eb', hover: '#2563eb' }, font: { color: '#475569' } })));
+    return;
+  }
+  const near = new Set<string>([nodeId, ...(network.getConnectedNodes(nodeId) as string[])]);
+  nodes.value.update(nodes.value.map((n: any) => ({ id: n.id, opacity: near.has(n.id) ? 1 : 0.18 })));
+  edges.value.update(edges.value.map((e: any) => {
+    const on = e.from === nodeId || e.to === nodeId;
+    return { id: e.id, color: on ? { color: '#2563eb', highlight: '#2563eb', hover: '#2563eb' } : { color: 'rgba(148,163,184,0.25)', highlight: '#2563eb', hover: '#2563eb' }, font: { color: on ? '#1d4ed8' : 'rgba(71,85,105,0.3)' } };
+  }));
 }
 
 function fitGraph() {
@@ -399,17 +434,22 @@ async function toggleNode(nodeId: string) {
   }
 }
 
+const expanding = ref(false);
+
 async function expandNode(nodeId: string) {
   if (expandedData.value[nodeId]) return; // already on the canvas
+  expanding.value = true;
   try {
     const response = await sparqlGet(currentRepoId.value, neighbourhoodQuery(nodeId, 60));
     const records = recordsFromBindings(response.data?.results?.bindings ?? []);
-    const added = drawRecords(records, false);
+    const added = drawRecords(records, false, nodeId);
     expandedData.value[nodeId] = added;
     if (!added.edges.length) setStatus('No further relations for this node.', 'info');
   } catch (error) {
     console.error('Error expanding node:', error);
     setStatus('Could not load the neighbours of this node.', 'error');
+  } finally {
+    expanding.value = false;
   }
 }
 
@@ -720,6 +760,7 @@ async function addRelationsToKG() {
           <div class="card-head">
             <h2 class="card-title">Graph</h2>
             <div class="btn-row">
+              <span v-if="expanding" class="muted">Loading neighbours…</span>
               <button class="btn btn-secondary btn-sm" type="button" @click="fitGraph" :disabled="graphState !== 'ready'">Fit</button>
               <button class="btn btn-secondary btn-sm" type="button" @click="refreshGraph">Refresh</button>
             </div>
