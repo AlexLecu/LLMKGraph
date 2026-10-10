@@ -299,7 +299,9 @@ function drawRecords(records: RelationRecord[], replace: boolean): { nodes: stri
   nodes.value!.add(newNodes);
   edges.value!.add(newEdges);
   updateLegend();
+  const first = !network;
   mountNetwork();
+  if (!first && (newNodes.length || newEdges.length)) settleLayout();
   return added;
 }
 
@@ -323,9 +325,9 @@ function mountNetwork() {
       width: 1.6,
     },
     physics: {
-      solver: 'forceAtlas2Based',
-      forceAtlas2Based: { gravitationalConstant: -80, centralGravity: 0.008, springLength: 170, springConstant: 0.06, avoidOverlap: 0.9 },
-      stabilization: { iterations: 200, updateInterval: 25 },
+      solver: 'barnesHut',
+      barnesHut: { gravitationalConstant: -6000, centralGravity: 0.15, springLength: 190, springConstant: 0.03, damping: 0.5, avoidOverlap: 0.6 },
+      stabilization: { iterations: 300, updateInterval: 25, fit: true },
     },
     interaction: { hover: true, tooltipDelay: 150, zoomSpeed: 0.6 },
     layout: { improvedLayout: true },
@@ -340,7 +342,18 @@ function mountNetwork() {
       deselectEdge();
     }
   });
-  network.on('stabilized', () => network?.fit({ animation: false }));
+  // Physics only runs until the layout settles; otherwise the graph drifts forever.
+  network.on('stabilized', () => {
+    network?.setOptions({ physics: { enabled: false } });
+    network?.fit({ animation: false });
+  });
+}
+
+/** Re-run the layout briefly after nodes/edges were added, then freeze again. */
+function settleLayout() {
+  if (!network) return;
+  network.setOptions({ physics: { enabled: true } });
+  network.stabilize(200);
 }
 
 function fitGraph() {
@@ -400,6 +413,7 @@ function collapseNode(nodeId: string) {
   for (const n of memory.nodes) delete nodeStates.value[n];
   delete expandedData.value[nodeId];
   updateLegend();
+  settleLayout();
 }
 
 // ---------------------------------------------------------------------------
