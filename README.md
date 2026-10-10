@@ -169,16 +169,13 @@ LLMKGraph/
 │   │   ├── create_schema.py       # Weaviate collections (Entity, Relation, Publication)
 │   │   └── ingest_data.py         # GraphDB → Weaviate ETL
 │   ├── streamlit/                 # Graph comparison app (+ legacy LangChain chat)
-│   ├── evaluation/                # Benchmark datasets, notebooks, RAGAS / Giskard results
-│   └── scripts/                   # Data cleaning and fine-tuning data preparation
+│   └── evaluation/                # Benchmark datasets, notebooks, RAGAS / Giskard results
 ├── frontend/                      # Vue 3 + Vite web interface
 ├── data/
 │   ├── CausalAMD_ont.rdf          # OWL ontology
 │   ├── amd_repo.rdf               # Ready-to-import GraphDB repository
-│   ├── 1K_AMD_abstracts.json      # AMD abstracts with Dimensions.ai ids (1,000)
-│   ├── 4K_AMD_abstracts.json      # AMD abstracts with Dimensions.ai ids (4,000)
+│   ├── abstracts_with_id.json     # Sample of 100 abstracts (full corpus not redistributed)
 │   ├── Extracted_Relations/       # Relations extracted per model and date
-│   ├── Fine_Tuning_Data/          # Train / validation sets for the fine-tuned extractors
 │   └── Annotators/                # Hand-annotated relation triples (two annotators)
 ├── docker-compose.yml             # GraphDB + API + Streamlit + frontend
 └── DEPLOYMENT.md                  # Free hosting recipe (GitHub Pages, HF Spaces, free VM)
@@ -218,10 +215,9 @@ Result files in the repo cover Gemma 3 (1B, 4B, 12B), Llama 3.2-3B, Llama 3.1-8B
 
 | Resource | Description | Location |
 |----------|-------------|----------|
-| 📚 **Abstracts** | 5,000 AMD research abstracts with Dimensions.ai publication ids (1K + 4K sets) | [`data/`](data/) |
+| 📚 **Abstracts** | A 100-abstract sample with Dimensions.ai publication ids; the full 5,000-abstract corpus used in the paper is not redistributed | [`data/abstracts_with_id.json`](data/abstracts_with_id.json) |
 | 🔗 **Extracted relations** | Relations per extractor and run (GPT-3.5 FT, GPT-4o-mini, Mistral FT, DeepSeek V3 on abstracts and clinical trials) | [`data/Extracted_Relations/`](data/Extracted_Relations/) |
 | ✍️ **Annotations** | 67 abstracts annotated with entity spans and relations (Prodigy), relation triples from two independent annotators (163 each), and a 20-abstract evaluation set | [`data/Annotators/`](data/Annotators/), [`data/Evaluation/`](data/Evaluation/) |
-| 🎯 **Fine-tuning data** | Train / validation JSONL used to fine-tune GPT-3.5 Turbo and Mistral Nemo | [`data/Fine_Tuning_Data/`](data/Fine_Tuning_Data/) |
 | ❓ **Benchmark** | 3,000 evaluation questions with verified answers | [`backend/evaluation/data/`](backend/evaluation/data/) |
 | 🗄️ **Knowledge graph** | Ready-to-import GraphDB repository + ontology | [`data/amd_repo.rdf`](data/amd_repo.rdf), [`data/CausalAMD_ont.rdf`](data/CausalAMD_ont.rdf) |
 
