@@ -20,6 +20,25 @@ CORS(app, origins="*" if _cors_origins == ["*"] else _cors_origins)
 GRAPHDB_URL = os.getenv('GRAPHDB_URL', 'http://localhost:7200')
 AVAILABLE_MODELS = ["model_a", "model_b", "model_c", "model_d"]
 
+# READ_ONLY=1 turns the API into a browse-only demo: every endpoint that writes
+# to the graph or calls a paid LLM answers 403 instead.
+READ_ONLY = os.getenv("READ_ONLY", "0") == "1"
+WRITE_ENDPOINTS = {"show_relations", "add_relations", "reason_kg", "delete_relation",
+                   "upload_abstract", "upload_relations"}
+
+# EMBEDDED_STORE=1 serves the knowledge graph from an in-process rdflib store
+# (see embedded_store.py) instead of an external GraphDB.
+if os.getenv("EMBEDDED_STORE", "0") == "1":
+    import embedded_store
+    embedded_store.load_from_env()
+    app.register_blueprint(embedded_store.bp)
+
+
+@app.before_request
+def _block_writes_when_read_only():
+    if READ_ONLY and request.endpoint in WRITE_ENDPOINTS:
+        return jsonify({"error": "This public demo is read-only. Run the project locally to extract, add, delete or reason over relations."}), 403
+
 
 @app.errorhandler(ValueError)
 def handle_value_error(error):
@@ -29,7 +48,7 @@ def handle_value_error(error):
 
 @app.route('/api/health', methods=['GET'])
 def health():
-    return jsonify({"status": "ok"})
+    return jsonify({"status": "ok", "read_only": READ_ONLY})
 
 
 @app.route('/api/showRelations', methods=['POST'])

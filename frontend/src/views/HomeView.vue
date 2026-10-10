@@ -67,6 +67,7 @@ const selectedEdge = ref<GraphEdge | null>(null);
 const graphState = ref<GraphState>('loading');
 const graphError = ref('');
 const apiStatus = ref<ApiStatus>('unknown');
+const readOnly = ref(false);
 const nodeStates = ref<Record<string, string>>({});
 const legendKinds = ref<string[]>([]);
 
@@ -171,8 +172,9 @@ onMounted(() => {
 
 async function checkApi() {
   try {
-    await axios.get(`${API_URL}/api/health`, { timeout: 4000 });
+    const { data } = await axios.get(`${API_URL}/api/health`, { timeout: 8000 });
     apiStatus.value = 'ok';
+    readOnly.value = !!data?.read_only;
   } catch {
     apiStatus.value = 'down';
   }
@@ -773,8 +775,8 @@ async function addRelationsToKG() {
     <main class="page">
       <div v-if="apiStatus === 'down'" class="banner banner-warn">
         <span>
-          ⚠️ The backend API is not reachable at <code>{{ API_URL }}</code>. Search, extraction and
-          reasoning are disabled until it is up (<code>cd backend && flask run -p 5555</code>).
+          ⚠️ The backend API is not reachable at <code>{{ API_URL }}</code>. If this is the public demo, the
+          service is probably waking up: retry in a minute. Locally: <code>cd backend && flask run -p 5555</code>.
         </span>
         <button class="btn btn-secondary btn-sm" type="button" @click="checkApi">Retry</button>
       </div>
@@ -825,8 +827,8 @@ async function addRelationsToKG() {
               <h3>Graph data is not available</h3>
               <p class="muted">{{ graphError }}</p>
               <p class="muted">
-                Make sure the API (<code class="inline">flask run -p 5555</code>) and GraphDB are running,
-                and that <code class="inline">GRAPHDB_URL</code> in <code class="inline">.env</code> points at GraphDB.
+                The API may still be waking up (free hosting sleeps when idle; retry in a minute). Locally, make sure
+                <code class="inline">flask run -p 5555</code> and GraphDB are running.
               </p>
               <button class="btn btn-primary btn-sm" type="button" @click="fetchData">Retry</button>
             </div>
@@ -855,7 +857,7 @@ async function addRelationsToKG() {
             <span class="selection-text">{{ selectedRelationText }}</span>
             <div class="btn-row">
               <button class="btn btn-secondary btn-sm" type="button" @click="deselectEdge">Clear</button>
-              <button class="btn btn-danger btn-sm" type="button" @click="deleteSelectedEdge">Delete relation</button>
+              <button v-if="!readOnly" class="btn btn-danger btn-sm" type="button" @click="deleteSelectedEdge">Delete relation</button>
             </div>
           </div>
 
@@ -914,7 +916,19 @@ async function addRelationsToKG() {
             </div>
           </section>
 
-          <section class="card">
+          <section v-if="readOnly" class="card">
+            <div class="card-head">
+              <h2 class="card-title">Read-only demo</h2>
+            </div>
+            <p class="muted">
+              This public instance lets you browse and search the graph. Extracting relations from new
+              abstracts, editing the graph and running the reasoner need API keys and GraphDB, so they are
+              available in the local setup described in the
+              <a href="https://github.com/AlexLecu/LLMKGraph#-quick-start" target="_blank" rel="noopener">README</a>.
+            </p>
+          </section>
+
+          <section v-if="!readOnly" class="card">
             <div class="card-head">
               <h2 class="card-title">Extract from an abstract</h2>
             </div>
@@ -934,7 +948,7 @@ async function addRelationsToKG() {
             </div>
           </section>
 
-          <section class="card">
+          <section v-if="!readOnly" class="card">
             <div class="card-head">
               <h2 class="card-title">Batch extraction &amp; upload</h2>
             </div>

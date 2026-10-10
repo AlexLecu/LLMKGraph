@@ -14,9 +14,24 @@ import json
 load_dotenv()
 
 GRAPHDB_URL = os.getenv('GRAPHDB_URL', 'http://localhost:7200')
-client_gpt = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
-client_mistral = Mistral(api_key=os.environ["MISTRAL_API_KEY"])
-client_deepseek = OpenAI(api_key=os.environ["DEEPSEEK_API_KEY"], base_url="https://api.deepseek.com")
+
+
+class _LazyClient:
+    """Create the provider client on first use, so importing this module does not
+    require every API key to be present (e.g. on a read-only demo deployment)."""
+
+    def __init__(self, factory):
+        self._factory = factory
+        self._client = None
+
+    def __getattr__(self, name):
+        if self._client is None:
+            self._client = self._factory()
+        return getattr(self._client, name)
+
+client_gpt = _LazyClient(lambda: OpenAI(api_key=os.environ["OPENAI_API_KEY"]))
+client_mistral = _LazyClient(lambda: Mistral(api_key=os.environ["MISTRAL_API_KEY"]))
+client_deepseek = _LazyClient(lambda: OpenAI(api_key=os.environ["DEEPSEEK_API_KEY"], base_url="https://api.deepseek.com"))
 
 # logging.basicConfig(
 #     filename='../data/Logs/2024-12-05/Log_Extraction_GPT3.5.log',

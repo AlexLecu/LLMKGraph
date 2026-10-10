@@ -1,10 +1,11 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 
+const hideEvaluation = /^(1|true)$/i.test(import.meta.env.VITE_HIDE_EVALUATION ?? '');
 const links = [
   { to: '/', label: 'Graph', icon: '◉' },
   { to: '/chat', label: 'Chat', icon: '💬' },
-  { to: '/evaluation', label: 'Evaluation', icon: '📊' },
+  ...(hideEvaluation ? [] : [{ to: '/evaluation', label: 'Evaluation', icon: '📊' }]),
 ];
 
 const open = ref(false);
