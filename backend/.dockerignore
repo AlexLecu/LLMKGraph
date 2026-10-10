@@ -1,0 +1,27 @@
+# Keep Docker build contexts small: both backend/Dockerfile and
+# weaviate_rag/Dockerfile use this directory as their context.
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+.DS_Store
+.chainlit/
+.files/
+*.log
+
+# Research artefacts that the running services never read
+evaluation/
+Notebooks/
+scripts/
+embeddings/
+extracted_relations/
+*_extracted_relations_gpt*/
+*.ipynb
+*.npy
+*.csv
+*.rdf
+*.png
+*.pdf
+weaviate_rag/weaviate2_data/
+weaviate_rag/pubmedbert-docker/
