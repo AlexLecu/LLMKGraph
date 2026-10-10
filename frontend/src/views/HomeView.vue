@@ -164,11 +164,15 @@ function edgeFromRecord(r: RelationRecord): GraphEdge {
 // ---------------------------------------------------------------------------
 // Startup
 // ---------------------------------------------------------------------------
-onMounted(() => {
+onMounted(async () => {
   checkApi();
-  fetchRepositories();
+  // Learn which repositories exist before the first graph query, so we never
+  // query a repository that is not there (and never let a stale answer win).
+  await fetchRepositories();
   fetchData();
 });
+
+let fetchSeq = 0;
 
 async function checkApi() {
   try {
@@ -188,7 +192,6 @@ async function fetchRepositories() {
       // Prefer an AMD repository when GraphDB also hosts other projects
       const preferred = repositories.value.find((r) => /amd/i.test(r.id)) ?? repositories.value[0]!;
       currentRepoId.value = preferred.id;
-      fetchData();
     }
   } catch (error) {
     console.error('Error fetching repositories:', error);
@@ -240,10 +243,12 @@ function neighbourhoodQuery(entityUri: string, limit: number) {
 // Default graph (neighbourhood of the AMD node)
 // ---------------------------------------------------------------------------
 async function fetchData() {
+  const seq = ++fetchSeq;
   graphState.value = 'loading';
   graphError.value = '';
   try {
     const response = await sparqlGet(currentRepoId.value, neighbourhoodQuery(`${ONT_NS}age_related_macular_degeneration`, 15));
+    if (seq !== fetchSeq) return; // a newer request superseded this one
     const records = recordsFromBindings(response.data?.results?.bindings ?? []);
     if (!records.length) {
       clearGraph();
@@ -253,6 +258,7 @@ async function fetchData() {
     nextTick(() => drawRecords(records, true));
     graphState.value = 'ready';
   } catch (error: any) {
+    if (seq !== fetchSeq) return;
     console.error('Error fetching data:', error);
     clearGraph();
     graphState.value = 'error';
