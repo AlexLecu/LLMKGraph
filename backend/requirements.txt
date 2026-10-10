@@ -17,7 +17,7 @@ langchain-openai>=1.1.14,<2
 langchain-huggingface>=1.0.0,<2
 langchain-community>=0.4.0,<1
 openai>=2.5.0,<4
-mistralai>=1.9.11,<2
+mistralai>=3.1.0,<4
 
 # Knowledge graph
 SPARQLWrapper>=2.0.0,<3
