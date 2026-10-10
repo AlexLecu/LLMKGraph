@@ -26,66 +26,37 @@ def validate_repo_id(repo_id):
     return repo_id
 
 def construct_sparql_query(query_text, filter_type):
-    pattern = re.escape(query_text)
-
+    """Build the search query. `filter_type` restricts the regex to the subject
+    ("node"), the predicate ("relation"), the object ("entity") or any of them.
+    Entity types are returned as well so the UI can colour nodes by type."""
+    # Two escaping layers: regex metacharacters first, then the SPARQL string
+    # literal (backslash and double quote). re.escape alone produces sequences
+    # such as "\ " that are not valid inside a SPARQL string.
+    pattern = re.escape(query_text).replace('\\', '\\\\').replace('"', '\\"')
+    regex = lambda var: f'regex(str(?{var}), "{pattern}", "i")'
     if filter_type == 'node':
-            sparql_query = f"""
-            PREFIX ont: <{ONT_NAMESPACE}>
-            PREFIX prov: <http://www.w3.org/ns/prov#>
-            SELECT ?relation ?subject ?predicate ?object ?publication WHERE {{
-                ?relation a ont:RELATION ;
-                        ont:relation_subject ?subject ;
-                        ont:relation_predicate ?predicate ;
-                        ont:relation_object ?object ;
-                        OPTIONAL {{ ?relation prov:wasDerivedFrom ?publication . }}
-                FILTER regex(str(?subject), "{pattern}", "i")
-            }} LIMIT 100
-            """
+        condition = regex('subject')
     elif filter_type == 'relation':
-        sparql_query = f"""
-        PREFIX ont: <{ONT_NAMESPACE}>
-        PREFIX prov: <http://www.w3.org/ns/prov#>
-        SELECT ?relation ?subject ?predicate ?object ?publication WHERE {{
-            ?relation a ont:RELATION ;
-                    ont:relation_subject ?subject ;
-                    ont:relation_predicate ?predicate ;
-                    ont:relation_object ?object ;
-                    OPTIONAL {{ ?relation prov:wasDerivedFrom ?publication . }}
-            FILTER regex(str(?predicate), "{pattern}", "i")
-        }} LIMIT 100
-        """
+        condition = regex('predicate')
     elif filter_type == 'entity':
-        sparql_query = f"""
-        PREFIX ont: <{ONT_NAMESPACE}>
-        PREFIX prov: <http://www.w3.org/ns/prov#>
-        SELECT ?relation ?subject ?predicate ?object ?publication WHERE {{
-            ?relation a ont:RELATION ;
-                    ont:relation_subject ?subject ;
-                    ont:relation_predicate ?predicate ;
-                    ont:relation_object ?object ;
-                   OPTIONAL {{ ?relation prov:wasDerivedFrom ?publication . }}
-            FILTER regex(str(?object), "{pattern}", "i")
-        }} LIMIT 100
-        """
+        condition = regex('object')
     else:
-        # No specific filter type: search in all fields.
-        sparql_query = f"""
-        PREFIX ont: <{ONT_NAMESPACE}>
-        PREFIX prov: <http://www.w3.org/ns/prov#>
-        SELECT ?relation ?subject ?predicate ?object ?publication WHERE {{
-            ?relation a ont:RELATION ;
-                    ont:relation_subject ?subject ;
-                    ont:relation_predicate ?predicate ;
-                    ont:relation_object ?object ;
-                    OPTIONAL {{ ?relation prov:wasDerivedFrom ?publication . }}
-            FILTER (
-                regex(str(?subject), "{pattern}", "i") ||
-                regex(str(?predicate), "{pattern}", "i") ||
-                regex(str(?object), "{pattern}", "i")
-            )
-        }} LIMIT 100
-        """
-    return sparql_query
+        condition = f"{regex('subject')} || {regex('predicate')} || {regex('object')}"
+
+    return f"""
+    PREFIX ont: <{ONT_NAMESPACE}>
+    PREFIX prov: <http://www.w3.org/ns/prov#>
+    SELECT ?relation ?subject ?predicate ?object ?publication ?subjectType ?objectType WHERE {{
+        ?relation a ont:RELATION ;
+                ont:relation_subject ?subject ;
+                ont:relation_predicate ?predicate ;
+                ont:relation_object ?object .
+        OPTIONAL {{ ?relation prov:wasDerivedFrom ?publication . }}
+        OPTIONAL {{ ?subject a ?subjectType . FILTER(STRSTARTS(STR(?subjectType), "{ONT_NAMESPACE}")) }}
+        OPTIONAL {{ ?object a ?objectType . FILTER(STRSTARTS(STR(?objectType), "{ONT_NAMESPACE}")) }}
+        FILTER ( {condition} )
+    }} LIMIT 100
+    """
 
 def query_knowledge_graph(query_text, filter_type, repo_id):
     validate_repo_id(repo_id)
@@ -115,7 +86,9 @@ def query_knowledge_graph(query_text, filter_type, repo_id):
             "subject": subject,
             "predicate": predicate,
             "object": object_,
-            "publicationId": publication
+            "publicationId": publication,
+            "subjectType": result.get("subjectType", {}).get("value"),
+            "objectType": result.get("objectType", {}).get("value"),
         })
 
     return data
