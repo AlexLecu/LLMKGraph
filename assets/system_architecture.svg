@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 780" width="1400" height="780" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif">
+<title>LLMKGraph system architecture</title>
+<defs><marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#4B5563"/></marker><marker id="arr_blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1D4ED8"/></marker><marker id="arr_pink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#BE185D"/></marker><marker id="arr_gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#374151"/></marker><marker id="arr_green" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#047857"/></marker></defs>
+<rect width="1400" height="780" fill="#FFFFFF" rx="18"/>
+<rect x="30" y="30" width="1340" height="190" rx="16" fill="none" stroke="#D1D5DB" stroke-width="1.5" stroke-dasharray="6 6"/>
+<text x="48" y="54" font-size="14" font-weight="700" fill="#6B7280" letter-spacing="1.5">1 · KNOWLEDGE GRAPH CONSTRUCTION</text>
+<rect x="60" y="80" width="268" height="120" rx="12" fill="#FEF3C7" stroke="#B45309" stroke-width="2"/>
+<text x="194.0" y="108" text-anchor="middle" font-size="16" font-weight="700" fill="#B45309">📚 Literature</text>
+<text x="194.0" y="132" text-anchor="middle" font-size="13.5" fill="#1F2937">5,000 AMD research abstracts</text>
+<text x="194.0" y="151" text-anchor="middle" font-size="13.5" fill="#1F2937">100 clinical trials (NCT)</text>
+<text x="194.0" y="170" text-anchor="middle" font-size="13.5" fill="#1F2937">Dimensions.ai publication ids</text>
+<rect x="378" y="80" width="268" height="120" rx="12" fill="#EDE9FE" stroke="#6D28D9" stroke-width="2"/>
+<text x="512.0" y="108" text-anchor="middle" font-size="16" font-weight="700" fill="#6D28D9">🔬 LLM relation extraction</text>
+<text x="512.0" y="132" text-anchor="middle" font-size="13.5" fill="#1F2937">Fine-tuned GPT-3.5 · Mistral Nemo</text>
+<text x="512.0" y="151" text-anchor="middle" font-size="13.5" fill="#1F2937">GPT-4o-mini · DeepSeek V3</text>
+<text x="512.0" y="170" text-anchor="middle" font-size="13.5" fill="#1F2937">12 entity types · 8 relation types</text>
+<rect x="696" y="80" width="268" height="120" rx="12" fill="#EDE9FE" stroke="#6D28D9" stroke-width="2"/>
+<text x="830.0" y="108" text-anchor="middle" font-size="16" font-weight="700" fill="#6D28D9">🧹 Disambiguation &amp; reasoning</text>
+<text x="830.0" y="132" text-anchor="middle" font-size="13.5" fill="#1F2937">Majority-vote entity typing</text>
+<text x="830.0" y="151" text-anchor="middle" font-size="13.5" fill="#1F2937">Name normalisation</text>
+<text x="830.0" y="170" text-anchor="middle" font-size="13.5" fill="#1F2937">HermiT reasoner (owlready2)</text>
+<rect x="1014" y="80" width="268" height="120" rx="12" fill="#DBEAFE" stroke="#1D4ED8" stroke-width="2"/>
+<text x="1148.0" y="108" text-anchor="middle" font-size="16" font-weight="700" fill="#1D4ED8">🗄️ GraphDB (RDF)</text>
+<text x="1148.0" y="132" text-anchor="middle" font-size="13.5" fill="#1F2937">CausalAMD OWL ontology</text>
+<text x="1148.0" y="151" text-anchor="middle" font-size="13.5" fill="#1F2937">Reified relations + provenance</text>
+<text x="1148.0" y="170" text-anchor="middle" font-size="13.5" fill="#1F2937">SPARQL endpoint</text>
+<line x1="328" y1="140.0" x2="378" y2="140.0" stroke="#4B5563" stroke-width="2.2" marker-end="url(#arr)"/>
+<line x1="646" y1="140.0" x2="696" y2="140.0" stroke="#4B5563" stroke-width="2.2" marker-end="url(#arr)"/>
+<line x1="964" y1="140.0" x2="1014" y2="140.0" stroke="#4B5563" stroke-width="2.2" marker-end="url(#arr)"/>
+<text x="512.0" y="70" text-anchor="middle" font-size="12.5" font-style="italic" fill="#4B5563">(entity1, relation, entity2) + source id</text>
+<rect x="30" y="250" width="1340" height="230" rx="16" fill="none" stroke="#D1D5DB" stroke-width="1.5" stroke-dasharray="6 6"/>
+<text x="48" y="274" font-size="14" font-weight="700" fill="#6B7280" letter-spacing="1.5">2 · GRAPH-RAG CHATBOT</text>
+<rect x="60" y="300" width="228" height="130" rx="12" fill="#DBEAFE" stroke="#1D4ED8" stroke-width="2"/>
+<text x="174.0" y="328" text-anchor="middle" font-size="16" font-weight="700" fill="#1D4ED8">🔍 Weaviate</text>
+<text x="174.0" y="352" text-anchor="middle" font-size="13.5" fill="#1F2937">Entity · Relation · Publication</text>
+<text x="174.0" y="371" text-anchor="middle" font-size="13.5" fill="#1F2937">BM25 entity search</text>
+<text x="174.0" y="390" text-anchor="middle" font-size="13.5" fill="#1F2937">Relations reference publications</text>
+<rect x="324" y="300" width="228" height="130" rx="12" fill="#D1FAE5" stroke="#047857" stroke-width="2"/>
+<text x="438.0" y="328" text-anchor="middle" font-size="16" font-weight="700" fill="#047857">🧭 Query analysis</text>
+<text x="438.0" y="352" text-anchor="middle" font-size="13.5" fill="#1F2937">spaCy noun phrases</text>
+<text x="438.0" y="371" text-anchor="middle" font-size="13.5" fill="#1F2937">&amp; keywords</text>
+<text x="438.0" y="390" text-anchor="middle" font-size="13.5" fill="#1F2937">AMD acronym expansion</text>
+<rect x="588" y="300" width="228" height="130" rx="12" fill="#D1FAE5" stroke="#047857" stroke-width="2"/>
+<text x="702.0" y="328" text-anchor="middle" font-size="16" font-weight="700" fill="#047857">🕸️ Sub-graph retrieval</text>
+<text x="702.0" y="352" text-anchor="middle" font-size="13.5" fill="#1F2937">Matching entities (BM25)</text>
+<text x="702.0" y="371" text-anchor="middle" font-size="13.5" fill="#1F2937">Relations between them</text>
+<text x="702.0" y="390" text-anchor="middle" font-size="13.5" fill="#1F2937">+ each entity's own relations</text>
+<rect x="852" y="300" width="228" height="130" rx="12" fill="#EDE9FE" stroke="#6D28D9" stroke-width="2"/>
+<text x="966.0" y="328" text-anchor="middle" font-size="16" font-weight="700" fill="#6D28D9">🤖 Grounded generation</text>
+<text x="966.0" y="352" text-anchor="middle" font-size="13.5" fill="#1F2937">Relation summary → context</text>
+<text x="966.0" y="371" text-anchor="middle" font-size="13.5" fill="#1F2937">Ollama local models or any</text>
+<text x="966.0" y="390" text-anchor="middle" font-size="13.5" fill="#1F2937">OpenAI-compatible API</text>
+<rect x="1116" y="300" width="228" height="130" rx="12" fill="#FCE7F3" stroke="#BE185D" stroke-width="2"/>
+<text x="1230.0" y="328" text-anchor="middle" font-size="16" font-weight="700" fill="#BE185D">💬 Chainlit chat UI</text>
+<text x="1230.0" y="352" text-anchor="middle" font-size="13.5" fill="#1F2937">Streaming answers</text>
+<text x="1230.0" y="371" text-anchor="middle" font-size="13.5" fill="#1F2937">Model &amp; temperature settings</text>
+<text x="1230.0" y="390" text-anchor="middle" font-size="13.5" fill="#1F2937">Prompt-injection filter</text>
+<line x1="552" y1="365.0" x2="588" y2="365.0" stroke="#4B5563" stroke-width="2.2" marker-end="url(#arr)"/>
+<line x1="816" y1="365.0" x2="852" y2="365.0" stroke="#4B5563" stroke-width="2.2" marker-end="url(#arr)"/>
+<line x1="1080" y1="365.0" x2="1116" y2="365.0" stroke="#4B5563" stroke-width="2.2" marker-end="url(#arr)"/>
+<path d="M 1230.0 300 C 1230.0 266, 438.0 266, 438.0 300" fill="none" stroke="#BE185D" stroke-width="2.2" marker-end="url(#arr_pink)"/>
+<text x="834.0" y="270" text-anchor="middle" font-size="12.5" font-style="italic" fill="#BE185D">user question</text>
+<path d="M 174.0 430 L 174.0 456 L 702.0 456 L 702.0 432" fill="none" stroke="#047857" stroke-width="2.2" stroke-dasharray="7 5" marker-end="url(#arr_green)"/>
+<text x="438.0" y="450" text-anchor="middle" font-size="12.5" font-style="italic" fill="#047857">entity / relation lookups</text>
+<path d="M 1148.0 200 L 1148.0 230 L 174.0 230 L 174.0 298" fill="none" stroke="#1D4ED8" stroke-width="2.2" marker-end="url(#arr_blue)"/>
+<text x="661.0" y="224" text-anchor="middle" font-size="12.5" font-style="italic" fill="#1D4ED8">ingest_data.py (SPARQL → Weaviate)</text>
+<rect x="30" y="500" width="1340" height="250" rx="16" fill="none" stroke="#D1D5DB" stroke-width="1.5" stroke-dasharray="6 6"/>
+<text x="48" y="524" font-size="14" font-weight="700" fill="#6B7280" letter-spacing="1.5">3 · INTERFACES &amp; EVALUATION</text>
+<rect x="60" y="550" width="292" height="150" rx="12" fill="#FCE7F3" stroke="#BE185D" stroke-width="2"/>
+<text x="206.0" y="578" text-anchor="middle" font-size="16" font-weight="700" fill="#BE185D">🖥️ Vue 3 graph explorer</text>
+<text x="206.0" y="602" text-anchor="middle" font-size="13.5" fill="#1F2937">Interactive KG visualisation</text>
+<text x="206.0" y="621" text-anchor="middle" font-size="13.5" fill="#1F2937">Search / filter · add &amp; delete relations</text>
+<text x="206.0" y="640" text-anchor="middle" font-size="13.5" fill="#1F2937">Run reasoner · upload abstracts</text>
+<text x="206.0" y="659" text-anchor="middle" font-size="13.5" fill="#1F2937">Embeds Chat and Evaluation tabs</text>
+<rect x="390" y="550" width="292" height="150" rx="12" fill="#DBEAFE" stroke="#1D4ED8" stroke-width="2"/>
+<text x="536.0" y="578" text-anchor="middle" font-size="16" font-weight="700" fill="#1D4ED8">🐍 Flask REST API</text>
+<text x="536.0" y="602" text-anchor="middle" font-size="13.5" fill="#1F2937">/api/search · /api/addRelations</text>
+<text x="536.0" y="621" text-anchor="middle" font-size="13.5" fill="#1F2937">/api/reason · /api/upload_abstract</text>
+<text x="536.0" y="640" text-anchor="middle" font-size="13.5" fill="#1F2937">SPARQL over GraphDB</text>
+<text x="536.0" y="659" text-anchor="middle" font-size="13.5" fill="#1F2937">Gunicorn in Docker</text>
+<rect x="720" y="550" width="292" height="150" rx="12" fill="#F3F4F6" stroke="#374151" stroke-width="2"/>
+<text x="866.0" y="578" text-anchor="middle" font-size="16" font-weight="700" fill="#374151">📊 Streamlit graph comparison</text>
+<text x="866.0" y="602" text-anchor="middle" font-size="13.5" fill="#1F2937">Graphs built by different LLMs</text>
+<text x="866.0" y="621" text-anchor="middle" font-size="13.5" fill="#1F2937">Node / edge counts, degree</text>
+<text x="866.0" y="640" text-anchor="middle" font-size="13.5" fill="#1F2937">distribution, clustering,</text>
+<text x="866.0" y="659" text-anchor="middle" font-size="13.5" fill="#1F2937">entity-type analysis</text>
+<rect x="1050" y="550" width="292" height="150" rx="12" fill="#F3F4F6" stroke="#374151" stroke-width="2"/>
+<text x="1196.0" y="578" text-anchor="middle" font-size="16" font-weight="700" fill="#374151">📏 Evaluation</text>
+<text x="1196.0" y="602" text-anchor="middle" font-size="13.5" fill="#1F2937">3,000 questions (1-hop / 2-hop,</text>
+<text x="1196.0" y="621" text-anchor="middle" font-size="13.5" fill="#1F2937">MCQ · true/false · open-ended)</text>
+<text x="1196.0" y="640" text-anchor="middle" font-size="13.5" fill="#1F2937">LLMs 1B–70B + GPT-5-mini, with</text>
+<text x="1196.0" y="659" text-anchor="middle" font-size="13.5" fill="#1F2937">vs. without KG · RAGAS · Giskard</text>
+<line x1="352" y1="625.0" x2="390" y2="625.0" stroke="#4B5563" stroke-width="2.2" marker-end="url(#arr)"/>
+<path d="M 866.0 550 L 866.0 524 L 536.0 524" fill="none" stroke="#1D4ED8" stroke-width="2.2" stroke-dasharray="7 5"/>
+<path d="M 536.0 550 L 536.0 524 L 1358 524 L 1358 252 L 1252 252 L 1252 202" fill="none" stroke="#1D4ED8" stroke-width="2.2" stroke-dasharray="7 5" marker-end="url(#arr_blue)"/>
+<text x="1352" y="246" text-anchor="end" font-size="12.5" font-style="italic" fill="#1D4ED8">SPARQL</text>
+<path d="M 1196.0 550 L 1196.0 490 L 966.0 490 L 966.0 432" fill="none" stroke="#374151" stroke-width="2.2" stroke-dasharray="7 5" marker-end="url(#arr_gray)"/>
+<text x="978" y="484" text-anchor="start" font-size="12.5" font-style="italic" fill="#374151">calls GraphRAGSystem with / without context</text>
+</svg>
