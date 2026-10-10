@@ -16,6 +16,47 @@ from huggingface_hub import InferenceClient
 import re
 from dotenv import load_dotenv
 load_dotenv()
+
+import os
+
+def get_weaviate_client():
+    """Get a Weaviate client based on environment configuration.
+
+    - WEAVIATE_URL + WEAVIATE_API_KEY  -> Weaviate Cloud (free 14-day sandbox)
+    - WEAVIATE_MODE=embedded           -> in-process Weaviate, data persisted in
+                                          WEAVIATE_DATA_PATH (Linux only; handy
+                                          for a single-container deploy)
+    - WEAVIATE_HOST (default localhost) -> a running Weaviate server
+    """
+    cloud_url = os.getenv('WEAVIATE_URL')
+    if cloud_url:
+        from weaviate.classes.init import Auth
+        return weaviate.connect_to_weaviate_cloud(
+            cluster_url=cloud_url,
+            auth_credentials=Auth.api_key(os.environ['WEAVIATE_API_KEY']),
+        )
+
+    if os.getenv('WEAVIATE_MODE', '').lower() == 'embedded':
+        return weaviate.connect_to_embedded(
+            persistence_data_path=os.getenv('WEAVIATE_DATA_PATH', './weaviate_data'),
+        )
+
+    weaviate_host = os.getenv('WEAVIATE_HOST', 'localhost')
+    weaviate_port = int(os.getenv('WEAVIATE_HTTP_PORT', '8080'))
+    weaviate_grpc_port = int(os.getenv('WEAVIATE_GRPC_PORT', '50051'))
+
+    if weaviate_host == 'localhost':
+        return weaviate.connect_to_local(port=weaviate_port, grpc_port=weaviate_grpc_port)
+    else:
+        return weaviate.connect_to_custom(
+            http_host=weaviate_host,
+            http_port=weaviate_port,
+            http_secure=False,
+            grpc_host=weaviate_host,
+            grpc_port=weaviate_grpc_port,
+            grpc_secure=False
+        )
+
 class GraphRAGSystem:
 
     def __init__(self, question, model_config=None):
@@ -28,6 +69,11 @@ class GraphRAGSystem:
             self.api_client = Together(api_key=self.model_config['api_key'])
         elif self.model_config['provider'] == 'openai':
             self.api_client = OpenAI(api_key=self.model_config['api_key'])
+        elif self.model_config['provider'] == 'openai-compatible':
+            # Any OpenAI-compatible chat endpoint (Groq, OpenRouter, Together,
+            # Gemini, DeepSeek, a remote Ollama, ...): base_url + api_key.
+            self.api_client = OpenAI(api_key=self.model_config['api_key'],
+                                     base_url=self.model_config.get('base_url'))
         elif self.model_config['provider'] == 'google':
             self.api_client = genai.Client(api_key=self.model_config['api_key'])
         elif self.model_config['provider'] == 'hf-api':
@@ -56,7 +102,7 @@ class GraphRAGSystem:
 
         self.temp_dir = tempfile.mkdtemp()
         atexit.register(shutil.rmtree, self.temp_dir, ignore_errors=True)
-        self.client = weaviate.connect_to_local()
+        self.client = get_weaviate_client()
         self.entity_collection = self.client.collections.get("Entity")
         self.relation_collection = self.client.collections.get("Relation")
         self.entity_id_to_name = {}
@@ -226,7 +272,7 @@ class GraphRAGSystem:
             f"Present the response as plain text in a natural, narrative style, avoiding technical terms like 'relationships' in the summary itself."
         )
         try:
-            if self.model_config['provider'] == 'together':
+            if self.model_config['provider'] in ('together', 'openai-compatible'):
                 response = self.api_client.chat.completions.create(
                     model=self.model_config['model_name'],
                     messages=[
@@ -236,7 +282,7 @@ class GraphRAGSystem:
                     temperature=0.1,
                     max_tokens=300
                 )
-                return response.choices[0].message.content.strip()
+                return self.remove_think_tags(response.choices[0].message.content).strip()
 
             elif self.model_config['provider'] == 'openai':
                 response = self.api_client.responses.create(

@@ -34,11 +34,12 @@ We provide Docker containers for easier setup and deployment using `docker-compo
     cd LLMKGraph
     ```
 
-2. Open the `.env` file and make sure your environment variables are correctly set:
+2. Create your `.env` from the template and fill in the keys you need
+   (`.env` is git-ignored, never commit real keys):
 
     ```bash
-    OPENAI_API_KEY=<your_openai_api_key_here>
-    HUGGINGFACEHUB_API_TOKEN=<your_huggingfacehub_api_token_here>
+    cp .env.example .env
+    # then edit OPENAI_API_KEY, HUGGINGFACEHUB_API_TOKEN, ...
     ```
 
 3. Build and start the containers using Docker Compose:
@@ -99,7 +100,7 @@ directory of this GitHub repository.
 ### Backend Setup
 
 1. Navigate to the backend directory.
-2. Create a virtual environment using Python 3.10.
+2. Create a virtual environment using Python 3.10–3.13 (Chainlit does not support 3.14 yet).
 3. Install the required Python packages
 
     `pip install -r requirements.txt`
@@ -113,7 +114,7 @@ directory of this GitHub repository.
 1. Navigate to the backend directory.
 2. Start the Streamlit app:
 
-   `streamlit run streamlit_app.py`
+   `streamlit run streamlit/streamlit_app.py`
 
 3. Note the URL where the Streamlit app is running 
 (typically http://localhost:8501). This URL will be used to embed 
@@ -131,6 +132,39 @@ the Streamlit app in frontend.
    `npm run dev`
 
 4. The VueJS application will now be running and accessible via the browser at `http://localhost:5173/'
+
+### Chainlit Chatbot (Graph-RAG over Weaviate)
+
+The newer chat interface lives in `backend/weaviate_rag` and uses Weaviate for retrieval.
+By default it talks to a local [Ollama](https://ollama.com); set `CHAT_PROVIDER=openai-compatible`
+plus `CHAT_API_BASE_URL`, `CHAT_API_KEY` and `CHAT_MODELS` in `.env` to use a hosted API
+(Groq, Gemini, OpenRouter, Together...). See `.env.example` for all options.
+
+```bash
+cd backend/weaviate_rag
+pip install -r requirements.txt && python -m spacy download en_core_web_sm
+chainlit run chatbot.py -w
+```
+
+# Configuration
+
+All URLs and keys are read from environment variables. The frontend reads
+`VITE_API_URL`, `VITE_GRAPHDB_URL`, `VITE_CHAT_URL` and `VITE_EVAL_URL`
+(see `frontend/.env.example`); the backend reads `GRAPHDB_URL`, `CORS_ORIGINS`,
+`FLASK_DEBUG` and the API keys (see `.env.example`).
+
+# Deployment
+
+See [DEPLOYMENT.md](DEPLOYMENT.md) for a free hosting recipe: frontend on GitHub Pages
+(workflow included), chatbot on Hugging Face Spaces with a free LLM API, and the
+GraphDB-backed API on a free VM.
+
+# Security & dependencies
+
+Dependencies are pinned with minimum versions at the patched releases flagged by
+GitHub security advisories (Chainlit ≥ 2.10.1, Flask-CORS ≥ 6, Streamlit ≥ 1.54, ...).
+Dependabot watches the Python, npm, Docker and GitHub Actions manifests weekly, and the
+CI workflow fails the frontend build on high-severity `npm audit` findings.
 
 ## Screenshots
 Here are a couple of screenshots demonstrating the application in action:

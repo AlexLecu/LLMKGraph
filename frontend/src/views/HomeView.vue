@@ -5,6 +5,7 @@ import { useLoading } from 'vue-loading-overlay';
 import axios from 'axios';
 import { Network } from 'vis-network';
 import { DataSet } from 'vis-data';
+import { API_URL, GRAPHDB_URL } from '@/config';
 
 interface Edge {
   id: string;
@@ -76,7 +77,7 @@ onMounted(() => {
 
 async function fetchRepositories() {
   try {
-    const response = await axios.get<Repository[]>("http://localhost:5555/api/available_repositories");
+    const response = await axios.get<Repository[]>(`${API_URL}/api/available_repositories`);
     repositories.value = response.data;
   } catch (error) {
     console.error("Error fetching repositories:", error);
@@ -89,7 +90,7 @@ function activateRepository(repoId: string) {
 }
 
 async function fetchData(query: string | null = null) {
-  const endpointUrl = `http://localhost:7200/repositories/${currentRepoId.value}`;
+  const endpointUrl = `${GRAPHDB_URL}/repositories/${currentRepoId.value}`;
   const defaultQuery = `
     PREFIX c: <http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD#>
     PREFIX prov: <http://www.w3.org/ns/prov#>
@@ -122,9 +123,9 @@ async function fetchData(query: string | null = null) {
         Accept: 'application/sparql-results+json',
         'Content-Type': 'application/x-www-form-urlencoded'
       },
-      paramsSerializer: (params) =>
+      paramsSerializer: (params: Record<string, string>) =>
         Object.keys(params)
-          .map(key => `${key}=${encodeURIComponent(params[key])}`)
+          .map(key => `${key}=${encodeURIComponent(params[key] ?? "")}`)
           .join('&')
     });
     processData(response.data);
@@ -372,7 +373,7 @@ async function expandNode(nodeId: string) {
 }
 
 async function fetchConnectedNodes(nodeId: string) {
-  const endpointUrl = `http://localhost:7200/repositories/${currentRepoId.value}`;
+  const endpointUrl = `${GRAPHDB_URL}/repositories/${currentRepoId.value}`;
   const baseURI = 'http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD#';
   const isURI = /^(http|https):\/\/.+$/.test(nodeId);
   const formattedNodeId = isURI ? nodeId : `${baseURI}${nodeId}`;
@@ -444,7 +445,7 @@ function performSearch() {
   if (filterType.value) params.append('type', filterType.value);
   params.append('repo_id', currentRepoId.value);
 
-  fetch(`http://localhost:5555/api/search?${params.toString()}`)
+  fetch(`${API_URL}/api/search?${params.toString()}`)
     .then(response => response.json())
     .then((data) => {
       // Map each field to its local name only.
@@ -705,7 +706,7 @@ async function deleteSelectedEdge() {
 
   try {
     const response = await axios.post(
-      'http://localhost:5555/api/deleteRelation',
+      `${API_URL}/api/deleteRelation`,
       payload,
       { headers: { 'Content-Type': 'application/json' } }
     );
@@ -773,7 +774,7 @@ function showRelations() {
   if (!validateAbstract()) return;
   validationError.value = '';
   const loader = $loading.show();
-  fetch('http://localhost:5555/api/showRelations', {
+  fetch(`${API_URL}/api/showRelations`, {
     method: 'POST',
     body: JSON.stringify(abstract.value),
     headers: { 'Content-Type': 'application/json' }
@@ -800,7 +801,7 @@ function addRelations() {
     repo_id: currentRepoId.value,
     relations: JSON.parse(responseText.value)
   };
-  fetch('http://localhost:5555/api/addRelations', {
+  fetch(`${API_URL}/api/addRelations`, {
     method: 'POST',
     body: JSON.stringify(payload),
     headers: { 'Content-Type': 'application/json' }
@@ -825,7 +826,7 @@ function reasonKg() {
   const loader = $loading.show();
   const params = new URLSearchParams();
   params.append('repo_id', currentRepoId.value);
-  fetch(`http://localhost:5555/api/reason?${params.toString()}`, {
+  fetch(`${API_URL}/api/reason?${params.toString()}`, {
     method: 'GET',
   })
     .then(response => response.json())
@@ -846,12 +847,12 @@ function reasonKg() {
 // File Upload & Extraction
 function handleAbstractUpload(event: Event) {
   const fileInput = event.target as HTMLInputElement;
-  abstractFile.value = fileInput.files ? fileInput.files[0] : null;
+  abstractFile.value = fileInput.files?.[0] ?? null;
 }
 
 function handleRelationsUpload(event: Event) {
   const fileInput = event.target as HTMLInputElement;
-  relationsFile.value = fileInput.files ? fileInput.files[0] : null;
+  relationsFile.value = fileInput.files?.[0] ?? null;
 }
 
 async function uploadAbstractFile() {
@@ -861,7 +862,7 @@ async function uploadAbstractFile() {
   formData.append("file", abstractFile.value);
   formData.append("model", selectedModel.value);
   try {
-    const response = await axios.post("http://localhost:5555/api/upload_abstract", formData, {
+    const response = await axios.post(`${API_URL}/api/upload_abstract`, formData, {
       responseType: "blob",
     });
     const extractedFile = new Blob([response.data], { type: "application/json" });
@@ -885,7 +886,7 @@ async function addRelationsToKG() {
   formData.append("file", relationsFile.value);
   formData.append("repo_id", currentRepoId.value);
   try {
-    const response = await axios.post("http://localhost:5555/api/upload_relations", formData);
+    const response = await axios.post(`${API_URL}/api/upload_relations`, formData);
     uploadStatus.value = response.data.message || "Failed to add relations.";
   } catch (error) {
     console.error("Error adding relations to KG:", error);

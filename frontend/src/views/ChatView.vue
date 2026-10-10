@@ -1,4 +1,6 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { CHAT_URL } from '@/config';
+</script>
 
 <template>
   <div class="app-container">
@@ -9,7 +11,7 @@
     </aside>
 
     <div class="chat-content">
-      <iframe ref="myIframe" src="http://localhost:8000/"></iframe>
+      <iframe ref="myIframe" :src="CHAT_URL"></iframe>
     </div>
   </div>
 </template>

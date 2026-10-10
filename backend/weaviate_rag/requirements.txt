@@ -1,0 +1,14 @@
+# Chatbot core
+chainlit>=2.10.1,<3
+weaviate-client>=4.10.4,<5
+python-dotenv>=1.2.2,<2
+
+# LLM providers
+ollama>=0.4.0
+openai>=2.5.0,<4
+together>=1.3.0
+google-genai>=1.0.0
+huggingface-hub>=0.26.0
+
+# NLP for query analysis
+spacy>=3.7.0,<4

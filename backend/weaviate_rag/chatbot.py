@@ -1,21 +1,66 @@
 import chainlit as cl
 from chainlit.input_widget import Select, Slider
 import ollama
+from openai import AsyncOpenAI
 from weaviate_rag.rag_system import GraphRAGSystem
 import time
 import logging
 import re
 import sys
 import os
+from dotenv import load_dotenv
 sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
 from backend.prompts import generate_chat_prompt
 
+load_dotenv()
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
-DEFAULT_MODEL = "llama3.2"
+# --- LLM backend -------------------------------------------------------------
+# CHAT_PROVIDER=ollama (default): local Ollama, models from CHAT_MODELS.
+# CHAT_PROVIDER=openai-compatible: any OpenAI-style chat endpoint, e.g.
+#   Groq        CHAT_API_BASE_URL=https://api.groq.com/openai/v1
+#   OpenRouter  CHAT_API_BASE_URL=https://openrouter.ai/api/v1
+#   Gemini      CHAT_API_BASE_URL=https://generativelanguage.googleapis.com/v1beta/openai/
+#   Together    CHAT_API_BASE_URL=https://api.together.xyz/v1
+# with CHAT_API_KEY and CHAT_MODELS="model-a,model-b" (first one is the default).
+CHAT_PROVIDER = os.getenv("CHAT_PROVIDER", "ollama").strip().lower()
+CHAT_API_BASE_URL = os.getenv("CHAT_API_BASE_URL") or None
+CHAT_API_KEY = os.getenv("CHAT_API_KEY") or "ollama"
+_default_models = "llama3.2,deepseek-r1,gemma3" if CHAT_PROVIDER == "ollama" else ""
+AVAILABLE_MODELS = [m.strip() for m in os.getenv("CHAT_MODELS", _default_models).split(",") if m.strip()]
+if not AVAILABLE_MODELS:
+    raise RuntimeError("CHAT_MODELS must list at least one model when CHAT_PROVIDER != ollama")
+
+DEFAULT_MODEL = AVAILABLE_MODELS[0]
 MAX_HISTORY = 10
 TEMPERATURE = 0.3
+
+_openai_client = AsyncOpenAI(api_key=CHAT_API_KEY, base_url=CHAT_API_BASE_URL) \
+    if CHAT_PROVIDER == "openai-compatible" else None
+
+
+def build_model_config(model_name):
+    """Model config handed to GraphRAGSystem for the retrieval summary step."""
+    if CHAT_PROVIDER == "openai-compatible":
+        return {"provider": "openai-compatible", "model_name": model_name,
+                "api_key": CHAT_API_KEY, "base_url": CHAT_API_BASE_URL}
+    return {"provider": "ollama", "model_name": model_name}
+
+
+async def stream_chat(history, model_name, temperature):
+    """Yield response text chunks from whichever LLM backend is configured."""
+    if _openai_client is not None:
+        stream = await _openai_client.chat.completions.create(
+            model=model_name, messages=history, temperature=temperature, stream=True)
+        async for chunk in stream:
+            if chunk.choices and chunk.choices[0].delta and chunk.choices[0].delta.content:
+                yield chunk.choices[0].delta.content
+    else:
+        sync_stream = ollama.chat(model=model_name, messages=history, stream=True,
+                                  options={"temperature": temperature})
+        async for chunk in async_generator(sync_stream):
+            yield chunk['message']['content']
 
 
 def sanitize_input(text):
@@ -51,14 +96,14 @@ def sanitize_input(text):
     return text
 
 
-def retrieve(user_input):
+def retrieve(user_input, model_name=None):
     try:
         sanitized_input = sanitize_input(user_input)
 
         if sanitized_input is None:
             return "No relevant information available due to potential security concerns."
 
-        analyzer = GraphRAGSystem(sanitized_input)
+        analyzer = GraphRAGSystem(sanitized_input, build_model_config(model_name or DEFAULT_MODEL))
         context = analyzer.analyze()
 
         return context
@@ -75,10 +120,10 @@ async def async_generator(sync_gen):
             break
 
 
-async def create_system_prompt(user_input):
+async def create_system_prompt(user_input, model_name=None):
     sanitized_input = sanitize_input(user_input)
 
-    context = retrieve(sanitized_input)
+    context = retrieve(sanitized_input, model_name)
     logger.info("Retrieved context for user query")
     system_prompt = generate_chat_prompt(context, sanitized_input)
 
@@ -96,7 +141,7 @@ async def start_chat():
             Select(
                 id="model",
                 label="Select Model",
-                values=["llama3.2", "deepseek-r1", "gemma3"],
+                values=AVAILABLE_MODELS,
                 initial_index=0,
             ),
             Slider(
@@ -163,7 +208,10 @@ async def main(message: cl.Message):
             content="I can only provide factual information about AMD research. Your question contains patterns that may compromise security or exceed length limits. Please rephrase your question.").send()
         return
 
-    system_prompt = await create_system_prompt(sanitized_input)
+    model_name = cl.user_session.get("model", DEFAULT_MODEL)
+    temperature = cl.user_session.get("temperature", TEMPERATURE)
+
+    system_prompt = await create_system_prompt(sanitized_input, model_name)
 
     history = cl.user_session.get("history", [])
 
@@ -177,26 +225,14 @@ async def main(message: cl.Message):
     if len(history) > MAX_HISTORY * 2 + 1:
         history = [history[0]] + history[-(MAX_HISTORY * 2):]
 
-    model_name = cl.user_session.get("model", DEFAULT_MODEL)
-    temperature = cl.user_session.get("temperature", TEMPERATURE)
-
     try:
-        sync_stream = ollama.chat(
-            model=model_name,
-            messages=history,
-            stream=True,
-            options={"temperature": temperature}
-        )
-
-        stream = async_generator(sync_stream)
+        stream = stream_chat(history, model_name, temperature)
         final_answer = cl.Message(content="")
 
-        if model_name == "deepseek-r1":
+        if "deepseek-r1" in model_name:
             thinking = False
             async with cl.Step(name="Analyzing Research") as thinking_step:
-                async for chunk in stream:
-                    content = chunk['message']['content']
-
+                async for content in stream:
                     if content == "<think>":
                         thinking = True
                         continue
@@ -213,8 +249,7 @@ async def main(message: cl.Message):
                     else:
                         await final_answer.stream_token(content)
         else:
-            async for chunk in stream:
-                content = chunk['message']['content']
+            async for content in stream:
                 await final_answer.stream_token(content)
 
         await final_answer.send()

@@ -1,0 +1,24 @@
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+*.egg-info/
+
+# Node
+node_modules/
+dist/
+frontend/.env.local
+
+# Tools / editors
+.idea/
+.vscode/
+.DS_Store
+.chainlit/
+.files/
