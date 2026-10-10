@@ -390,21 +390,24 @@ function placeAroundNode(origin: string, freshIds: string[]) {
   // Chord between neighbouring fresh nodes ~150px so labels do not collide
   const radius = n === 1 ? 200 : Math.max(220, (190 * (n - 1)) / span);
   const sorted = [...freshIds].sort((a, b) => String(nodes.value!.get(a)?.label ?? a).localeCompare(String(nodes.value!.get(b)?.label ?? b)));
-  const taken = Object.entries(pos).filter(([id]) => !fresh.has(id)).map(([, p]) => p);
-  const placed: { x: number; y: number }[] = [];
+  // Approximate half-width of a node from its label (canvas units at scale 1)
+  const halfWidth = (id: string) => (String(nodes.value!.get(id)?.label ?? '').length * 7.6 + 30) / 2;
+  const taken = Object.entries(pos).filter(([id]) => !fresh.has(id)).map(([id, p]) => ({ x: p.x, y: p.y, hw: halfWidth(id) }));
+  const placed: { x: number; y: number; hw: number }[] = [];
   const updates = sorted.map((id, i) => {
     const angle = base - span / 2 + (n === 1 ? 0 : (span * i) / (n - 1));
+    const hw = halfWidth(id);
     let r = radius;
     let x = 0, y = 0;
-    // Nudge outwards while too close to anything already on the canvas
-    for (let attempt = 0; attempt < 4; attempt++) {
+    // Nudge outwards while overlapping anything already on the canvas
+    for (let attempt = 0; attempt < 5; attempt++) {
       x = o.x + Math.cos(angle) * r;
       y = o.y + Math.sin(angle) * r;
-      const clash = [...taken, ...placed].some((q) => Math.abs(q.x - x) < 180 && Math.abs(q.y - y) < 48);
+      const clash = [...taken, ...placed].some((q) => Math.abs(q.x - x) < q.hw + hw + 16 && Math.abs(q.y - y) < 46);
       if (!clash) break;
-      r += 70;
+      r += 60;
     }
-    placed.push({ x, y });
+    placed.push({ x, y, hw });
     return { id, x, y, fixed: { x: false, y: false } };
   });
   nodes.value.update(updates);
