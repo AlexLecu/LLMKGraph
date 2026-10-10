@@ -47,19 +47,24 @@ def construct_sparql_query(query_text, filter_type):
     else:
         condition = f"{regex('subject')} || {regex('predicate')} || {regex('object')}"
 
+    # The regex match runs in a sub-select so the OPTIONAL lookups (source,
+    # entity types) are evaluated only for the (at most 100) matching relations.
     return f"""
     PREFIX ont: <{ONT_NAMESPACE}>
     PREFIX prov: <http://www.w3.org/ns/prov#>
     SELECT ?relation ?subject ?predicate ?object ?publication ?subjectType ?objectType WHERE {{
-        ?relation a ont:RELATION ;
-                ont:relation_subject ?subject ;
-                ont:relation_predicate ?predicate ;
-                ont:relation_object ?object .
+        {{
+            SELECT ?relation ?subject ?predicate ?object WHERE {{
+                ?relation ont:relation_subject ?subject ;
+                        ont:relation_predicate ?predicate ;
+                        ont:relation_object ?object .
+                FILTER ( {condition} )
+            }} LIMIT 100
+        }}
         OPTIONAL {{ ?relation prov:wasDerivedFrom ?publication . }}
         OPTIONAL {{ ?subject a ?subjectType . FILTER(STRSTARTS(STR(?subjectType), "{ONT_NAMESPACE}") && ?subjectType != ont:Entity) }}
         OPTIONAL {{ ?object a ?objectType . FILTER(STRSTARTS(STR(?objectType), "{ONT_NAMESPACE}") && ?objectType != ont:Entity) }}
-        FILTER ( {condition} )
-    }} LIMIT 100
+    }}
     """
 
 def query_knowledge_graph(query_text, filter_type, repo_id):

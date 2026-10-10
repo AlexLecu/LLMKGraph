@@ -24,7 +24,7 @@ import os
 import uuid
 
 from flask import Blueprint, Response, jsonify, request
-from rdflib import ConjunctiveGraph, Namespace, RDF, URIRef
+from rdflib import Graph, Namespace, RDF
 
 from disambiguation.disambiguation import refine_relations, sanitize_entity_name
 
@@ -32,16 +32,15 @@ logger = logging.getLogger(__name__)
 
 ONT = Namespace("http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD#")
 PROV = Namespace("http://www.w3.org/ns/prov#")
-DATA_GRAPH = URIRef("http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD/")
 
-_repos: dict[str, ConjunctiveGraph] = {}
+_repos: dict[str, Graph] = {}
 
 bp = Blueprint("embedded_store", __name__)
 
 
-def _add_relations(graph: ConjunctiveGraph, relations: list[dict]) -> int:
+def _add_relations(graph: Graph, relations: list[dict]) -> int:
     """Mirror of bulk_relations.create_sparql_queries_for_bulk_import, as triples."""
-    g = graph.get_context(DATA_GRAPH)
+    g = graph
     count = 0
     for r in refine_relations(relations):
         try:
@@ -70,7 +69,7 @@ def _add_relations(graph: ConjunctiveGraph, relations: list[dict]) -> int:
 
 def load_repositories(spec: list[dict], base_dir: str) -> None:
     for repo in spec:
-        graph = ConjunctiveGraph()
+        graph = Graph()
         ontology = repo.get("ontology")
         if ontology:
             graph.parse(os.path.join(base_dir, ontology))
