@@ -281,6 +281,7 @@ function drawRecords(records: RelationRecord[], replace: boolean): { nodes: stri
     edges.value!.clear();
     nodeStates.value = {};
     expandedData.value = {};
+    fitOnSettle = true;
   }
   const added = { nodes: [] as string[], edges: [] as string[] };
   const newNodes: GraphNode[] = [];
@@ -327,7 +328,7 @@ function mountNetwork() {
     physics: {
       solver: 'barnesHut',
       barnesHut: { gravitationalConstant: -6000, centralGravity: 0.15, springLength: 190, springConstant: 0.03, damping: 0.5, avoidOverlap: 0.6 },
-      stabilization: { iterations: 300, updateInterval: 25, fit: true },
+      stabilization: { iterations: 300, updateInterval: 25, fit: false },
     },
     interaction: { hover: true, tooltipDelay: 150, zoomSpeed: 0.6 },
     layout: { improvedLayout: true },
@@ -343,11 +344,18 @@ function mountNetwork() {
     }
   });
   // Physics only runs until the layout settles; otherwise the graph drifts forever.
+  // The view is re-fitted only when the canvas was redrawn from scratch, so the
+  // user's zoom and pan survive expanding or collapsing a node.
   network.on('stabilized', () => {
     network?.setOptions({ physics: { enabled: false } });
-    network?.fit({ animation: false });
+    if (fitOnSettle) {
+      fitOnSettle = false;
+      network?.fit({ animation: false });
+    }
   });
 }
+
+let fitOnSettle = true;
 
 /** Re-run the layout briefly after nodes/edges were added, then freeze again. */
 function settleLayout() {
