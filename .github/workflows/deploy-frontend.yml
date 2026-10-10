@@ -5,7 +5,7 @@
 #   Settings -> Secrets and variables -> Actions -> Variables (optional):
 #     VITE_API_URL      e.g. https://<your-backend>.onrender.com
 #     VITE_GRAPHDB_URL  e.g. https://<your-graphdb-host>
-#     VITE_CHAT_URL     e.g. https://<user>-<space>.hf.space/
+#     VITE_CHAT_URL     e.g. https://llmkgraph-amd-chat.onrender.com/
 #     VITE_EVAL_URL     e.g. https://<your-streamlit-host>/?embed=true
 # Without those variables the page builds, but points at localhost.
 name: Deploy frontend to GitHub Pages

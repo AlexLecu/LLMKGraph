@@ -5,13 +5,14 @@ The project has four moving parts with very different hosting needs:
 | Component | Folder | Needs | Free option |
 |---|---|---|---|
 | Vue frontend | `frontend/` | static files | **GitHub Pages** (workflow included) |
-| Chainlit chatbot | `backend/weaviate_rag/` | Python, Weaviate, an LLM | **Hugging Face Spaces** (Docker) + Groq/Gemini free API + Weaviate Cloud sandbox |
+| Chainlit chatbot | `backend/weaviate_rag/` | Python, Weaviate, an LLM | **Render** free web service (single container, Weaviate bundled) + Gemini free API |
 | Flask API + Streamlit | `backend/` | Python, Java, GraphDB | **Oracle Cloud Always Free VM** (or any VPS) with `docker-compose` |
 | GraphDB | docker image | ~2 GB RAM Java server | same VM as above |
 
 There is no serverless free tier that runs GraphDB or local Ollama models, so a
-100 % free deployment means: static frontend on Pages, chatbot on a Space with a
-hosted LLM API, and the GraphDB-backed API either on a free VM or left local.
+100 % free deployment means: static frontend on Pages, chatbot in one free
+container on Render with a hosted LLM API, and the GraphDB-backed API either on a
+free VM or left local.
 
 ---
 
@@ -30,54 +31,31 @@ Already wired up in `.github/workflows/deploy-frontend.yml`.
 The build uses `VITE_BASE_PATH=/LLMKGraph/` so assets and the router work under
 the sub-path; `404.html` is a copy of `index.html` so `/chat` deep links work.
 
-## 2. Chatbot on Hugging Face Spaces (free CPU, 16 GB RAM)
+## 2. Chatbot on Render (free web service)
 
-### 2a. Pick a hosted LLM (free tiers)
+> Hugging Face Docker Spaces now require a PRO subscription, so the chatbot
+> goes to [Render](https://render.com): free plan, 512 MB RAM, Docker, no card.
+> The service sleeps after 15 minutes without traffic and wakes on the first
+> request (about a minute). Fine for a demo.
 
-The chatbot no longer requires Ollama. Set `CHAT_PROVIDER=openai-compatible` and
-point it at any OpenAI-style endpoint:
+Everything is in the repository: [`deploy/chatbot/Dockerfile`](deploy/chatbot/Dockerfile)
+(Weaviate binary + Chainlit, knowledge graph loaded from JSON at start-up, ~10 s)
+and the blueprint [`render.yaml`](render.yaml).
 
-| Provider | `CHAT_API_BASE_URL` | Example `CHAT_MODELS` |
-|---|---|---|
-| Groq (fast, generous free tier) | `https://api.groq.com/openai/v1` | `llama-3.3-70b-versatile,deepseek-r1-distill-llama-70b` |
-| Google Gemini | `https://generativelanguage.googleapis.com/v1beta/openai/` | `gemini-2.5-flash` |
-| OpenRouter (free models end in `:free`) | `https://openrouter.ai/api/v1` | `meta-llama/llama-3.3-70b-instruct:free` |
+1. Render dashboard → **New → Blueprint** → connect the GitHub repository.
+   Render reads `render.yaml` and asks for the one secret, `CHAT_API_KEY`
+   (a Gemini API key; the blueprint already points at Gemini's OpenAI-compatible
+   endpoint and the `gemini-3.8-flash` / `gemini-3.1-flash-lite` models).
+2. Deploy. The service URL looks like `https://llmkgraph-amd-chat.onrender.com`.
+3. Put that URL in the GitHub Actions variable `VITE_CHAT_URL` and re-run the
+   Pages workflow, so the Chat tab of the published frontend embeds it.
 
-Models containing `deepseek-r1` get the "thinking" step UI automatically.
+To use another OpenAI-compatible provider, change `CHAT_API_BASE_URL`,
+`CHAT_MODELS` and the key in the Render dashboard (Environment tab).
 
-### 2b. Pick a Weaviate
-
-* **Weaviate Cloud sandbox** (free, expires after 14 days, fine for demos):
-  create a cluster at <https://console.weaviate.cloud>, then set
-  `WEAVIATE_URL` and `WEAVIATE_API_KEY`. Ingest the data once from your machine
-  with the same two env vars: `python ingest_data.py` in `backend/weaviate_rag`.
-* **Embedded Weaviate** inside the Space (`WEAVIATE_MODE=embedded`): no external
-  service, but the free Space disk is ephemeral, so you must run
-  `create_schema.py` + `ingest_data.py` at container start (add them to the
-  `CMD`). Only worth it if the sandbox expiry bothers you.
-
-### 2c. Create the Space
-
-1. <https://huggingface.co/new-space> → SDK **Docker**, hardware **CPU basic (free)**.
-2. The Space repo must have `Dockerfile` at its root, so push the contents of
-   `backend/` and rename the chatbot Dockerfile:
-
-   ```bash
-   git clone https://huggingface.co/spaces/<user>/<space> hf-space
-   rsync -a --exclude '__pycache__' --exclude '*.rdf' --exclude evaluation backend/ hf-space/
-   cp backend/weaviate_rag/Dockerfile hf-space/Dockerfile
-   cd hf-space && git add -A && git commit -m "Deploy chatbot" && git push
-   ```
-
-   The Dockerfile already listens on port **7860** (what Spaces expects) and runs
-   Chainlit headless.
-3. **Settings → Variables and secrets** on the Space:
-   `CHAT_PROVIDER`, `CHAT_API_BASE_URL`, `CHAT_MODELS` as variables;
-   `CHAT_API_KEY`, `WEAVIATE_URL`, `WEAVIATE_API_KEY` as secrets.
-4. The chatbot is served at `https://<user>-<space>.hf.space/`. Put that URL in the
-   `VITE_CHAT_URL` GitHub variable so the frontend's Chat tab embeds it.
-
-Free Spaces go to sleep after 48 h without traffic and wake on the first request.
+The shipped data is `data/Extracted_Relations/2025-03-12/Deepseek_V3_Relations_ct.json`
+(100 AMD clinical trials). To ship a different set, point the `COPY` line in the
+Dockerfile at another relations JSON in the repository.
 
 ## 3. Flask API + GraphDB (the part that needs a real machine)
 

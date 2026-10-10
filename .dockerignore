@@ -1,0 +1,22 @@
+# Root build context (deploy/chatbot/Dockerfile). Keep research artefacts out.
+.git/
+node_modules/
+frontend/
+backend/evaluation/
+backend/Notebooks/
+backend/scripts/
+backend/embeddings/
+backend/extracted_relations/
+backend/*_extracted_relations_gpt*/
+backend/weaviate_rag/weaviate2_data/
+backend/weaviate_rag/pubmedbert-docker/
+**/__pycache__/
+**/.ipynb_checkpoints/
+**/*.ipynb
+**/*.npy
+**/*.csv
+**/*.png
+**/*.pdf
+**/*.log
+.DS_Store
+.env
