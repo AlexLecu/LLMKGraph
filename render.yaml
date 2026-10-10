@@ -14,8 +14,8 @@ services:
       - key: CHAT_PROVIDER
         value: openai-compatible
       - key: CHAT_API_BASE_URL
-        value: https://generativelanguage.googleapis.com/v1beta/openai/
+        value: https://api.groq.com/openai/v1
       - key: CHAT_MODELS
-        value: gemini-3.8-flash,gemini-3.1-flash-lite
+        value: openai/gpt-oss-120b,openai/gpt-oss-20b
       - key: CHAT_API_KEY
         sync: false   # entered once in the Render dashboard, never stored in git
