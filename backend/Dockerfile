@@ -1,4 +1,4 @@
-FROM python:3.11-slim
+FROM python:3.14-slim
 
 # Java is needed by owlready2's HermiT reasoner (disambiguation/reason.py)
 RUN apt-get update && \
