@@ -40,14 +40,6 @@ MAX_ABSTRACT_CHARS = 8000
 MAX_RELATIONS_PER_REQUEST = 1000
 _extraction_log = defaultdict(deque)
 
-# EMBEDDED_STORE=1 serves the knowledge graph from an in-process rdflib store
-# (see embedded_store.py) instead of an external GraphDB.
-if os.getenv("EMBEDDED_STORE", "0") == "1":
-    import embedded_store
-    embedded_store.load_from_env()
-    app.register_blueprint(embedded_store.bp)
-
-
 def _request_repo_id():
     body = request.get_json(silent=True) if request.is_json else None
     return (body or {}).get("repo_id") or request.args.get("repo_id") or request.form.get("repo_id")

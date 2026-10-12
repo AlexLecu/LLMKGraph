@@ -1,6 +1,7 @@
-# Self-contained AMD chatbot for a single free container (Render, Koyeb, Fly, ...):
-# Weaviate (single binary, BM25 only) + Chainlit UI; the knowledge graph is
-# loaded from JSON at start-up (~10 s), so no external database is needed.
+# Self-contained AMD chatbot in one container: Weaviate (single binary, BM25
+# only) + the chat API used by the web UI (CHAT_UI=api) or the Chainlit UI.
+# The knowledge graph is loaded from the relation JSON files at build time, so
+# no external database is needed. Used by deploy/server/docker-compose.yml.
 #
 # Build context is the repository root:
 #   docker build -f deploy/chatbot/Dockerfile -t llmkgraph-chat .

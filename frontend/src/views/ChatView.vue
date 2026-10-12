@@ -1,13 +1,11 @@
 <script setup lang="ts">
 // AMD research assistant. Talks to the chat API (backend/weaviate_rag/chat_api.py):
 // every question is answered from relations retrieved from the knowledge graph.
-// With VITE_CHAT_EMBED_URL set, a Chainlit UI is embedded instead (Render demo).
 import { computed, nextTick, onMounted, ref } from 'vue';
 import { marked } from 'marked';
 import DOMPurify from 'dompurify';
 import AppSidebar from '@/components/AppSidebar.vue';
-import EmbeddedApp from '@/components/EmbeddedApp.vue';
-import { CHAT_API_URL, CHAT_EMBED_URL } from '@/config';
+import { CHAT_API_URL } from '@/config';
 
 interface Turn {
   role: 'user' | 'assistant';
@@ -36,7 +34,6 @@ const tooLong = computed(() => draft.value.length > MAX_CHARS);
 const canSend = computed(() => !busy.value && draft.value.trim().length > 0 && !tooLong.value);
 
 onMounted(async () => {
-  if (CHAT_EMBED_URL) return;
   try {
     const r = await fetch(`${CHAT_API_URL}/api/chat/models`);
     const data = await r.json();
@@ -131,12 +128,7 @@ function newChat() {
 <template>
   <div class="app-shell">
     <AppSidebar />
-    <main v-if="CHAT_EMBED_URL" class="page">
-      <EmbeddedApp :url="CHAT_EMBED_URL" name="AMD chat assistant" env-var="VITE_CHAT_EMBED_URL"
-        start-hint="cd backend/weaviate_rag && chainlit run chatbot.py -w" />
-    </main>
-
-    <main v-else class="page chat-page">
+    <main class="page chat-page">
       <header class="chat-head">
         <div>
           <h1>AMD research assistant</h1>

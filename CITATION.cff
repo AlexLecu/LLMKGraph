@@ -3,6 +3,7 @@ message: "If you use this software, please cite the paper below."
 title: "LLMKGraph: Knowledge Graph-Augmented Retrieval for Evidence-Based AMD Information"
 type: software
 repository-code: "https://github.com/AlexLecu/LLMKGraph"
+url: "https://llmkgraph.utcluj.ro"
 license: MIT
 authors:
   - family-names: Lecu
