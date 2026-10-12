@@ -12,6 +12,8 @@ GRAPHDB_URL = os.getenv('GRAPHDB_URL', 'http://localhost:7200')
 # path-traversal holes.
 _LOCAL_NAME_RE = re.compile(r'^[A-Za-z0-9_]+$')
 _REPO_ID_RE = re.compile(r'^[A-Za-z0-9_-]+$')
+# Reified relation nodes are REL_<uuid4>, so hyphens are allowed after the prefix
+_RELATION_ID_RE = re.compile(r'^REL_[A-Za-z0-9-]+$')
 
 
 def validate_local_name(value, what="identifier"):
@@ -111,7 +113,9 @@ def delete_relation_kg(subject, predicate, object_, repo_id, relation=None):
     sparql_post = SPARQLWrapper(f"{GRAPHDB_URL}/repositories/{repo_id}/statements")
 
     if relation:
-        validate_local_name(relation, "relation")
+        relation = relation.rsplit("#", 1)[-1]  # accept the full IRI too
+        if not _RELATION_ID_RE.match(relation):
+            raise ValueError(f"Invalid relation: {relation!r}")
         delete_query = f"""
             PREFIX ont: <{ONT_NAMESPACE}>
             DELETE WHERE {{ ont:{relation} ?p ?o . }}
