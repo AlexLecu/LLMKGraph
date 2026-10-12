@@ -10,13 +10,13 @@
 [![CI](https://github.com/AlexLecu/LLMKGraph/actions/workflows/ci.yml/badge.svg)](https://github.com/AlexLecu/LLMKGraph/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
-[🌐 Live Demo](https://alexlecu.github.io/LLMKGraph/) · [💬 Chatbot](https://llmkgraph-amd-chat.onrender.com/) · [🎥 Paper Overview](https://www.youtube.com/watch?v=PbS0i7zZnZk) · [🎬 Platform Demo](https://www.youtube.com/watch?v=0qlS2vuFpTo) · [📄 Paper](https://doi.org/10.1109/ACCESS.2025.3643370) · [📚 Citation](#-citation) · [🚀 Deploy](DEPLOYMENT.md)
+[🌐 Live Demo](https://llmkgraph.utcluj.ro) · [💬 Chatbot](https://llmkgraph.utcluj.ro/chat) · [📊 LLM Comparison](https://llmkgraph.utcluj.ro/evaluation) · [🎥 Paper Overview](https://www.youtube.com/watch?v=PbS0i7zZnZk) · [🎬 Platform Demo](https://www.youtube.com/watch?v=0qlS2vuFpTo) · [📄 Paper](https://doi.org/10.1109/ACCESS.2025.3643370) · [📚 Citation](#-citation) · [🚀 Deploy](DEPLOYMENT.md)
 
 **Official code for the paper** "[Reducing Hallucinations in Medical AI: A Knowledge Graph-Augmented Retrieval System for Evidence-Based Age-Related Macular Degeneration Information](https://doi.org/10.1109/ACCESS.2025.3643370)", *IEEE Access* **13**, 210624–210639, 2025.
 
 <img src="assets/system_architecture.svg" alt="LLMKGraph system architecture" width="90%">
 
-*Try it: the [web interface](https://alexlecu.github.io/LLMKGraph/) is on GitHub Pages and the [chatbot](https://llmkgraph-amd-chat.onrender.com/) runs on a free Render instance (it sleeps when idle, so the first request may take a minute).*
+*Try it at **[llmkgraph.utcluj.ro](https://llmkgraph.utcluj.ro)**, hosted by the Technical University of Cluj-Napoca: browse the knowledge graph, ask the research assistant, compare the extraction LLMs, or extract relations from an abstract of your own into the Playground graph.*
 
 *Three layers: LLM-based knowledge graph construction over AMD literature, a Graph-RAG chatbot grounded in that graph, and the web interfaces and evaluation suite built on top.*
 
@@ -32,7 +32,7 @@ LLMKGraph turns the biomedical literature on **Age-related Macular Degeneration 
 |-----------|-------------|
 | 🧠 **Knowledge Graph** | Causal relations extracted from 5,000 AMD research abstracts (Dimensions.ai) and 100 clinical trials, stored in GraphDB (RDF) under the CausalAMD ontology, every relation linked to its source publication via `prov:wasDerivedFrom` |
 | 🔬 **LLM Relation Extraction** | Fine-tuned GPT-3.5 Turbo and Mistral Nemo, GPT-4o-mini and DeepSeek extract 12 entity types and 8 relation types; entity disambiguation and HermiT reasoning clean the result |
-| 💬 **Graph-RAG Chatbot** | Chainlit chat over Weaviate: the question is analysed with spaCy, matching entities are found with BM25, the relations between and around them are retrieved, summarised, and handed to the LLM as grounded context |
+| 💬 **Graph-RAG Chatbot** | Research assistant over Weaviate: the question is analysed with spaCy, matching entities are found with BM25, the relations between and around them are retrieved, summarised, and handed to the LLM as grounded context |
 
 ---
 
@@ -58,19 +58,23 @@ Open models from 1B to 70B parameters plus GPT-5-mini were evaluated on **3,000 
 
 <div align="center"><img src="screenshots/HomePage.png" alt="Knowledge graph explorer" width="80%"></div>
 
-*The graph explorer: browse, search and edit causal relations, run the reasoner, and upload new abstracts for extraction.*
+*The graph explorer: browse and search the graphs, extract relations from an abstract, edit relations and run the reasoner.*
+
+<div align="center"><img src="screenshots/ChatPage.png" alt="Graph-grounded research assistant" width="80%"></div>
+
+*The research assistant: every answer is written from relations retrieved from the knowledge graph.*
 
 
 | Component | Description | Location |
 |-----------|-------------|----------|
-| 🖥️ **Web Interface** | Vue 3 app: graph visualisation (vis-network), search and filtering, relation editing, reasoner, abstract upload; embeds the Chat and Evaluation apps | [`frontend/`](frontend/) |
-| 🐍 **Backend API** | Flask + Gunicorn REST API over GraphDB (search, add/delete relations, reasoning, extraction uploads) | [`backend/app.py`](backend/app.py) |
+| 🖥️ **Web Interface** | Vue 3 app: graph visualisation (vis-network), search and filtering, relation editing, reasoner, abstract upload, the chat page and the LLM-comparison page | [`frontend/`](frontend/) |
+| 🐍 **Backend API** | Flask + Gunicorn REST API over GraphDB (search, add/delete relations, reasoning, extraction uploads, graph comparison); a read-only public mode with a writable Playground | [`backend/app.py`](backend/app.py) |
 | 🔬 **Relation Extraction** | Prompted and fine-tuned LLM extractors (GPT, Mistral, DeepSeek) producing typed `(entity1, relation, entity2)` triples with provenance | [`backend/bulk_relations.py`](backend/bulk_relations.py), [`backend/prompts.py`](backend/prompts.py) |
 | 🧹 **Disambiguation & Reasoning** | Majority-vote entity typing, name normalisation, and OWL reasoning with HermiT (owlready2) pushed back into GraphDB | [`backend/disambiguation/`](backend/disambiguation/) |
 | 📐 **CausalAMD Ontology** | OWL ontology with 12 entity classes and the causal object properties used by the graph | [`data/CausalAMD_ont.rdf`](data/CausalAMD_ont.rdf) |
-| 💬 **Graph-RAG Chatbot** | Chainlit UI, spaCy query analysis, Weaviate BM25 entity search, pairwise and per-entity relation retrieval, LLM summarisation; Ollama or any OpenAI-compatible API | [`backend/weaviate_rag/`](backend/weaviate_rag/) |
+| 💬 **Graph-RAG Chatbot** | spaCy query analysis, Weaviate BM25 entity search, pairwise and per-entity relation retrieval, LLM summarisation; served as a streaming HTTP API for the web UI or as a Chainlit app; Ollama or any OpenAI-compatible API | [`backend/weaviate_rag/`](backend/weaviate_rag/) |
 | 🔍 **Vector / Graph Store** | Weaviate `Entity`, `Relation`, `Publication` collections (text2vec-transformers), ingested from GraphDB via SPARQL | [`backend/weaviate_rag/create_schema.py`](backend/weaviate_rag/create_schema.py), [`ingest_data.py`](backend/weaviate_rag/ingest_data.py) |
-| 📊 **Graph Comparison** | Streamlit app comparing graphs built by different LLMs (node/edge counts, degree distribution, clustering, entity types) | [`backend/streamlit/`](backend/streamlit/) |
+| 📊 **Graph Comparison** | Compares the graphs built by different LLMs (size, degree distribution, clustering, relation and entity types, triple agreement): a page of the web UI backed by `/api/evaluation`, and the original Streamlit app | [`backend/evaluation_stats.py`](backend/evaluation_stats.py), [`backend/streamlit/`](backend/streamlit/) |
 | 📏 **Evaluation** | 3,000-question benchmark (Grok-generated, verified), RAGAS scoring, Giskard scans, per-model notebooks and results | [`backend/evaluation/`](backend/evaluation/) |
 
 ---
@@ -124,6 +128,8 @@ python create_schema.py && python ingest_data.py
 
 # 4. Chat — http://localhost:8000
 chainlit run chatbot.py -w
+# or the HTTP API used by the web UI's Chat page (set VITE_CHAT_API_URL=http://localhost:8000)
+uvicorn chat_api:app --port 8000
 ```
 
 To use a hosted model instead of Ollama, set in `.env`:
@@ -132,10 +138,10 @@ To use a hosted model instead of Ollama, set in `.env`:
 CHAT_PROVIDER=openai-compatible
 CHAT_API_BASE_URL=https://api.groq.com/openai/v1   # or Gemini / OpenRouter / Together
 CHAT_API_KEY=...
-CHAT_MODELS=llama-3.3-70b-versatile,deepseek-r1-distill-llama-70b
+CHAT_MODELS=openai/gpt-oss-120b,openai/gpt-oss-20b
 ```
 
-> 💡 All URLs and keys are read from environment variables; see [`.env.example`](.env.example) (backend) and [`frontend/.env.example`](frontend/.env.example) (frontend). Free hosting options for every component are in [📄 DEPLOYMENT.md](DEPLOYMENT.md).
+> 💡 All URLs and keys are read from environment variables; see [`.env.example`](.env.example) (backend) and [`frontend/.env.example`](frontend/.env.example) (frontend). The production setup behind [llmkgraph.utcluj.ro](https://llmkgraph.utcluj.ro) is described in [📄 DEPLOYMENT.md](DEPLOYMENT.md).
 
 ### Manual setup (without Docker)
 
@@ -160,12 +166,15 @@ cd ../frontend && npm install && npm run dev
 LLMKGraph/
 ├── backend/
 │   ├── app.py                     # Flask REST API (search, relations, reasoning, uploads)
+│   ├── evaluation_stats.py        # Graph comparison behind /api/evaluation
 │   ├── prompts.py                 # Extraction + chat prompts (entity / relation vocabulary)
 │   ├── bulk_relations.py          # LLM relation extraction (GPT, Mistral, DeepSeek) + bulk KG load
 │   ├── enrich_kg_gpt.py           # Single-abstract extraction used by the UI
 │   ├── search_kg.py               # SPARQL search / delete helpers
 │   ├── disambiguation/            # Entity disambiguation + HermiT reasoning (owlready2)
 │   ├── weaviate_rag/              # Graph-RAG chatbot
+│   │   ├── chat_core.py           # Shared chat logic (LLM backends, sanitising, retrieval)
+│   │   ├── chat_api.py            # Streaming HTTP chat API used by the web UI
 │   │   ├── chatbot.py             # Chainlit app (Ollama or OpenAI-compatible backends)
 │   │   ├── rag_system.py          # BM25 entity retrieval, relation retrieval, LLM summary
 │   │   ├── query_analyzer.py      # spaCy noun-phrase / keyword extraction
@@ -180,8 +189,11 @@ LLMKGraph/
 │   ├── abstracts_with_id.json     # Sample of 100 abstracts (full corpus not redistributed)
 │   ├── Extracted_Relations/       # Relations extracted per model and date
 │   └── Annotators/                # Hand-annotated relation triples (two annotators)
-├── docker-compose.yml             # GraphDB + API + Streamlit + frontend
-└── DEPLOYMENT.md                  # Free hosting recipe (GitHub Pages, HF Spaces, free VM)
+├── deploy/
+│   ├── server/                    # Production compose project + nginx (llmkgraph.utcluj.ro)
+│   └── chatbot/                   # Self-contained chatbot image (Weaviate + chat API)
+├── docker-compose.yml             # Local: GraphDB + API + Streamlit + frontend
+└── DEPLOYMENT.md                  # How the public instance is deployed
 ```
 
 ---
@@ -210,7 +222,7 @@ Result files in the repo cover Gemma 3 (1B, 4B, 12B), Llama 3.2-3B, Llama 3.1-8B
 - Accuracy for MCQ and true/false (context impact per question is also recorded)
 - **RAGAS** for open-ended answers: answer correctness, answer relevancy, faithfulness, context precision/recall
 - **Giskard** LLM vulnerability scans of the chatbot (Llama 3.2, Gemma 3, DeepSeek-R1); HTML reports in [`backend/evaluation/data/giskard_scan_results/`](backend/evaluation/data/giskard_scan_results/)
-- **Graph-level comparison** of KGs built by different extractors (node/edge counts, degree distribution, clustering coefficient, entity-type distribution) in the Streamlit app
+- **Graph-level comparison** of KGs built by different extractors (node/edge counts, degree distribution, clustering coefficient, relation and entity types, triple agreement) on the [LLM comparison page](https://llmkgraph.utcluj.ro/evaluation)
 
 ---
 
@@ -231,10 +243,10 @@ Result files in the repo cover Gemma 3 (1B, 4B, 12B), Llama 3.2-3B, Llama 3.1-8B
 | Category | Stack |
 |----------|-------|
 | 🐍 Backend | Python, Flask, Gunicorn, SPARQLWrapper, rdflib, owlready2 + HermiT, spaCy |
-| 💬 Chat / UI apps | Chainlit (Graph-RAG chatbot), Streamlit (graph comparison) |
+| 💬 Chat / UI apps | Streaming chat API (FastAPI) and Chainlit for the Graph-RAG chatbot, Streamlit (local graph comparison) |
 | 🖥️ Frontend | Vue 3, TypeScript, Vite, vis-network |
 | 🗄️ Databases | GraphDB 10.8 (RDF / SPARQL), Weaviate 1.28 (text2vec-transformers) |
-| 🤖 LLMs | Extraction: fine-tuned GPT-3.5 Turbo and Mistral Nemo, GPT-4o-mini, DeepSeek · Chat: Ollama (Llama 3.2, DeepSeek-R1, Gemma 3) or any OpenAI-compatible API |
+| 🤖 LLMs | Extraction: fine-tuned GPT-3.5 Turbo and Mistral Nemo, GPT-4o-mini, DeepSeek · Chat: Ollama (Llama 3.2, DeepSeek-R1, Gemma 3) or any OpenAI-compatible API (the public instance uses gpt-oss-120b on Groq) |
 | 📏 Evaluation | RAGAS, Giskard, Jupyter |
 
 ---
@@ -264,7 +276,7 @@ Machine-readable metadata is in [CITATION.cff](CITATION.cff).
 
 ## 🔒 Security & Dependencies
 
-Dependencies are pinned with minimum versions at the patched releases flagged by GitHub security advisories; Dependabot watches the Python, npm, Docker and GitHub Actions manifests, and CI fails the frontend build on high-severity `npm audit` findings. Keep `FLASK_DEBUG=0` and set `CORS_ORIGINS` to your frontend origin before exposing the API.
+Dependencies are pinned with minimum versions at the patched releases flagged by GitHub security advisories; Dependabot watches the Python, npm, Docker and GitHub Actions manifests, and CI fails the frontend build on high-severity `npm audit` findings. Keep `FLASK_DEBUG=0` and set `CORS_ORIGINS` to your frontend origin before exposing the API; the public instance runs with `READ_ONLY=1` (see [DEPLOYMENT.md](DEPLOYMENT.md#what-the-public-site-allows)).
 
 ## 📄 License
 

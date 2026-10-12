@@ -47,6 +47,7 @@ updates:
       - "/backend"
       - "/backend/weaviate_rag"
       - "/frontend"
+      - "/deploy/chatbot"
     schedule:
       interval: "monthly"
     labels:

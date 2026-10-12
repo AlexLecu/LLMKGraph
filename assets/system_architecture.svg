@@ -51,9 +51,9 @@
 <text x="966.0" y="371" text-anchor="middle" font-size="13.5" fill="#1F2937">Ollama local models or any</text>
 <text x="966.0" y="390" text-anchor="middle" font-size="13.5" fill="#1F2937">OpenAI-compatible API</text>
 <rect x="1116" y="300" width="228" height="130" rx="12" fill="#FCE7F3" stroke="#BE185D" stroke-width="2"/>
-<text x="1230.0" y="328" text-anchor="middle" font-size="16" font-weight="700" fill="#BE185D">💬 Chainlit chat UI</text>
+<text x="1230.0" y="328" text-anchor="middle" font-size="16" font-weight="700" fill="#BE185D">💬 Chat UI (Vue · Chainlit)</text>
 <text x="1230.0" y="352" text-anchor="middle" font-size="13.5" fill="#1F2937">Streaming answers</text>
-<text x="1230.0" y="371" text-anchor="middle" font-size="13.5" fill="#1F2937">Model &amp; temperature settings</text>
+<text x="1230.0" y="371" text-anchor="middle" font-size="13.5" fill="#1F2937">Model choice · starters</text>
 <text x="1230.0" y="390" text-anchor="middle" font-size="13.5" fill="#1F2937">Prompt-injection filter</text>
 <line x1="552" y1="365.0" x2="588" y2="365.0" stroke="#4B5563" stroke-width="2.2" marker-end="url(#arr)"/>
 <line x1="816" y1="365.0" x2="852" y2="365.0" stroke="#4B5563" stroke-width="2.2" marker-end="url(#arr)"/>
@@ -71,7 +71,7 @@
 <text x="206.0" y="602" text-anchor="middle" font-size="13.5" fill="#1F2937">Interactive KG visualisation</text>
 <text x="206.0" y="621" text-anchor="middle" font-size="13.5" fill="#1F2937">Search / filter · add &amp; delete relations</text>
 <text x="206.0" y="640" text-anchor="middle" font-size="13.5" fill="#1F2937">Run reasoner · upload abstracts</text>
-<text x="206.0" y="659" text-anchor="middle" font-size="13.5" fill="#1F2937">Embeds Chat and Evaluation tabs</text>
+<text x="206.0" y="659" text-anchor="middle" font-size="13.5" fill="#1F2937">Chat and LLM-comparison pages</text>
 <rect x="390" y="550" width="292" height="150" rx="12" fill="#DBEAFE" stroke="#1D4ED8" stroke-width="2"/>
 <text x="536.0" y="578" text-anchor="middle" font-size="16" font-weight="700" fill="#1D4ED8">🐍 Flask REST API</text>
 <text x="536.0" y="602" text-anchor="middle" font-size="13.5" fill="#1F2937">/api/search · /api/addRelations</text>
@@ -79,11 +79,11 @@
 <text x="536.0" y="640" text-anchor="middle" font-size="13.5" fill="#1F2937">SPARQL over GraphDB</text>
 <text x="536.0" y="659" text-anchor="middle" font-size="13.5" fill="#1F2937">Gunicorn in Docker</text>
 <rect x="720" y="550" width="292" height="150" rx="12" fill="#F3F4F6" stroke="#374151" stroke-width="2"/>
-<text x="866.0" y="578" text-anchor="middle" font-size="16" font-weight="700" fill="#374151">📊 Streamlit graph comparison</text>
+<text x="866.0" y="578" text-anchor="middle" font-size="16" font-weight="700" fill="#374151">📊 LLM graph comparison</text>
 <text x="866.0" y="602" text-anchor="middle" font-size="13.5" fill="#1F2937">Graphs built by different LLMs</text>
-<text x="866.0" y="621" text-anchor="middle" font-size="13.5" fill="#1F2937">Node / edge counts, degree</text>
-<text x="866.0" y="640" text-anchor="middle" font-size="13.5" fill="#1F2937">distribution, clustering,</text>
-<text x="866.0" y="659" text-anchor="middle" font-size="13.5" fill="#1F2937">entity-type analysis</text>
+<text x="866.0" y="621" text-anchor="middle" font-size="13.5" fill="#1F2937">Size, degree, clustering,</text>
+<text x="866.0" y="640" text-anchor="middle" font-size="13.5" fill="#1F2937">relation &amp; entity types,</text>
+<text x="866.0" y="659" text-anchor="middle" font-size="13.5" fill="#1F2937">triple agreement (/api/evaluation)</text>
 <rect x="1050" y="550" width="292" height="150" rx="12" fill="#F3F4F6" stroke="#374151" stroke-width="2"/>
 <text x="1196.0" y="578" text-anchor="middle" font-size="16" font-weight="700" fill="#374151">📏 Evaluation</text>
 <text x="1196.0" y="602" text-anchor="middle" font-size="13.5" fill="#1F2937">3,000 questions (1-hop / 2-hop,</text>

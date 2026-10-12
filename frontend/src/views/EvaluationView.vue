@@ -278,7 +278,8 @@ const pretty = (name: string) => name.replace(/_/g, ' ');
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr));
+  /* two charts per row on desktop, one on narrow screens */
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 520px), 1fr));
   gap: 16px;
 }
 
@@ -327,6 +328,10 @@ thead th {
 td.top {
   font-weight: 700;
   color: var(--heading);
+}
+
+.overlap th[scope='row'] {
+  white-space: nowrap;
 }
 
 .overlap td.diag {
