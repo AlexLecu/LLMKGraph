@@ -5,7 +5,7 @@
 #
 # Build context is the repository root:
 #   docker build -f deploy/chatbot/Dockerfile -t llmkgraph-chat .
-FROM python:3.11-slim
+FROM python:3.14-slim
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends curl ca-certificates && \
