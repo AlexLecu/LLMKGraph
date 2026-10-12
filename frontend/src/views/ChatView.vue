@@ -156,6 +156,7 @@ function newChat() {
       </header>
 
       <section ref="scroller" class="thread card" aria-live="polite">
+        <div class="column">
         <div v-if="!turns.length" class="empty">
           <div class="empty-mark" aria-hidden="true">👁️</div>
           <h2>Ask about age-related macular degeneration</h2>
@@ -184,6 +185,7 @@ function newChat() {
             </div>
           </div>
         </template>
+        </div>
       </section>
 
       <form class="composer card" @submit.prevent="send()">
@@ -213,7 +215,8 @@ function newChat() {
   flex-direction: column;
   gap: 12px;
   height: 100vh;
-  max-width: 1100px;
+  /* the conversation and the composer share one centred reading column */
+  --column: 880px;
 }
 
 @media (max-width: 1023px) {
@@ -223,6 +226,9 @@ function newChat() {
 }
 
 .chat-head {
+  width: 100%;
+  max-width: calc(var(--column) + 48px);
+  margin: 0 auto;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
@@ -256,8 +262,16 @@ function newChat() {
   min-height: 0;
   overflow-y: auto;
   display: flex;
+  padding: 24px;
+}
+
+.column {
+  width: 100%;
+  max-width: var(--column);
+  margin: 0 auto;
+  display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 20px;
 }
 
 .empty {
@@ -343,7 +357,6 @@ function newChat() {
 .answer {
   flex: 1;
   min-width: 0;
-  max-width: 760px;
   font-size: 14.5px;
   line-height: 1.6;
   color: var(--text);
@@ -423,6 +436,9 @@ function newChat() {
 
 .composer {
   padding: 10px 12px;
+  width: 100%;
+  max-width: calc(var(--column) + 48px);
+  margin: 0 auto;
 }
 
 .composer .textarea {
@@ -458,6 +474,10 @@ function newChat() {
 }
 
 @media (max-width: 600px) {
+  .thread {
+    padding: 14px;
+  }
+
   .disclaimer {
     display: none;
   }

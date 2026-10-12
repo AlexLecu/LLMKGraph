@@ -334,7 +334,15 @@ function drawRecords(records: RelationRecord[], replace: boolean, origin: string
   updateLegend();
   const first = !network;
   mountNetwork();
-  if (!first && origin && added.nodes.length) placeAroundNode(origin, added.nodes);
+  if (!first && replace && network) {
+    // A fresh drawing on an existing canvas (other graph, new search): physics
+    // was switched off after the previous layout settled, so lay the new nodes
+    // out again; the 'stabilized' handler freezes them and fits the view.
+    network.setOptions({ physics: { enabled: true } });
+    network.stabilize(300);
+  } else if (!first && origin && added.nodes.length) {
+    placeAroundNode(origin, added.nodes);
+  }
   return added;
 }
 
