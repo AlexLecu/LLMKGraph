@@ -7,6 +7,7 @@ import AppSidebar from '@/components/AppSidebar.vue';
 import GroupedBars, { type Series } from '@/components/GroupedBars.vue';
 import { API_URL } from '@/config';
 import { ENTITY_STYLES } from '@/graph/palette';
+import { repoInfo } from '@/graph/repositories';
 
 interface RepoStats {
   relations: number;
@@ -28,11 +29,6 @@ interface Evaluation {
   common_to_all: number;
 }
 
-const MODEL_NAMES: Record<string, string> = {
-  amd_repo_gpt_35: 'GPT-3.5',
-  amd_repo_mistral: 'Mistral',
-  amd_repo_gpt_4o1_mini: 'GPT-4o1-mini',
-};
 
 const data = ref<Evaluation | null>(null);
 const error = ref('');
@@ -52,7 +48,7 @@ onMounted(async () => {
 const series = computed<Series[]>(() =>
   (data.value?.repositories ?? []).map((id, i) => ({
     id,
-    label: MODEL_NAMES[id] ?? id,
+    label: repoInfo(id).label,
     color: `var(--series-${(i % 3) + 1})`,
   })),
 );
@@ -79,12 +75,13 @@ function rankedCategories(field: 'relation_types' | 'entity_types', label: (k: s
 
 const relationCategories = computed(() => rankedCategories('relation_types', (k) => k));
 const entityCategories = computed(() => rankedCategories('entity_types', (k) => ENTITY_STYLES[k]?.label ?? k));
-const degreeCategories = computed(() =>
-  Object.keys(data.value?.stats[data.value.repositories[0]!]?.degree_distribution ?? {}).map((key) => ({
-    key,
-    label: `${key} link${key === '1' ? '' : 's'}`,
-  })),
-);
+// Fixed bucket order (JSON object keys arrive sorted alphabetically)
+const DEGREE_BUCKETS = ['1', '2', '3–5', '6–10', '11–20', '21+'];
+const degreeCategories = computed(() => {
+  const present = Object.keys(data.value?.stats[data.value.repositories[0]!]?.degree_distribution ?? {});
+  return [...DEGREE_BUCKETS.filter((k) => present.includes(k)), ...present.filter((k) => !DEGREE_BUCKETS.includes(k))]
+    .map((key) => ({ key, label: `${key} link${key === '1' ? '' : 's'}` }));
+});
 
 const SUMMARY: { key: keyof RepoStats; label: string; hint: string; digits?: number }[] = [
   { key: 'relations', label: 'Relations', hint: 'stored relations (a triple found in several abstracts counts each time)' },
@@ -114,7 +111,7 @@ const pretty = (name: string) => name.replace(/_/g, ' ');
         <div>
           <h1>LLM comparison</h1>
           <p class="muted">
-            The same AMD abstracts, with relations extracted by three different LLMs, one GraphDB repository each.
+            The same 100 AMD abstracts, with relations extracted by three different LLMs (one graph each).
           </p>
         </div>
         <div v-if="series.length" class="legend" aria-label="Legend">
@@ -338,6 +335,10 @@ td.top {
 
 .note {
   margin-top: 10px;
+}
+
+.card > .card-title + .card-sub {
+  margin-top: 2px;
 }
 
 .stat {

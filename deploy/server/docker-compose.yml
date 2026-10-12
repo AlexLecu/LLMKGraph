@@ -44,6 +44,12 @@ services:
       <<: *backend-env
       READ_ONLY: ${READ_ONLY:-1}
       CORS_ORIGINS: ${PUBLIC_URL}
+      # Visitors may add/delete/reason only here; the thesis graphs stay read-only
+      WRITABLE_REPOS: ${WRITABLE_REPOS:-amd_playground}
+      # "Extract from an abstract" with one model (Groq, covered by its spend limit)
+      EXTRACTION_API_BASE_URL: ${CHAT_API_BASE_URL:-https://api.groq.com/openai/v1}
+      EXTRACTION_API_KEY: ${GROQ_API_KEY}
+      EXTRACTION_MODEL: ${EXTRACTION_MODEL:-openai/gpt-oss-120b}
 
   chatbot:
     build:
@@ -53,7 +59,7 @@ services:
     container_name: llmkgraph-chatbot
     restart: unless-stopped
     environment:
-      CHAINLIT_ROOT_PATH: /chatbot
+      CHAT_UI: api
       CHAT_PROVIDER: openai-compatible
       CHAT_API_BASE_URL: ${CHAT_API_BASE_URL:-https://api.groq.com/openai/v1}
       CHAT_API_KEY: ${GROQ_API_KEY:?set GROQ_API_KEY in .env}

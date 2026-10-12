@@ -7,6 +7,7 @@ import { Network } from 'vis-network';
 import { DataSet } from 'vis-data';
 import AppSidebar from '@/components/AppSidebar.vue';
 import { API_URL, DEFAULT_REPO } from '@/config';
+import { groupRepositories, repoInfo } from '@/graph/repositories';
 import {
   ONT_NS, ALL_STYLES, ENTITY_STYLES, localName, prettyLabel, entityKind, makeNode,
   type GraphNode,
@@ -59,6 +60,7 @@ const validationError = ref('');
 const searchValidationError = ref('');
 const repositories = ref<Repository[]>([]);
 const currentRepoId = ref(DEFAULT_REPO);
+const repoGroups = computed(() => groupRepositories(repositories.value.map((r) => r.id)));
 const queryText = ref('');
 const filterType = ref('');
 const results = ref<RelationRecord[]>([]);
@@ -68,6 +70,12 @@ const graphState = ref<GraphState>('loading');
 const graphError = ref('');
 const apiStatus = ref<ApiStatus>('unknown');
 const readOnly = ref(false);
+// Public site: graphs visitors may write to, and the single extraction model
+const writableRepos = ref<string[]>([]);
+const extractionModel = ref('');
+const canWrite = computed(() => !readOnly.value || writableRepos.value.includes(currentRepoId.value));
+const canExtract = computed(() => !readOnly.value || !!extractionModel.value);
+const playgroundId = computed(() => writableRepos.value.find((id) => repositories.value.some((r) => r.id === id)) ?? '');
 const nodeStates = ref<Record<string, string>>({});
 const legendKinds = ref<string[]>([]);
 
@@ -114,7 +122,7 @@ function sparqlGet(repoId: string, query: string) {
 
 function describeAxiosError(error: any): string {
   if (error?.response?.data?.error) return String(error.response.data.error);
-  if (error?.response) return `The API answered ${error.response.status} for repository "${currentRepoId.value}".`;
+  if (error?.response) return `The API answered ${error.response.status} for the "${repoInfo(currentRepoId.value).label}" graph.`;
   return `No answer from the API at ${API_URL}.`;
 }
 
@@ -179,6 +187,8 @@ async function checkApi() {
     const { data } = await axios.get(`${API_URL}/api/health`, { timeout: 8000 });
     apiStatus.value = 'ok';
     readOnly.value = !!data?.read_only;
+    writableRepos.value = data?.writable_repos ?? [];
+    extractionModel.value = data?.read_only ? data?.extraction_model ?? '' : '';
   } catch {
     apiStatus.value = 'down';
   }
@@ -605,7 +615,7 @@ async function deleteSelectedEdge() {
     setStatus('Select an edge in the graph first.', 'info');
     return;
   }
-  if (!window.confirm(`Delete this relation from "${currentRepoId.value}"?\n\n${selectedRelationText.value}`)) return;
+  if (!window.confirm(`Delete this relation from "${repoInfo(currentRepoId.value).label}"?\n\n${selectedRelationText.value}`)) return;
 
   const payload = {
     subject: localName(edge.from),
@@ -674,14 +684,20 @@ function showRelations() {
     headers: { 'Content-Type': 'application/json' },
   })
     .then((response) => {
-      if (!response.ok) throw new Error(`API answered ${response.status}`);
+      if (!response.ok) {
+        return response.json().catch(() => ({})).then((body) => {
+          throw new Error(body.error || `The API answered ${response.status}.`);
+        });
+      }
       return response.json();
     })
     .then((response) => {
       responseText.value = JSON.stringify(response, null, 2);
-      setStatus('Relations extracted. Review them, then click "Add to graph".', 'success');
+      setStatus(response.length
+        ? `${response.length} relations extracted. Review them, then add them to the graph.`
+        : 'No relations found in this text.', response.length ? 'success' : 'info');
     })
-    .catch(() => setStatus('Error extracting relations. Check the API and the OPENAI_API_KEY.', 'error'))
+    .catch((e) => setStatus(`Error extracting relations: ${e.message}`, 'error'))
     .finally(() => loader.hide());
 }
 
@@ -698,8 +714,16 @@ function addRelations() {
     .then((response) => response.json())
     .then((data) => {
       if (data.status === 'Successfully completed') {
-        setStatus('Relations added to the knowledge graph.', 'success');
-        fetchData();
+        setStatus(`Relations added to ${repoInfo(currentRepoId.value).label}.`, 'success');
+        // show what was just added: search for the first relation's subject
+        const first = payload.relations[0]?.entity1_name;
+        if (first) {
+          queryText.value = String(first);
+          filterType.value = '';
+          performSearch();
+        } else {
+          fetchData();
+        }
       } else {
         setStatus(data.error || 'There was an issue adding relations.', 'error');
       }
@@ -800,20 +824,24 @@ async function addRelationsToKG() {
           <p class="muted">Causal relations extracted from AMD literature, stored in GraphDB.</p>
         </div>
         <div class="repos" v-if="repositories.length">
-          <span class="muted">Repository</span>
-          <button
-            v-for="repo in repositories"
-            :key="repo.id"
-            type="button"
-            class="pill"
-            :class="{ active: repo.id === currentRepoId }"
-            @click="activateRepository(repo.id)"
-          >
-            {{ repo.id }}
-          </button>
+          <div v-for="g in repoGroups" :key="g.group" class="repo-group">
+            <span class="muted group-label">{{ g.group }}</span>
+            <button
+              v-for="id in g.ids"
+              :key="id"
+              type="button"
+              class="pill"
+              :class="{ active: id === currentRepoId }"
+              :title="repoInfo(id).detail"
+              @click="activateRepository(id)"
+            >
+              {{ repoInfo(id).label }}
+            </button>
+          </div>
+          <p class="muted repo-detail">{{ repoInfo(currentRepoId).detail }}</p>
         </div>
         <div v-else class="repos">
-          <span class="muted">Repository <code class="inline">{{ currentRepoId }}</code></span>
+          <span class="muted">Graph: <strong>{{ repoInfo(currentRepoId).label }}</strong></span>
         </div>
       </header>
 
@@ -848,9 +876,15 @@ async function addRelationsToKG() {
             <div v-else-if="graphState === 'empty'" class="graph-overlay">
               <h3>Nothing to show</h3>
               <p class="muted">
-                Repository <code class="inline">{{ currentRepoId }}</code> has no relations around the AMD node
-                (or the search returned nothing). Import <code class="inline">data/amd_repo.rdf</code> in GraphDB
-                or add relations from the panel on the right.
+                <template v-if="readOnly && canWrite">
+                  The <strong>{{ repoInfo(currentRepoId).label }}</strong> graph has nothing around the AMD node yet.
+                  Paste an abstract in the panel on the right, extract its relations and add them here.
+                </template>
+                <template v-else>
+                  The <strong>{{ repoInfo(currentRepoId).label }}</strong> graph has no relations around the AMD node
+                  (or the search returned nothing). Import <code class="inline">data/amd_repo.rdf</code> in GraphDB
+                  or add relations from the panel on the right.
+                </template>
               </p>
               <button class="btn btn-secondary btn-sm" type="button" @click="fetchData">Reload</button>
             </div>
@@ -870,7 +904,7 @@ async function addRelationsToKG() {
             <span class="selection-text">{{ selectedRelationText }}</span>
             <div class="btn-row">
               <button class="btn btn-secondary btn-sm" type="button" @click="deselectEdge">Clear</button>
-              <button v-if="!readOnly" class="btn btn-danger btn-sm" type="button" @click="deleteSelectedEdge">Delete relation</button>
+              <button v-if="canWrite" class="btn btn-danger btn-sm" type="button" @click="deleteSelectedEdge">Delete relation</button>
             </div>
           </div>
 
@@ -929,7 +963,7 @@ async function addRelationsToKG() {
             </div>
           </section>
 
-          <section v-if="readOnly" class="card">
+          <section v-if="readOnly && !canExtract" class="card">
             <div class="card-head">
               <h2 class="card-title">Read-only demo</h2>
             </div>
@@ -941,18 +975,30 @@ async function addRelationsToKG() {
             </p>
           </section>
 
-          <section v-if="!readOnly" class="card">
+          <section v-if="canExtract" class="card">
             <div class="card-head">
               <h2 class="card-title">Extract from an abstract</h2>
             </div>
-            <p class="card-sub">Paste an abstract; relations are extracted with GPT-4o-mini and can be edited before they are added to the graph.</p>
+            <p class="card-sub">
+              Paste an abstract; relations are extracted with
+              <strong>{{ readOnly ? extractionModel.replace(/^openai\//, '') : 'GPT-4o-mini' }}</strong>
+              and can be edited before they are added to the graph.
+            </p>
+            <p v-if="readOnly && !canWrite" class="msg msg-info write-hint">
+              The thesis graphs are read-only.
+              <template v-if="playgroundId">
+                Relations can be added to the
+                <button type="button" class="link-btn" @click="activateRepository(playgroundId)">{{ repoInfo(playgroundId).label }}</button>
+                graph.
+              </template>
+            </p>
             <div class="field">
               <textarea v-model="abstract" class="textarea" rows="5" placeholder="Paste an AMD abstract here…"></textarea>
             </div>
             <div class="btn-row">
               <button class="btn btn-primary" type="button" @click="showRelations" :disabled="apiStatus === 'down'">Extract relations</button>
-              <button class="btn btn-secondary" type="button" @click="addRelations" :disabled="!responseText || apiStatus === 'down'">Add to graph</button>
-              <button class="btn btn-secondary" type="button" @click="reasonKg" :disabled="apiStatus === 'down'" title="Run the HermiT reasoner on the current repository">Run reasoner</button>
+              <button class="btn btn-secondary" type="button" @click="addRelations" :disabled="!responseText || !canWrite || apiStatus === 'down'" :title="canWrite ? '' : 'Switch to a writable graph first'">Add to {{ repoInfo(currentRepoId).label }}</button>
+              <button v-if="canWrite" class="btn btn-secondary" type="button" @click="reasonKg" :disabled="apiStatus === 'down'" title="Run the HermiT reasoner on the current graph">Run reasoner</button>
             </div>
             <p v-if="validationError" class="msg msg-error">{{ validationError }}</p>
             <div class="field" style="margin-top: 12px">
@@ -1017,9 +1063,52 @@ async function addRelationsToKG() {
 
 .repos {
   display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.repo-group {
+  display: flex;
   align-items: center;
   gap: 6px;
   flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.group-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-right: 2px;
+}
+
+.repo-detail {
+  margin: 0;
+  font-size: 12.5px;
+}
+
+@media (max-width: 1023px) {
+  .repos,
+  .repo-group {
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+}
+
+.write-hint {
+  margin: 0 0 12px;
+}
+
+.link-btn {
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  font-weight: 700;
+  color: inherit;
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .pill {

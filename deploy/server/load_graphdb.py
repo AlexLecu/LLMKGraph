@@ -32,6 +32,8 @@ REPOSITORIES = [
      ["Extracted_Relations/2024-12-05/GPT4-o1_mini_Relations.json"]),
     ("amd_repo_mistral", "AMD - LLM comparison: Mistral",
      ["Extracted_Relations/2024-12-05/Mistral_Relations.json"]),
+    # Empty graph (ontology only) that visitors of the public site may write to
+    ("amd_playground", "AMD - Playground (public, writable)", []),
 ]
 
 # Legacy RDF4J config vocabulary: understood by GraphDB 10.x and 11.x alike

@@ -7,7 +7,6 @@ RUN npm ci
 COPY . .
 # Every backend is reached through this container, so the UI uses relative URLs
 ENV VITE_API_URL=/ \
-    VITE_CHAT_URL=/chatbot/ \
     VITE_DEFAULT_REPO=amd_abstracts
 RUN npm run build
 

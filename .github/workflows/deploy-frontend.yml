@@ -43,7 +43,8 @@ jobs:
           VITE_BASE_PATH: /${{ github.event.repository.name }}/
           VITE_API_URL: ${{ vars.VITE_API_URL }}
           VITE_GRAPHDB_URL: ${{ vars.VITE_GRAPHDB_URL }}
-          VITE_CHAT_URL: ${{ vars.VITE_CHAT_URL }}
+          # Render runs the Chainlit UI, embedded as an iframe
+          VITE_CHAT_EMBED_URL: ${{ vars.VITE_CHAT_URL }}
           VITE_HIDE_EVALUATION: ${{ vars.VITE_HIDE_EVALUATION }}
       # SPA fallback so deep links (/chat, /evaluation) work on Pages
       - run: cp dist/index.html dist/404.html
