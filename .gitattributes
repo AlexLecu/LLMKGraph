@@ -1,0 +1,4 @@
+# GitHub language stats: count the application code, not the evaluation
+# notebooks or the generated scan reports (they stay in the repo as usual)
+*.ipynb linguist-detectable=false
+backend/evaluation/data/giskard_scan_results/** linguist-generated
