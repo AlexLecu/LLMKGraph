@@ -15,16 +15,27 @@ load_dotenv()
 
 from bulk_relations import _LazyClient  # noqa: E402
 
-client = _LazyClient(lambda: OpenAI(api_key=os.environ["OPENAI_API_KEY"]))
+# Single-abstract extraction: GPT-4o-mini by default, or any OpenAI-compatible
+# endpoint via EXTRACTION_API_BASE_URL / EXTRACTION_API_KEY / EXTRACTION_MODEL
+# (e.g. Groq's openai/gpt-oss-120b on the public site).
+EXTRACTION_MODEL = os.getenv("EXTRACTION_MODEL") or "gpt-4o-mini"
+client = _LazyClient(lambda: OpenAI(
+    api_key=os.getenv("EXTRACTION_API_KEY") or os.environ["OPENAI_API_KEY"],
+    base_url=os.getenv("EXTRACTION_API_BASE_URL") or None))
 GRAPHDB_URL = os.getenv('GRAPHDB_URL', 'http://localhost:7200')
+
+
+def extraction_model_name():
+    return EXTRACTION_MODEL
 
 
 def generate_relations(text):
     user_prompt = generate_user_prompt(text)
 
     chat_response = client.chat.completions.create(
-        model="gpt-4o-mini",
-        max_tokens=2000,
+        model=EXTRACTION_MODEL,
+        # reasoning models (gpt-oss) spend part of the budget thinking
+        max_tokens=int(os.getenv("EXTRACTION_MAX_TOKENS", "4000")),
         temperature=0,
         messages=[
             ChatCompletionSystemMessageParam(role="system", content=system_prompt.strip()),

@@ -40,6 +40,13 @@ if [ "${1:-}" = "--build-only" ]; then
   exit 0
 fi
 
+# CHAT_UI=api serves the JSON/streaming API used by the Vue chat page (plain HTTP);
+# the default is the Chainlit UI.
+if [ "${CHAT_UI:-chainlit}" = "api" ]; then
+  echo "== starting the chat API on port ${PORT:-7860}"
+  exec uvicorn chat_api:app --host 0.0.0.0 --port "${PORT:-7860}" --proxy-headers --forwarded-allow-ips='*'
+fi
+
 echo "== starting Chainlit on port ${PORT:-7860}"
 # CHAINLIT_ROOT_PATH serves the UI under a sub-path (e.g. /chatbot behind a reverse proxy)
 exec chainlit run chatbot.py --host 0.0.0.0 --port "${PORT:-7860}" --headless ${CHAINLIT_ROOT_PATH:+--root-path "$CHAINLIT_ROOT_PATH"}

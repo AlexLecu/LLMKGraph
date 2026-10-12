@@ -12,6 +12,8 @@
   },
   "dependencies": {
     "axios": "^1.20.0",
+    "dompurify": "^3.4.16",
+    "marked": "^18.0.14",
     "vue-loading-overlay": "^6.0.6"
   },
   "devDependencies": {

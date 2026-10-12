@@ -9,7 +9,7 @@ COPY deploy/api/requirements.txt /app/requirements.txt
 RUN pip install --no-cache-dir --upgrade pip && pip install --no-cache-dir -r /app/requirements.txt
 
 COPY backend/app.py backend/search_kg.py backend/embedded_store.py backend/enrich_kg_gpt.py \
-     backend/bulk_relations.py backend/prompts.py /app/
+     backend/bulk_relations.py backend/prompts.py backend/evaluation_stats.py /app/
 COPY backend/disambiguation /app/disambiguation
 COPY data/CausalAMD_ont.rdf /app/data/CausalAMD_ont.rdf
 COPY data/Extracted_Relations/2025-03-12/Deepseek_V3_Relations_ct.json \

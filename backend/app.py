@@ -1,10 +1,13 @@
 from flask import Flask, request, jsonify, make_response, send_file
-from enrich_kg_gpt import return_relations, add_relations_to_kg
+from enrich_kg_gpt import return_relations, add_relations_to_kg, extraction_model_name
 from disambiguation.reason import reason_and_update
 from search_kg import query_knowledge_graph, delete_relation_kg, validate_repo_id
 from bulk_relations import extract_relations, add_bulk_relations_to_kg
 from flask_cors import CORS
+import evaluation_stats
 import re
+import time
+from collections import defaultdict, deque
 import requests
 import tempfile
 import json
@@ -20,11 +23,22 @@ CORS(app, origins="*" if _cors_origins == ["*"] else _cors_origins)
 GRAPHDB_URL = os.getenv('GRAPHDB_URL', 'http://localhost:7200')
 AVAILABLE_MODELS = ["model_a", "model_b", "model_c", "model_d"]
 
-# READ_ONLY=1 turns the API into a browse-only demo: every endpoint that writes
-# to the graph or calls a paid LLM answers 403 instead.
+# READ_ONLY=1 turns the API into a browse-only public site: every endpoint that
+# writes to the graph or calls an LLM answers 403, with two opt-in exceptions:
+#   WRITABLE_REPOS=amd_playground  repositories visitors may add to / delete from / reason over
+#   EXTRACTION_MODEL=...           single-abstract extraction with that one model
+#                                  (EXTRACTION_API_BASE_URL / EXTRACTION_API_KEY), rate limited
 READ_ONLY = os.getenv("READ_ONLY", "0") == "1"
 WRITE_ENDPOINTS = {"show_relations", "add_relations", "reason_kg", "delete_relation",
                    "upload_abstract", "upload_relations"}
+REPO_SCOPED_ENDPOINTS = {"add_relations", "reason_kg", "delete_relation", "upload_relations"}
+WRITABLE_REPOS = {r.strip() for r in os.getenv("WRITABLE_REPOS", "").split(",") if r.strip()}
+PUBLIC_EXTRACTION = bool(os.getenv("EXTRACTION_MODEL"))
+EXTRACTION_RATE = int(os.getenv("EXTRACTION_RATE_LIMIT", "20"))      # extractions per client ...
+EXTRACTION_WINDOW = int(os.getenv("EXTRACTION_RATE_WINDOW", "3600"))  # ... per this many seconds
+MAX_ABSTRACT_CHARS = 8000
+MAX_RELATIONS_PER_REQUEST = 1000
+_extraction_log = defaultdict(deque)
 
 # EMBEDDED_STORE=1 serves the knowledge graph from an in-process rdflib store
 # (see embedded_store.py) instead of an external GraphDB.
@@ -34,10 +48,33 @@ if os.getenv("EMBEDDED_STORE", "0") == "1":
     app.register_blueprint(embedded_store.bp)
 
 
+def _request_repo_id():
+    body = request.get_json(silent=True) if request.is_json else None
+    return (body or {}).get("repo_id") or request.args.get("repo_id") or request.form.get("repo_id")
+
+
+def _client_id():
+    forwarded = request.headers.get("X-Forwarded-For", "")
+    return forwarded.split(",")[0].strip() or request.remote_addr or "?"
+
+
 @app.before_request
 def _block_writes_when_read_only():
-    if READ_ONLY and request.endpoint in WRITE_ENDPOINTS:
-        return jsonify({"error": "This public demo is read-only. Run the project locally to extract, add, delete or reason over relations."}), 403
+    if not READ_ONLY or request.endpoint not in WRITE_ENDPOINTS:
+        return None
+    if request.endpoint in REPO_SCOPED_ENDPOINTS and _request_repo_id() in WRITABLE_REPOS:
+        return None
+    if request.endpoint == "show_relations" and PUBLIC_EXTRACTION:
+        q = _extraction_log[_client_id()]
+        now = time.time()
+        while q and now - q[0] > EXTRACTION_WINDOW:
+            q.popleft()
+        if len(q) >= EXTRACTION_RATE:
+            return jsonify({"error": "Extraction limit reached; please try again later."}), 429
+        q.append(now)
+        return None
+    where = f" (except in: {', '.join(sorted(WRITABLE_REPOS))})" if WRITABLE_REPOS else ""
+    return jsonify({"error": f"The graphs on this public site are read-only{where}."}), 403
 
 
 @app.errorhandler(ValueError)
@@ -48,12 +85,26 @@ def handle_value_error(error):
 
 @app.route('/api/health', methods=['GET'])
 def health():
-    return jsonify({"status": "ok", "read_only": READ_ONLY})
+    return jsonify({"status": "ok", "read_only": READ_ONLY,
+                    "writable_repos": sorted(WRITABLE_REPOS) if READ_ONLY else None,
+                    # only advertise extraction where it is actually allowed
+                    "extraction_model": extraction_model_name() if (PUBLIC_EXTRACTION or not READ_ONLY) else None})
 
 
 @app.route('/api/showRelations', methods=['POST'])
 def show_relations():
-    text = request.data
+    # The UI posts the abstract as a JSON string; plain text bodies work too
+    text = request.get_data(as_text=True)
+    try:
+        decoded = json.loads(text)
+        text = decoded if isinstance(decoded, str) else text
+    except ValueError:
+        pass
+    text = text.strip()
+    if not text:
+        return jsonify({"error": "The abstract is empty."}), 400
+    if len(text) > MAX_ABSTRACT_CHARS:
+        return jsonify({"error": f"The abstract is too long (max {MAX_ABSTRACT_CHARS} characters)."}), 400
     relations = return_relations(text)
 
     response = make_response(jsonify(relations))
@@ -64,7 +115,12 @@ def show_relations():
 @app.route('/api/addRelations', methods=['POST'])
 def add_relations():
     json_file = request.get_json()
-    add_relations_to_kg(json_file["relations"], validate_repo_id(json_file["repo_id"]))
+    relations = json_file.get("relations")
+    if not isinstance(relations, list) or not relations:
+        return jsonify({"error": "Expected a non-empty list of relations."}), 400
+    if len(relations) > MAX_RELATIONS_PER_REQUEST:
+        return jsonify({"error": f"At most {MAX_RELATIONS_PER_REQUEST} relations per request."}), 400
+    add_relations_to_kg(relations, validate_repo_id(json_file["repo_id"]))
 
     response = make_response("{\"status\": \"Successfully completed\"}")
 
@@ -138,6 +194,16 @@ def delete_relation():
     return response
 
 
+@app.route("/api/evaluation", methods=["GET"])
+def evaluation():
+    """Compare the LLM-specific repositories (?repos=a,b,c; default EVAL_REPOS)."""
+    repos = [validate_repo_id(r.strip()) for r in request.args.get("repos", "").split(",") if r.strip()]
+    try:
+        return jsonify(evaluation_stats.compare(repos))
+    except requests.RequestException as e:
+        return jsonify({"error": f"GraphDB unavailable: {e}"}), 502
+
+
 @app.route("/api/available_repositories", methods=["GET"])
 def available_repositories():
     try:
@@ -194,6 +260,10 @@ def upload_relations():
         relations = json.load(file)
     except json.JSONDecodeError:
         return jsonify({"error": "Invalid JSON file"}), 400
+    if isinstance(relations, dict):
+        relations = relations.get("relations", [])
+    if not isinstance(relations, list) or len(relations) > MAX_RELATIONS_PER_REQUEST * 20:
+        return jsonify({"error": "Expected a JSON list of relations (at most 20,000)."}), 400
     add_bulk_relations_to_kg(relations, repo_id)
 
     response = make_response("{\"status\": \"Successfully completed\"}")
