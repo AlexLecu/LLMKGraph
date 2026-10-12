@@ -155,7 +155,7 @@ function newChat() {
         </div>
       </header>
 
-      <section ref="scroller" class="thread card" aria-live="polite">
+      <section ref="scroller" class="thread" aria-live="polite">
         <div class="column">
         <div v-if="!turns.length" class="empty">
           <div class="empty-mark" aria-hidden="true">👁️</div>
@@ -257,12 +257,13 @@ function newChat() {
   padding: 6px 8px;
 }
 
+/* No frame around the conversation: just the centred column, like chat apps */
 .thread {
   flex: 1;
   min-height: 0;
   overflow-y: auto;
   display: flex;
-  padding: 24px;
+  padding: 12px 24px 24px;
 }
 
 .column {
@@ -303,7 +304,7 @@ function newChat() {
   flex-direction: column;
   gap: 4px;
   padding: 12px 14px;
-  background: var(--surface-muted);
+  background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
   color: var(--text);
