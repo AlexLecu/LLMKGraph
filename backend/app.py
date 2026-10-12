@@ -4,6 +4,7 @@ from disambiguation.reason import reason_and_update
 from search_kg import query_knowledge_graph, delete_relation_kg, validate_repo_id
 from bulk_relations import extract_relations, add_bulk_relations_to_kg
 from flask_cors import CORS
+import evaluation_stats
 import re
 import requests
 import tempfile
@@ -136,6 +137,16 @@ def delete_relation():
     response = make_response("{\"status\": \"Successfully completed\"}")
 
     return response
+
+
+@app.route("/api/evaluation", methods=["GET"])
+def evaluation():
+    """Compare the LLM-specific repositories (?repos=a,b,c; default EVAL_REPOS)."""
+    repos = [validate_repo_id(r.strip()) for r in request.args.get("repos", "").split(",") if r.strip()]
+    try:
+        return jsonify(evaluation_stats.compare(repos))
+    except requests.RequestException as e:
+        return jsonify({"error": f"GraphDB unavailable: {e}"}), 502
 
 
 @app.route("/api/available_repositories", methods=["GET"])

@@ -4,6 +4,8 @@
 #   docker compose up -d --build
 #   docker compose run --rm load    # once: create + fill the GraphDB repositories
 #
+# The Evaluation page is served by the API (/api/evaluation), so no Streamlit
+# (it needs WebSockets, which the university proxy does not forward).
 # Everything is published on 127.0.0.1:${WEB_PORT} only; the host's nginx forwards
 # the public hostname there (see nginx-host.conf). Nothing else is reachable from
 # outside, and nothing is shared with other projects on the same machine.
@@ -43,14 +45,6 @@ services:
       READ_ONLY: ${READ_ONLY:-1}
       CORS_ORIGINS: ${PUBLIC_URL}
 
-  evaluation:
-    <<: *backend
-    container_name: llmkgraph-evaluation
-    command: >
-      streamlit run streamlit/streamlit_app_evaluation.py
-      --server.port=8502 --server.headless=true --server.baseUrlPath=streamlit
-      --browser.gatherUsageStats=false
-
   chatbot:
     build:
       context: ../..
@@ -77,7 +71,6 @@ services:
     depends_on:
       - api
       - chatbot
-      - evaluation
     ports:
       - "127.0.0.1:${WEB_PORT:-3002}:80"
 

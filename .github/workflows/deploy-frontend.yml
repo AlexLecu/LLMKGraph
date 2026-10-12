@@ -6,7 +6,6 @@
 #     VITE_API_URL      e.g. https://<your-backend>.onrender.com
 #     VITE_GRAPHDB_URL  e.g. https://<your-graphdb-host>
 #     VITE_CHAT_URL     e.g. https://llmkgraph-amd-chat.onrender.com/
-#     VITE_EVAL_URL     e.g. https://<your-streamlit-host>/?embed=true
 # Without those variables the page builds, but points at localhost.
 name: Deploy frontend to GitHub Pages
 
@@ -45,7 +44,6 @@ jobs:
           VITE_API_URL: ${{ vars.VITE_API_URL }}
           VITE_GRAPHDB_URL: ${{ vars.VITE_GRAPHDB_URL }}
           VITE_CHAT_URL: ${{ vars.VITE_CHAT_URL }}
-          VITE_EVAL_URL: ${{ vars.VITE_EVAL_URL }}
           VITE_HIDE_EVALUATION: ${{ vars.VITE_HIDE_EVALUATION }}
       # SPA fallback so deep links (/chat, /evaluation) work on Pages
       - run: cp dist/index.html dist/404.html
