@@ -1,3 +1,5 @@
+import os
+
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -10,15 +12,11 @@ def main():
     st.title("Graph Comparison App")
     st.write("Compare the graphs generated using the same data but different LLMs, stored across multiple repositories.")
 
-    # Repositories and their SPARQL endpoints with actual names
-    repositories = {
-        "amd_repo_gpt_35": "http://graphdb:7200/repositories/amd_repo_gpt_35",
-        "amd_repo_mistral": "http://graphdb:7200/repositories/amd_repo_mistral",
-        "amd_repo_gpt_4o1_mini": "http://graphdb:7200/repositories/amd_repo_gpt_4o1_mini"
-    }
-
-    # The graph URI to be used across all repositories
-    graph_uri = "http://amddata.org/amd/"
+    # Repositories to compare (same abstracts, different extraction LLMs).
+    # GRAPHDB_URL and EVAL_REPOS (comma-separated ids) override the defaults.
+    graphdb_url = os.getenv("GRAPHDB_URL", "http://graphdb:7200").rstrip("/")
+    repo_ids = os.getenv("EVAL_REPOS", "amd_repo_gpt_35,amd_repo_mistral,amd_repo_gpt_4o1_mini")
+    repositories = {r.strip(): f"{graphdb_url}/repositories/{r.strip()}" for r in repo_ids.split(",") if r.strip()}
 
     # Sidebar for evaluation options
     st.sidebar.header("Select Evaluation Metrics")
@@ -39,12 +37,12 @@ def main():
     graphs_data = {}
     data_frames = {}
     for repo_name, endpoint in repositories.items():
-        G, df = fetch_graph_data(endpoint, graph_uri)
+        G, df = fetch_graph_data(endpoint)
         if G is not None and df is not None:
             graphs_data[repo_name] = G
             data_frames[repo_name] = df
         else:
-            st.error(f"No data found in repository '{repo_name}' for graph '{graph_uri}'.")
+            st.error(f"No data found in repository '{repo_name}'.")
 
     if data_frames:
         if not evaluation_metrics:
@@ -73,21 +71,25 @@ def main():
         st.error("No valid data found in any of the repositories.")
 
 
-def fetch_graph_data(endpoint_url, graph_uri=None):
-    # Function to fetch triples from a specific named graph or default graph
+# Relations are stored reified (ont:RELATION nodes with subject/predicate/object),
+# so read them back as plain (subject, predicate, object) rows, plus the explicit
+# rdf:type of every entity that takes part in a relation (for the type analysis).
+RELATION_QUERY = """
+PREFIX ont: <http://www.semanticweb.org/lecualexandru/ontologies/2024/11/CausalAMD#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+SELECT DISTINCT ?s ?p ?o
+FROM <http://www.ontotext.com/explicit>
+WHERE {
+  { ?r a ont:RELATION ; ont:relation_subject ?s ; ont:relation_predicate ?p ; ont:relation_object ?o . }
+  UNION
+  { ?r a ont:RELATION ; ont:relation_subject|ont:relation_object ?s . ?s a ?o . BIND(rdf:type AS ?p) }
+}
+"""
+
+
+def fetch_graph_data(endpoint_url):
     sparql = SPARQLWrapper(endpoint_url)
-    if graph_uri:
-        query = f"""
-        SELECT ?s ?p ?o WHERE {{
-          GRAPH <{graph_uri}> {{ ?s ?p ?o }}
-        }}
-        """
-    else:
-        query = """
-        SELECT ?s ?p ?o WHERE {
-          ?s ?p ?o
-        }
-        """
+    query = RELATION_QUERY
     sparql.setQuery(query)
     sparql.setReturnFormat(JSON)
     try:

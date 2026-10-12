@@ -6,7 +6,7 @@ import axios from 'axios';
 import { Network } from 'vis-network';
 import { DataSet } from 'vis-data';
 import AppSidebar from '@/components/AppSidebar.vue';
-import { API_URL } from '@/config';
+import { API_URL, DEFAULT_REPO } from '@/config';
 import {
   ONT_NS, ALL_STYLES, ENTITY_STYLES, localName, prettyLabel, entityKind, makeNode,
   type GraphNode,
@@ -58,7 +58,7 @@ const statusKind = ref<'info' | 'success' | 'error'>('info');
 const validationError = ref('');
 const searchValidationError = ref('');
 const repositories = ref<Repository[]>([]);
-const currentRepoId = ref('amd_repo_mistral');
+const currentRepoId = ref(DEFAULT_REPO);
 const queryText = ref('');
 const filterType = ref('');
 const results = ref<RelationRecord[]>([]);

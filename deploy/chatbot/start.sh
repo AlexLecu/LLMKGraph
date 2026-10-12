@@ -41,4 +41,5 @@ if [ "${1:-}" = "--build-only" ]; then
 fi
 
 echo "== starting Chainlit on port ${PORT:-7860}"
-exec chainlit run chatbot.py --host 0.0.0.0 --port "${PORT:-7860}" --headless
+# CHAINLIT_ROOT_PATH serves the UI under a sub-path (e.g. /chatbot behind a reverse proxy)
+exec chainlit run chatbot.py --host 0.0.0.0 --port "${PORT:-7860}" --headless ${CHAINLIT_ROOT_PATH:+--root-path "$CHAINLIT_ROOT_PATH"}

@@ -1,0 +1,100 @@
+# LLMKGraph on a single server behind an existing reverse proxy.
+#
+#   cp .env.example .env            # set GROQ_API_KEY and PUBLIC_URL
+#   docker compose up -d --build
+#   docker compose run --rm load    # once: create + fill the GraphDB repositories
+#
+# Everything is published on 127.0.0.1:${WEB_PORT} only; the host's nginx forwards
+# the public hostname there (see nginx-host.conf). Nothing else is reachable from
+# outside, and nothing is shared with other projects on the same machine.
+name: llmkgraph
+
+x-backend: &backend
+  build:
+    context: ../../backend
+    dockerfile: Dockerfile
+  image: llmkgraph-backend
+  restart: unless-stopped
+  depends_on:
+    - graphdb
+  environment: &backend-env
+    GRAPHDB_URL: http://graphdb:7200
+    FLASK_DEBUG: "0"
+
+services:
+  graphdb:
+    image: ontotext/graphdb:10.8.0
+    container_name: llmkgraph-graphdb
+    restart: unless-stopped
+    environment:
+      GDB_HEAP_SIZE: ${GRAPHDB_HEAP:-3g}
+    volumes:
+      - graphdb-data:/opt/graphdb/home
+    # Workbench for administration only, through an SSH tunnel
+    ports:
+      - "127.0.0.1:${GRAPHDB_PORT:-7201}:7200"
+
+  api:
+    <<: *backend
+    container_name: llmkgraph-api
+    command: gunicorn --bind 0.0.0.0:5555 --workers 3 --timeout 300 app:app
+    environment:
+      <<: *backend-env
+      READ_ONLY: ${READ_ONLY:-1}
+      CORS_ORIGINS: ${PUBLIC_URL}
+
+  evaluation:
+    <<: *backend
+    container_name: llmkgraph-evaluation
+    command: >
+      streamlit run streamlit/streamlit_app_evaluation.py
+      --server.port=8502 --server.headless=true --server.baseUrlPath=streamlit
+      --browser.gatherUsageStats=false
+
+  chatbot:
+    build:
+      context: ../..
+      dockerfile: deploy/chatbot/Dockerfile
+    image: llmkgraph-chatbot
+    container_name: llmkgraph-chatbot
+    restart: unless-stopped
+    environment:
+      CHAINLIT_ROOT_PATH: /chatbot
+      CHAT_PROVIDER: openai-compatible
+      CHAT_API_BASE_URL: ${CHAT_API_BASE_URL:-https://api.groq.com/openai/v1}
+      CHAT_API_KEY: ${GROQ_API_KEY:?set GROQ_API_KEY in .env}
+      CHAT_MODELS: ${CHAT_MODELS:-openai/gpt-oss-120b,openai/gpt-oss-20b}
+
+  web:
+    build:
+      context: ../../frontend
+      dockerfile: ../deploy/server/web.Dockerfile
+      additional_contexts:
+        server: .
+    image: llmkgraph-web
+    container_name: llmkgraph-web
+    restart: unless-stopped
+    depends_on:
+      - api
+      - chatbot
+      - evaluation
+    ports:
+      - "127.0.0.1:${WEB_PORT:-3002}:80"
+
+  # One-off loader: docker compose run --rm load
+  load:
+    <<: *backend
+    container_name: llmkgraph-load
+    restart: "no"
+    profiles: ["tools"]
+    command: python /srv/load_graphdb.py
+    environment:
+      <<: *backend-env
+      DATA_DIR: /data
+      PYTHONPATH: /app
+    volumes:
+      - ../../data:/data:ro
+      - ./load_graphdb.py:/srv/load_graphdb.py:ro
+
+volumes:
+  graphdb-data:
