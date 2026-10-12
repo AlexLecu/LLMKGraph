@@ -222,6 +222,25 @@
   color: var(--primary);
 }
 
+/* On the dark soft backgrounds the saturated text colours are unreadable */
+@media (prefers-color-scheme: dark) {
+  .msg-info {
+    color: #dbeafe;
+  }
+
+  .msg-success {
+    color: #dcfce7;
+  }
+
+  .msg-error {
+    color: #fee2e2;
+  }
+
+  .banner-warn {
+    color: #fef3c7;
+  }
+}
+
 .muted {
   color: var(--text-muted);
   font-size: 13px;

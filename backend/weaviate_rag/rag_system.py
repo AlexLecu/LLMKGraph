@@ -25,6 +25,8 @@ except ImportError:  # run as a plain script from this directory
     from weaviate_client import get_weaviate_client
 
 
+SUMMARY_MAX_TOKENS = int(os.getenv("RAG_SUMMARY_MAX_TOKENS", "2000"))
+
 class GraphRAGSystem:
 
     def __init__(self, question, model_config=None):
@@ -248,7 +250,9 @@ class GraphRAGSystem:
                         {"role": "user", "content": prompt}
                     ],
                     temperature=0.1,
-                    max_tokens=300
+                    # Reasoning models (e.g. gpt-oss) think before answering and count
+                    # those tokens here; 300 left them with an empty summary.
+                    max_tokens=SUMMARY_MAX_TOKENS
                 )
                 return self.remove_think_tags(response.choices[0].message.content).strip()
 
