@@ -87,7 +87,8 @@ def handle_value_error(error):
 def health():
     return jsonify({"status": "ok", "read_only": READ_ONLY,
                     "writable_repos": sorted(WRITABLE_REPOS) if READ_ONLY else None,
-                    "extraction_model": extraction_model_name()})
+                    # only advertise extraction where it is actually allowed
+                    "extraction_model": extraction_model_name() if (PUBLIC_EXTRACTION or not READ_ONLY) else None})
 
 
 @app.route('/api/showRelations', methods=['POST'])

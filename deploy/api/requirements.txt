@@ -5,6 +5,7 @@ gunicorn>=23.0.0,<27
 requests>=2.32,<3
 SPARQLWrapper>=2.0.0,<3
 rdflib>=7.1.3,<8
+networkx>=3.4,<4
 owlready2>=0.45
 openai>=2.5.0,<4
 mistralai>=1.9.11,<2
